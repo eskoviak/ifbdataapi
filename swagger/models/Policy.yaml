@@ -2,9 +2,9 @@ description: |
   A top-level model which represents an insurance Policy (of various types) or an annuity Contract (fixed
   and variable).
 required: 
-  ['id', 'policyNumber','description','locations','policyDetails','issueAge','originalInceptionDate','termEffectiveDate',
-   'termExpirationDate', 'cancelDate','maturityDate','policyTerm', 'premium', 'billingDetails','policyAssociations',
-   'supplementalDocuments']
+  ['id', 'policyNumber','description', 'policyStatus', 'locations','policyDetails', 'insuranceScore', 'issueAge',
+   'originalInceptionDate','termEffectiveDate', 'termExpirationDate', 'cancelDate','maturityDate','policyTerm',
+   'premium', 'billingDetails','policyAssociations', 'supplementalDocuments']
 properties:
   id:
     description: |
@@ -17,6 +17,10 @@ properties:
     type: ['string', 'null']
   description:
     description: Short description of the policy (eg, '2006 Harley Road King').
+    type: string
+  policyStatus:
+    description: |
+      The current status of the policy as coded by the source system.
     type: string
   lineOfBusiness:
     description: |
@@ -40,6 +44,14 @@ properties:
       3.  PolciyDetail-Commercial:  This is used for Farm and Commercial lines.
       
     type: object
+  # EWS 514
+  insuranceScore:
+    description: |
+      The score or index used to rate the policy, such as a credit score or other indicator of financial
+      health.
+    x-required-in:
+      [ 'Homeowners']
+    type: ['string', 'null']
   issueAge:
     description: |
       (Life/Annuity) The age of the insured or annuitant at the time of issue. This is a policy

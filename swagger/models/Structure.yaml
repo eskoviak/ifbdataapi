@@ -2,13 +2,15 @@ description: |
   A physical structure to be insured.  A structure is a building which is uninhabited by
   humans.  For a building which is inhabited by humans, use dwelling.
 required:
-  ['locationId', 'item', 'description', 'isBroadPeril', 'isVacant']
+  ['locationId', 'item', 'description', 'isBroadPeril', 'isVacant', 'lossSettlement']
 properties:
   locationId:
     description: |
       The location number for the structure.  There MUST be at one and only
       one location for a structure, which contains the location specific information, such as
       address.  The location(s) are contained in the Policy model.
+    x-required-in:
+      ['all']
     type: string
   item:
     description: |
@@ -24,4 +26,13 @@ properties:
     type: boolean
   isVacant:
     description: Whether the structure is vacant
-    type: boolean 
+    type: boolean
+  lossSettlement:
+    description: |
+      The option choosen for recovery should a loss occur.
+    enum:
+      [
+         'FRV', # Full Replacement Value
+         'ACV', # Actual Cash Value
+         'RC'   # Replacement Cost
+      ]

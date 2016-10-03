@@ -1,8 +1,15 @@
 description: Billing information for a policy or contract.
 required:
-  ['PaymentMode']
+  ['billingMode', 'paymentMode']
 # ICAF 780 -- Comment out everything but paymentMode for phase 1 of CARE+
 properties:
+  billingMode:
+    description: |
+      The method used to present the bill to the member
+    x-required-in:
+      ['rural']
+    enum:
+      ['Direct', 'Agency', 'null']
 # paymentMethod:
 #    description: The Method of payment, i.e. Check, ACH, etc.
 #    type: string

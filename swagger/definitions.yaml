@@ -13,6 +13,10 @@ definitions:
     $ref: ./models/ClientInterest.yaml
   Coverage:
     $ref: ./models/Coverage.yaml
+  CoverageBenefit:
+    $ref: ./models/CoverageBenefit.yaml
+  CoverageDetail-Life:
+    $ref: ./models/CoverageDetail-Life.yaml
   Dividend:
     $ref: ./models/Dividend.yaml
   Limit:
@@ -41,8 +45,6 @@ definitions:
     $ref: ./models/Interest.yaml
   Billing:
     $ref: ./models/Billing.yaml
-  CoverageDetail-Life:
-    $ref: ./models/CoverageDetail-Life.yaml
   Location:
     $ref: ./models/Location.yaml
   LossHistory:
@@ -73,3 +75,5 @@ definitions:
     $ref: ./models/Vehicle.yaml
   VehicleDriver:
     $ref: ./models/VehicleDriver.yaml
+  YesNoChoice:
+    $ref: ./models/YesNoChoice.yaml

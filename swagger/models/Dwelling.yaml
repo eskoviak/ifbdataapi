@@ -4,7 +4,7 @@ description: |
 required:
   ['locationId', 'item', 'construction', 'dwellingType', 'fireProtection', 'formTypeDescription',
    'foundation', 'generalCondition', 'numberOfFamilies', 'occupancy', 'roofType', 'roofAge',
-   'residenceType', 'replacementValue', 'generalLossDeductibleAmount', yearOfConstruction']
+   'residenceType', 'replacementValue', 'generalLossDeductibleAmount', 'yearOfConstruction']
 properties:
   locationId:
     description: |
