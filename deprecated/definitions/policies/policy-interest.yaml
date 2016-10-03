@@ -1,0 +1,8 @@
+description: Represents the relationship between a policy and a client
+properties:
+  relationshipType:
+    enum: ["named insured", "additional named insured", "driver"]
+  policyId:
+    type: string
+  clientId:
+    type: string

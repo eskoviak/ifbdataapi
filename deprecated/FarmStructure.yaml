@@ -1,0 +1,16 @@
+description: A location covered as a FarmStructure
+properties:
+  broadPeril:
+    description: whether broad peril applies
+    type: boolean
+  location:
+    description: The location number connected with the structure
+    type: string
+  item:
+    description: |
+      The item number (eg, 01, 02, 03) of the structure 
+      (may correspond to the building number)
+    type: string
+  vacant:
+    description: Whether the structure is vacant
+    type: string 

@@ -1,0 +1,659 @@
+[
+{
+  "policyId" : "RG-1182514-FD",
+  "insuranceLine" : "farm dwelling",
+  "coverages" : [
+    {
+      "name" : "dwelling equipment breakdown",
+      "limits" : [
+          {
+            "name" : "dwelling equipment breakdown",
+            "value" : 536919
+          }
+        ],
+      "deductibles" : [],
+      "premium" : 0,
+      "isEndorsement" : false,
+      "isExtended" : false,
+      "isExcluded" : false,
+      "isWaived" : false,
+      "coverageDetails" : {}
+    }
+  ],
+  "discounts" : [
+    {
+      "name" : "multi-line discount",
+      "description" : "",
+      "appliedDate" : "2015-10-01T12:00:0.000Z",
+    },
+    {
+      "name" : "new home",
+      "description" : "",
+      "appliedDate" : "2015-10-01T12:00:0.000Z",
+    },
+    {
+      "name" : "protection system",
+      "description" : "fire/smoke/dead bolts",
+      "appliedDate" : "2015-10-01T12:00:0.000Z",
+    }
+  ],
+  "premium" : 507,
+  "insuredItems" : [
+  {
+    "id" : "RG-1552621-10",
+    "description" : "010/30N/9E/HOME FARM",
+    "coverages" : [
+      {
+        "name" : "Coverage A",
+        "limits" : [
+            {
+              "name" : "Coverage A",
+              "value" : 536919
+            }
+          ],
+        "deductibles" : [
+          {
+            "name" : "general",
+            "value" : 2500
+          },
+          {
+            "name" : "windstorm/hail",
+            "value" : 2500
+          }
+        ],
+        "premium" : 0,
+        "isEndorsement" : false,
+        "isExtended" : false,
+        "isExcluded" : false,
+        "isWaived" : false,
+        "coverageDetails" : {}
+      },
+      {
+        "name" : "Coverage B",
+        "limits" : [
+            {
+              "name" : "Coverage B",
+              "value" : 53692
+            }
+          ],
+        "premium" : 0,
+        "isEndorsement" : false,
+        "isExtended" : false,
+        "isExcluded" : false,
+        "isWaived" : false,
+        "coverageDetails" : {}
+      },
+      {
+        "name" : "Coverage C",
+        "limits" : [
+            {
+              "name" : "Coverage C",
+              "value" : 402689
+            }
+          ],
+        "premium" : 0,
+        "isEndorsement" : false,
+        "isExtended" : false,
+        "isExcluded" : false,
+        "isWaived" : false,
+        "coverageDetails" : {}
+      },
+      {
+        "name" : "Coverage D",
+        "limits" : [
+            {
+              "name" : "Coverage D",
+              "value" : 107384
+            }
+          ],
+        "deductibles": [],
+        "premium" : 0,
+        "isEndorsement" : false,
+        "isExtended" : false,
+        "isExcluded" : false,
+        "isWaived" : false,
+        "coverageDetails" : {}
+      },
+      {
+        "name" : "refrigerated property",
+        "limits" : [
+          {
+            "name" : "refrigerated property",
+            "value" : 1000
+          }
+        ],
+        "deductibles": [],
+        "premium" : 10,
+        "isEndorsement" : true,
+        "isExtended" : false,
+        "isExcluded" : false,
+        "isWaived" : false,
+        "coverageDetails" : {}
+      }
+    ],
+    "discounts" : [],
+    "lossHistory" : [],
+    "itemType" : "dwelling",
+    "itemDetails" : {
+      "construction" : "brick veneer",
+      "dwellingType" : "",
+      "fireProtection" : "",
+      "formTypeDescription" : "",
+      "foundation" : null,
+      "generalCondition" : "",
+      "location" : 1,
+      "locationAddress" : {},
+      "numberOfFamilies" : 1,
+      "occupancy": "",
+      "roofType" : "asphalt",
+      "roofAge" : 3,
+      "residenceType" : "",
+      "replacementValue" : 536919,
+      "yearOfConstruction" : 1895
+    },
+  },
+  {
+    "id" : "RG-1552621-20",
+    "description" : "1416 W SPRINGFIELD ST DWELLING",
+    "coverages" : [
+      {
+        "name" : "Coverage A",
+        "limits" : [
+            {
+              "name" : "",
+              "value" : 274121
+            }
+          ],
+        "deductibles": [
+          {
+            "name" : "general",
+            "value" : 2500
+          },
+          {
+            "name" : "windstorm/hail",
+            "value" : 2500
+          }
+        ],
+        "premium" : 0,
+        "isEndorsement" : false,
+        "isExtended" : false,
+        "isExcluded" : false,
+        "isWaived" : false,
+        "coverageDetails" : {}
+      },
+      {
+        "name" : "Coverage B",
+        "limits" : [
+            {
+              "name" : "Coverage B",
+              "value" : 27412
+            }
+          ],
+        "deductibles": [],
+        "premium" : 0,
+        "isEndorsement" : false,
+        "isExtended" : false,
+        "isExcluded" : false,
+        "isWaived" : false,
+        "coverageDetails" : {}
+      },
+      {
+        "name" : "Coverage C",
+        "limits" : [
+            {
+              "name" : "Coverage C",
+              "value" : 205591
+            }
+          ],
+        "deductibles": [],
+        "premium" : 0,
+        "isEndorsement" : false,
+        "isExtended" : false,
+        "isExcluded" : false,
+        "isWaived" : false,
+        "coverageDetails" : {}
+      },
+      {
+        "name" : "Coverage D",
+        "limits" : [
+            {
+              "name" : "Coverage D",
+              "value" : 54824
+            }
+          ],
+        "deductibles": [],
+        "premium" : 0,
+        "isEndorsement" : false,
+        "isExtended" : false,
+        "isExcluded" : false,
+        "isWaived" : false,
+        "coverageDetails" : {}
+      },
+      {
+        "name" : "refrigerated property",
+        "limits" : [
+          {
+            "name" : "refrigerated property",
+            "value" : 1000
+          }
+        ],
+        "deductibles" : [],
+        "premium" : 10,
+        "isEndorsement" : true,
+        "isExtended" : false,
+        "isExcluded" : false,
+        "isWaived" : false,
+        "coverageDetails" : {}
+      }
+    ],
+    "discounts" : [],
+    "lossHistory" : [],
+    "itemType" : "dwelling",
+    "itemDetails" : {
+      "construction" : "brick veneer",
+      "dwellingType" : "",
+      "fireProtection" : "fully protected",
+      "formTypeDescription" : "",
+      "foundation" : null,
+      "generalCondition" : "",
+      "location" : 7,
+      "locationAddress" : {},
+      "numberOfFamilies" : 1,
+      "occupancy": "owner",
+      "roofType" : "asphalt",
+      "roofAge" : 1,
+      "residenceType" : "",
+      "replacementValue" : 274121,
+      "yearOfConstruction" : 2015
+    }
+  }
+  ]
+},
+{
+  "policyId" : "RG-1552621-FS",
+  "policyNumber" : "RG-1552621",
+  "insuranceLine" : "farm structure",
+  "coverages" : [
+    {
+      "name" : "outdoor antenna",
+      "limits" : [
+          {
+            "name" : "outdoor antenna",
+            "value" : null
+          }
+        ],
+      "deductibles": [],
+      "premium" : 0,
+      "isEndorsement" : false,
+      "isExtended" : false,
+      "isExcluded" : false,
+      "isWaived" : false,
+      "coverageDetails" : {}
+    },
+    {
+      "name" : "fire department service charge",
+      "limits" : [
+          {
+            "name" : "fire department service charge",
+            "value" : null
+          }
+        ],
+      "deductibles": [],
+      "premium" : 0,
+      "isEndorsement" : false,
+      "isExtended" : false,
+      "isExcluded" : false,
+      "isWaived" : false,
+      "coverageDetails" : {}
+    },
+    {
+      "name" : "structures equipment breakdown",
+      "limits" : [
+          {
+            "name" : "structures equipment breakdown",
+            "value" : null
+          }
+        ],
+      "deductibles": [],
+      "premium" : 0,
+      "isEndorsement" : false,
+      "isExtended" : false,
+      "isExcluded" : false,
+      "isWaived" : false,
+      "coverageDetails" : {}
+    },
+    {
+      "name" : "private power &amp; light poles",
+      "limits" : [
+          {
+            "name" : "private power &amp; light poles",
+            "value" : 1000
+          }
+        ],
+      "deductibles" : [
+        {
+          "name" : null,
+          "value" : 2500
+        }
+      ],
+      "premium" : 0,
+      "isEndorsement" : false,
+      "isExtended" : false,
+      "isExcluded" : false,
+      "isWaived" : false,
+      "coverageDetails" : {}
+    }
+  ],
+  "premium" : 5833,
+  "insuredItems" : [
+    {
+      "id" : "RG-1182514-1-2",
+      "description" : "WET HOLD TANK #1 2000BU",
+      "coverages" : [
+        {
+          "name" : "building",
+          "limits" : [
+              {
+                "name" : "",
+                "value" : 2000
+              }
+            ],
+          "deductibles": [],
+          "premium" : 9,
+          "isEndorsement" : false,
+          "isExtended" : false,
+          "isExcluded" : false,
+          "isWaived" : false,
+          "deductible" : 2500,
+          "coverageDetails" : {}
+        },
+        {
+          "name" : "broad peril",
+          "limits" : [
+              {
+                "name" : "broad peril",
+                "value" : 2000
+              }
+            ],
+          "premium" : 0,
+          "isEndorsement" : false,
+          "isExtended" : false,
+          "isExcluded" : false,
+          "isWaived" : false,
+          "coverageDetails" : {}
+        }
+      ],
+      "discounts" : [],
+      "lossHistory" : [],
+      "itemType" : "farm structure",
+      "itemDetails" : {
+        "broadPeril" : true,
+        "location" : "1",
+        "item" : "2",
+        "vacant" : "not applicable"
+      }
+    },
+    {
+      "id" : "RG-1182514-1-3",
+      "description" : "WET HOLD TANK #2 4000BU",
+      "coverages" : [
+        {
+          "name" : "building",
+          "limits" : [
+              {
+                "name" : "",
+                "value" : 4000
+              }
+          ],
+          "deductibles" : [],
+          "premium" : 18,
+          "isEndorsement" : false,
+          "isExtended" : false,
+          "isExcluded" : false,
+          "isWaived" : false,
+          "coverageDetails" : {}
+        }
+      ],
+      "discounts" : [],
+      "lossHistory" : [],
+      "itemType" : "farm structure",
+      "itemDetails" : {
+        "broadPeril" : true,
+        "location" : "1",
+        "item" : "3",
+        "vacant" : "not applicable"
+      }
+    },
+    {
+      "id" : "RG-1182514-1-4",
+      "description" : "50X64 FEED MILL",
+      "coverages" : [
+        {
+          "name" : "building",
+          "limits" : [
+              {
+                "name" : "",
+                "value" : 60537
+              }
+            ],
+          "deductibles" : [],
+          "premium" : 273,
+          "isEndorsement" : false,
+          "isExtended" : false,
+          "isExcluded" : false,
+          "isWaived" : false,
+          "coverageDetails" : {}
+        }
+      ],
+      "discounts" : [],
+      "lossHistory" : [],
+      "itemType" : "farm structure",
+      "itemDetails" : {
+        "broadPeril" : true,
+        "location" : "1",
+        "item" : "4",
+        "vacant" : "not applicable"
+      }
+    }
+
+  ]
+},
+{
+  "policyId" : "RG-1552621-FI",
+  "policyNumber" : "RG-1552621",
+  "insuranceLine" : "farm inland marine",
+  "coverages" : [
+    {
+      "name" : "",
+      "limits" : [
+          {
+            "name" : "",
+            "value" : null
+          }
+        ],
+      "deductibles" : [
+        {
+          "name" : "",
+          "value" : 2500
+        }
+      ],
+      "premium" : 0,
+      "isEndorsement" : false,
+      "isExtended" : false,
+      "isExcluded" : false,
+      "isWaived" : false,
+      "coverageDetails" : {}
+    }
+  ],
+  "premium" : 5833,
+  "insuredItems" : [
+    {
+      "id" : "",
+      "description" : "jewelry",
+      "coverages" : [
+        {
+          "name" : "LDS 14K YELLOW 6 PRONG SOLITAIRE RG W/105CT",
+          "limits" : [
+              {
+                "name" : "",
+                "value" : 9550
+              }
+            ],
+          "deductibles" : [],
+          "premium" : 86,
+          "isEndorsement" : false,
+          "isExtended" : false,
+          "isExcluded" : false,
+          "isWaived" : false,
+          "coverageDetails" : {}
+        }
+      ],
+      "discounts" : [],
+      "lossHistory" : [],
+      "itemType" : "farm structure",
+      "itemDetails" : {}
+    }
+
+  ]
+},
+{
+  "policyId" : "RG-1552621-FP",
+  "policyNumber" : "RG-1552621",
+  "insuranceLine" : "farm property",
+  "coverages" : [
+    {
+      "name" : "farm property broad peril",
+      "limits" : [{
+        "name" : null,
+        "value" : 60235
+      }],
+      "deductibles": [],
+      "premium" : 18,
+      "isEndorsement" : false,
+      "isExtended" : false,
+      "isExcluded" : false,
+      "isWaived" : false,
+      "coverageDetails" : {}
+    },
+    {
+      "name" : "farm machinery",
+      "limits" : [{
+        "name" : null,
+        "value" : 1065690
+      }],
+      "deductibles": [],
+      "premium" : 460,
+      "isEndorsement" : false,
+      "isExtended" : false,
+      "isExcluded" : false,
+      "isWaived" : false,
+      "coverageDetails" : {}
+    },
+    {
+      "name" : "equipment breakdown",
+      "limits" : [],
+      "deductibles": [],
+      "premium" : 0,
+      "isEndorsement" : false,
+      "isExtended" : false,
+      "isExcluded" : false,
+      "isWaived" : false,
+      "coverageDetails" : {}
+    },
+    {
+      "name" : "personal farm records",
+      "limits" : [{
+        "name" : null,
+        "value" : 1000
+      }],
+      "deductibles": [],
+      "premium" : 0,
+      "isEndorsement" : false,
+      "isExtended" : false,
+      "isExcluded" : false,
+      "isWaived" : false,
+      "coverageDetails" : {}
+    },
+    {
+      "name" : "refrigerated products",
+      "limits" : [{
+        "name" : null,
+        "value" : 1000
+      }],
+      "deductibles": [],
+      "premium" : 0,
+      "isEndorsement" : false,
+      "isExtended" : false,
+      "isExcluded" : false,
+      "isWaived" : false,
+      "coverageDetails" : {}
+    }
+  ],
+  "premium" : 3568,
+  "insuredItems" : [
+    {
+      "id" : "RG-1182514-FP-1-1",
+      "description" : "010/30N/9E/HOME FARM DWG",
+      "coverages" : [
+        {
+          "name" : "peak season 03/01/2016 to 06/15/2016",
+          "limits" : [
+              {
+                "name" : "peak addl limit",
+                "value" : 87000
+              }
+            ],
+          "deductibles" : [],
+          "premium" : 127,
+          "isEndorsement" : false,
+          "isExtended" : false,
+          "isExcluded" : false,
+          "isWaived" : false,
+          "coverageDetails" : {}
+        },
+        {
+          "name" : "peak season 10/01/2015 to 08/01/2016",
+          "limits" : [
+              {
+                "name" : "peak addl limit",
+                "value" : 25000
+              }
+            ],
+          "deductibles" : [],
+          "premium" : 127,
+          "isEndorsement" : false,
+          "isExtended" : false,
+          "isExcluded" : false,
+          "isWaived" : false,
+          "coverageDetails" : {}
+        },
+        {
+          "name" : "blanket farm personal property",
+          "limits" : [
+            {
+              "name" : "machinery",
+              "value" : 1066550
+            },
+            {
+              "name" : "misc tools and equipment",
+              "value" : 3700
+            }
+          ],
+          "deductibles" : [],
+          "premium" : 2638,
+          "isEndorsement" : false,
+          "isExtended" : false,
+          "isExcluded" : false,
+          "isWaived" : false,
+          "coverageDetails" : {}
+        }
+      ],
+      "discounts" : [],
+      "lossHistory" : [],
+      "itemType" : "blanketProperty",
+      "itemDetails" : {}
+    }
+  ]
+}
+]
+

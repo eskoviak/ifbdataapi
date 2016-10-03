@@ -1,0 +1,58 @@
+x-ifb-comment: |
+  (cac) Need the enum values for many of these types
+  (cac) Why do we need loss "Dwelling Loss History" for both the policy
+        and for individual dwellings? Can't the loss history be aggregated
+        up to the policy level?
+properties:
+  dwellingNumber:
+    description: The unique identifier of this dwelling vis a vis the policy
+    type: number
+  address:
+    description: The address corresponding to this dwelling
+    $ref: ../../definitions.yaml#/Address
+  formType:
+    description: The insurance type for this dwelling
+    type: number
+  dwellingType:
+    description: the type of dwelling
+  foundation:
+    description: the type of foundation
+  roof:
+    description: the type of roof
+  roofAge:
+    description: the age of the roof in years
+    type: number
+  generalCondition:
+    description: the general condition of the dwelling
+  construction:
+    description: the type of construction of the building
+  fireProtection:
+    description: the type of fire protection of the building
+  residenceType:
+    description: the type of residence of the building
+  replacementValue:
+    description: the cost to replace the dwelling
+    type: number
+  yearOfConstruction:
+    description: The year the dwelling was constructed
+    type: number
+  numberOfFamilies:
+    description: the number of families dwelling at this location
+    type: number
+  coverages:
+    type: array
+    items:
+      $ref: ../../definitions.yaml#/Coverage
+  premiumModifiers:
+    type: array
+    items:
+      $ref: ../../definitions.yaml#/PremiumModifier
+  claimSummary:
+    description: dwelling loss history
+    type: array
+    items:
+      $ref: ../../definitions.yaml#/ClaimSummary
+
+
+
+

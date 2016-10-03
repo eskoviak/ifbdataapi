@@ -1,0 +1,15 @@
+description: Commercial policy details
+properties:
+  coinsurance:
+    x-ifb-comment: (cac) Need details for coinsurance
+    type: string
+  dwellings:
+    type: array
+    items:
+      $ref: ../../definitions.yaml#/Dwelling
+  properties:
+    type: array
+    items:
+      $ref: ../../definitions.yaml#/Property
+
+

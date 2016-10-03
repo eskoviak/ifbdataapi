@@ -1,0 +1,33 @@
+description: |
+  Demographic information associated with a client; will be null for businesses.
+required:
+  ['gender', 'genderCode', 'maritalStatus', 'maritalStatusCode', 'dateOfBirth', 'dateOfDeath',
+   'driversLicenseState', 'driversLicenseNumber']
+properties:
+  gender:
+    description: |
+      The gender of the client, if known.  Either #.gender or #.genderCode is required. 
+    enum: ['Male', 'Female', 'Other', 'Unknown', 'null']
+  genderCode:
+    description: |
+      The system code representing the gender. Either #.gender or #.genderCode is required.
+    type: ['string', 'null']
+  maritalStatus:
+    description: |
+      Either #.maritalStatus or #.maritalStatusCode is required
+    enum: ['Deceased', 'Estranged', 'Single', 'Legally Separated', 'Married', 'Divorced',
+      'Unknown', 'Widowed', 'null']
+  maritalStatusCode:
+    description: The system code representing the marital status.
+    type: ['string', 'null']
+  dateOfBirth:
+    description: The date of birth of the client.
+    type: string
+    format: date
+  dateOfDeath:
+    type: ['string', 'null']
+    format: date
+  driversLicenseState:
+    type: ['string', 'null']
+  driversLicenseNumber:
+    type: ['string', 'null']

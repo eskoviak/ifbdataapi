@@ -1,0 +1,15 @@
+description: A summary of a claim on one policy
+properties:
+  claimId:
+    description: the Id associated with the claim record being summarized
+    type: string
+  description:
+    description: description of the loss
+    type: string
+  lossDate:
+    description: the date the claim was reported
+    type: string
+    format: date
+  amount:
+    description: the amount paid for the claim
+    type: number

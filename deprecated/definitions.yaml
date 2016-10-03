@@ -1,0 +1,126 @@
+Agent:
+  $ref: ./definitions/agents/agent.yaml
+Auto:
+  $ref: ./definitions/policies/auto.yaml
+BillingInvoice:
+  $ref: ./definitions/invoices/billing-invoice.yaml
+ClaimSummary:
+  $ref: ./definitions/claims/claim-summary.yaml
+ClientAccount:
+  $ref: ./definitions/clients/client-account.yaml
+Client:
+  $ref: ./definitions/clients/client.yaml
+ClientContactPreferences:
+  $ref: ./definitions/clients/client-contact-preferences.yaml
+ClientIndividualDetail:
+  $ref: ./definitions/clients/client-individual-detail.yaml
+ClientApplication:
+  $ref: ./definitions/clients/client-application.yaml
+Commercial:
+  $ref: ./definitions/policies/commercial.yaml
+Coverage:
+  $ref: ./definitions/policies/coverage.yaml
+Dwelling:
+  $ref: ./definitions/policies/dwelling.yaml
+Homeowners:
+  $ref: ./definitions/policies/homeowners.yaml
+Life:
+  $ref: ./definitions/policies/life.yaml
+LossHistory:
+  $ref: ./definitions/policies/loss-history.yaml
+Membership:
+  $ref: ./definitions/memberships/membership.yaml
+Policy:
+  $ref: ./definitions/policies/policy.yaml
+PolicyDocument:
+  $ref: ./definitions/policies/policy-document.yaml
+PolicyInterest:
+  $ref: ./definitions/policies/policy-interest.yaml
+PolicySummary:
+  $ref: ./definitions/policies/policy-summary.yaml
+Property:
+  $ref: ./definitions/policies/property.yaml
+PremiumModifier:
+  $ref: ./definitions/policies/discount.yaml
+SupplementalDocument:
+  $ref: ./definitions/policies/supplemental-document.yaml
+Address:
+  properties:
+    addressType:
+      enum: ["mailing", "billing", "insured","garaging","policy", "life"]
+    street1:
+      type: string
+    street2:
+      type: string
+    city:
+      type: string
+    state:
+      type: string
+    county:
+      type: string
+    postalCode:
+      type: string
+    country:
+      type: string
+  required: ["street1", "city", "state", "country", "postalCode"]
+InsuredItem:
+  properties:
+    itemType:
+      description: |
+        The type of item insured. This 
+      type: string
+    description:
+      type: string
+    deductible:
+      type: number
+    limit:
+      type: number
+    premium:
+      type: number
+    premiumModifiers:
+      type: array
+      $ref: "#/PremiumModifier" 
+    coverages:
+      type: array
+      $ref: "#/Coverage"
+    amountInsured:
+      type: number
+    policyInterests:
+      type: array
+      $ref: "#/PolicyInterest"
+    itemDetails:
+      type: object
+Phone:
+  properties:
+    phoneNumber:
+      type: string
+      format: e.164.1
+    phoneType:
+      enum: ["fax", "home", "work", "mobile"]
+Meta:
+  properties:
+    _responseDate:
+      description: The server time of the response
+      type: string
+      format: number
+    _totalItems:
+      description: The total number of items in the response
+      type: number
+    _limit:
+      description: The limit used in a list response
+      type: number
+    _offset:
+      description: The offset used in a list response
+      type: number
+    _sort:
+      description: The sort fields used in a list response
+      type: string
+    _searchQuery:
+      description: The search terms used for a list response
+      type: string
+  required: ["_totalItems"]
+APIException:
+  properties:
+    messages:
+      items:
+        type: string

@@ -1,0 +1,43 @@
+description: |
+  (Life/Annuities) Specific information regarding Investments/Financial intruments particular to 
+  permanent (whole life or participating) and Universal life policies as well as Annuties.  This
+  includes loan information.
+required:
+  ['lastValueQuoteDate', 'currentInterestRate', 'netCashSurrenderValue', 'totalSurrenderValue',
+   'guaranteedInterestRate', 'loanPayoffAmount', 'currentLoanInterestRate', 'maximumLoanAmountAvailable',
+   'guranteedCashValue', 'totalCashValue', 'premiumDepositFund']
+properties:
+  lastValueQuoteDate:
+    description: The date for which the values were last quoted.
+    type: ['string', 'null']
+    format: date
+  currentInterestRate:
+    description: The current interest rate for new money.
+    type: ['number', 'null']
+  netCashSurrenderValue:
+    description:  The net cash value if the insurance policy is surrendered.
+    type: ['number', 'null']
+  totalSurrenderValue:
+    description: The total amount that would be received if the policy were to be surrendered.
+    type: ['number', 'null']
+  guaranteedInterestRate:
+    description: The guaranteed interest rate.
+    type: ['number', 'null']
+  loanPayoffAmount:
+    description: The amount needed to payoff the current loan.
+    type: ['number', 'null']
+  currentLoanInterestRate:
+    description: The interest rate of the current loan on the policy.
+    type: ['number', 'null']
+  maximumLoanAmountAvailable:
+    description: The maximum amount available for a loan on this policy.
+    type: ['number', 'null']
+  guranteedCashValue:
+    description: the amount guaranteed as a cash value of the policy.
+    type: ['number', 'null']
+  totalCashValue:
+    description: The total cash value of the policy.
+    type: ['number', 'null']
+  premiumDepositFund:
+    description: unknown
+    type: ['number', 'null']

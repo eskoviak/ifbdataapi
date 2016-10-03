@@ -1,0 +1,484 @@
+swagger: "2.0"
+info:
+  version: 0.0.1-alpha
+  title: ICAF Account Management API
+  description: |
+    The ICAF Account Management API is used for common account management tasks
+    such as getting client information, policy coverage status, adding insured
+    properties, viewing billing history and invoices, and so forth.
+host: www.infarmbureau.com
+basePath: /api/v1
+produces:
+  - application/json
+schemes:
+  - https
+paths:
+  /agents:
+    get:
+      description: Search for agents by name.
+      operationId: getAllAgents
+      parameters:
+        - $ref: "#/parameters/SearchQuery"
+        - $ref: "#/parameters/Limit"
+        - $ref: "#/parameters/Offset"
+        - $ref: "#/parameters/Sort"
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "definitions.yaml#/Agent"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /agents/{agentId}:
+    get:
+      description: |
+        **[public]** Returns the details of an individual agent by agentId
+      operationId: getAgent
+      parameters:
+        - $ref: "#/parameters/AgentId"
+      responses:
+        "200":
+          description: Successful request
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/Agent"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /client-accounts:
+    get:
+      description: |
+        Returns a collection of a client accounts (aka household).
+        Contains clients that are main insured, but vendors and
+        other third parties that may be represented as a `Client`
+        may not be within a client account.
+      operationId: getClientAccounts
+      parameters:
+        -  name: accountName
+           in: query
+           description: Searches client accounts by account name
+           required: false
+           type: string
+        -  name: agentId
+           in: query
+           description: Searches client accounts by agentId
+           required: false
+           type: string
+        - $ref: "#/parameters/Limit"
+        - $ref: "#/parameters/Offset"
+        - $ref: "#/parameters/Sort"
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/ClientAccount"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /clients:
+    get:
+      description: returns an array of `Client`.
+      operationId: getAllClients
+      parameters:
+        - $ref: "#/parameters/SearchQuery"
+        - $ref: "#/parameters/Limit"
+        - $ref: "#/parameters/Offset"
+        - $ref: "#/parameters/Sort"
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/Client"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /clients/{clientId}:
+    get:
+      description: Gets a single `Client` object.
+      operationId: getClient
+      parameters:
+        - $ref: "#/parameters/ClientId"
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/Client"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /clients/{clientId}/application:
+    get:
+      description: |
+        Returns the application accounts and metadata for this client.
+        OAM login name and last login date are included here.
+      parameters:
+        - $ref: "#/parameters/ClientId"
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/ClientApplication"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /clients/{clientId}/interests:
+    get:
+      parameters:
+        - $ref: "#/parameters/ClientId"
+        - name: relationship
+          in: query
+          description: Limits return values by relationship type
+          type: string
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/PolicyInterest"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /clients/{clientId}/individual:
+    get:
+      description: |
+        Returns the Individual Client details
+      operationId: getClientIndividualDetails
+      parameters:
+        - $ref: "#/parameters/ClientId"
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/ClientIndividualDetail"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /clients/{clientId}/contactprefs:
+    get:
+      description: The client's contact preference settings
+      operationId: getClientContactPreferences
+      parameters:
+        - $ref: "#/parameters/ClientId"
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/ClientContactPreferences"
+              _meta:
+                $ref: "#/definitions/Meta"
+    put:
+      description: Updates the client's contact preference settings
+      operationId: updateClientContactPreferences
+      consumes:
+        - application/json
+      parameters:
+        - $ref: "#/parameters/ClientId"
+        - name: body
+          in: body
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/ClientContactPreferences"
+              _meta:
+                $ref: "#/definitions/Meta"
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/ClientContactPreferences"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /documents:
+    get:
+      summary: Returns an array of PolicyDocuments
+      operationId: getPolicyDocuments
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/PolicyDocument"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /documents/{documentId}:
+    get:
+      summary: Return a single PolicyDocument
+      operationId: getPolicyDocument
+      parameters:
+        - name: documentId
+          in: path
+          required: true
+          type: string
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/PolicyDocument"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /invoice/{invoiceId}:
+    get:
+      summary: Returns the specified BillingInvoice
+      operationId: getBillingInvoice
+      parameters:
+        - name: invoiceId
+          in: path
+          required: true
+          description: Billing invoice ID
+          type: string
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/BillingInvoice"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /memberships:
+    get:
+      description: |
+        Returns a collection of Memberships searched by membership name
+      operationId: getAllMemberships
+      parameters:
+        - $ref: "#/parameters/SearchQuery"
+        - $ref: "#/parameters/Limit"
+        - $ref: "#/parameters/Offset"
+        - $ref: "#/parameters/Sort"
+      responses:
+        "200":
+          description: Successful responses
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/Membership"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /policies:
+    get:
+      description: |
+        Returns a collection of policies by policy number, policy id, or clientId
+      operationId: getAllPolicies
+      parameters:
+        - name: byPolicyId
+          in: query
+          description: Search by Policy ID value
+          type: string
+        - name: byPolicyNumber
+          in: query
+          description: Search by Policy Number value
+          type: string
+        - name: byClientId
+          in: query
+          description: Search for policies by clientId
+          type: string
+      responses:
+        "200":
+          description: Successful responses
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/Policy"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /policies/{policyId}:
+    get:
+      summary: Gets one Policy by policyId
+      operationId: getPolicy
+      parameters:
+        - $ref: "#/parameters/PolicyId"
+      responses:
+        "200":
+          description: Successful responses
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/Policy"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /policies/{policyId}/claims:
+    get:
+      summary: Returns an array of ClaimSummary
+      operationId: getPolicyClaimSummary
+      parameters:
+        - $ref: "#/parameters/PolicyId"
+      responses:
+        "200":
+          description: Successful responses
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/ClaimSummary"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /policies/{policyId}/insured-items:
+    get:
+      summary: Returns array of insured items
+      operationId: getInsuredItems
+      parameters:
+        - $ref: "#/parameters/PolicyId"
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/InsuredItem"
+              _meta:
+                $ref: "#/definitions/Meta"
+  /policies/{policyId}/interests:
+    get:
+      summary: Returns an array of PolicyInterests
+      operationId: getAllPolicyInterests
+      parameters:
+        - $ref: "#/parameters/PolicyId"
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: "#/definitions/PolicyInterest"
+              _meta:
+                $ref: "#/definitions/Meta"
+parameters:
+  AgentId:
+    name: agentId
+    in: path
+    required: true
+    description: an agent ID
+    type: string
+  ClientId:
+    name: clientId
+    in: path
+    required: true
+    description: The client ID
+    type: string
+  PolicyId:
+    name: policyId
+    required: true
+    in: path
+    description: policyId
+    type: string
+  SearchQuery:
+    name: q
+    in: query
+    description: Search string
+    required: false
+    type: string
+  Limit:
+    name: limit
+    in: query
+    description: Size of array
+    default: 100
+    type: number
+    format: integer
+  Offset:
+    name: offset
+    in: query
+    description: Number of records to skip
+    default: 0
+    required: false
+    type: number
+    format: integer
+  Sort:
+    name: sort
+    in: query
+    description: |
+      Comma separated list of field names. Default is ascending sort, descending
+      fields are prefixed with a !
+      *example* sorting by firstName, lastName ascending with descending DoB
+      ```
+      /api/myresource?sort=firstName,lastName,!dateOfBirth
+      ```
+    required: false
+    type: string
+responses:
+  Forbidden:
+    description: Forbidden Operation
+    schema:
+      $ref: "#/definitions/APIException"
+  Validation Exception:
+    description: Validation exception
+    schema:
+      $ref: "#/definitions/APIException"
+  Not Found:
+    description: Resource not found
+    schema:
+      $ref: "#/definitions/APIException"
+definitions:
+  $ref: "definitions.yaml"

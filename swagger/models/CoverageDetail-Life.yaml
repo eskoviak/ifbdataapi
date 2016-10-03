@@ -1,0 +1,45 @@
+description: |
+  (Life) Condition covered or excluded by a life insurance policy or annuities
+  contract.
+required:
+  ['issueAge', 'type', 'guidelineAnnualPremium', 'deathBenefitOption', 'rateClassification', 'tableRating',
+   'faceAmount', 'annualPremium', 'effectiveDate', 'expirationDate', 'interestCredited']
+properties:
+  issueAge:
+    description: The age of the insurred at issue
+    type: integer
+  # TODO IS THIS IN THE RIGHT SPOT--Its at the //Life level in the XML
+  # ICAF 808 rename to coverageType
+  coverageType:
+    description: The type of coverage this is (i.e. base).
+    type: string
+  guidelineAnnualPremium:
+    description: the annual premium level above which the contract becomes a Modified Endowment Contract.
+    type: ['number', 'null']
+  deathBenefitOption:
+    description: |
+      Option chosen for this contract which would affect the death proceeds, i.e. increasing, level
+    type: ['string', 'null']
+  rateClassification:
+    description: Underwriting rateClassification.
+    type: ['string', 'null']
+  tableRating:
+    description: The permanent table rating used.
+    type: ['string', 'null']
+  faceAmount:
+    description: The current contractual amount of death benefit for this coverage.
+    type: number
+  annualPremium:
+    description: The annual premium for this coverage.
+    type: number
+  effectiveDate:
+    description: The date upon which this coverage is effective.
+    type: string
+    format: date
+  expirationDate:
+    description: The date upon which this coverage terminates.
+    type: string
+    format: date
+  interestCredited:
+    description: Thie interest credited on this policy.
+    type: ['number', 'null']

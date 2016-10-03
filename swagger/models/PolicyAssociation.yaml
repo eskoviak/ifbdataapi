@@ -1,0 +1,38 @@
+description: |
+  The PolicyAssociation model is used to model those entities (person or organization) which have an
+  interest in a Policy, whose data is not necessarily sourced from the client recordkeeping system.
+
+  The exact nature of the association is given in the associationType and assoicationSubType properties.
+required:
+  ['clientId', 'name', 'address', 'referenceData', 'associationType', 'associationSubType', 
+   'demographics']
+properties:
+  # ICAF 809
+  clientId:
+    description: |
+      The client id from the the client record keeping system.
+    type: ['string', 'null']
+  name:
+    type: string
+  address:
+    $ref: ../definitions.yaml#/definitions/Address
+  referenceData:
+    description: |
+      Reference information for this association.  The data in this field could represent a loan number or case
+      number in the case of assignee (Life) or PolicyInterest (farm).  It could represent the percentage split 
+      for a Beneficiary (Life).
+    type: ['string', 'null']
+  associationType:
+    description: |
+      Description of the type of association:  (Life) Assignee, Beneficiary; (Farm) Policy Interests, Additional Named insured
+    type: string
+  associationSubType:
+    description: |
+      Further describes the association to the policy.  In the case of Beneficiary (Life), describes the Beneficiary
+      type:  Primary or Contingent.
+    type: ['string', 'null']
+  # ICAF 824
+  demographics:
+    description: |
+      Information about the party associated with the policy.
+    $ref: ../definitions.yaml#/definitions/Demographics

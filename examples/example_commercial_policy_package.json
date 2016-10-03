@@ -1,0 +1,114 @@
+[{
+  "policyId": "CPP8148881-XYZ",
+  "insuranceLine": "commercial auto",
+  "coverages": [
+    {
+      "name": "Non-Owned Automobile",
+      "limits": [],
+      "premium": 58,
+      "isEndorsement": false,
+      "isExtended" : false,
+      "isExcluded" : false,
+      "isWaived" : false,
+      "coverageDetails": {
+         "ratingBasis" : {
+            "employees" : 2,
+            "partners" : 0,
+            "volunteers" : 0
+          }
+      }
+    },
+    {
+      "name": "Hired Automobile",
+      "limits": [],
+      "premium": 86,
+      "isEndorsement": false,
+      "isExtended" : false,
+      "isExcluded" : false,
+      "isWaived" : false,
+      "coverageDetails": {}
+
+    }
+  ],
+  "deductibles": [],
+  "premium": 0,
+  "insuredItems": [{
+    "id": "1WC200E22W1083563",
+    "description": "TW122 TRAILER",
+    "coverages": [
+      {
+        "name": "Collision",
+        "limits": [],
+        "premium": 31,
+        "isEndorsement": false,
+        "isExtended" : false,
+        "isExcluded" : false,
+        "isWaived" : false,
+        "coverageDetails": {}
+      },
+      {
+        "name": "Comprehensive",
+        "limits": [],
+        "premium": 9,
+        "isEndorsement": false,
+        "isExtended" : false,
+        "isExcluded" : false,
+        "isWaived" : false,
+        "coverageDetails": {}
+      },
+      {
+        "name": "Liability",
+        "limits": [],
+        "premium": 68,
+        "isEndorsement": false,
+        "isExtended" : false,
+        "isExcluded" : false,
+        "isWaived" : false,
+        "coverageDetails": {}
+      },
+      {
+        "name": "Medical Payment",
+        "limits": [],
+        "premium": 6,
+        "isEndorsement": false,
+        "isExtended" : false,
+        "isExcluded" : false,
+        "isWaived" : false,
+        "coverageDetails": {}
+      }
+    ],
+    "deductibles": [
+      {
+        "name": "Comprehensive",
+        "value": 500,
+        "appliesToCoverages" : ["Comprehensive"]
+      },
+      {
+        "name": "Collision",
+        "value": 500,
+        "appliesToCoverages" : ["Collision"]
+      }
+    ],
+    "discounts": [],
+    "lossHistory": [],
+    "limits": [],
+    "coverages": [],
+    "itemType": "vehicle",
+    "itemDetails": {
+      "description" : "1998 TW122 TRAILER",
+      "address" : {},
+      "type" : "other than private pass",
+      "vin" : "1WC200E22W1083563",
+      "vehicleUse": null,
+      "valetLevel" : null,
+      "valetLevelDateOrdered" : null,
+      "classCode" : "68499",
+      "classCodeDescription" : "TRLR LOC NOC ALL OTHER",
+      "territory" : "Indianapolis Suburban",
+      "ratingTier" : "",
+      "unit" : 1
+      "costNew": 15000,
+      "drivers" : []
+    },
+  }]
+}]

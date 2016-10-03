@@ -1,0 +1,46 @@
+description: A Client Account model
+required:
+  ['id','accountNumber', 'accountName', 'contactName', 'address', 'phoneNumber', 'agentId',
+   'agentName', 'relatedClients']
+properties:
+  id:
+    description: The unique identifier for the ClientAccount
+    type: string
+  accountNumber:
+    description: The Client Account number that is displayed.
+    type: string
+  accountName:
+    description: |
+      The name given to the account by the client.
+      Defaults to the head of household's last name.
+    type: string
+  contactName:
+    description: |
+      Name of the primary contact for the Client Account.
+      Defaults to the "Head of Household" Client.
+    type: ['string', 'null']
+  address:
+    description: The address for correspondence related to the Client Account.
+    $ref: ../definitions.yaml#/definitions/Address
+  phoneNumber:
+    description: The primary phone number for the Client Account contact.
+    $ref: ../definitions.yaml#/definitions/Phone
+  agentId:
+    description: |
+      The id of the agent associated with the account.
+    type: string
+  agentName:
+    type: string
+  relatedClients:
+    description: |
+      Array of objects containing relatedClients associated to ClientAccount
+    type: array
+    items:
+      type: object
+      properties:
+        clientId:
+          type: string
+        clientAccountRelationship:
+          type: string
+        clientAccountRelationshipCode:
+          type: string

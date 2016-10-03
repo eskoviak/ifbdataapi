@@ -1,0 +1,34 @@
+description: |
+  (Personal)  A rated or excluded driver of a vehicle.
+required: ["clientId","isRated","isExcluded","relationshipToNamedInsured","discounts","penalties"]
+properties:
+  clientId:
+    description: The id of the Client information for the driver
+    type: string
+  isRated:
+    description: the VehicleDriver is the rated driver of the vehicle
+    type: boolean
+  isExcluded:
+    description: the VehicleDriver is excluded from coverage
+    type: boolean
+  relationshipToNamedInsured:
+    type: string
+  discounts:
+    description: Discounts associated with the driver
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/Discount
+  penalties:
+    type: array
+    items:
+      properties:
+        description:
+          description: The accident/conviction description
+          type: string
+        date:
+          description: The date of the infraction
+          type: string
+          format: date
+        points:
+          description: value of penalty
+          type: number

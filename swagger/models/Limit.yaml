@@ -1,0 +1,11 @@
+description: |
+  The maximum amount for a Coverage.  In the form of a name/value pair--
+  example:  'Liability Limit'/10000000
+required: ["name", "value"]
+properties:
+  name:
+    description: The name of a Limit
+    type: ["string", "null"]
+  value:
+    description: The value of a Limit
+    type: number 

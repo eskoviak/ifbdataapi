@@ -1,0 +1,26 @@
+description: |
+  (DEPRECATED IN FAVOR OF INTEREST)
+  Represents the relationship between an object and a client
+properties:
+  relationshipTypeCode:
+    description: |
+      Code which descibes the relationship between the two objects being refererenced.
+
+      Either #.relationshipTypeCode or #.relationshipType MUST be specfied.
+    type: string
+  relationshipType:
+    type: string
+  objectId:
+    description: Links a client to another related object (policy, membership, billing account)
+    type: string
+  objectType:
+    description: a description of the object associated with the client
+    type: string
+  clientId:
+    type: string
+  expirationDate:
+    type: string
+    format: date
+  effectiveDate:
+    type: string
+    format: date

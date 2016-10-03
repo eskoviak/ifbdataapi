@@ -1,0 +1,20 @@
+description:  (Life/Annuities) Projected values for a policy or contract
+required:
+  ['projectedValueDate', 'anniversaryPolicyValue', 'age65PolicyValue', 'dividendValue', 'policyValue']
+properties:
+  projectedValueDate:
+    description: The date for which the values have been provided.
+    type: string
+    format: date
+  anniversaryPolicyValue:
+    description: The future value of the policy at the anniversary date.
+    type: number
+  age65PolicyValue:
+    description: The future value of the policy on the insured's 65th birthday.
+    type: number
+  dividendValue:
+    description: The projected value of the accumulated dividends on the #.projectedValueDate.
+    type: number
+  policyValue:
+    description: The projected cash value value of the policy on the #.projectedValueDate.
+    type: number

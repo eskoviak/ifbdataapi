@@ -1,0 +1,37 @@
+description:  An object which relates two objects via type and id
+required: 
+  ['rootId', 'rootType', 'rootTypeCode', 'childId', 'childType', 'childTypeCode', 'relationshipType',
+   'relationshipTypeCode', 'effectiveDate', 'expirationDate', 'address']
+properties:
+  rootId:
+    description: The id of the source object.
+    type: string
+  rootType:
+    description: The type of the root object.
+    enum: ['Policy', 'Billing Account', 'Claim', 'Membership', 'Quote', 'Client']
+  rootTypeCode:
+    description: The type code of the root object.
+    type: ['string', 'null']
+  childId:
+    description: The id of the target object
+    type: string
+  childType:
+    description: The type of the target object.
+    enum: ['Policy', 'Billing Account', 'Claim', 'Membership', 'Quote', 'Client']
+  childTypeCode:
+    description: The type code of the target object.
+    type: ['string', 'null']
+  relationshipType:
+    description: The relationship between the root and target object.
+    type: string
+  relationshipTypeCode:
+    description: The code for the relationship between the root and target object.
+    type: ['string', 'null']
+  effectiveDate:
+    type: string
+    format: date
+  expirationDate:
+    type: ['string', 'null']
+    format: date
+  address:
+    $ref: ../definitions.yaml#/definitions/Address

@@ -1,0 +1,15 @@
+description: |
+  A deductible covering one more more Coverages.  Modeled as a name:value pair.
+
+  Example:
+    name:  'Each Item/Location'
+    value: 1000
+required: ["name", "value"]
+properties:
+  name:
+    description: The label of the deductible
+    type: ["string", "null"]
+  # This had been defined as a string but makes more sense to spec as a numeric
+  value:
+    description: The value of the deductible
+    type: number

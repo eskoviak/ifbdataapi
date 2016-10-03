@@ -1,0 +1,15 @@
+description: |
+  A model for a name:value pair.  Used whenever a data item is needed which only has a name and value.  This will eventually be used for:
+  * Limits
+  * Deductibles
+  * Discounts
+  * Exposures
+
+  Note:  The name is required but nullable.  The parent's name may be enough to tag this item.
+required:
+  ['name', 'value']
+properties:
+  name:
+    type: ['string', 'null']
+  value:
+    type: ['string', 'number']

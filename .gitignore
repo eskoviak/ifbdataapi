@@ -1,0 +1,11 @@
+/node_modules
+/bower_components
+*.swp
+*.swo
+*.log
+validate.err
+*proposed.yaml
+*.xml
+*.xsl
+*.xpr
+dist

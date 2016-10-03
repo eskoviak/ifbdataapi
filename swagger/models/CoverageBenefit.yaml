@@ -1,0 +1,19 @@
+description: |
+  (Life) A benefit which modifieds the parent coverage (to which it only applies).
+required:
+  ['description', 'premiumAmount', 'effectiveDate', 'expirationDate']
+properties:
+  description:
+    description: The description of the benefit.
+    type: string
+  premiumAmount:
+    description: The amount of the premium for this benefit.
+    type: number
+  effectiveDate:
+    description: The effective date of this benefit.
+    type: string
+    format: date
+  expirationDate:
+    description: The date at which this benefit expires.
+    type: ['string', 'null']
+    format: date

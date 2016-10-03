@@ -1,0 +1,8 @@
+properties:
+  name:
+    description: The name of the supplemental document
+    type: string
+  dateAdded:
+    description: The date the supplemental document was added
+    type: string
+    format: date

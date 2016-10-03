@@ -1,0 +1,4 @@
+properties:
+  locationNumber:
+    type: string
+  limitOfLiability:

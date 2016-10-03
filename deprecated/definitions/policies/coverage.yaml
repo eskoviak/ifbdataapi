@@ -1,0 +1,14 @@
+description: Condition covered or exlcuded by insurance policy
+properties:
+  name:
+    description: The label used for the coverage (ex. Bodily Injury Liability)
+    type: string
+  description:
+    description: Limits and other details of the Coverage
+    type: string
+  extended:
+    description: Additional coverages beyond the base coverages
+    type: boolean
+  waived:
+    description: Normally a basic coverage but has been waived
+    type: boolean

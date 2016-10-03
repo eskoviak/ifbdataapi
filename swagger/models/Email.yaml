@@ -1,0 +1,9 @@
+description: Email model
+required:
+  ['emailAddress', 'emailAddressType']
+properties:
+  emailAddress:
+    type: string
+  emailAddressType:
+    description: Exceed email code values
+    enum: ["CON", "INC", "INO", "OAM", "OAS", "OTH"]

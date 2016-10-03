@@ -1,0 +1,59 @@
+description: |
+  Condition covered or excluded by an insurance policy or annuity contract.  Coverages
+  are also known as 'Riders.
+required: ["deductibles","description","coverageDetail","limits","premium","isEndorsement","isExtended","isExcluded","isWaived","inclusions"]
+properties:
+  deductibles:
+    description: |
+      Pro-rated portion of the claim which is not paid by the insurer. A deductible may apply
+      to multiple coverages.  Examples:
+      
+      (Home) A deductible may cover COVA, COVB, COVC, but only be represented in the
+      response under COVA
+      (Renters) or only under COVC
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/Deductible
+  description:
+    description: |
+      A unique label used for the coverage (ex. Bodily Injury Liability).
+      In POINT, maps to the coverage description.  For (Life), contains the plan
+      description (business name of the plan).
+    type: string
+  coverageDetail:
+    description: |
+      (Life/Annuities) Detail data which is specific to a life policy or 
+      annuity contract.  SHOULD be null in other insurance types.
+    $ref: ../definitions.yaml#/definitions/CoverageDetail-Life
+  limits:
+    description: |
+      Limits of liability (on the part of the insurer) and other details of the Coverage
+      in the form of a name/value pair.
+
+      Example--for a #.description = 'Residence', this array may have an object 'Liability Limit':1000000 
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/Limit
+  premium:
+    type: number
+  isEndorsement:
+    description: Flag which indicates if this is a coverage endorsement.
+    type: boolean
+  isExtended:
+    description: flag for extended coverage
+    type: ['boolean' ,'null']
+  isExcluded:
+    description: flag for excluded coverage
+    type: ['boolean' ,'null']
+  isWaived:
+    description: flag for waived coverage
+    type: ['boolean' ,'null']
+  inclusions:
+    description: |
+      (Farm) Specific coverage inclusions which are not separate coverages (i.e. have
+      no associated premium).  Example:  "Equipment Breakdown Coverage"
+
+      Items are an array of strings.
+    type: array
+    items:
+      type: ['string', 'null']

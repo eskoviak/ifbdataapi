@@ -1,0 +1,27 @@
+description: A model for an agent or representative of the firm.
+required:
+  ['id', 'agentName', 'title', 'phoneNumber', 'faxNumber', 'emailAddress', 'address',
+   'biography', 'agencyManagerId', 'agencyManagerName']
+properties:
+  id:
+    type: string
+  agentName:
+    type: string
+  title:
+    type: ['string', 'null']
+  phoneNumber:
+    $ref: ../definitions.yaml#/definitions/Phone
+  faxNumber:
+    type: ['string', 'null']
+  emailAddress:
+    type: ['string', 'null']
+  address:
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/Address
+  biography:
+    type: ['string', 'null']
+  agencyManagerId:
+    type: ['string', 'null']
+  agencyManagerName:
+    type: ['string', 'null']

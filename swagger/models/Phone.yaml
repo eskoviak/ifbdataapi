@@ -1,0 +1,13 @@
+description: Phone model
+properties:
+  phoneNumber:
+    description: |
+      The phone number in the ITU-T E.164.1 Format,
+    type: string
+    format: e.164.1
+  phoneType:
+    description: |
+      These enumerations are sourced from Exceed Client
+    enum: ['Alternate', 'Business', 'Contact', 'Emergency', 'Fax', 'Account', 'Home', 'Vacation', 'Work', 'Cell', 'Pager', 'Relative', 'Toll Free', 'Unlisted']
+  phoneTypeCode:
+    type: string

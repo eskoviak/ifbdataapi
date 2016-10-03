@@ -1,0 +1,9 @@
+properties:
+  x-ifb-comment: Is `dwelling` different from `property location`?
+  dwellings:
+    type: array
+    items:
+      $ref: ../../definitions.yaml#/Dwelling
+  farmVehicles:
+    type: array
+      $ref: ../../definitions.yaml#/FarmVehicle

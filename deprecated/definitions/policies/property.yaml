@@ -1,0 +1,14 @@
+x-ifb-comment: |
+  (cac) Need details on ACV/RC fields 
+  (cac) Need details on class field
+description: Property insured via a commercial policy
+properties:
+  description:
+    description: A description of the property insured
+    type: string
+  locationNumber:
+     x-ifb-comment: (cac) Need details
+  deductible:
+    type: number
+  premium:
+    type: number

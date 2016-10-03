@@ -1,0 +1,27 @@
+description: |
+  (Commerical) An instance of a fleet driver.
+required: 
+  ['name', 'licenseNumber', 'isCommercialLicense', 'dateOfBirth', 'licenseState', 'licenseDate', 'yearOfHire']
+properties:
+  name:
+    description: The name of the fleet driver.
+    type: string
+  licenseNumber:
+    type: string
+  isCommercialLicense:
+    description: |
+      Indicator that the driver holds an commerical endorsement for the
+      license identified by the licenseNumber above.
+    type: string
+  dateOfBirth:
+    type: string
+    format: dateOfBirth
+  licenseState:
+    description: Two letter state USPS code for the issuing state.
+    type: string
+  licenseDate:
+    description: The date of issue for the license referenced.
+    type: string
+    format: date
+  yearOfHire:
+    type: string

@@ -1,0 +1,52 @@
+description: An vehicle type of InsuredItem
+required:
+  ['address','description','type','vin','vehicleUse','valetLevel','classCode','classCodeDescription',
+  'territory','ratingTier','unit','costNew','drivers']
+properties:
+  address:
+    description: The address where the vehicle is garaged
+    $ref: ../definitions.yaml#/definitions/Address
+  description:
+    description: The vehicle year, make and model
+    type: string
+# EWS 458 -- Updated type.description to be succint
+  type:
+    description: |
+      The type of vehice, such as 'Pickup'
+    type: string
+  vin:
+    description: Vehicle Identification Number
+    type: string
+  vehicleUse:
+    description: Example, length of commute
+    type: string
+# ICAF 794
+# change type to number or null; added to required list
+  valetLevel:
+    type: ['string', 'null']
+# ICAF 775
+# valetLevelDateOrdered:
+#   type: string
+#   format: date
+  classCode:
+    description: Vehicle class code
+    type: string
+  classCodeDescription:
+    description: Vehicle class code description
+    type: string
+  territory:
+    description: The territory code where the vehicle is garaged
+  ratingTier:
+    type: number
+  unit:
+    description: Sequence number of vehicle (used with multiple vehicles)
+    type: number
+  costNew:
+    description: |
+      The MSRP or the stated value of the vehicle.  
+    type: number
+  drivers:
+    description: Array of VehicleDriver.
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/VehicleDriver

@@ -1,0 +1,17 @@
+properties:
+  name:
+    description: The system name of the modifier
+    type: string
+  modifierType:
+    enum: ['percentage','fixed']
+  modifierAmount:
+    description: The dollar or percentage amount of the modification
+    type: number
+  appliedDate:
+    description:
+      The date on which the modifier was first applied
+    type: string
+    format: date
+  lineOfBusiness:
+    enum: ['home', 'auto']
+

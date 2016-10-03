@@ -1,0 +1,75 @@
+definitions:
+  Acknowledgement:
+    $ref: ./models/Acknowledgement.yaml
+  Address:
+    $ref: ./models/Address.yaml
+  Agent:
+    $ref: ./models/Agent.yaml
+  Client:
+    $ref: ./models/Client.yaml
+  ClientAccount:
+    $ref: ./models/ClientAccount.yaml
+  ClientInterest:
+    $ref: ./models/ClientInterest.yaml
+  Coverage:
+    $ref: ./models/Coverage.yaml
+  Dividend:
+    $ref: ./models/Dividend.yaml
+  Limit:
+    $ref: ./models/Limit.yaml
+  Deductible:
+    $ref: ./models/Deductible.yaml
+  Demographics:
+    $ref: ./models/Demographics.yaml
+  Discount:
+    $ref: ./models/Discount.yaml
+  Dwelling:
+    $ref: ./models/Dwelling.yaml
+  Structure:
+    $ref: ./models/Structure.yaml
+  Hash:
+    $ref: ./models/Hash.yaml
+  Investment:
+    $ref: ./models/Investment.yaml
+  Email:
+    $ref: ./models/Email.yaml
+  FleetDriver:
+    $ref: ./models/FleetDriver.yaml
+  InsuredItem:
+    $ref: ./models/InsuredItem.yaml
+  Interest:
+    $ref: ./models/Interest.yaml
+  Billing:
+    $ref: ./models/Billing.yaml
+  CoverageDetail-Life:
+    $ref: ./models/CoverageDetail-Life.yaml
+  Location:
+    $ref: ./models/Location.yaml
+  LossHistory:
+    $ref: ./models/LossHistory.yaml
+  Membership:
+    $ref: ./models/Membership.yaml
+  NonForfeitureProvision:
+    $ref: ./models/NonForfeiture-Life.yaml
+  Other:
+    $ref: ./models/Other.yaml
+  Phone:
+    $ref: ./models/Phone.yaml
+  Policy:
+    $ref: ./models/Policy.yaml
+  PolicyAssociation:
+    $ref: ./models/PolicyAssociation.yaml
+  PolicyDetail-Commercial:
+    $ref: ./models/PolicyDetail-Commercial.yaml
+  PolicyDetail-Life:
+    $ref: ./models/PolicyDetail-Life.yaml
+  PolicyDetail-Personal:
+    $ref: ./models/PolicyDetail-Personal.yaml
+  ProjectedValues:
+    $ref: ./models/ProjectedValues.yaml
+  SupplementalDocument:
+    $ref: ./models/SupplementalDocument.yaml
+  Vehicle:
+    $ref: ./models/Vehicle.yaml
+  VehicleDriver:
+    $ref: ./models/VehicleDriver.yaml

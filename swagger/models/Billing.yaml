@@ -1,0 +1,30 @@
+description: Billing information for a policy or contract.
+required:
+  ['PaymentMode']
+# ICAF 780 -- Comment out everything but paymentMode for phase 1 of CARE+
+properties:
+# paymentMethod:
+#    description: The Method of payment, i.e. Check, ACH, etc.
+#    type: string
+  paymentMode:
+    description: |
+      The Mode of billing/payment, i.e. Monthly, Quarterly or Annually.
+    type: string
+#  paymentAmount:
+#    description: The amount of the payment, based on the paymentMode.
+#    type: number
+#  paidToDate:
+#    description: The date to which the policy is currently paid up.
+#    type: string
+#    format: date
+#  billedToDate:
+#    description: The date to which to which the last bill on the policy is paid to.
+#    type: string
+#    format: date
+#  gracePeriodEndDate:
+#    description: The date at which the current grace period ends.
+#    type: string
+#    format: date
+#  lastPremiumAutomaticPolicyLoan:
+#    description: (Life) Was the last premium paid an Automatic Policy Loan.
+#    type: string

@@ -1,0 +1,7 @@
+# This can be deprecated
+description:  The equine itemType model
+properties:
+  coverages:
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/Coverage

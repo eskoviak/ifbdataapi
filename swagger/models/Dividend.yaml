@@ -1,0 +1,35 @@
+description: |
+  Contains the Perm/Universal life policy specific information regarding dividends
+required:
+  ['dividendOption', 'totalPaidUpAdditions', 'paidUpAdditionsCashValue', 'dividendsOnDeposit', 'proRataDividend',
+   'terminalDividends', 'dividendOnDepositAmount', 'dividendsOnDepositInterestRate']
+properties:
+  dividendAmount:
+    description: | 
+      The amount of the most recent dividend
+    type: number
+  dividendOption:
+    description: The Dividend options available.
+    type: string
+  totalPaidUpAdditions:
+    description: The total Paid Up Additions.
+    type: number
+  paidUpAdditionsCashValue:
+    description: the cash value of all Paid UP Additions (PUA).
+    type: number
+  dividendsOnDeposit:
+    description: The total amount of dividends which have been paid to a deposit account--with interest.
+    type: number
+  proRataDividend:
+    description: The pro-rated dividend on the the policy.
+    type: number
+  terminalDividends:
+    description: The divdends paid when the policy terminates.
+    type: number
+  dividendOnDepositAmount:
+    description: Dividends on Deposit / Accumulate with Interest.
+    type: number
+  dividendsOnDepositInterestRate:
+    description: The interest rate being earned by the deposited dividends.
+    type: number
+  

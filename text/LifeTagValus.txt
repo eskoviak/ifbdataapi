@@ -1,0 +1,33 @@
+PAYMENT METHOD               
+'DIRECT'                     
+'EFT'                        
+'EXTENDEDTERMINSURANCE'      
+'MCBIP'                      
+'PAIDUP'                     
+'PIP'                        
+'PREMIUMDEPOSITFUND'         
+'REDUCEDPAID-UP'             
+'SINGLEPREMIUM'              
+                             
+PAYMENT MODE                 
+'ANNUAL'                     
+'MONTHLY'                    
+'N/A'                        
+'QUARTERLY'                  
+'SEMIANNUAL'                 
+
+RELATION ROLE CODE            
+'ASSIGNEE'                    
+'BENEFICIARY'                 
+'CONT BENEFICIARY'            
+'DEPENDENT'                   
+'INSURED'                     
+'JOINT(01)'		                   
+'OTHER INSURED(01)'           
+'OWNER(01)'                   
+'PAYOR'                       
+'PRIMARY BENEFICIARY'         
+'SERVICING AGENT'             
+'SPOUSE'                      
+'TERTIARY BENEFICIARY'  
+      

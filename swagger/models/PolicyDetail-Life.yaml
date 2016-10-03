@@ -1,0 +1,63 @@
+description: |
+  (Life) Policy detail model. which is the detail element of an insurance policy.
+required:
+  ['detailPart', 'coverages', 'investments', 'dividends', 'faceAmount', 'netBaseDeathBenefit', 'targetPremiumAmount',
+    'targetPremiumAmountBase', 'totalPremiumsPaidAmount', 'discountedAdvancePremium', 'projectedValues', 'nonForfeitureProvision']
+properties:
+  detailPart:
+    description: |
+      The insurance lines for which this model applies.
+    enum: ['Life', 'Annuity']
+  type:
+    description: The type of policy this is (i.e. TERM).
+    type: string
+  coverages:
+    description: |
+      An array of the coverages for this policy.  There must be at least one
+      coverage which represents the base coverage.
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/Coverage
+  investments:
+    description: |
+      The investment information which is part of this life policy or
+      annuity contract.
+    type: array
+    items:
+        $ref: ../definitions.yaml#/definitions/Investment
+  dividends:
+    description: |
+      The dividend information for a permanent/universal life policy
+    $ref: ../definitions.yaml#/definitions/Dividend
+  faceAmount:
+    description: The total base face amount for the policy.
+    type: number
+  netBaseDeathBenefit:
+    description: The net death benefit paid on the based coverage of a life insurance policy.
+    type: number
+  targetPremiumAmount:
+    description: The target premium for a Universal Life/Interest Sensitive Life Policy.
+    type: ['number', 'null']
+  targetPremiumAmountBase:
+    description: The target premium for all riders on a Universal Life/Interest Sensitive Life Policy.
+    type: ['number', 'null']
+  totalPremiumsPaidAmount:
+    description: The cumulative premiums paid on the contract since inception.
+    type: ['number', 'null']
+  discountedAdvancePremium:
+    description: unknown
+    type: ['number', 'null']
+  projectedValues:
+    description: The projected policy values for a given date.
+    type: object
+    $ref: ../definitions.yaml#/definitions/ProjectedValues
+  nonForfeitureProvision:
+    description: Provisions to prevent forfeiture of the policy.
+    type: object
+    $ref: ../definitions.yaml#/definitions/NonForfeitureProvision
+  # ELS Removing--this was added in error
+  #policyAssociations:
+  #  description: An array of parties with interests in this policy.
+  #  type: array
+  #  items:
+  #    $ref: ../definitions.yaml#/definitions/PolicyAssociation

@@ -1,0 +1,35 @@
+
+description: A Policy model
+properties:
+  id:
+    type: string
+  policyNumber:
+    type: string
+  description:
+    description: Short description of the policy (eg, "2006 Harley Road King")
+    type: string
+  lineOfBusiness:
+    description: The policy package (ie, policy type)
+    enum: ["auto", "homeowners", "farm", "life", "commercial", "annuity", "rural"]
+  originalInceptionDate:
+    description: The date the policy was first in force
+    type: string
+    format: date
+  termEffectiveDate:
+    description: First effective date of the policy's term
+    type: string
+    format: date
+  termExpirationDate:
+    type: string
+    format: date
+  cancelDate:
+    type: string
+    format: date
+  policyTerm:
+    type: string
+  billPlan:
+    type: string
+  premium:
+    description: The rolled-up value of the premiums of the Insurance Lines
+    type: number
+

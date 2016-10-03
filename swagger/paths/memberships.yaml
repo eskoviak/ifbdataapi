@@ -1,0 +1,42 @@
+swagger: "2.0"
+info:
+  version: 2.0.0
+  title: Memberships
+  description: Memberships endpoint
+produces:
+  - application/json
+schemes:
+  - https
+basePath: /memberships
+paths:
+  /{membershipId}/:
+    get:
+      x-auth-type: "Application & Application User"
+      x-scope: api_read
+      x-throttling-tier: Unlimited
+      description: Returns a Membership
+      parameters:
+        - $ref: "#/parameters/MembershipId"
+      responses:
+        "200":
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: ../definitions.yaml#/definitions/Membership
+        "401":
+          description: Unauthorized or invalid token
+        "404":
+          description: Entity not found
+        "500":
+          description: Server error
+parameters:
+  MembershipId:
+    name: membershipId
+    required: true
+    in: path
+    description: The membershipId or membership number 
+    type: string    

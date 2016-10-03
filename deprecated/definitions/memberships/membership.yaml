@@ -1,0 +1,33 @@
+description: Detailed information of membership details
+x-ifb-comment: |
+  Memberships are much like policies (beginning, end, term dates)
+properties:
+  id:
+    description: The member's unique membership number
+    type: string
+  paidStatus:
+    description: Logically there's an "expired" state which is unpaid ??
+    enum: ["paid","unpaid",""]
+  membershipType:
+    enum: ["primary","student","select"]
+  membershipClass:
+    description: |
+      voting - has a voting interest in an aggricultural concern
+      associate - ordinary non-voting membership
+    enum: ["voting","associate"]
+  longevityDate:
+    x-ifb-comment: |
+      (cac) Adrian says this field name is important to label
+      distinctly from `originalInceptionDate`
+    description: The day the membership was purchased
+    type: string
+    format: date
+  overrideCounty:
+    description: |
+      Use the Client's county by default unless this value overrides
+    type: string
+  overrideTownship:
+    type: string
+  clientId:
+    description: The Client id for associated with the Membership
+    type: string

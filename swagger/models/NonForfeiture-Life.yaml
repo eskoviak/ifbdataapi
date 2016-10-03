@@ -1,0 +1,12 @@
+description: (Life) Describes the non-forfeiture provisions on a life policy
+properties:
+  reducedPaidUpAmount:
+    description: unknown.
+    type: number
+  extendedTermInsuranceAmount:
+    description: unknown.
+    type: number
+  extendedTermInsuranceExpirationDate:
+    description: unknown.
+    type: string
+    format: date
