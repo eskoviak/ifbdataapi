@@ -1,8 +1,9 @@
 description: |
   (Life) Policy detail model. which is the detail element of an insurance policy.
 required:
-  ['detailPart', 'coverages', 'investments', 'dividends', 'faceAmount', 'netBaseDeathBenefit', 'targetPremiumAmount',
-    'targetPremiumAmountBase', 'totalPremiumsPaidAmount', 'discountedAdvancePremium', 'projectedValues', 'nonForfeitureProvision']
+  ['detailPart', 'type', 'maturityAge', 'coverages', 'investments', 'dividends', 'faceAmount', 'netBaseDeathBenefit',
+   'targetPremiumAmount', 'targetPremiumAmountBase', 'totalPremiumsPaidAmount', 'discountedAdvancePremium',
+   'projectedValues', 'nonForfeitureProvision']
 properties:
   detailPart:
     description: |
@@ -11,6 +12,12 @@ properties:
   type:
     description: The type of policy this is (i.e. TERM).
     type: string
+  maturityAge:
+    description: |
+      The age of the annuitant at contract maturity.
+    type: 
+      - number
+      - null
   coverages:
     description: |
       An array of the coverages for this policy.  There must be at least one
