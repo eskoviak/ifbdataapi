@@ -15,9 +15,9 @@ properties:
   maturityAge:
     description: |
       The age of the annuitant at contract maturity.
-      type: 
-        - number
-        - null
+    type: 
+      - number
+      - null
   coverages:
     description: |
       An array of the coverages for this policy.  There must be at least one
