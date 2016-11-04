@@ -2,9 +2,25 @@ description: |
   A top-level model which represents an insurance Policy (of various types) or an annuity Contract (fixed
   and variable).
 required: 
-  ['id', 'policyNumber','description', 'policyStatus', 'locations','policyDetails', 'insuranceScore', 'issueAge',
-   'originalInceptionDate','termEffectiveDate', 'termExpirationDate', 'cancelDate','maturityDate','policyTerm',
-   'premium', 'billingDetails','policyAssociations', 'supplementalDocuments']
+  - 'id'
+  - 'policyNumber'
+  - 'description'
+  - 'policyStatus'
+  - 'policyStatusCode'
+  - 'locations'
+  - 'policyDetails'
+  - 'insuranceScore'
+  - 'issueAge'
+  - 'originalInceptionDate'
+  - 'termEffectiveDate'
+  - 'termExpirationDate'
+  - 'cancelDate'
+  - 'maturityDate'
+  - 'policyTerm'
+  - 'premium'
+  - 'billingDetails'
+  - 'policyAssociations'
+  - 'supplementalDocuments'
 properties:
   id:
     description: |
@@ -14,23 +30,42 @@ properties:
     type: string
   policyNumber:
     description: The recordkeeping system Policy Number; this is NOT globally unique.
-    type: ['string', 'null']
+    type: 
+      - 'string'
+      - 'null'
   description:
     description: Short description of the policy (eg, '2006 Harley Road King').
     type: string
   policyStatus:
     description: |
-      The current status of the policy as coded by the source system.
+      The current status of the policy in text as decoded from the source system.  Either policyStatus or
+      policyStatusCode MUST be populated.
     type: string
+  policyStatusCode:
+    description: |
+      The current status of the policy as represented by a code from the source system.  Either policyStatus
+      or policyStatusCode MUST be populated.
   lineOfBusiness:
     description: |
       The policy package (ie, policy type). This a 'hint' with respect to the data to found in
       #.policyDetail.
-    enum: ['Auto', 'Homeowners', 'Farm', 'Life', 'Commercial', 'Annuity', 'Rural']
+    enum: 
+      - 'Auto'
+      - 'Homeowners'
+      - 'Farm'
+      - 'Farm Pollution'
+      - 'Personal Umbrella'
+      - 'Farm Umbrella'
+      - 'Life'
+      - 'Commercial'
+      - 'Annuity'
+      - 'Rural'
   locations:
     description: |
       All of the locations which are associated with this policy or contract.
-    type: ['array', 'null']
+    type: 
+      - 'array'
+      - 'null'
     items:
       $ref: ../definitions.yaml#/definitions/Location
   policyDetails:
@@ -44,14 +79,15 @@ properties:
       3.  PolciyDetail-Commercial:  This is used for Farm and Commercial lines.
       
     type: object
-  # EWS 514
   insuranceScore:
     description: |
       The score or index used to rate the policy, such as a credit score or other indicator of financial
       health.
     x-required-in:
-      [ 'Homeowners']
-    type: ['string', 'null']
+      - 'Homeowners'
+    type: 
+      - 'string'
+      - 'null'
   issueAge:
     description: |
       (Life/Annuity) The age of the insured or annuitant at the time of issue. This is a policy
@@ -59,7 +95,9 @@ properties:
       in Annuity contracts.  For a life insurance policy, it is more common to specify the issue age
       of the insured at the Coverage
       level.
-    type: ['number', 'null']
+    type:
+      - 'number'
+      - 'null'
     format: integer
   originalInceptionDate:
     description: The date the policy or contract was first in force.
@@ -71,24 +109,29 @@ properties:
     format: date
   termExpirationDate:
     description: The date the policy or contract term expires.
-    type: ['string', 'null']
+    type:
+      - 'string'
+      - 'null'
     format: date
   cancelDate:
-    type: ['string', 'null']
+    type:
+      - 'string'
+      - 'null'
     format: date
   maturityDate:
     description: |
       (Life/Annuity) The date at which the policy or contract matures--premiums are no longer
       being collected.
-    type: ['string', 'null']
+    type:
+      - 'string'
+      - 'null'
     format: date
   policyTerm:
     description: |
       The term of the current policy, in months.
-    type: ['number', 'null']
-  # ICAF 780 -- deprecate
-  #billingPlan:
-  #  type: string
+    type:
+      - 'number'
+      - 'null'
   premium:
     description: The rolled-up value of the premiums of the Insurance Lines
     type: number
@@ -102,15 +145,6 @@ properties:
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/PolicyAssociation
-#ICAF 809
-#  policyInterests:
-#    description: |
-#      Used to add interested parties to the policy; As opposed to policyAssocitions, these parties have clientIds,
-#      which can be used to get further information if needed.
-#    type: array
-#    items:
-#      $ref: ../definitions.yaml#/definitions/Interest
-#ICAF 793
   supplementalDocuments:
     description: |
       Any documents attached to the policy which are required for it's issuance.
