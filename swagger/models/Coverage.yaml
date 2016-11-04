@@ -2,8 +2,19 @@ description: |
   Condition covered or excluded by an insurance policy or annuity contract.  Coverages
   are also known as 'Riders.
 required: 
-  ['deductibles','description','coverageDetail', 'coverageFlags', 'coverageSchedule', 'limits','premium',
-   'coverageBenefit', 'isEndorsement', 'isExtended','isExcluded','isWaived','inclusions']
+  - 'deductibles'
+  - 'description'
+  - 'coverageDetail'
+  - 'coverageFlags'
+  - 'coverageSchedule'
+  - 'limits'
+  - 'premium'
+  - 'coverageBenefit'
+  - 'isEndorsement'
+  - 'isExtended'
+  - 'isExcluded'
+  - 'isWaived'
+  - 'inclusions'
 properties:
   deductibles:
     description: |
@@ -22,6 +33,10 @@ properties:
       In POINT, maps to the coverage description.  For (Life), contains the plan
       description (business name of the plan).
     type: string
+  planCode:
+    description: |
+      The code used by the host system that uniquely identifies this coverage.
+    type: string
   coverageDetail:
     description: |
       (Life/Annuities) Detail data which is specific to a life policy or annuity contract,
@@ -31,7 +46,9 @@ properties:
   coverageFlags:
     description: |
       This property is an arry of YesNoChoice models representing coverage options (yes/no choices)
-    type: ['array', 'null']
+    type:
+      - 'array'
+      - 'null'
     items:
       $ref: ../definitions.yaml#/definitions/YesNoChoice
     example:
@@ -83,7 +100,6 @@ properties:
       $ref: ../definitions.yaml#/definitions/Limit
   premium:
     type: number
-  # EWS 510
   coverageBenefit:
     description: |
       (Life/Annuity) Models specific benefits to the coverage, which are usually additional premium and modify
@@ -96,13 +112,19 @@ properties:
     type: boolean
   isExtended:
     description: flag for extended coverage
-    type: ['boolean' ,'null']
+    type:
+      - 'boolean'
+      - 'null'
   isExcluded:
     description: flag for excluded coverage
-    type: ['boolean' ,'null']
+    type:
+      - 'boolean'
+      - 'null'
   isWaived:
     description: flag for waived coverage
-    type: ['boolean' ,'null']
+    type:
+      - 'boolean'
+      - 'null'
   inclusions:
     description: |
       (Farm) Specific coverage inclusions which are not separate coverages (i.e. have
@@ -111,4 +133,6 @@ properties:
       Items are an array of strings.
     type: array
     items:
-      type: ['string', 'null']
+      type:
+        - 'string'
+        - 'null'
