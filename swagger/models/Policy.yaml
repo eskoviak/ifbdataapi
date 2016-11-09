@@ -7,6 +7,8 @@ required:
   - 'description'
   - 'policyStatus'
   - 'policyStatusCode'
+  - 'transactionStatus'
+  - 'transactionStatusCode'
   - 'locations'
   - 'policyDetails'
   - 'insuranceScore'
@@ -40,11 +42,38 @@ properties:
     description: |
       The current status of the policy in text as decoded from the source system.  Either policyStatus or
       policyStatusCode MUST be populated.
-    type: string
+    type: 
+      - 'string'
+      - 'null'
   policyStatusCode:
     description: |
       The current status of the policy as represented by a code from the source system.  Either policyStatus
       or policyStatusCode MUST be populated.
+    type:
+      - 'string'
+      - 'null'
+  transactionStatus:
+    description: |
+      The transaction status is additional information to the policy status, which is an indicator of a possible
+      change in the policy status due to a pending transaction.  Example:  cancellation in process.  Either
+      transactionStatus or transactionStatusCode must be specfied.
+    x-required-in:
+      - 'Home'
+      - 'Auto'
+    type:
+      - 'string'
+      - 'null'
+  transactionStatusCode:
+    description: |
+      The transaction status code is additional information to the policy status, which is a code indicating a possible
+      change in the policy status due to a pending transaction.  Example:  cancellation in process.  Either
+      transactionStatus or transactionStatusCode must be specfied.
+    x-required-in:
+      - 'Home'
+      - 'Auto'
+    type:
+      - 'string'
+      - 'null'
   lineOfBusiness:
     description: |
       The policy package (ie, policy type). This a 'hint' with respect to the data to found in
