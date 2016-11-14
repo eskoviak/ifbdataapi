@@ -4,15 +4,20 @@ description: |
 
   The exact nature of the association is given in the associationType and assoicationSubType properties.
 required:
-  ['clientId', 'locationId', 'name', 'address', 'referenceData', 'associationType', 'associationTypeCode', 
-  'associationSubType', 'demographics']
+  - 'clientId'
+  - 'locationId'
+  - 'name'
+  - 'address'
+  - 'referenceData'
+  - 'associationType'
+  - 'associationTypeCode'
+  - 'associationSubType'
+  - 'demographics'
 properties:
-  # ICAF 809
   clientId:
     description: |
       The client id from the the client record keeping system.
     type: ['string', 'null']
-  # EWS 497
   locationId:
     description: |
       If the interest is tied to a specific location, use this to refer to the Location.Id property.
@@ -35,18 +40,17 @@ properties:
       Additional Named Insured.  Either #.associationType or #.associationTypeCode must be valued to describe the
       relationship of this object with the parent Policy.
     type: ['string', 'null']
-  #EWS 448, 515  
   associationTypeCode:
     description: |
       Descriptive code for the type of association:  (Life) Assignee, Beneficiary; (Farm) Policy Interests, (Multiple) 
       Additional Named Insured.  Either #.associationType or #.associationTypeCode must be valued to describe the
-      relationship of this object with the parent Policy.    type: ['string', 'null']
+      relationship of this object with the parent Policy.
+    type: ['string', 'null']
   associationSubType:
     description: |
       Further describes the association to the policy.  In the case of Beneficiary (Life), describes the Beneficiary
       type:  Primary or Contingent.
     type: ['string', 'null']
-  # ICAF 824
   demographics:
     description: |
       Information about the party associated with the policy.
