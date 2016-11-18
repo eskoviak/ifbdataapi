@@ -21,7 +21,7 @@ properties:
   locationId:
     description: |
       The location Id for the dwelling.  There MUST be one and only one location
-      for a dwelling- which contains the location specific information, such as
+      for a dwelling, which contains the location specific information, such as
       address.  The location(s) are contained in the Policy model.
     type: string
   item:
@@ -51,7 +51,6 @@ properties:
     description: |
       The form type description of the building.  This is currently a data field which
       is specific to farm insurance.
-      (Commercial) Example:  for a farm dwelling, HO-3 Platinum is a normal home, DP is condo.
     type: string
     example:
     # Used in Commercial
