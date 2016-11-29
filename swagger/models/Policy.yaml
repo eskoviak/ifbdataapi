@@ -83,10 +83,11 @@ properties:
       - 'Homeowners'
       - 'Farm'
       - 'Farm Pollution'
-      - 'Personal Umbrella'
       - 'Farm Umbrella'
-      - 'Life'
+      - 'Personal Umbrella'
       - 'Commercial'
+      - 'Commercial Umbrella'
+      - 'Life'
       - 'Annuity'
       - 'Rural'
   locations:
@@ -119,11 +120,14 @@ properties:
       - 'null'
   issueAge:
     description: |
-      (Life/Annuity) The age of the insured or annuitant at the time of issue. This is a policy
+      The age of the insured or annuitant at the time of issue. This is a policy
       level property, meaning that it applies to the entire policy package. This usage is more common
       in Annuity contracts.  For a life insurance policy, it is more common to specify the issue age
       of the insured at the Coverage
       level.
+    x-optional-in:
+      - 'Life'
+      - 'Annuities'
     type:
       - 'number'
       - 'null'
