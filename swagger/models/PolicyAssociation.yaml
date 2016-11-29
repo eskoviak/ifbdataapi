@@ -37,7 +37,7 @@ properties:
       Reference information for this association.  The data in this field could represent a loan number or case
       number in the case of assignee (Life) or PolicyInterest (farm).  It could represent the percentage split 
       for a Beneficiary (Life).
-    type: ['string', 'null']
+    type: 
       - 'string'  
       - 'null'
   associationType:
