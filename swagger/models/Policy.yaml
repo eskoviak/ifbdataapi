@@ -4,6 +4,7 @@ description: |
 required: 
   - 'id'
   - 'policyNumber'
+  - 'priorPolicyNumber'
   - 'description'
   - 'policyStatus'
   - 'policyStatusCode'
@@ -33,6 +34,18 @@ properties:
   policyNumber:
     description: The recordkeeping system Policy Number; this is NOT globally unique.
     type: 
+      - 'string'
+      - 'null'
+  priorPolicyNumber:
+    description: |
+      Used in situations where there is a one to one correspondence between a current policy
+      and the one being converted, replaced, exchanged, or reissued.
+    x-used-in:
+      - 'Life'
+      - 'Annuities'
+    x-acord-xref:
+      - 'OLifE.Holding.Policy.PriorPolNumber'
+    type:
       - 'string'
       - 'null'
   description:

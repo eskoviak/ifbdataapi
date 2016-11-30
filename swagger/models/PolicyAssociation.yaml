@@ -63,6 +63,25 @@ properties:
     type:
       - 'string'  
       - 'null'
+  associationRelationship:
+    description: |
+      This field is used to describe the relationship of the Party in this model (PolicyAssociation) to 
+      the parent Policy model.
+    x-used-by:
+      - 'Life'
+      - 'Annuities'
+    type:
+      - 'string'
+      - 'null'
+    example:
+      # Son of the issured who is the primary Beneficiary (partial listing)
+      - { "PolicyAssociation" :
+          { "!..." :,
+            "associationType" : "Beneficiary",
+            "associationSubType" : "Primary",
+            "associationRelationship" : "Son",
+            "...!" : }
+        }
   demographics:
     description: |
       Information about the party associated with the policy.
