@@ -55,6 +55,8 @@ definitions:
     $ref: ./models/NonForfeiture-Life.yaml
   Other:
     $ref: ./models/Other.yaml
+  Payout:
+    $ref: ./models/Payout.yaml
   Phone:
     $ref: ./models/Phone.yaml
   Policy:

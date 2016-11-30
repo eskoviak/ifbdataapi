@@ -1,20 +1,87 @@
-description:  (Life/Annuities) Projected values for a policy or contract
+description: |
+  Projected values for a policy or contract. This model should not be used to model similar values for investments--it is meant 
+  to be at the policy level.
+x-used-by:
+  - 'PolicyDetails-Life'
 required:
-  ['projectedValueDate', 'anniversaryPolicyValue', 'age65PolicyValue', 'dividendValue', 'policyValue']
+  - 'projectedValueDate'
+  - 'policyValue'
+  - 'policySurrenderValue'
+  - 'anniversaryPolicyValue'
+  - 'anniversarySurrenderValue'
+  - 'guaranteedPolicyValue'
+  - 'guaranteedSurrenderValue'
+  - 'guaranteedAnniversaryPolicyValue'
+  - 'guaranteedAgeXXAnniversaryPolicyValue'
+  - 'guaranteedAnniversarySurrenderValue'
+  - 'ageXX'
+  - 'ageXXAnniveraryDate'
+  - 'ageXXPolicyValue'
+  - 'age65PolicyValue'
+  - 'dividendValue'
 properties:
   projectedValueDate:
-    description: The date for which the values have been provided.
+    description: |
+      The date for which the values have been provided.  If this is the current date, then
+      #.policyValue and #.  represent the current values.
     type: string
     format: date
+  policyValue:
+    description: |
+      The projected cash value value of the policy on the #.projectedValueDate.
+    type: number  
+  policySurrenderValue:
+    description: |
+      The projected surrender value on #.projectedValueDate.
+    type:
+      - 'number'
   anniversaryPolicyValue:
-    description: The future value of the policy at the anniversary date.
+    description: |
+      The future value of the policy at the policy anniversary date.
     type: number
-  age65PolicyValue:
-    description: The future value of the policy on the insured's 65th birthday.
+  anniversarySurrenderValue:
+    description: |
+      The surrender value at the next policy anniversary date.
+    type:
+      - 'number'
+  guaranteedPolicyValue:
+    description: |
+      The contractual policy value as of the #.projectedValueDate.
+    type:
+      - 'number'
+  guaranteedSurrenderValue:
+    description: |
+      The contractual surnender value as of the #.projectedValueDate.
+    type:
+      - 'number'
+  guaranteedAnniversaryPolicyValue:
+    description: |
+      The contractual policy value as of the next policy anniversary date.
+    type:
+      - 'number'
+  guaranteedAgeXXAnniversaryPolicyValue:
+    description: |
+      The contractual policy value, at #.ageXXAnniveraryDate
+    type:
+      - 'number'
+  guaranteedAnniversarySurrenderValue:
+    description: |
+      The contractual policy value as of the next policy anniversary date.
+    type:
+      - 'number'
+  ageXX:
+    description: |
+      An arbitrary age which is used in #.ageXXAnniveraryDate
+    type:
+      - 'number'
+    format: integer
+  ageXXAnniveraryDate:
+    description: |
+      The date basis for which other ageXX properties are based.
+  ageXXPolicyValue:
+    description: The future value of the policy on the insured's birthday for #.ageXXAnniveraryDate.
     type: number
   dividendValue:
     description: The projected value of the accumulated dividends on the #.projectedValueDate.
     type: number
-  policyValue:
-    description: The projected cash value value of the policy on the #.projectedValueDate.
-    type: number
+
