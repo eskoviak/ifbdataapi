@@ -12,18 +12,17 @@ required:
   - 'guaranteedPolicyValue'
   - 'guaranteedSurrenderValue'
   - 'guaranteedAnniversaryPolicyValue'
-  - 'guaranteedAgeXXAnniversaryPolicyValue'
+  - 'guaranteedAgeXAnniversaryPolicyValue'
   - 'guaranteedAnniversarySurrenderValue'
-  - 'ageXX'
-  - 'ageXXAnniveraryDate'
-  - 'ageXXPolicyValue'
-  - 'age65PolicyValue'
+  - 'ageX'
+  - 'ageXAnniversaryDate'
+  - 'ageXPolicyValue'
   - 'dividendValue'
 properties:
   projectedValueDate:
     description: |
       The date for which the values have been provided.  If this is the current date, then
-      #.policyValue and #.  represent the current values.
+      #.policyValue and #.policySurrenderValue  represent the current values.
     type: string
     format: date
   policyValue:
@@ -37,7 +36,7 @@ properties:
       - 'number'
   anniversaryPolicyValue:
     description: |
-      The future value of the policy at the policy anniversary date.
+      The future value of the policy at the next policy anniversary date.
     type: number
   anniversarySurrenderValue:
     description: |
@@ -59,9 +58,9 @@ properties:
       The contractual policy value as of the next policy anniversary date.
     type:
       - 'number'
-  guaranteedAgeXXAnniversaryPolicyValue:
+  guaranteedAgeXAnniversaryPolicyValue:
     description: |
-      The contractual policy value, at #.ageXXAnniveraryDate
+      The contractual policy value, at #.AgeXAnniversaryDate
     type:
       - 'number'
   guaranteedAnniversarySurrenderValue:
@@ -69,17 +68,17 @@ properties:
       The contractual policy value as of the next policy anniversary date.
     type:
       - 'number'
-  ageXX:
+  AgeX:
     description: |
-      An arbitrary age which is used in #.ageXXAnniveraryDate
+      An arbitrary age which is used in #.AgeXAnniversaryDate
     type:
       - 'number'
     format: integer
-  ageXXAnniveraryDate:
+  AgeXAnniversaryDate:
     description: |
-      The date basis for which other ageXX properties are based.
-  ageXXPolicyValue:
-    description: The future value of the policy on the insured's birthday for #.ageXXAnniveraryDate.
+      The date basis for which other AgeX properties are based.
+  AgeXPolicyValue:
+    description: The future value of the policy on the insured's birthday for #.AgeXAnniveraryDate.
     type: number
   dividendValue:
     description: The projected value of the accumulated dividends on the #.projectedValueDate.
