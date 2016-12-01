@@ -12,6 +12,7 @@ required:
   - 'associationType'
   - 'associationTypeCode'
   - 'associationSubType'
+  - 'associationRelationship'
   - 'demographics'
 properties:
   clientId:
