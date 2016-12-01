@@ -22,6 +22,7 @@ required:
   - 'discountedAdvancePremium'
   - 'projectedValues'
   - 'nonForfeitureProvision'
+  - 'payout'
 properties:
   detailPart:
     description: |
