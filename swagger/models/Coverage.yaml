@@ -4,6 +4,7 @@ description: |
 required: 
   - 'deductibles'
   - 'description'
+  - 'planCode'
   - 'coverageDetail'
   - 'coverageFlags'
   - 'coverageSchedule'
