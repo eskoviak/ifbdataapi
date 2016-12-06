@@ -1,10 +1,12 @@
 #Model Level (shown in order of precedence):
+##x-called-by: :== <hostname>/<path-to-resource>/[{<**paramterList>}]
+* Indicates which resource requests return this item
 ##x-used-by: :== enum[ <swagger>, ... ]
-* Indicates which files include this model
+* Indicates which files include this 
 ##x-acord-agg-xref: :== string
 * The ACORD aggregate (xPath) which this represents or is based on.  For LAH, the xPath should begin at OLifE. 
 
-#Property Level:
+#Property Level (shown in order of precedence):
 ##x-required-in :== enum[ (<swagger>, ... | 'all')]
 * Used to indicate the property is required in a specific usage
 ##x-acord-xref: :== [ string | null ]

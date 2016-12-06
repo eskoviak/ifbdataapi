@@ -1,13 +1,24 @@
 description: |
-  A client object represents a party to the insurance policy or annuity contract.  sourceSystemTypeCode client can be
+  A client object represents a party to the insurance policy or annuity contract.  A client can be
   either a person (i.e. the insured or the annuitant), an organization (i.e. a bank or assignee), or
   it can be Unknown (i.e. a trust, which can be either a person or an organization).  The client is
   related to the policy/contract through the use of the Interest model, which acts as a link
   between the two objects.
-# preferred method of contact has been deferred to phase 2.
+x-called-by:
+  - '<hostname>/api/api/{clientId}'
+x-used-by:
+  - 'Interests'
 required:
-  ['id', 'sourceSystemType', 'sourceSystemTypeCode', 'name', 'phoneNumbers', 'emailAddresses',
-   'taxId', 'addresses', 'preferences', 'demographics']
+  - 'id'
+  - 'sourceSystemType'
+  - 'sourceSystemTypeCode'
+  - 'name'
+  - 'phoneNumbers'
+  - 'emailAddresses'
+  - 'taxId'
+  - 'addresses'
+  - 'preferences'
+  - 'demographics'
 properties:
   id:
     description: A unique identifier for the client
@@ -16,12 +27,16 @@ properties:
     description: |
       The type of client as recorded on the source system.  Note: either #.sourceSystemType or 
       #.sourceSystemTypeCode is required.
-    type: ['string', 'null']
+    type:
+      - 'string'
+      - 'null'
   sourceSystemTypeCode:
     description: |
       The type code of client as recorded on the source system. Note: either #.sourceSystemType
       or #.sourceSystemTypeCode is required.
-    type: ['string', 'null']
+    type:
+      - 'string'
+      - 'null'
   name:
     description: A display-formatted name of the individual or business for this Client
     type: string
@@ -35,7 +50,9 @@ properties:
       $ref: ../definitions.yaml#/definitions/Email
   taxId:
     description: SHOULD only display for Business clients only.
-    type: ['string', 'null']
+    type:
+      - 'string'
+      - 'null'
   addresses:
     type: array
     items:
