@@ -4,13 +4,14 @@ description: |
 x-used-by:
   - 'Policy'
 x-acord-agg-xref:
-  - 'OLifE.Holding.Policy.Life'
-  - 'OLifE.Holding.Policy.Annuity'  
+  - '#1' : 'OLifE.Holding.Policy.Life'
+  - '#2' : 'OLifE.Holding.Policy.Annuity'  
 required:
   - 'detailPart'
   - 'type'
   - 'maturityAge'
   - 'coverages'
+  - 'initialDepositAmount'
   - 'investments'
   - 'dividends'
   - 'faceAmount'
@@ -46,6 +47,16 @@ properties:
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/Coverage
+  initialDepositAmount:
+    description: |
+      On an Annuity, this represents the estimated or expected portion of an
+      initial lump sum to be made to this contract.  Examples include qualified
+      or non-qualified replacements, Mutual Funds or Certificates of Deposit.
+    x-acord-xref:
+      - '#2.InitDepositAmt'
+    type:
+      - 'number'
+      - 'null'
   investments:
     description: |
       The investment information which is part of this life policy or
@@ -81,7 +92,7 @@ properties:
     description: |
       Date on which last premium payment was applied.  This is a property on OLifE.Holding.Policy.Life only.
     x-acord-xref:
-      - '#.LastPremDate'
+      - '#1.LastPremDate'
     type:
       - 'string'
     format: date
