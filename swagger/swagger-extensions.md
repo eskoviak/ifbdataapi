@@ -2,7 +2,9 @@
 ##x-used-by: :== enum[ <swagger>, ... ]
 * Indicates which files include this model
 ##x-acord-agg-xref: :== string
-* The ACORD aggregate (xPath) which this represents or is based on.  For LAH, the xPath should begin at OLifE. 
+* The ACORD aggregate (xPath) which this represents or is based on.
+* For LAH, the xPath should begin at OLifE.
+* for PCS, the xpath should begin with the Base Type
 
 #Property Level:
 ##x-required-in :== enum[ (<swagger>, ... | 'all')]
