@@ -37,6 +37,23 @@ properties:
     type:
       - 'string'
       - 'null'
-      
-
- 
+  titlePrefix:
+    description: |
+      Any phrase to precede the name which is not part of the actual name,
+      such as Dr. or Mrs.
+    x-acord-xref:
+      - '#1.TitlePrefix'
+      - '#2.Prefix'
+    type:
+      - 'string'
+      - 'null'    
+  nameSuffix:
+    description: |
+      Any phrase to succeed the name which is not par tof the actual name, 
+      such as `Jr.` or `III.`
+    x-acord-xref:
+      - '#1.NameSuffix'
+      - '#2.Suffix'
+    type:
+      - 'string'
+      - 'null'

@@ -57,6 +57,8 @@ definitions:
     $ref: ./models/Other.yaml
   Payout:
     $ref: ./models/Payout.yaml
+  PersonName:
+    $ref: ./models/PersonName.yaml
   Phone:
     $ref: ./models/Phone.yaml
   Policy:
