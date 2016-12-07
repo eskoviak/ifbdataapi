@@ -5,13 +5,14 @@
 * The ACORD aggregate (xPath) which this represents or is based on.
 * For LAH, the xPath should begin at OLifE.
 * for PCS, the xpath should begin with the Base Type
+* When there are multiple cross-references, they should be prefaced by `#[0..9| ]`, _i.e._ '#1' : 'OLifE.xxx'
 
 #Property Level:
 ##x-required-in :== enum[ (<swagger>, ... | 'all')]
 * Used to indicate the property is required in a specific usage
 ##x-acord-xref: :== [ string | null ]
 *The ACORD property (xPath) which this represents or is based on.  For LAH, the xPath should begin at OLifE.  If
-the model has an **x-acord-agg-xref** proerty, the `#.` notation can be used to note the top level option
+the model has an **x-acord-agg-xref** proerty, the `#[9..9| ].` notation can be used to note the top level option
 ##x-acord-type-code: :== [ string ]
 * The ACORD Type Code list which this property is based on (from a business concept).
 * It does not constrain the item to using the typecode, just relating the model element to the ACORD standard.
