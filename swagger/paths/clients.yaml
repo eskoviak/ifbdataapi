@@ -2,7 +2,27 @@ swagger: "2.0"
 info:
   version: 2.0.0
   title: Clients
-  description: Clients endpoint
+  description: |
+    This is the entry point for client inquiries.
+
+    #### Service Functionality:
+    This API is called with a clientId parameter.  If successful, the resultant resource is a
+    JSON oject, based on the Client model. 
+    
+    #### Performance Expectation:
+    Standard SLA applies.
+    
+    #### Service Capacity Supported:
+    Standard Capacity applies
+    
+    #### Suggested Test Scenario:
+    TBD
+    
+    #### Service Availability:
+    Standard Service Availability applies
+    
+    #### Service Security:
+    HTTPS/SSL
 produces:
   - application/json
 schemes:
