@@ -1,8 +1,11 @@
 description: |
   A top-level model which represents an insurance Policy (of various types) or an annuity Contract (fixed
   and variable).
+x-acord-agg-xref:
+  '#1' : 'OLife/Holding/Policy'
 required: 
   - 'id'
+  - 'transactionId'
   - 'policyNumber'
   - 'priorPolicyNumber'
   - 'description'
@@ -36,6 +39,17 @@ properties:
     type: 
       - 'string'
       - 'null'
+  transactionId:
+    description: |
+      A transaction, or session key, provided by the source system during a multi-step business
+      process.  The key is needed by subsequent operations to complete the desired processing.
+    x-used-in:
+      - 'PersAutoModRq'
+    x-acord-xref:
+      - '%SIGNONENTITY.SessKey'
+    type: 
+      - 'string'
+      - 'null'  
   priorPolicyNumber:
     description: |
       Used in situations where there is a one to one correspondence between a current policy
@@ -44,7 +58,7 @@ properties:
       - 'Life'
       - 'Annuities'
     x-acord-xref:
-      - 'OLifE.Holding.Policy.PriorPolNumber'
+      - '#1.PriorPolNumber'
     type:
       - 'string'
       - 'null'
