@@ -8,7 +8,10 @@ x-acord-agg-ref:
   - '#2' : 'OLifE/Party/Person'
 required:
   - 'firstName'
-
+  - 'middleName'
+  - 'lastName'
+  - 'titlePrefix'
+  - 'nameSuffix'
 properties:
   firstName:
     description: |
