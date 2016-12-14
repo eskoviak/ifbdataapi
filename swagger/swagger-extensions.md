@@ -5,7 +5,7 @@
 * The ACORD aggregate (xPath) which this represents or is based on.
 * For LAH, the xPath should begin at OLifE.
 * for PCS, the xpath should begin with the Base Type
-* When there are multiple cross-references, they should be prefaced by `#[0..9| ]`, _i.e._ '#1' : 'OLifE.xxx'
+* When there are multiple cross-references, they should be indicated by `#[{(LAH)|(PCS)}| ]`, _i.e._ '#LAH' : 'OLifE.xxx'
 
 #Property Level:
 ##x-required-in :== enum[ (<swagger>, ... | 'all')]
