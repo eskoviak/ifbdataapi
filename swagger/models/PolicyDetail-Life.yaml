@@ -4,7 +4,7 @@ description: |
 x-used-by:
   - 'Policy'
 x-acord-agg-xref:
-  - '#1' : 'OLifE.Holding.Policy.Life'
+  - '#LAH' : 'OLifE.Holding.Policy.Life'
   - '#2' : 'OLifE.Holding.Policy.Annuity'  
 required:
   - 'detailPart'
@@ -17,6 +17,7 @@ required:
   - 'faceAmount'
   - 'netBaseDeathBenefit'
   - 'targetPremiumAmount'
+  - 'minimumPremiumAmount'
   - 'targetPremiumAmountBase'
   - 'lastPremiumDate'
   - 'totalPremiumsPaidAmount'
@@ -82,6 +83,14 @@ properties:
     type:
       - 'number'
       - 'null'
+  minimumPremiumAmount:
+    description: |
+      Current No Lapse Guarantee Premium.  At IFB, this is a policy level datum.
+    x-acord-xref:
+      - '#LAH.Coverage.MinPremAmt'
+    type:
+      - 'number'
+      - 'null'
   targetPremiumAmountBase:
     description: |
       The target premium for all riders on a Universal Life/Interest Sensitive Life Policy.
@@ -92,7 +101,7 @@ properties:
     description: |
       Date on which last premium payment was applied.  This is a property on OLifE.Holding.Policy.Life only.
     x-acord-xref:
-      - '#1.LastPremDate'
+      - '#LAH.LastPremDate'
     type:
       - 'string'
     format: date
