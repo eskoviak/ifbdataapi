@@ -8,3 +8,5 @@ validate.err
 *.xml
 *.xsl
 *.xpr
+*.ps1
+
