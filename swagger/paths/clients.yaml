@@ -36,11 +36,7 @@ paths:
       x-throttling-tier: Unlimited
       description: Returns a Client
       parameters:
-        - name: clientId
-          in: path
-          description: The clientId
-          required: true
-          type: string
+        - $ref: "#/parameters/ClientId"
       responses:
         "200":
           description: Successful response
@@ -50,7 +46,7 @@ paths:
               data:
                 type: array
                 items:
-                  $ref: ../definitions.yaml#/definitions/Client
+                  $ref: ../models/Client.yaml
         "401":
           description: Unauthorized or invalid token
         "404":
@@ -75,16 +71,12 @@ paths:
                 type: array
                 items:
                   $ref: ../definitions.yaml#/definitions/Interest
-        "401":
-          description: Unauthorized or invalid token
         "404":
           description: Entity not found
-        "500":
-          description: Server error
 parameters:
   ClientId:
     name: clientId
     required: true
     in: path
-    description: The clientId
+    description: The clientId used to identify the client which is the object of the request.
     type: string

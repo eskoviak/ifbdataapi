@@ -2,7 +2,27 @@ swagger: "2.0"
 info:
   version: 2.0.0
   title: Policies
-  description: Policy Endpoints
+  description: |
+    This is the entry point for policy inquiries.
+
+    #### Service Functionality:
+    This API is called with a policyId parameter.  If successful, the resultant resource is a
+    JSON oject, based on the Policy model. 
+    
+    #### Performance Expectation:
+    Standard SLA applies.
+    
+    #### Service Capacity Supported:
+    Standard Capacity applies
+    
+    #### Suggested Test Scenario:
+    TBD
+    
+    #### Service Availability:
+    Standard Service Availability applies
+    
+    #### Service Security:
+    HTTPS/SSL
 produces:
   - application/json
 schemes:
@@ -23,7 +43,7 @@ paths:
               data:
                 type: array
                 items:
-                  $ref: ../definitions.yaml#/definitions/Policy
+                  $ref: ../models/Policy.yaml
         "401":
           description: Unauthorized or invalid token
         "404":
@@ -44,7 +64,7 @@ paths:
               data:
                 type: array
                 items:
-                  $ref: ../definitions.yaml#/definitions/Interest
+                  $ref: ../models/Interest.yaml
         "401":
           description: Unauthorized or invalid token
         "404":
