@@ -3,7 +3,7 @@ info:
   version: 2.0.0
   title: Clients
   description: |
-    This is the entry point for client inquiries.
+    This is the entry pointe for client inquiries.
 
     #### Service Functionality:
     This API is called with a clientId parameter.  If successful, the resultant resource is a
