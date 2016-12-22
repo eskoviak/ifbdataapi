@@ -82,13 +82,13 @@ properties:
       - 'null'
   transactionSequenceNumber:
     description: |
-      
+      ???
     type:
       - 'string'
       - 'null'
   effectiveTypeCode:
     description: |
-
+      ???
     type:
       - 'string'
       - 'null'
