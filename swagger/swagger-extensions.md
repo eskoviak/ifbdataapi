@@ -1,13 +1,15 @@
 #Model Level (shown in order of precedence):
-##x-used-by: :== enum[ <swagger>, ... ]
-* Indicates which files include this model
-##x-acord-agg-xref: :== string
-* The ACORD aggregate (xPath) which this represents or is based on.
-* For LAH, the xPath should begin at OLifE.
-* for PCS, the xpath should begin with the Base Type
+
+##x-used-by: ::= enum[ <string> ]
+* Indicates which files include this model (are parents of) this model
+
+##x-acord-agg-xref: ::= {}
+* The ACORD aggregate (xPath) which this represents or is based on
+* The the key of the JSON object should begin with a fragment id character `#`
 * When there are multiple cross-references, they should be indicated by `#[{(LAH)|(PCS)}| ]`, _i.e._ '#LAH' : 'OLifE.xxx'
 
 #Property Level:
+
 ##x-required-in :== enum[ (<swagger>, ... | 'all')]
 * Used to indicate the property is required in a specific usage
 ##x-acord-xref: :== [ string | null ]

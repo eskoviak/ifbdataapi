@@ -2,15 +2,24 @@ description: |
   A top-level model which represents an insurance Policy (of various types) or an annuity Contract (fixed
   and variable).
 x-acord-agg-xref:
-  '#1' : 'OLife/Holding/Policy'
+  '#LAH' : 'OLife/Holding/Policy'
 required: 
   - 'id'
   - 'transactionId'
+  - 'businessPurposeTypeCode'
+  - 'transactionRequestDate'
+  - 'transactionEffectiveDate'
+  - 'quoteSequenceNumber'
+  - 'transactionSequenceNumber'
+  - 'effectiveTypeCode'
+  - 'policyId'
   - 'policyNumber'
   - 'priorPolicyNumber'
+  - 'lineOfBusinessCode'
   - 'description'
   - 'policyStatus'
   - 'policyStatusCode'
+  - 'controllingStateProvinceCode'
   - 'transactionStatus'
   - 'transactionStatusCode'
   - 'locations'
@@ -34,11 +43,6 @@ properties:
       information and policy number but in the latter case MUST not be used to infer
       information about the policy.
     type: string
-  policyNumber:
-    description: The recordkeeping system Policy Number; this is NOT globally unique.
-    type: 
-      - 'string'
-      - 'null'
   transactionId:
     description: |
       A transaction, or session key, provided by the source system during a multi-step business
@@ -50,6 +54,56 @@ properties:
     type: 
       - 'string'
       - 'null'  
+  businessPurposeTypeCode:
+    description: |
+      A code indicating the business event being submitted in this message.
+    type:
+      - 'string'
+      - 'null'
+  transactionRequestDate:
+    description: |
+      The date the transaction was requested.
+    type:
+      - 'string'
+      - 'null'
+    format: date
+  transactionEffectiveDate:
+    description: |
+      The date the transaction is effective.
+    type:
+      - 'string'
+      - 'null'
+    format: date
+  quoteSequenceNumber:
+    descrexitiption: |
+      
+    type:
+      - 'string'
+      - 'null'
+  transactionSequenceNumber:
+    description: |
+      
+    type:
+      - 'string'
+      - 'null'
+  effectiveTypeCode:
+    description: |
+
+    type:
+      - 'string'
+      - 'null'
+  policyId:
+    description: |
+      The identfier of the policy in the record keeping system.  This may or may not be similar to the #.id property, and
+      may or may not contain the #.policyNumber.
+    type:
+      - 'string'
+      - 'null'
+  policyNumber:
+    description: The recordkeeping system Policy Number; this is NOT globally unique, and can be distinct from the policyId.
+    type: 
+      - 'string'
+      - 'null'
   priorPolicyNumber:
     description: |
       Used in situations where there is a one to one correspondence between a current policy
@@ -58,7 +112,13 @@ properties:
       - 'Life'
       - 'Annuities'
     x-acord-xref:
-      - '#1.PriorPolNumber'
+      - '#LAH.PriorPolNumber'
+    type:
+      - 'string'
+      - 'null'
+  lineOfBusinessCode:
+    description: |
+      ???
     type:
       - 'string'
       - 'null'
@@ -76,6 +136,12 @@ properties:
     description: |
       The current status of the policy as represented by a code from the source system.  Either policyStatus
       or policyStatusCode MUST be populated.
+    type:
+      - 'string'
+      - 'null'
+  controllingStateProvinceCode:
+    description: |
+      ???
     type:
       - 'string'
       - 'null'
