@@ -75,8 +75,8 @@ properties:
       - 'null'
     format: date
   quoteSequenceNumber:
-    descrexitiption: |
-      
+    description: |
+      ???
     type:
       - 'string'
       - 'null'
