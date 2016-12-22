@@ -38,7 +38,8 @@ paths:
       description: |
         This is a more lengthy description of the service, which may be multiline.  Avoid using a repeat 
         of the summary, which should be limited to one line or descriptive phrase.
-      produces:  application/JSON
+      produces:  
+        - application/JSON
       parameters:
         - $ref: "#/parameters/ClientId"
       responses:
@@ -84,5 +85,3 @@ parameters:
     in: path
     description: The clientId used to identify the client which is the object of the request.
     type: string
-definitions:
-  
