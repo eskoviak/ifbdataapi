@@ -1,37 +1,75 @@
-description:  An object which relates two objects via type and id
+description: |
+  An object which relates two objects via type and id.  Consider two objects, such as Policy and Client.  A policy is owned by a client.  In this case, the root objectType is Policy, with it's policyId. The child objectType is Client, with it's clientId.  The relationshipType is owner:  Policy --> Owner --> Client. Note that codes or text may be used to represent the three parts of the Interest.
 required: 
-  ['rootId', 'rootType', 'rootTypeCode', 'childId', 'childType', 'childTypeCode', 'relationshipType',
-   'relationshipTypeCode', 'effectiveDate', 'expirationDate', 'address']
+  - 'rootId'
+  - 'rootType'
+  - 'rootTypeCode'
+  - 'childId'
+  - 'childType'
+  - 'childTypeCode'
+  - 'relationshipType'
+  - 'relationshipTypeCode'
+  - 'effectiveDate'
+  - 'expirationDate'
+  - 'address'
 properties:
   rootId:
-    description: The id of the source object.
+    description: |
+      The id of the source object.
     type: string
   rootType:
-    description: The type of the root object.
-    enum: ['Policy', 'Billing Account', 'Claim', 'Membership', 'Quote', 'Client']
+    description: |
+      The type of the root object.
+    enum:
+      - 'Policy'
+      - 'Billing Account'
+      - 'Claim'
+      - 'Membership'
+      - 'Quote'
+      - 'Client'
   rootTypeCode:
-    description: The type code of the root object.
-    type: ['string', 'null']
+    description: |
+      The type code of the root object.
+    type: 
+      - 'string'
+      - 'null'
   childId:
-    description: The id of the target object
+    description: |
+      The id of the target object
     type: string
   childType:
-    description: The type of the target object.
-    enum: ['Policy', 'Billing Account', 'Claim', 'Membership', 'Quote', 'Client']
+    description: |
+      The type of the target object.
+    enum:
+      - 'Policy'
+      - 'Billing Account'
+      - 'Claim'
+      - 'Membership'
+      - 'Quote'
+      - 'Client'
   childTypeCode:
-    description: The type code of the target object.
-    type: ['string', 'null']
+    description: |
+      The type code of the target object.
+    type:
+      - 'string'
+      - 'null'
   relationshipType:
-    description: The relationship between the root and target object.
+    description: |
+      The relationship between the root and target object.
     type: string
   relationshipTypeCode:
-    description: The code for the relationship between the root and target object.
-    type: ['string', 'null']
+    description: |
+     The code for the relationship between the root and target object.
+    type:
+      - 'string'
+      - 'null'
   effectiveDate:
     type: string
     format: date
   expirationDate:
-    type: ['string', 'null']
+    type:
+      - 'string'
+      - 'null'
     format: date
   address:
     $ref: ../definitions.yaml#/definitions/Address
