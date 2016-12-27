@@ -11,17 +11,18 @@ required:
   - 'transactionEffectiveDate'
   - 'quoteSequenceNumber'
   - 'transactionSequenceNumber'
-  - 'effectiveTypeCode'
+  - 'effectiveTypeCode'  ##
   - 'policyId'
   - 'policyNumber'
   - 'priorPolicyNumber'
-  - 'lineOfBusinessCode'
   - 'description'
   - 'policyStatus'
   - 'policyStatusCode'
   - 'controllingStateProvinceCode'
   - 'transactionStatus'
   - 'transactionStatusCode'
+  - 'lineOfBusiness'
+  - 'lineOfBusinessCode'
   - 'locations'
   - 'policyDetails'
   - 'insuranceScore'
@@ -76,19 +77,14 @@ properties:
     format: date
   quoteSequenceNumber:
     description: |
-      ???
+      A unique number used to tie quotes together, which have differences but relate to the same
+      item for which insurance is being quoted. ##  
     type:
       - 'string'
       - 'null'
   transactionSequenceNumber:
     description: |
-      ???
-    type:
-      - 'string'
-      - 'null'
-  effectiveTypeCode:
-    description: |
-      ???
+      Used for inforce based on ammendment.  Perhaps this one and the qsn can be combined.  ##
     type:
       - 'string'
       - 'null'
@@ -118,7 +114,6 @@ properties:
       - 'null'
   lineOfBusinessCode:
     description: |
-      ???
     type:
       - 'string'
       - 'null'
@@ -141,7 +136,7 @@ properties:
       - 'null'
   controllingStateProvinceCode:
     description: |
-      ???
+      The juristiction (state or province) in which the policy governed ## See ACORD
     type:
       - 'string'
       - 'null'

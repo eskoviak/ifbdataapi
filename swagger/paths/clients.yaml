@@ -3,12 +3,15 @@ info:
   version: 2.0.0
   title: Clients
   description: |
-    This is the entry pointe for client inquiries.
+    This is the entry point for client inquiries.
 
     #### Service Functionality:
     This API is called with a clientId parameter.  If successful, the resultant resource is a
-    JSON oject, based on the Client model. 
-    
+    JSON oject, based on the Client model.
+
+    #### Instance Diagram(s) 
+    ![Client](http://connections/issite/ews/SiteAssets/path-clients.png)
+
     #### Performance Expectation:
     Standard SLA applies.
     
@@ -23,6 +26,10 @@ info:
     
     #### Service Security:
     HTTPS/SSL
+  contact:
+    name:  Mary Boscaccia
+    url:  http://www.infarmbureau.com
+    email: mary.Boscacci@infarmbureau.com
 produces:
   - application/json
 schemes:
@@ -34,17 +41,19 @@ paths:
       x-auth-type: "Application & Application User"
       x-scope: api_read
       x-throttling-tier: Unlimited
-      summary: Returns basic information about the client identified by the given Id
+      summary: Returns a array of Client models identified by the clientId
       description: |
-        This is a more lengthy description of the service, which may be multiline.  Avoid using a repeat 
-        of the summary, which should be limited to one line or descriptive phrase.
-      produces:  
-        - application/JSON
+        This process layer service queries the client record keeping system (Exceed) using the submitted parameter (clientId).   A detailed Client is returned, if the clientId exists.
+      externalDocs:
+        description: Client Instance Diagram
+        url: http://connections/issite/ews/SiteAssets/path-clients.png
+      produces: 
+        - application/json
       parameters:
         - $ref: "#/parameters/ClientId"
       responses:
         "200":
-          description: Successful response
+          description: Success
           schema:
             type: object
             properties:
@@ -63,7 +72,14 @@ paths:
       x-auth-type: "Application & Application User"
       x-scope: api_read
       x-throttling-tier: Unlimited
-      summary: An array of Interest
+      summary: An array of Interests for the given clientId
+      description:
+        This process layer service queries the policy record keeping system, and returns an array of interests (relationships) between the client identified by the clientId and insurance objects.
+      externalDocs:
+        description: Interest Instance Diagram
+        url: http://connections/issite/ews/SiteAssets/Client%20Model.png
+      produces:
+        - application/json
       parameters:
         - $ref: "#/parameters/ClientId" 
       responses:
@@ -85,3 +101,6 @@ parameters:
     in: path
     description: The clientId used to identify the client which is the object of the request.
     type: string
+definitions:
+  Client:
+    
