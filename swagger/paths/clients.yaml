@@ -103,4 +103,12 @@ parameters:
     type: string
 definitions:
   Client:
-    
+    description: |
+      A Client object represents a legal entity with a defined relationship to the insurance policy or
+      annuity contract.  A the model represents either a person (i.e. the insured or the annuitant),
+      an organization (i.e. a bank or assignee), or it can be Unknown (i.e. a trust, which can be either
+      a person or an organization).
+    properties:
+      id:
+        description: A unique identifier for the client
+        type: string
