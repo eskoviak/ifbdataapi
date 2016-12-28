@@ -153,6 +153,8 @@ properties:
     description: |
       The policy package (ie, policy type). This a 'hint' with respect to the data to found in
       #.policyDetail.
+    type:
+      - 'string'
     enum: 
       - 'Auto'
       - 'Homeowners'
@@ -168,16 +170,12 @@ properties:
   locations:
     description: |
       All of the locations which are associated with this policy or contract.
-    type: 
-      - 'array'
-      - 'null'
+    type: array
     items:
       $ref: ../definitions.yaml#/definitions/Location
   policyDetails:
     description:  |
-      This property contains one or more PolicyDetail-XXX models, each of which contains detail information for
-      the policy.
-
+      This property contains one or more PolicyDetail-XXX models, each of which contains detail information for the policy.
       There are three PolicyDetail-XXX models:
       1.  PolicyDetail-Personal:  This is used for the Auto, Homeowners, and Rural lines.
       2.  PolicyDetail-Life:  This is used for the Life and Annuity lines.
@@ -240,12 +238,13 @@ properties:
       - 'null'
   premium:
     description: |
-      The rolled-up value of the premiums of the Insurance Lines
-    type: number
+      The rolled-up value of the premiums of the Insurance Lines.
+    type:
+      - 'number'
   billingDetails:
     description: |
       Details about the billing on this policy.
-    $ref: ../definitions.yaml#/definitions/Billing
+    $ref: '../definitions.yaml#/definitions/Billing'
   policyAssociations:
     description: |
       A list of the parties (persons or businesses) which have an association or interest in the policy, but are not necessarily clients of the enterprise.

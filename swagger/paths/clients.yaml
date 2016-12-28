@@ -1,4 +1,4 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
   version: 2.0.0
   title: Clients
@@ -38,7 +38,7 @@ basePath: /clients
 paths:
   /{clientId}/:
     get:
-      x-auth-type: "Application & Application User"
+      x-auth-type: 'Application & Application User'
       x-scope: api_read
       x-throttling-tier: Unlimited
       summary: Returns a array of Client models identified by the clientId
@@ -47,9 +47,9 @@ paths:
       produces: 
         - application/json
       parameters:
-        - $ref: "#/parameters/ClientId"
+        - $ref: '#/parameters/ClientId'
       responses:
-        "200":
+        '200':
           description: Success
           schema:
             type: object
@@ -57,16 +57,16 @@ paths:
               data:
                 type: array
                 items:
-                  $ref: "#/definitions/Client"
-        "401":
+                  $ref: '#/definitions/Client'
+        '401':
           description: Unauthorized or invalid token
-        "404":
+        '404':
           description: Entity not found
-        "500":
+        '500':
           description: Server error
   /{clientId}/interests:
     get:
-      x-auth-type: "Application & Application User"
+      x-auth-type: 'Application & Application User'
       x-scope: api_read
       x-throttling-tier: Unlimited
       summary: An array of Interests for the given clientId
@@ -75,9 +75,9 @@ paths:
       produces:
         - application/json
       parameters:
-        - $ref: "#/parameters/ClientId" 
+        - $ref: '#/parameters/ClientId' 
       responses:
-        "200":
+        '200':
           description: Success
           schema:
             type: object
@@ -85,8 +85,8 @@ paths:
               data:
                 type: array
                 items:
-                  $ref: "#/definitions/Interest"
-        "404":
+                  $ref: '#/definitions/Interest'
+        '404':
           description: Entity not found
 parameters:
   ClientId:
@@ -134,15 +134,15 @@ definitions:
           The component parts of the Client name, when the Client represents an individual, if known.  For individuals, 
           either  `name` or `personName` property should be populated.  It is expected that this property will be null
           for organizations.
-        $ref: "#/definitions/PersonName"
+        $ref: '#/definitions/PersonName'
       phoneNumbers:
         type: array
         items:
-          $ref: "#/definitions/Phone"
+          $ref: '#/definitions/Phone'
       emailAddresses:
         type: array
         items:
-          $ref: "#/definitions/Email"
+          $ref: '#/definitions/Email'
       taxId:
         description: |
           This is a government assigned identifier.  In the US, this is either the Tax ID Number (TIN) for a business
@@ -153,14 +153,14 @@ definitions:
       addresses:
         type: array
         items:
-          $ref: "#/definitions/Address"
+          $ref: '#/definitions/Address'
       preferences:
         description: |
           A schemaless object key/value pairs representing Client preferences
           This is used for configuring contact preferences.
         type: object
       demographics:
-        $ref: "#/definitions/Demographics"
+        $ref: '#/definitions/Demographics'
   PersonName:
     description: |
       This model contains name details for a person.  It is based on the ACORD PersonName_Type (PCS)
@@ -347,4 +347,4 @@ definitions:
         type: ['string', 'null']
         format: date
       address:
-        $ref: "#/definitions/Address"  
+        $ref: '#/definitions/Address'  

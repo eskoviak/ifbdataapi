@@ -1,18 +1,31 @@
 swagger: '2.0'
-info: {version: 2.0.0, title: Policies, description: "This is the entry point for\
-    \ policy inquiries.\n\n#### Service Functionality:\nThis API is called with a\
-    \ policyId parameter.  If successful, the resultant resource is a\nJSON oject,\
-    \ based on the Policy model. \n\n#### Performance Expectation:\nStandard SLA applies.\n\
-    \n#### Service Capacity Supported:\nStandard Capacity applies\n\n#### Suggested\
-    \ Test Scenario:\nTBD\n\n#### Service Availability:\nStandard Service Availability\
-    \ applies\n\n#### Service Security:\nHTTPS/SSL\n"}
+info:
+  version: 2.0.0
+  title: Policies
+  description: "This is the entry point for policy inquiries.  Policy inquiries are\
+    \ supported for the following types of lines of Insurance:\n\n| Personal | Commercial\
+    \ | Life |\n| --- | --- | --- |\n| Auto | Farm | Life |\n| Home | Pollution |\
+    \ Annuities |\n|Umbrella | Farm Umbrella | Rural |\n\n#### Service Functionality\n\
+    This API is called with a policyId parameter.  If successful, the resultant resource\
+    \ is a JSON oject, based on the prefix of the policyId.\n\n#### Instance Diagrams\n\
+    *Auto Policy* \n    ![Auto Policy](http://connections/issite/ews/SiteAssets/Auto%20Policy%20Structure.png)\n\
+    \n*Home Policy*\n    ![Home Policy](http://connections/issite/ews/SiteAssets/Home%20Policy%20Structure.png)\n\
+    \n#### Performance Expectation\nStandard SLA applies.\n\n#### Service Capacity\
+    \ Supported\nStandard Capacity applies\n\n#### Suggested Test Scenario\nTBD\n\n\
+    #### Service Availability\nStandard Service Availability applies\n\n#### Service\
+    \ Security\nHTTPS/SSL\n"
+  contact: {name: Mary Boscaccia, url: 'http://www.infarmbureau.com', email: mary.Boscacci@infarmbureau.com}
 produces: [application/json]
 schemes: [https]
 basePath: /policies
 paths:
   /{policyId}:
     get:
-      summary: a Policy
+      summary: Return a policy object
+      description: 'For a given policyId, returns a JSON object representing the detailed
+        client information, if the id exists on the Client system.
+
+        '
       parameters:
       - {$ref: '#/parameters/PolicyId'}
       responses:
@@ -163,6 +176,7 @@ paths:
                         #.policyDetail.
 
                         '
+                      type: [string]
                       enum: [Auto, Homeowners, Farm, Farm Pollution, Farm Umbrella,
                         Personal Umbrella, Commercial, Commercial Umbrella, Life,
                         Annuity, Rural]
@@ -171,7 +185,7 @@ paths:
                         this policy or contract.
 
                         '
-                      type: [array, 'null']
+                      type: array
                       items:
                         definitions:
                           Acknowledgement:
@@ -207,8 +221,11 @@ paths:
                               postalCode, country]
                             properties:
                               addressType:
-                                description: Future use.  If used, SHOULD be set to
-                                  'Mailing'.
+                                description: 'Future use.  If used, SHOULD be set
+                                  to ''Mailing''.
+
+                                  '
+                                type: [string]
                                 enum: [Mailing]
                               addressAggregate:
                                 description: 'The aggregate address for use when the
@@ -217,49 +234,46 @@ paths:
                                   '
                                 type: [string, 'null']
                               street1:
-                                description: First line of the postal address, e.g.
+                                description: 'First line of the postal address, e.g.
                                   100 Main St.
+
+                                  '
                                 type: [string, 'null']
                               street2:
-                                description: Second line of the postal address, e.g.
-                                  Apt 100.
+                                description: 'Second line of the postal address, e.g.
+                                  Unit 100.
+
+                                  '
                                 type: [string, 'null']
                               city:
                                 type: [string, 'null']
                               state:
-                                description: For domestic addresses, use USPS two-digit
+                                description: 'For domestic addresses, use USPS two-digit
                                   state code.
+
+                                  '
                                 type: [string, 'null']
                               countyCode:
                                 description: 'Properties countyCode and county are
                                   mutually exclusive.  Use countyCode when the source
-
                                   system provides a two-character code.  If the source
-                                  is the actual County name, then use
-
-                                  the county property.
+                                  is the actual County name, then use the county property.
 
                                   '
                                 type: [string, 'null']
                               county:
                                 description: 'Properties countyCode and county are
                                   mutually exclusive.  Use countyCode when the source
-
                                   system provides a two-character code.  If the source
-                                  is the actual County name, then use
-
-                                  the county property.
+                                  is the actual County name, then use the county property.
 
                                   '
                                 type: [string, 'null']
                               townshipCode:
                                 description: 'Properties townshipCode and township
                                   are mutually exclusive.  Use townshipCode when the
-                                  source
-
-                                  system provides a two-character code.  If the source
-                                  is the actual Township name, then use
-
+                                  source system provides a two-character code.  If
+                                  the source is the actual Township name, then use
                                   the township property.
 
                                   '
@@ -267,18 +281,23 @@ paths:
                               township:
                                 description: 'Properties townshipCode and township
                                   are mutually exclusive.  Use townshipCode when the
-                                  source
-
-                                  system provides a two-character code.  If the source
-                                  is the actual Township name, then use
-
+                                  source system provides a two-character code.  If
+                                  the source is the actual Township name, then use
                                   the township property.
 
                                   '
                                 type: [string, 'null']
                               postalCode:
+                                description: 'The USPS postal code, also known as
+                                  the zip code.  Should be in the format ##### or
+                                  #####-#### (zip plus four).
+
+                                  '
                                 type: [string, 'null']
                               country:
+                                description: 'The name of the country.
+
+                                  '
                                 type: [string, 'null']
                           Agent:
                             description: A model for an agent or representative of
@@ -467,29 +486,20 @@ paths:
                               isEndorsement, isExtended, isExcluded, isWaived, inclusions]
                             properties:
                               deductibles:
-                                description: 'Pro-rated portion of the claim which
-                                  is not paid by the insurer. A deductible may apply
-
-                                  to multiple coverages.  Examples:
-
-
-                                  (Home) A deductible may cover COVA, COVB, COVC,
-                                  but only be represented in the
-
-                                  response under COVA
-
-                                  (Renters) or only under COVC
+                                description: 'Pro-rated portion of a potential claim
+                                  which is not paid by the insurer. A deductible may
+                                  apply to a single or multiple coverages, or the
+                                  entire policy.
 
                                   '
                                 type: array
-                                items: {$ref: '#/paths/~1%7BpolicyId%7D/get/responses/200/schema/properties/data/items/properties/locations/items/definitions/Deductible'}
+                                items: {$ref: '#/paths/~1%7BpolicyId%7D/get/responses/200/schema/properties/data/items/properties/locations/items/definitions/Hash'}
                               description: {description: 'A unique label used for
                                   the coverage (ex. Bodily Injury Liability).
 
                                   In POINT, maps to the coverage description.  For
-                                  (Life), contains the plan
-
-                                  description (business name of the plan).
+                                  (Life), contains the plan description (business
+                                  name of the plan).
 
                                   ', type: string}
                               planCode: {description: 'The code used by the host system
@@ -498,9 +508,7 @@ paths:
                                   ', type: string}
                               coverageDetail: {description: '(Life/Annuities) Detail
                                   data which is specific to a life policy or annuity
-                                  contract,
-
-                                  but common accross all such entities.
+                                  contract, but common accross all such entities.
 
                                   ', type: object, $ref: '#/paths/~1%7BpolicyId%7D/get/responses/200/schema/properties/data/items/properties/locations/items/definitions/CoverageDetail-Life'}
                               coverageFlags:
@@ -523,7 +531,7 @@ paths:
                                   - {name: startDate, value: '1776-07-04'}
                                   - {name: endDate, value: '1776-07-04'}
                                 - coverageSchedules:
-                                  - {name: classCode, value: CCCCC}
+                                  - {name: classCode, value: CCCC}
                                   - {name: classCodeDescription, value: CCCC Description}
                                 - coverageSchedules:
                                   - name: Liability
@@ -690,37 +698,48 @@ paths:
                               value: {description: The value of the deductible, type: number}
                           Demographics:
                             description: 'Demographic information associated with
-                              a client; will be null for businesses.
+                              a client; may be null for businesses.
 
                               '
                             required: [gender, genderCode, maritalStatus, maritalStatusCode,
                               dateOfBirth, dateOfDeath, driversLicenseState, driversLicenseNumber]
                             properties:
                               gender:
-                                description: "The gender of the client, if known.\
-                                  \  Either #.gender or #.genderCode is required.\
-                                  \ \n"
-                                enum: [Male, Female, Other, Unknown, 'null']
+                                description: 'The gender of the client, if known.  Either
+                                  #/gender or #/genderCode is required.
+
+                                  '
+                                type: [string, 'null']
+                                enum: [Male, Female, Other, Unknown]
                               genderCode:
                                 description: 'The system code representing the gender.
-                                  Either #.gender or #.genderCode is required.
+                                  Either #/gender or #/genderCode is required.
 
                                   '
                                 type: [string, 'null']
                               maritalStatus:
-                                description: 'Either #.maritalStatus or #.maritalStatusCode
-                                  is required
+                                description: 'A textual representation of the marital
+                                  status. Either #/maritalStatus or #/maritalStatusCode
+                                  is required.
 
                                   '
-                                enum: [Deceased, Estranged, Single, Legally Separated,
-                                  Married, Divorced, Unknown, Widowed, 'null']
-                              maritalStatusCode:
-                                description: The system code representing the marital
-                                  status.
                                 type: [string, 'null']
-                              dateOfBirth: {description: The date of birth of the
-                                  client., type: string, format: date}
+                                enum: [Deceased, Estranged, Single, Legally Separated,
+                                  Married, Divorced, Unknown, Widowed]
+                              maritalStatusCode:
+                                description: 'The system code representing the marital
+                                  status. Either #/maritalStatus or #/maritalStatusCode
+                                  is required.
+
+                                  '
+                                type: [string, 'null']
+                              dateOfBirth: {description: 'The date of birth.
+
+                                  ', type: string, format: date}
                               dateOfDeath:
+                                description: 'The date of death.
+
+                                  '
                                 type: [string, 'null']
                                 format: date
                               driversLicenseState:
@@ -938,9 +957,11 @@ paths:
                             description: Email model
                             required: [emailAddress, emailAddressType]
                             properties:
-                              emailAddress: {type: string}
+                              emailAddress:
+                                type: [string]
                               emailAddressType:
                                 description: Exceed email code values
+                                type: [string]
                                 enum: [CON, INC, INO, OAM, OAS, OTH]
                           FleetDriver:
                             description: '(Commerical) An instance of a fleet driver.
@@ -964,18 +985,12 @@ paths:
                                   license referenced., type: string, format: date}
                               yearOfHire: {type: string}
                           InsuredItem:
-                            description: '(Commercial, Personal) Within any policy
-                              there is a `thing` that is insured. The InsuredItem
-
-                              model covers the business properties associated with
-                              a PolicyDetail
-
-                              including Coverages, Limits, Discounts, and LossHistory.
-                              Physical
-
-                              descriptors of the item are captured as `itemDetails`.
-
-                              '
+                            description: "Policies (or contracts) that insure real\
+                              \ property (personal or commerical vehicle, dwelling,\
+                              \ etc.) against loss, damage or liability have one or\
+                              \ more specific items being insured.  This model describes\
+                              \ said item(s) and any specific properties of that insurance\
+                              \ with regard to that item. \n"
                             required: [coverages, discounts, lossHistory, limits,
                               itemType, itemDetails]
                             properties:
@@ -993,23 +1008,15 @@ paths:
                                 items: {$ref: '#/paths/~1%7BpolicyId%7D/get/responses/200/schema/properties/data/items/properties/locations/items/definitions/Limit'}
                               itemType:
                                 description: 'Property itemDetails will be a defined
-                                  model of type itemType.  These
-
-                                  types are:
-
-
-                                  * Dwelling
-
-                                  * Other
-
-                                  * Structure
-
-                                  * Vehicle
+                                  model of type itemType.
 
                                   '
+                                type: [string]
                                 enum: [Dwelling, Other, Structure, Vehicle]
-                              itemDetails: {description: An instance of an item array.
-                                  See itemType., type: object}
+                              itemDetails: {description: 'An instance of Dwelling,
+                                  Other, Structure or Vehicle.  See itemType.
+
+                                  ', type: object}
                           Interest: {$ref: '#/paths/~1%7BpolicyId%7D~1interests/get/responses/200/schema/properties/data/items'}
                           Billing:
                             description: Billing information for a policy or contract.
@@ -1021,28 +1028,27 @@ paths:
 
                                   '
                                 x-required-in: [rural]
+                                type: [string]
                                 enum: [Direct, Agency, 'null']
-                              paymentMode: {description: 'The Mode of billing/payment,
-                                  i.e. Monthly, Quarterly or Annually.
+                              paymentMode:
+                                description: 'The Mode of billing/payment, i.e. Monthly,
+                                  Quarterly or Annually.
 
-                                  ', type: string}
+                                  '
+                                type: [string]
                           Location:
                             description: 'This object represents a geographical location,
-                              which contains items to be insured, such as
-
-                              dwellings and structures, which are fixed to the location,
-                              and insured items (vehicles, etc.)
-
-                              which MAY or MAY NOT be fixed to the location.
+                              which contains items to be insured, such as dwellings
+                              and structures, which are fixed to the location, and
+                              insured items (vehicles, etc.) which MAY or MAY NOT
+                              be fixed to the location.
 
                               '
                             required: [id, address, acres, typeFarming, ownership]
                             properties:
-                              id: {description: 'The sequence or unit number.  This
-                                  is only valid in the context of
-
-                                  the transaction. Refer to the description property
-                                  for a
+                              id: {description: 'The sequence or unit number. This
+                                  is only valid in the context of the transaction.
+                                  Refer to the description property for a
 
                                   persistent identifier.
 
@@ -1749,10 +1755,7 @@ paths:
                                 type: boolean
                     policyDetails: {description: 'This property contains one or more
                         PolicyDetail-XXX models, each of which contains detail information
-                        for
-
-                        the policy.
-
+                        for the policy.
 
                         There are three PolicyDetail-XXX models:
 
@@ -1816,10 +1819,12 @@ paths:
 
                         '
                       type: [number, 'null']
-                    premium: {description: 'The rolled-up value of the premiums of
-                        the Insurance Lines
+                    premium:
+                      description: 'The rolled-up value of the premiums of the Insurance
+                        Lines.
 
-                        ', type: number}
+                        '
+                      type: [number]
                     billingDetails: {description: 'Details about the billing on this
                         policy.
 
@@ -1869,26 +1874,32 @@ paths:
                     relationshipType, relationshipTypeCode, effectiveDate, expirationDate,
                     address]
                   properties:
-                    rootId: {description: 'The id of the source object.
+                    rootId:
+                      description: 'The id of the source object.
 
-                        ', type: string}
+                        '
+                      type: [string]
                     rootType:
                       description: 'The type of the root object.
 
                         '
+                      type: [string]
                       enum: [Policy, Billing Account, Claim, Membership, Quote, Client]
                     rootTypeCode:
                       description: 'The type code of the root object.
 
                         '
                       type: [string, 'null']
-                    childId: {description: 'The id of the target object
+                    childId:
+                      description: 'The id of the target object
 
-                        ', type: string}
+                        '
+                      type: [string]
                     childType:
                       description: 'The type of the target object.
 
                         '
+                      type: [string]
                       enum: [Policy, Billing Account, Claim, Membership, Quote, Client]
                     childTypeCode:
                       description: 'The type code of the target object.

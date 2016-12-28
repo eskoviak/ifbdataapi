@@ -1,14 +1,15 @@
 description: |
-  This object represents a geographical location, which contains items to be insured, such as
-  dwellings and structures, which are fixed to the location, and insured items (vehicles, etc.)
-  which MAY or MAY NOT be fixed to the location.
+  This object represents a geographical location, which contains items to be insured, such as dwellings and structures, which are fixed to the location, and insured items (vehicles, etc.) which MAY or MAY NOT be fixed to the location.
 required:
-  ['id', 'address', 'acres', 'typeFarming', 'ownership']
+  - 'id'
+  - 'address'
+  - 'acres'
+  - 'typeFarming'
+  - 'ownership'
 properties:
   id:
     description: |
-      The sequence or unit number.  This is only valid in the context of
-      the transaction. Refer to the description property for a
+      The sequence or unit number. This is only valid in the context of the transaction. Refer to the description property for a
       persistent identifier.
     type: string
   address:
@@ -24,4 +25,6 @@ properties:
   ownership:
     description: |
       (Pollution) Indicator whether the location is Owned or Leased
-    enum: ['Leased', 'Owned']
+    enum:
+     - 'Leased'
+     - 'Owned'

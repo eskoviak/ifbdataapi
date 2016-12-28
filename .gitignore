@@ -9,4 +9,5 @@ validate.err
 *.xsl
 *.xpr
 *.ps1
-
+server.js
+/swagger/bundles

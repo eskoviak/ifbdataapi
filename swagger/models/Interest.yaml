@@ -16,10 +16,13 @@ properties:
   rootId:
     description: |
       The id of the source object.
-    type: string
+    type:
+     - 'string'
   rootType:
     description: |
       The type of the root object.
+    type:
+      - 'string'
     enum:
       - 'Policy'
       - 'Billing Account'
@@ -36,10 +39,13 @@ properties:
   childId:
     description: |
       The id of the target object
-    type: string
+    type:
+     - 'string'
   childType:
     description: |
       The type of the target object.
+    type:
+      - 'string'
     enum:
       - 'Policy'
       - 'Billing Account'
