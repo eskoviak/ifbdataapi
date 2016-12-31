@@ -1,0 +1,26 @@
+description: |
+  The ModificationInfo model is used by top level models to allow clients to indicate
+  what modifications are being requested by the operation.
+x-used-by:
+  - 'Policy'
+x-acord-agg-xref:
+  - '#1' : 'ModInfo_type'
+required:
+  - 'referenceId'
+properties:
+  referenceId:
+    description: |
+      This property is an identifier reference to a specific element within the
+      stream.  As used here, this refers to the element that was changed by the
+      client.
+    x-acord-xref:
+      - '#1:@IdRef'
+    type:
+      - 'string'
+  description:
+    description: |
+      Contains the descriptive information about the change.
+    x-acord-xref:
+      -'#1:ChangeDesc'
+    type:
+      - 'string'
