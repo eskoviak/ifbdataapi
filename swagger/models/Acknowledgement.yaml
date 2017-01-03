@@ -1,15 +1,18 @@
 description: |
-  # ICAF-803
-  The acknowledgement model.  This model is used to represent technical information which is returned outside of
-  the business data which currently includes the result code and description.
+  The acknowledgement model.  This model is used to represent technical information which is returned outside of the business data (response payload).
 required:
-  ['code', 'description']
+  - 'code'
+  - 'description'
 properties:
   code:
     description: |
       The code returned from the source system as a result of this transaction.
-    type: ['string', 'null']
+    type:
+      - 'string'
+      - 'null'
   description:
     description: |
       The textual message provided by the source system
-    type: ['string', 'null']
+    type:
+      - 'string'
+      - 'null'

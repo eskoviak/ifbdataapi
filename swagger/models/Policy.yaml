@@ -172,7 +172,7 @@ properties:
       All of the locations which are associated with this policy or contract.
     type: array
     items:
-      $ref: ../definitions.yaml#/definitions/Location
+      $ref: '../definitions.yaml#/definitions/Location'
   policyDetails:
     description:  |
       This property contains one or more PolicyDetail-XXX models, each of which contains detail information for the policy.
