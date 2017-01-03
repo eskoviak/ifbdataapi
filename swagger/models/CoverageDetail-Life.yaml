@@ -1,45 +1,102 @@
 description: |
-  (Life) Condition covered or excluded by a life insurance policy or annuities
-  contract.
+  Condition covered or excluded by a life insurance policy or annuities contract.
 required:
-  ['issueAge', 'type', 'guidelineAnnualPremium', 'deathBenefitOption', 'rateClassification', 'tableRating',
-   'faceAmount', 'annualPremium', 'effectiveDate', 'expirationDate', 'interestCredited']
+  - 'issueAge'
+  - 'type'
+  - 'guidelineAnnualPremium'
+  - 'deathBenefitOption'
+  - 'termLevelYears'
+  - 'rateClassification'
+  - 'tableRating'
+  - 'tableRatingPremiumAmount'
+  - 'flatRatingPremiumAmount'
+  - 'faceAmount'
+  - 'annualPremium'
+  - 'effectiveDate'
+  - 'expirationDate'
+  - 'interestCredited'
+  - 'termInterestRate'
 properties:
   issueAge:
-    description: The age of the insurred at issue
-    type: integer
-  # TODO IS THIS IN THE RIGHT SPOT--Its at the //Life level in the XML
-  # ICAF 808 rename to coverageType
+    description: |
+      The age of the insurred at issue
+    type: number
+    format: integer
   coverageType:
-    description: The type of coverage this is (i.e. base).
+    description: |
+      The type of coverage this is (i.e. base).
     type: string
   guidelineAnnualPremium:
-    description: the annual premium level above which the contract becomes a Modified Endowment Contract.
-    type: ['number', 'null']
+    description: |
+      The annual premium level above which the contract becomes a Modified Endowment Contract.
+    type: 
+      - 'number'
+      - 'null'
   deathBenefitOption:
     description: |
-      Option chosen for this contract which would affect the death proceeds, i.e. increasing, level
-    type: ['string', 'null']
+      Option chosen for this contract which would affect the death proceeds- i.e. increasing- level
+    type: 
+      - 'string'
+      - 'null'
+  termLevelYears:
+    description: |
+      The duration at which the death benefit stops decreasing and remains level.
+    type:
+      - 'number'
+      - 'null'
+    format: integer
   rateClassification:
-    description: Underwriting rateClassification.
-    type: ['string', 'null']
+    description: |
+      Underwriting rateClassification.
+    type:
+      - 'string'
+      - 'null'
   tableRating:
-    description: The permanent table rating used.
-    type: ['string', 'null']
+    description: |
+      The permanent table rating used.
+    type:
+      - 'string'
+      - 'null'
+  tableRatingPremiumAmount:
+    description: |
+      The amount of premium due to the table rating.
+    type:
+      - 'number'
+      - 'null'
+  flatRatingPremiumAmount:
+    description: |
+      The amount of premium due to the flat rating.
+    type:
+      - 'number'
+      - 'null'
   faceAmount:
-    description: The current contractual amount of death benefit for this coverage.
-    type: number
-  annualPremium:
-    description: The annual premium for this coverage.
+    description: |
+      The current contractual amount of death benefit for this coverage.
+    type:
+      - 'number'
+  annualPremium: 
+    description: |
+      The annual premium for this coverage.
     type: number
   effectiveDate:
-    description: The date upon which this coverage is effective.
+    description: |
+      The date upon which this coverage is effective.
     type: string
     format: date
   expirationDate:
-    description: The date upon which this coverage terminates.
+    description: |
+      The date upon which this coverage terminates.
     type: string
     format: date
   interestCredited:
-    description: Thie interest credited on this policy.
-    type: ['number', 'null']
+    description: |
+      The interest credited on this policy.
+    type: 
+      - 'number'
+      - 'null'
+  termInterestRate:
+    description: |
+      The interest rate at which the face amount is commuted.
+    type:
+      - 'number'
+      - 'null'
