@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: 2.0.0
-  title: Policies
+  title: policies
   description: "This is the entry point for policy inquiries.  Policy inquiries are\
     \ supported for the following types of lines of Insurance:\n\n| Personal | Commercial\
     \ | Life |\n| --- | --- | --- |\n| Auto | Farm | Life |\n| Home | Pollution |\

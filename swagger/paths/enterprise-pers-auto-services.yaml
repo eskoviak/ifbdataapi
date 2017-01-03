@@ -1,0 +1,52 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: enterprise-pers-auto-services
+  description: |
+    This API is used to initiate a transfer of automobile insurance coverage from one vehicle to another.  It is intended to provide system and process (See [here]() for a description of this architecure) layer access to a self service front end.
+
+    #### Service Functionality
+    Using the Exceed COM framework, this service orchestrates the necessary calls to the record-keeping system, wrapping th ACORD transactions as necessary.  This exposes the same functionality used by the CSR to effect a change in the covered vehicle.
+
+    #### Performance Expectation
+    TBD
+
+    #### Service Capacity Supported
+    TBD
+
+    #### Suggested Test Scenario
+    TODO:  Get with Scott on this
+
+    #### Service Availability
+    TBD
+
+    #### Service Security
+    TBD
+
+  contact:
+    name: Enterprise Web Services 
+    email: ewsdevelopers@infarmbureau.com
+    url: http://connections/issite/ews/
+
+basePath: /camel
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /PolicyMod:
+    get:
+      summary:  Modifies an auto poicy.
+      description: Used to transfer an auto policy from one vehicle to another
+      produces:
+        - application/xml
+      responses:
+        '200':
+          description: mod response
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/pet'

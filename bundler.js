@@ -1,15 +1,28 @@
 const YAML = require('yaml-js');
 const SwaggerParser = require('swagger-parser');
-const fs = require('fs');
+const fs = require('fs')
 
-const swaggerBundleDir = './swagger/bundles';
-const swaggerDir = './swagger/paths';
-const swaggerIndex = `${swaggerDir}/policies.yaml`;
 
-SwaggerParser.bundle(swaggerIndex,
-  { strictValidation: true, validateSchema: true },
-  (err, api, metadata) => {
-    console.error(err);
-    console.log(YAML.dump(api));
-    fs.writeFile(`${swaggerBundleDir}/policies.yaml`, YAML.dump(api), console.error);
-  });
+const swaggerBundleDir = './swagger/bundles/';
+const swaggerDir = './swagger/paths/';
+const files = ['policies.yaml',
+             'client-accounts.yaml',
+			 'memberships.yaml',
+			 'clients.yaml'
+			 ]
+//var files = fs.readdirSync('./swagger/paths/');
+//console.log(files);
+//return;
+for ( file of files ) {
+    SwaggerParser.bundle(swaggerDir+file,
+      { strictValidation: true, validateSchema: true },
+        (err, api) => {
+		  if (err) throw err;
+          fs.writeFile(swaggerBundleDir+api.info.title+'.yaml', YAML.dump(api),
+		    (err) => {
+			    if (err) throw err;
+				console.log('Bundled:' + api.info.title);
+            });
+	    });
+    };
+  

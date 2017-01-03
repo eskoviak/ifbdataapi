@@ -2,13 +2,6 @@
 description: Coverages, Discounts, Premiums, etc connected with an insurance line
 required: ["detailPart","coverages","deductibles","discounts","premium","insuredItems"]
 properties:
-  # ICAF 774
-  #id:
-  #  description: |
-  #    A globaly unique id. This could be a GUID or a composite of system
-  #    information and policy number but in the latter case MUST not be used to
-  #    infer information about the policy.
-  #  type: string
   detailPart:
     description: The insurance lines for which this model applies
     enum: ['Auto', 'Homeowners', 'Renters', 'Rural']
