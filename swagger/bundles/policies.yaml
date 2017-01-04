@@ -30,7 +30,9 @@ paths:
       - {$ref: '#/parameters/PolicyId'}
       responses:
         '200':
-          description: Success
+          description: 'Success:  Includes the source return codes: `SU-1000`, `TE-1005`
+
+            '
           schema:
             type: object
             properties:
