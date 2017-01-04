@@ -79,5 +79,7 @@ definitions:
     $ref: ./models/Vehicle.yaml
   VehicleDriver:
     $ref: ./models/VehicleDriver.yaml
+#  VehicleTransfer:
+#    $ref: ../xml/VehicleTransfer_And_VehicleQuestionsChange.xml
   YesNoChoice:
     $ref: ./models/YesNoChoice.yaml

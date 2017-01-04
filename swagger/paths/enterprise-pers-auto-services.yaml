@@ -8,6 +8,8 @@ info:
     #### Service Functionality
     Using the Exceed COM framework, this service orchestrates the necessary calls to the record-keeping system, wrapping th ACORD transactions as necessary.  This exposes the same functionality used by the CSR to effect a change in the covered vehicle.
 
+    ![Vehicle Transfer](http://connections/issite/ews/SiteAssets/sd-Vehicle%20Transfer%20Overview.png)
+
     #### Performance Expectation
     TBD
 
@@ -33,9 +35,9 @@ schemes:
   - http
   - https
 consumes:
-  - application/json
+  - application/xml
 produces:
-  - application/json
+  - application/xml
 paths:
   /PolicyMod:
     get:
@@ -47,6 +49,5 @@ paths:
         '200':
           description: mod response
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/pet'
+            type: file
+#              $ref: '../definitions.yaml#/definitions/VehicleTransfer'

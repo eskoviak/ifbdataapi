@@ -396,69 +396,130 @@ paths:
                             coverage (to which it only applies).
 
                             '
-                          required: [description, premiumAmount, effectiveDate, expirationDate]
+                          required: [description, ratingFactor, premiumAmount, effectiveDate,
+                            expirationDate]
                           properties:
-                            description: {description: The description of the benefit.,
-                              type: string}
-                            premiumAmount: {description: The amount of the premium
-                                for this benefit., type: number}
-                            effectiveDate: {description: The effective date of this
-                                benefit., type: string, format: date}
+                            description: {description: 'The description of the benefit.
+
+                                ', type: string}
+                            ratingFactor:
+                              description: 'The rating that must be applied to the
+                                standard premium to arrive at the correct premium
+                                for this benefit.  Stored as a percentage (rate).
+
+                                '
+                              type: [number]
+                            premiumAmount: {description: 'The amount of the premium
+                                for this benefit.
+
+                                ', type: number}
+                            effectiveDate: {description: 'The effective date of this
+                                benefit.
+
+                                ', type: string, format: date}
                             expirationDate:
-                              description: The date at which this benefit expires.
+                              description: 'The date at which this benefit expires.
+
+                                '
                               type: [string, 'null']
                               format: date
                         CoverageDetail-Life:
-                          description: '(Life) Condition covered or excluded by a
-                            life insurance policy or annuities
-
-                            contract.
+                          description: 'Condition covered or excluded by a life insurance
+                            policy or annuities contract.
 
                             '
                           required: [issueAge, type, guidelineAnnualPremium, deathBenefitOption,
-                            rateClassification, tableRating, faceAmount, annualPremium,
-                            effectiveDate, expirationDate, interestCredited]
+                            termLevelYears, rateClassification, tableRating, tableRatingPremiumAmount,
+                            flatRatingPremiumAmount, faceAmount, annualPremium, effectiveDate,
+                            expirationDate, interestCredited, termInterestRate]
                           properties:
-                            issueAge: {description: The age of the insurred at issue,
-                              type: integer}
-                            coverageType: {description: The type of coverage this
-                                is (i.e. base)., type: string}
+                            issueAge: {description: 'The age of the insurred at issue
+
+                                ', type: number, format: integer}
+                            coverageType: {description: 'The type of coverage this
+                                is (i.e. base).
+
+                                ', type: string}
                             guidelineAnnualPremium:
-                              description: the annual premium level above which the
+                              description: 'The annual premium level above which the
                                 contract becomes a Modified Endowment Contract.
+
+                                '
                               type: [number, 'null']
                             deathBenefitOption:
                               description: 'Option chosen for this contract which
-                                would affect the death proceeds, i.e. increasing,
+                                would affect the death proceeds- i.e. increasing-
                                 level
 
                                 '
                               type: [string, 'null']
+                            termLevelYears:
+                              description: 'The duration at which the death benefit
+                                stops decreasing and remains level.
+
+                                '
+                              type: [number, 'null']
+                              format: integer
                             rateClassification:
-                              description: Underwriting rateClassification.
+                              description: 'Underwriting rateClassification.
+
+                                '
                               type: [string, 'null']
                             tableRating:
-                              description: The permanent table rating used.
+                              description: 'The permanent table rating used.
+
+                                '
                               type: [string, 'null']
-                            faceAmount: {description: The current contractual amount
-                                of death benefit for this coverage., type: number}
-                            annualPremium: {description: The annual premium for this
-                                coverage., type: number}
-                            effectiveDate: {description: The date upon which this
-                                coverage is effective., type: string, format: date}
-                            expirationDate: {description: The date upon which this
-                                coverage terminates., type: string, format: date}
+                            tableRatingPremiumAmount:
+                              description: 'The amount of premium due to the table
+                                rating.
+
+                                '
+                              type: [number, 'null']
+                            flatRatingPremiumAmount:
+                              description: 'The amount of premium due to the flat
+                                rating.
+
+                                '
+                              type: [number, 'null']
+                            faceAmount:
+                              description: 'The current contractual amount of death
+                                benefit for this coverage.
+
+                                '
+                              type: [number]
+                            annualPremium: {description: 'The annual premium for this
+                                coverage.
+
+                                ', type: number}
+                            effectiveDate: {description: 'The date upon which this
+                                coverage is effective.
+
+                                ', type: string, format: date}
+                            expirationDate: {description: 'The date upon which this
+                                coverage terminates.
+
+                                ', type: string, format: date}
                             interestCredited:
-                              description: Thie interest credited on this policy.
+                              description: 'The interest credited on this policy.
+
+                                '
+                              type: [number, 'null']
+                            termInterestRate:
+                              description: 'The interest rate at which the face amount
+                                is commuted.
+
+                                '
                               type: [number, 'null']
                         Dividend:
                           description: 'Contains the Perm/Universal life policy specific
                             information regarding dividends
 
                             '
-                          required: [dividendOption, totalPaidUpAdditions, paidUpAdditionsCashValue,
-                            dividendsOnDeposit, proRataDividend, terminalDividends,
-                            dividendOnDepositAmount, dividendsOnDepositInterestRate]
+                          required: [dividendOption, totalPaidUpAdditions, oneYearTermAmount,
+                            oneYearTermRefund, paidUpAdditionsCashValue, dividendsOnDeposit,
+                            proRataDividend, terminalDividends, dividendOnDepositAmount,
+                            dividendsOnDepositInterestRate]
                           properties:
                             dividendAmount: {description: 'The amount of the most
                                 recent dividend
@@ -468,6 +529,12 @@ paths:
                               type: string}
                             totalPaidUpAdditions: {description: The total Paid Up
                                 Additions., type: number}
+                            oneYearTermAmount: {description: 'The amount of accumulated
+                                one year term additions
+
+                                ', type: number}
+                            oneYearTermRefund: {description: "The calculated refund\
+                                \ of cost of one year term additions.  \n"}
                             paidUpAdditionsCashValue: {description: the cash value
                                 of all Paid UP Additions (PUA)., type: number}
                             dividendsOnDeposit: {description: The total amount of
@@ -555,20 +622,27 @@ paths:
                             driversLicenseNumber:
                               type: [string, 'null']
                         Discount:
-                          description: A discount that modifies the premium for a
+                          description: 'A discount that modifies the premium for a
                             policy
+
+                            '
                           required: [name, description, appliedDate]
                           properties:
-                            name: {description: The label of the discount, type: string}
-                            description: {description: The description or value of
-                                the discount, type: string}
-                            appliedDate: {description: The date the modifier was first
-                                applied, type: string, format: date}
+                            name: {description: 'The label of the discount
+
+                                ', type: string}
+                            description: {description: 'The description or value of
+                                the discount
+
+                                ', type: string}
+                            appliedDate: {description: 'The date the modifier was
+                                first applied
+
+                                ', type: string, format: date}
                         Dwelling:
                           description: 'Model for Dwelling.  A dwelling is a building
-                            which is inhabited by humans.   For other buildings,
-
-                            use a structure.
+                            which is inhabited by humans.   For other buildings, use
+                            a structure.
 
                             '
                           required: [locationId, item, construction, dwellingType,
@@ -577,39 +651,40 @@ paths:
                             replacementValue, yearOfConstruction]
                           properties:
                             locationId: {description: 'The location Id for the dwelling.  There
-                                MUST be one and only one location
-
-                                for a dwelling, which contains the location specific
-                                information, such as
-
-                                address.  The location(s) are contained in the Policy
-                                model.
+                                MUST be one and only one location for a dwelling,
+                                which contains the location specific information,
+                                such as address.  The location(s) are contained in
+                                the Policy model.
 
                                 ', type: string}
                             item: {description: 'An arbitrary, system assigned item
                                 number within the location dicriminates this structure
-
                                 on a location with multiple structures.
 
                                 '}
-                            construction: {description: the type of construction of
-                                the building, type: string}
+                            construction: {description: 'The type of construction
+                                of the building.
+
+                                ', type: string}
                             dwellingType: {description: 'Type of Dwelling (eg, house,
-                                apartment, condo, townhouse, rowhouse)
+                                apartment, condo, townhouse, rowhouse).
 
                                 ', type: string}
                             exposures:
-                              description: "Exposures are specific risks which have\
-                                \ been identified during the underwriting \nprocess.\n"
+                              description: 'Exposures are specific risks which have
+                                been identified during the underwriting process.
+
+                                '
                               type: [array, 'null']
                               items: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Hash'}
-                            fireProtection: {description: the type of fire protection
-                                of the building, type: string}
+                            fireProtection: {description: 'The type of fire protection
+                                of the building
+
+                                ', type: string}
                             formTypeDescription:
                               description: 'The form type description of the building.  This
-                                is currently a data field which
-
-                                is specific to farm insurance.
+                                is currently a data field which is specific to farm
+                                insurance.
 
                                 '
                               type: string
@@ -617,22 +692,28 @@ paths:
                               - {formTypeDescription: HO-3 PLatinum}
                               - {formTypeDescription: DP}
                             foundation: {description: Foundation Type., type: string}
-                            generalCondition: {type: string}
-                            numberOfFamilies: {description: the number of families
-                                dwelling at this location., type: number}
+                            generalCondition: {description: 'The general condition
+                                of the building.
+
+                                ', type: string}
+                            numberOfFamilies: {description: 'The number of families
+                                dwelling at this location.
+
+                                ', type: number, format: integer}
                             occupancy: {description: 'The type of residence of the
                                 dwelling.  Examples inlcude ''OWNER'', ''RENTED TO
                                 OTHERS''.
 
                                 ', type: string}
                             roofType: {description: Type of roof., type: string}
-                            roofAge: {description: Age of roof in years., type: number}
+                            roofAge: {description: Age of roof in years., type: number,
+                              format: integer}
                             residenceType: {description: The type of residence of
                                 the building., type: string}
                             replacementValue: {description: The cost to replace the
-                                dwelling., type: number}
+                                dwelling., type: number, format: integer}
                             yearOfConstruction: {description: The year the dwelling
-                                was constructed., type: number}
+                                was constructed., type: number, format: integer}
                             supplementalDocuments:
                               description: 'Any documents attached to the policy which
                                 are required for it''s issuance.
