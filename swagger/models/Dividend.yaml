@@ -3,6 +3,8 @@ description: |
 required:
   - 'dividendOption'
   - 'totalPaidUpAdditions'
+  - 'oneYearTermAmount'
+  - 'oneYearTermRefund'
   - 'paidUpAdditionsCashValue'
   - 'dividendsOnDeposit'
   - 'proRataDividend'
