@@ -1,0 +1,82 @@
+swagger: "2.0"
+info:
+  version: 1.0.0 SNAPSHOT
+  title: client-inquiry
+  description:
+    This service is used to find clients in the recordkeeping system which meet several critera.
+
+    The first set of criteria are fixed:
+    
+
+    #### Service Functionality
+    This API is called with a clientId parameter.  If successful, the resultant resource is a
+    JSON oject, based on the Client model. 
+    
+    #### Performance Expectation
+    Standard SLA applies.
+    
+    #### Service Capacity Supported
+    Standard Capacity applies
+    
+    #### Suggested Test Scenario
+    TBD
+    
+    #### Service Availability
+    Standard Service Availability applies
+    
+    #### Service Security
+    HTTPS/SSL
+produces:
+  - application/json
+schemes:
+  - https
+paths:
+  /client-inquiry:
+    post:
+      summary: a Policy
+      parameters:
+        - $ref: "#/parameters/PolicyId"
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: ../definitions.yaml#/definitions/Policy
+        "401":
+          description: Unauthorized or invalid token
+        "404":
+          description: Entity not found
+        "500":
+          description: Server error                  
+  /{policyId}/interests:
+    get:
+      summary: An array of Interest
+      parameters:
+        - $ref: "#/parameters/PolicyId"
+      responses:
+        "200":
+          description: Success
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: ../definitions.yaml#/definitions/Interest
+        "401":
+          description: Unauthorized or invalid token
+        "404":
+          description: Entity not found
+        "500":
+          description: Server error                  
+parameters:
+  PolicyId:
+    name: policyId
+    required: true
+    in: path
+    description: policyId
+    type: string

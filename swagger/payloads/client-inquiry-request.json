@@ -1,0 +1,12 @@
+{  "lastName" : "<string | null>",
+    "firstName" : "<string | null>",
+    "dateOfBirth" : "<string | null>",
+    "taxId" : "<string | null>",
+    "filters" : 
+        [ 
+          {
+            "name" : "<string>",
+            "value" : ["<string>"]
+          }  
+        ]
+}   

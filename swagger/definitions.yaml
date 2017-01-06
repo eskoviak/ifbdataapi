@@ -7,6 +7,10 @@ definitions:
     $ref: ./models/Agent.yaml
   Client:
     $ref: ./models/Client.yaml
+  client-inquiry-request:
+    $ref: ./payloads/client-inquiry-request.json
+  client-search-request:
+    $ref: ./payloads/client-search-request.json
   ClientAccount:
     $ref: ./models/ClientAccount.yaml
   ClientInterest:
