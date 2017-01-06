@@ -242,8 +242,6 @@ properties:
     type:
       - 'number'
   billingDetails:
-    description: |
-      Details about the billing on this policy.
     $ref: '../definitions.yaml#/definitions/Billing'
   policyAssociations:
     description: |

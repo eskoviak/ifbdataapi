@@ -3,7 +3,9 @@ info:
   version: '1.0.0'
   title: enterprise-pers-auto-services
   description: |
-    This API is used to initiate a transfer of automobile insurance coverage from one vehicle to another.  It is intended to provide system and process (See [here]() for a description of this architecure) layer access to a self service front end.
+    This API is used to initiate a transfer of automobile insurance coverage from one vehicle to another.  It is intended to provide system and process layer (See [here](http://connections/issite/iCAF/SitePages/Home.aspx) for a description of this architecure) access to a self service front end.
+
+    This service is built using the Simple Object Access Protocol (SOAP).
 
     #### Service Functionality
     Using the Exceed COM framework, this service orchestrates the necessary calls to the record-keeping system, wrapping th ACORD transactions as necessary.  This exposes the same functionality used by the CSR to effect a change in the covered vehicle.
@@ -28,7 +30,7 @@ info:
   contact:
     name: Enterprise Web Services 
     email: ewsdevelopers@infarmbureau.com
-    url: http://connections/issite/ews/
+    url: http://connections/issite/ews/SitePages/Home.aspx
 
 basePath: /camel
 schemes:
@@ -40,14 +42,44 @@ produces:
   - application/xml
 paths:
   /PolicyMod:
-    get:
-      summary:  Modifies an auto poicy.
+    post:
+      tags:
+        - 'PolicyMod'
+        - 'Policy'
+      summary:  Modifies an auto policy.
       description: Used to transfer an auto policy from one vehicle to another
+      operationId: JavaMethodName
+      consumes:
+        - application/xml
       produces:
         - application/xml
       responses:
         '200':
-          description: mod response
+          description: modification response
           schema:
             type: file
-#              $ref: '../definitions.yaml#/definitions/VehicleTransfer'
+          examples:
+            application/xml: 
+              $ref:  '../../xml/VehicleTransfer_And_VehicleQuestionsChange.xml'
+  /PolicyChangeLimit:
+    post:
+      tags:
+        - 'PolicyChangeLimit'
+        - 'Policy'
+      summary: Changes one or more limits
+      description: Based on some business logic, this changes limits when applicable
+      operationId:  JavaMethodName1
+      consumes:
+        - application/xml
+      produces:
+        - applicaiton/xml
+      externalDocs:
+        description: |
+          Sample Request
+        url: http://connections/issite/ews/SiteAssets/VehicleTransfer_And_VehicleQuestionsChange.xml
+      responses:
+        '200':
+          description: coverage change response
+          schema:
+            type: file
+      

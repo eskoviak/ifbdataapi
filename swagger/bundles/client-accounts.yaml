@@ -227,12 +227,7 @@ paths:
 
                                 '
                               type: [string, 'null']
-                            personName: {description: "The component parts of the\
-                                \ Client name, when the Client represents an individual,\
-                                \ if known.  For individuals, \neither the #.name\
-                                \ or #personName property should be populated.  It\
-                                \ is expected that this property will be null\nfor\
-                                \ organizations.\n", $ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/PersonName'}
+                            personName: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/PersonName'}
                             phoneNumbers:
                               type: array
                               items: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Phone'}
@@ -315,11 +310,7 @@ paths:
                                 that uniquely identifies this coverage.
 
                                 ', type: string}
-                            coverageDetail: {description: '(Life/Annuities) Detail
-                                data which is specific to a life policy or annuity
-                                contract, but common accross all such entities.
-
-                                ', type: object, $ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/CoverageDetail-Life'}
+                            coverageDetail: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/CoverageDetail-Life'}
                             coverageFlags:
                               description: 'This property is an arry of YesNoChoice
                                 models representing coverage options (yes/no choices)
@@ -512,8 +503,8 @@ paths:
                                 '
                               type: [number, 'null']
                         Dividend:
-                          description: 'Contains the Perm/Universal life policy specific
-                            information regarding dividends
+                          description: 'Contains the policy specific information regarding
+                            dividends
 
                             '
                           required: [dividendOption, totalPaidUpAdditions, oneYearTermAmount,
@@ -573,7 +564,8 @@ paths:
                             value: {description: The value of the deductible, type: number}
                         Demographics:
                           description: 'Demographic information associated with a
-                            client; may be null for businesses.
+                            Client or PolicyAssociation Model ; SHOULD be null for
+                            businesses.
 
                             '
                           required: [gender, genderCode, maritalStatus, maritalStatusCode,
@@ -1003,7 +995,7 @@ paths:
                                 persistent identifier.
 
                                 ', type: string}
-                            address: {description: The address of this location, $ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Address'}
+                            address: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Address'}
                             acres: {description: (Farm) The number of acres at this
                                 location, type: number}
                             typeFarming: {description: '(Farm and Pollution) The type
@@ -1080,8 +1072,10 @@ paths:
                             doNotRenew: {description: Membership will not renew after
                                 term date, type: boolean}
                         NonForfeitureProvision:
-                          description: (Life) Describes the non-forfeiture provisions
-                            on a life policy
+                          description: 'Describes the non-forfeiture provisions on
+                            a life policy
+
+                            '
                           properties:
                             reducedPaidUpAmount: {description: unknown., type: number}
                             extendedTermInsuranceAmount: {description: unknown., type: number}
@@ -1174,10 +1168,10 @@ paths:
                               type: [number]
                               format: date
                         PersonName:
-                          description: 'This model contains name details for a person.  It
-                            is based on the ACORD PersonName_Type (PCS)
-
-                            and OLifE/Party/Person (LAH).
+                          description: 'The component parts of the Client name, when
+                            the Client represents an individual, if known.  For individuals,
+                            either the #.name or #personName property should be populated.  It
+                            is expected that this property will be null for organizations.
 
                             '
                           x-used-by: [Client]
@@ -1467,10 +1461,7 @@ paths:
 
                                 '
                               type: [number]
-                            billingDetails: {description: 'Details about the billing
-                                on this policy.
-
-                                ', $ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Billing'}
+                            billingDetails: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Billing'}
                             policyAssociations:
                               description: 'A list of the parties (persons or businesses)
                                 which have an association or interest in the policy,
@@ -1559,10 +1550,7 @@ paths:
                               - PolicyAssociation: {'!...': null, associationType: Beneficiary,
                                   associationSubType: Primary, associationRelationship: Son,
                                   '...!': null}
-                            demographics: {description: 'Information about the party
-                                associated with the policy.
-
-                                ', $ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Demographics'}
+                            demographics: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Demographics'}
                         PolicyDetail-Commercial:
                           description: 'The policy details for a commercial type of
                             insurance.  Currently this covers Farm.
@@ -1652,10 +1640,7 @@ paths:
                                 '
                               type: array
                               items: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Investment'}
-                            dividends: {description: 'The dividend information for
-                                a permanent/universal life policy
-
-                                ', $ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Dividend'}
+                            dividends: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Dividend'}
                             faceAmount: {description: 'The total base face amount
                                 for the policy.
 
@@ -1710,21 +1695,9 @@ paths:
 
                                 '
                               type: [number, 'null']
-                            projectedValues: {description: 'The projected policy values
-                                for a given date.
-
-                                ', type: object, $ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/ProjectedValues'}
-                            nonForfeitureProvision: {description: 'Provisions to prevent
-                                forfeiture of the policy.
-
-                                ', type: object, $ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/NonForfeitureProvision'}
-                            payout: {description: 'When the contract is paid, the
-                                beneficiary(ies) may elect to recieve a recurring
-                                payment or payout.  this
-
-                                model captures that information.
-
-                                ', type: object, $ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Payout'}
+                            projectedValues: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/ProjectedValues'}
+                            nonForfeitureProvision: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/NonForfeitureProvision'}
+                            payout: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Payout'}
                         PolicyDetail-Personal:
                           description: Coverages, Discounts, Premiums, etc connected
                             with an insurance line
@@ -1860,30 +1833,44 @@ paths:
                             valetLevel, classCode, classCodeDescription, territory,
                             ratingTier, unit, costNew, drivers]
                           properties:
-                            address: {description: The address where the vehicle is
-                                garaged, $ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Address'}
+                            address: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Address'}
                             description: {description: 'The vehicle year, make and
-                                model', type: string}
-                            type: {description: 'The type of vehice, such as ''Pickup''
+                                model
 
                                 ', type: string}
-                            vin: {description: Vehicle Identification Number, type: string}
-                            vehicleUse: {description: 'Example, length of commute',
-                              type: string}
+                            type: {description: 'The type of vehicle, such as ''Pickup''
+
+                                ', type: string}
+                            vin: {description: 'Vehicle Identification Number
+
+                                ', type: string}
+                            vehicleUse: {description: 'Example, length of commute
+
+                                ', type: string}
                             valetLevel:
                               type: [string, 'null']
-                            classCode: {description: Vehicle class code, type: string}
-                            classCodeDescription: {description: Vehicle class code
-                                description, type: string}
-                            territory: {description: The territory code where the
-                                vehicle is garaged}
+                            classCode: {description: 'Vehicle class code
+
+                                ', type: string}
+                            classCodeDescription: {description: 'Vehicle class code
+                                description
+
+                                ', type: string}
+                            territory: {description: 'The territory code where the
+                                vehicle is garaged
+
+                                '}
                             ratingTier: {type: number}
-                            unit: {description: Sequence number of vehicle (used with
-                                multiple vehicles), type: number}
+                            unit: {description: 'Sequence number of vehicle (used
+                                with multiple vehicles)
+
+                                ', type: number}
                             costNew: {description: "The MSRP or the stated value of\
                                 \ the vehicle.  \n", type: number}
                             drivers:
-                              description: Array of VehicleDriver.
+                              description: 'Array of VehicleDriver.
+
+                                '
                               type: array
                               items: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/VehicleDriver'}
                         VehicleDriver:
@@ -1943,13 +1930,14 @@ paths:
                                 '
                               x-required-in: [all]
                               type: boolean
-                    phoneNumber: {description: The primary phone number for the Client
-                        Account contact., $ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Phone'}
-                    agentId: {description: 'The id of the agent associated with the
-                        account.
+                    phoneNumber: {$ref: '#/paths/~1%7BclientAccountId%7D~1/get/responses/200/schema/properties/data/items/properties/address/definitions/Phone'}
+                    agentId:
+                      description: 'The id of the agent associated with the account.
 
-                        ', type: string}
-                    agentName: {type: string}
+                        '
+                      type: [string]
+                    agentName:
+                      type: [string]
                     relatedClients:
                       description: 'Array of objects containing relatedClients associated
                         to ClientAccount
@@ -1959,9 +1947,12 @@ paths:
                       items:
                         type: object
                         properties:
-                          clientId: {type: string}
-                          clientAccountRelationship: {type: string}
-                          clientAccountRelationshipCode: {type: string}
+                          clientId:
+                            type: [string]
+                          clientAccountRelationship:
+                            type: [string]
+                          clientAccountRelationshipCode:
+                            type: [string]
         '401': {description: Unauthorized or invalid token}
         '404': {description: Entity not found}
         '500': {description: Server error}

@@ -1,5 +1,5 @@
 description: |
-  Demographic information associated with a client; may be null for businesses.
+  Demographic information associated with a Client or PolicyAssociation Model ; SHOULD be null for businesses.
 required:
   - 'gender'
   - 'genderCode'

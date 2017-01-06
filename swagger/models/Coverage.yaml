@@ -33,9 +33,6 @@ properties:
       The code used by the host system that uniquely identifies this coverage.
     type: string
   coverageDetail:
-    description: |
-      (Life/Annuities) Detail data which is specific to a life policy or annuity contract, but common accross all such entities.
-    type: object
     $ref: '../definitions.yaml#/definitions/CoverageDetail-Life'
   coverageFlags:
     description: |

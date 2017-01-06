@@ -8,7 +8,8 @@ const swaggerDir = './swagger/paths/';
 const files = ['policies.yaml',
              'client-accounts.yaml',
 			 'memberships.yaml',
-			 'clients.yaml'
+			 'clients.yaml',
+			 'enterprise-pers-auto-services.yaml'
 			 ]
 //var files = fs.readdirSync('./swagger/paths/');
 //console.log(files);

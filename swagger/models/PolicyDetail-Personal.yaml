@@ -20,10 +20,6 @@ properties:
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/Discount
-  # ICAF 774    
-  #premium:
-  #  description: Rolled-up value of the premium for the insurance line
-  #  type: number
   insuredItems:
     description: |
       If the policy covers a unit or location, details for it

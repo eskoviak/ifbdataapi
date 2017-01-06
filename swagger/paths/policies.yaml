@@ -56,14 +56,14 @@ paths:
       responses:
         '200':
           description: |
-            Success:  Includes the source return codes: `SU-1000`, `TE-1005`
+            Success--Includes the source return codes: `SU-1000`, `TE-1005`
           schema:
             type: object
             properties:
               data:
                 type: array
                 items:
-                  $ref: '../models/Policy.yaml'
+                  $ref: '../definitions.yaml#/definitions/Policy
         '401':
           description: Unauthorized or invalid token
         '404':
@@ -84,7 +84,7 @@ paths:
               data:
                 type: array
                 items:
-                  $ref: ../models/Interest.yaml
+                  $ref: ../definitions.yaml#/definitions/Interest
         '401':
           description: Unauthorized or invalid token
         '404':

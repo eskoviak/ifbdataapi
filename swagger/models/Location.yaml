@@ -13,7 +13,6 @@ properties:
       persistent identifier.
     type: string
   address:
-    description: The address of this location
     $ref: ../definitions.yaml#/definitions/Address
   acres:
     description: (Farm) The number of acres at this location

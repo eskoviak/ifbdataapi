@@ -84,6 +84,4 @@ properties:
             "...!" : }
         }
   demographics:
-    description: |
-      Information about the party associated with the policy.
     $ref: ../definitions.yaml#/definitions/Demographics
