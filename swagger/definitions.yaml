@@ -37,6 +37,8 @@ definitions:
     $ref: ./models/Investment.yaml
   Email:
     $ref: ./models/Email.yaml
+  filter:
+    $ref: ./payloads/filter.json
   FleetDriver:
     $ref: ./models/FleetDriver.yaml
   InsuredItem:

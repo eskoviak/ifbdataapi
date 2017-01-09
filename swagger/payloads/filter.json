@@ -1,0 +1,11 @@
+{
+   "$schema": "http://json-schema.org/schema#",
+   "title": "Schema for business object filter",
+   "id": "http://infarmbureau.com/schemas/filter.json",
+   "filter" : {
+        "properties" : {
+            "name" : { "type" : "string"},
+            "value" : { "type" : "string"}
+            }
+    }
+}

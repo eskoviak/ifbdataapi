@@ -1,0 +1,18 @@
+{
+   "$schema": "http://json-schema.org/schema#",
+   "title": "Schema for client-inquiry-request",
+   "id": "http://infarmbureau.com/schemas/client-inquiry-request.json",
+   "type" : "object",
+   "properties" : {
+       "firstName" : { "type" : "string" },
+       "lastName" : { "type" : "string" },
+       "dateOfBirth" : { "type" : "string", "format" : "date-time" },
+       "taxId" : { "type" : "string" },
+       "filters" : {
+           "type" : "array",
+           "items": {
+               "$ref" : "..definitions.yaml#/definitions/filter"
+           }
+        }
+    }   
+}      
