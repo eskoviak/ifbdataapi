@@ -1,43 +1,32 @@
-{
-    "$schema": "http://json-schema.org/schema#",
-    "title": "Schema for client-inquiry-response",
-    "id": "http://infarmbureau.com/schemas/client-inquiry-response.json",
-    "data" : {
-        "type" : "array",
-        "items" : {
-            "clients" : {
-                "type" : "array",
-                "items" : {
-                    "id" : {"type" : "string" },
-                    "name" : {"type" : "string" },
-                    "firstName" : {"type" : "string" },
-                    "lastName" : {"type" : "string"},
-                    "dateOfBirth" : { "type" :  "string", "format" : "date" },
-                    "taxId" : { "type" : "string" },
-                    "rootId" : { "type" : "string" },
-                    "type" : { "type" : "string" },
-                    "typeCode" : { "type" : "string" },
-                    "childId" : { "type" : "stirng" }
-                },
-                "required" : [
-                    "id", 
-                    "name",
-                    "firstName",
-                    "lastName",
-                    "dateOfBirth",
-                    "taxId",
-                    "rootId",
-                    "type",
-                    "typeCode",
-                    "childId"
-                ]
+{  
+    "type" : "object",
+    "properties" : {
+        "data" : {
+            "type" : "array",
+            "items" : {
+                "type" : "object",
+                "properties" : {
+                    "clients" : {
+                        "type" : "array",
+                        "items" : {
+                            "type" : "object",
+                            "properties" : {
+                                "id" : {"type" : "string" },
+                                "name" : {"type" : "string" },
+                                "firstName" : {"type" : "string" },
+                                "lastName" : {"type" : "string"},
+                                "dateOfBirth" : { "type" :  "string", "format" : "date" },
+                                "taxId" : { "type" : "string" },
+                                "rootId" : { "type" : "string" },
+                                "type" : { "type" : "string" },
+                                "typeCode" : { "type" : "string" },
+                                "childId" : { "type" : "string" }
+                            }
+                        }
+                    }
+                }
             }
-        },
-        "required" : [
-            "clients"
-        ]
+        }
     },
-    "required": [
-        "data"
-    ]
+    "required" : ["data"]
 }

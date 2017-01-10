@@ -1,0 +1,67 @@
+swagger: '2.0'
+info:
+  version: 1.0.0 SNAPSHOT
+  title: client-inquiry
+  description: |
+
+    This API is used to inquire about clients from the enterprise client record keeping system.  This inquiry consists of two pieces of information:
+
+    1. Some combination of client demographic information:
+    * First Name
+    * Last Name
+    * Date of Birth
+    * Tax ID (SSN)
+    2. A business filter to focus the inquiry.  This filter is an array of name/value pair objects.
+
+    #### Service Functionality
+    This service sits in front of the [process layer](http://connections/issite/iCAF/SitePages/Home.aspx) exposing the inquiry functionality to the experience layer clients.
+    |   |   |
+    | --- | --- |
+    | ![](http://connections/issite/EWS/SiteAssets/experience-client-inquiry.png) | Refer to the figure at the left.  The client uses HTTP POST with the desired query fields in the request body, using JSON format specified.  The Process assembles the data, using the client locator information and the desired filter.  Upon completion of the data gathering process(es), a JSON encoded body is returned as the requested resource.
+
+    #### Performance Expectation
+    TBD
+    
+    #### Service Capacity Supported
+    TBD
+    
+    #### Suggested Test Scenario
+    TBD
+    
+    #### Service Availability
+    TBD
+    
+    #### Service Security
+    TBD
+  contact:
+    name: Enterprise Web Services Team
+    email: EWSDevelopers@infambureau.com
+    url: http://connections/issite/ews/home.aspx
+host:  ap-karafa-dev:8181
+schemes:
+  - 'http'
+  - 'https'
+consumes:
+  - 'application/json'
+produces:
+  - 'application/json'
+paths:
+  /client-inquiry:
+    post:
+      summary: Request client information with multiple parameters
+      description: |
+        Requests a client or client list which meet demographic information and which are filtered by certain business relationships.
+      parameters:
+        - name: client-inquiry-request
+          in: body
+          description: The input parameters in JSON format
+          required: true
+          schema:
+            $ref: '../definitions.yaml#/definitions/client-inquiry-request'
+      responses:
+        '200':
+          description: Success.  The client information with the added business context for the requested relationship(s).
+          schema:
+            $ref: '../definitions.yaml#/definitions/client-inquiry-response'
+        default:
+          description: Failure
