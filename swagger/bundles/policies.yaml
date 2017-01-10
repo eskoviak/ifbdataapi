@@ -859,6 +859,14 @@ paths:
                           description: Exceed email code values
                           type: [string]
                           enum: [CON, INC, INO, OAM, OAS, OTH]
+                    filter:
+                      $schema: http://json-schema.org/schema#
+                      title: Schema for business object filter
+                      id: http://infarmbureau.com/schemas/filter.json
+                      filter:
+                        properties:
+                          name: {type: string}
+                          value: {type: string}
                     FleetDriver:
                       description: '(Commerical) An instance of a fleet driver.
 
