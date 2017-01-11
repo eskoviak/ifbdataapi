@@ -6,18 +6,22 @@ info:
 
     This API is used to inquire about clients from the enterprise client record keeping system.  This inquiry consists of two pieces of information:
 
-    1. Some combination of client demographic information:
+    _Some combination of client demographic information_
+
     * First Name
     * Last Name
     * Date of Birth
     * Tax ID (SSN)
-    2. A business filter to focus the inquiry.  This filter is an array of name/value pair objects.
+
+    _A business filter to focus the inquiry_  
+    * This filter is an array of name/value pair objects
 
     #### Service Functionality
     This service sits in front of the [process layer](http://connections/issite/iCAF/SitePages/Home.aspx) exposing the inquiry functionality to the experience layer clients.
-    |   |   |
-    | --- | --- |
-    | ![](http://connections/issite/EWS/SiteAssets/experience-client-inquiry.png) | Refer to the figure at the left.  The client uses HTTP POST with the desired query fields in the request body, using JSON format specified.  The Process assembles the data, using the client locator information and the desired filter.  Upon completion of the data gathering process(es), a JSON encoded body is returned as the requested resource.
+
+    ![](http://connections/issite/EWS/SiteAssets/experience-client-inquiry.png)
+    
+    The client uses HTTP POST with the desired query fields in the request body, using the JSON format detailed in the request specification.  The Process Layer assembles the data, using the client identifying information and applying the desired filter.  Upon completion of the data gathering process(es), a JSON encoded body is returned as the requested resource.
 
     #### Performance Expectation
     TBD
@@ -36,7 +40,7 @@ info:
   contact:
     name: Enterprise Web Services Team
     email: EWSDevelopers@infambureau.com
-    url: http://connections/issite/ews/home.aspx
+    url: http://connections/issite/ews/SitePages/Home.aspx
 host:  ap-karafa-dev:8181
 schemes:
   - 'http'

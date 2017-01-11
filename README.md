@@ -1,25 +1,11 @@
-# CARE+ / General Policy API
+# Enterprise API Specification Libarary
 
 ## Usage
 
 1. Clone this repository to your computer.
 
-2. Perform an `npm install` to install Gulp and its dependant libraries.
+2. Ensure that the node-js program is installed and available in your repository.
 
-```
-$ npm install
-```
-
-### Gulp commands
-
-`gulp validate` runs the [Swagger Parser](https://www.npmjs.com/package/swagger-parser) validator once.
-
-`gulp watch` watches the main `swagger/swagger.yaml` file for changes
-
-`gulp build` replaces local $ref paths with url-based $refs, converts yaml to
-json, and outputs to the `dist/` folder.
-
-`gulp clean` deletes the contents of the `dist/` folder.
 
 ## Using Swagger Editor
 
@@ -30,17 +16,9 @@ json, and outputs to the `dist/` folder.
 
 ## Swagger Documentation Notes
 
-  >The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
-  >NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
-  >"OPTIONAL" in this document are to be interpreted as described in
-  >[RFC 2119] (https://tools.ietf.org/html/rfc2119).
-
 * All models MUST have a description.
 * Properties of single values SHOULD have a description
-* Properties of collections MAY have a description
-* Sparse properties are properties that do not apply to all model implementations
-* Properties that are sparse MUST be tagged in the description with 
-  appropriate domain descriptions. For example, (Life) or (Personal, Commercial)
+* Properties of collections SHOULD NOT have a description--the editor will use the description from the collection item specification.
 * Primary id properties should be named `id` and be the first element of the
 model.  When referencing a id of another model, prefix with the model name, i.e. _clientId_ when referring to the id property of a Client model
 * Enumerations of strings:  The first letter MUST be capitalized

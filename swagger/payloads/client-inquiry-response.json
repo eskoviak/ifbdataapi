@@ -21,10 +21,23 @@
                                 "type" : { "type" : "string" },
                                 "typeCode" : { "type" : "string" },
                                 "childId" : { "type" : "string" }
-                            }
+                            },
+                            "required" : [
+                                "id",
+                                "name",
+                                "firstName",
+                                "lastName",
+                                "dateOfBirth",
+                                "taxId",
+                                "rootId",
+                                "type",
+                                "typeCode",
+                                "childId"
+                            ]
                         }
                     }
-                }
+                },
+                "required" : ["clients"]
             }
         }
     },

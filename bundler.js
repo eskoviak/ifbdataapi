@@ -1,29 +1,26 @@
-const YAML = require('yaml-js');
-const SwaggerParser = require('swagger-parser');
-const fs = require('fs')
-
-
+/*
+ * Bundler and Validater
+ */
+var Parser = require('swagger-parser');
+var fs = require('fs');
 const swaggerBundleDir = './swagger/bundles/';
 const swaggerDir = './swagger/paths/';
-const files = ['policies.yaml',
-             'client-accounts.yaml',
-			 'memberships.yaml',
-			 'clients.yaml',
-			 'enterprise-pers-auto-services.yaml'
-			 ]
-//var files = fs.readdirSync('./swagger/paths/');
-//console.log(files);
-//return;
-for ( file of files ) {
-    SwaggerParser.bundle(swaggerDir+file,
-      { strictValidation: true, validateSchema: true },
-        (err, api) => {
-		  if (err) throw err;
-          fs.writeFile(swaggerBundleDir+api.info.title+'.yaml', YAML.dump(api),
-		    (err) => {
-			    if (err) throw err;
-				console.log('Bundled:' + api.info.title);
-            });
-	    });
-    };
-  
+
+// build the list of .yaml files and pass to validation and bundling
+fs.readdir(swaggerDir,
+(err, files) => {
+	files
+		.filter( file => { return file.substr(-5) === '.yaml';})
+		.forEach( file => { Parser.validate(swaggerDir+file, 
+							(err, api) => {
+								if (err) {
+									console.log(err.name + ' in '+err.message);
+								} else {
+									console.log('API %s is valid', api.info.title);
+									fs.writeFile(swaggerBundleDir+api.info.title+'.yaml',
+										require('yaml-js').dump(api),
+										console.log('API %s had been bundled', api.info.title));
+								}
+							})
+		});
+});  
