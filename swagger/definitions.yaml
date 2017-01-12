@@ -9,6 +9,10 @@ definitions:
     $ref: ./models/Client.yaml
   ClientAccount:
     $ref: ./models/ClientAccount.yaml
+  client-inquiry-request:
+    $ref: ./payloads/client-inquiry-request.json
+  client-inquiry-response:
+    $ref: ./payloads/client-inquiry-response.json
   ClientInterest:
     $ref: ./models/ClientInterest.yaml
   Coverage:
@@ -81,7 +85,5 @@ definitions:
     $ref: ./models/Vehicle.yaml
   VehicleDriver:
     $ref: ./models/VehicleDriver.yaml
-#  VehicleTransfer:
-#    $ref: ../xml/VehicleTransfer_And_VehicleQuestionsChange.xml
   YesNoChoice:
     $ref: ./models/YesNoChoice.yaml
