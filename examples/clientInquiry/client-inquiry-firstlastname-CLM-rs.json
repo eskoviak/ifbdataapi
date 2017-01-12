@@ -1,0 +1,56 @@
+{
+  "data": [
+    {
+      "clients": [
+        {
+          "id": "KVWM4RSFF030CLTCTCN3",
+          "name": "MATTHEW WHITE",
+          "firstName": "MATTHEW",
+          "lastName": "WHITE",
+          "dateOfBirth": "1997-08-28",
+          "taxId": "817-37-5555",
+          "rootId": "KVWM4RSFF030CLTCTCN3",
+          "type": "Claim",
+          "typeCode": "CLM",
+          "childId": "Q2XBBGKYZW929CCS7915"
+        },
+        {
+          "id": "KVWM4RSFF030CLTCTCN3",
+          "name": "MATTHEW WHITE",
+          "firstName": "MATTHEW",
+          "lastName": "WHITE",
+          "dateOfBirth": "1997-08-28",
+          "taxId": "817-37-5555",
+          "rootId": "KVWM4RSFF030CLTCTCN3",
+          "type": "Claim",
+          "typeCode": "CLM",
+          "childId": "Q2XBBGKYZW929CCS7915"
+        },
+        {
+          "id": "KVWM4RSFF030CLTCTCN3",
+          "name": "MATTHEW WHITE",
+          "firstName": "MATTHEW",
+          "lastName": "WHITE",
+          "dateOfBirth": "1997-08-28",
+          "taxId": "817-37-5555",
+          "rootId": "KVWM4RSFF030CLTCTCN3",
+          "type": "Claim",
+          "typeCode": "CLM",
+          "childId": "Q2XBBGKYZW929CCS7915"
+        },
+        {
+          "id": "KVWM4RSFF030CLTCTCN3",
+          "name": "MATTHEW WHITE",
+          "firstName": "MATTHEW",
+          "lastName": "WHITE",
+          "dateOfBirth": "1997-08-28",
+          "taxId": "817-37-5555",
+          "rootId": "KVWM4RSFF030CLTCTCN3",
+          "type": "Claim",
+          "typeCode": "CLM",
+          "childId": "7PB4SJRXDC749CCS0348"
+        }
+      ]
+    }
+  ]
+}

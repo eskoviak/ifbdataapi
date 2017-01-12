@@ -1,0 +1,16 @@
+{
+  "lastName" : "BABER",
+  "firstName" : null,
+  "dateOfBirth" : null,
+  "taxId" : null,
+  "filters" : [
+    {
+      "name" : "businessObject",
+      "value" : "MEMB"
+    },
+    {
+      "name" : "businessObject",
+      "value" : "MESL"
+    }
+  ]
+}

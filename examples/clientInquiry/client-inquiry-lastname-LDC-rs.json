@@ -1,0 +1,176 @@
+{
+  "data": [
+    {
+      "clients": [
+        {
+          "id": "A8KV6ZSFF030CLTCTCN3",
+          "name": "ASHLEY BABER",
+          "firstName": "ASHLEY",
+          "lastName": "BABER",
+          "dateOfBirth": "1992-07-06",
+          "taxId": "812-38-5662",
+          "rootId": "AAHV6ZSFF030CLTCTCN3",
+          "type": "Membership",
+          "typeCode": "MESL",
+          "childId": "ME  1002573293"
+        },
+        {
+          "id": "OST48BQFF030CLTCTCN3",
+          "name": "DRENDA K BABER",
+          "firstName": "DRENDA",
+          "lastName": "BABER",
+          "dateOfBirth": "1960-11-29",
+          "taxId": "817-05-5832",
+          "rootId": "OST48BQFF030CLTCTCN3",
+          "type": "Membership",
+          "typeCode": "MEMB",
+          "childId": "ME  0002073591"
+        },
+        {
+          "id": "OST48BQFF030CLTCTCN3",
+          "name": "DRENDA K BABER",
+          "firstName": "DRENDA",
+          "lastName": "BABER",
+          "dateOfBirth": "1960-11-29",
+          "taxId": "817-05-5832",
+          "rootId": "IGY48BQFF030CLTCTCN3",
+          "type": "Membership",
+          "typeCode": "MESL",
+          "childId": "ME  1000009396"
+        },
+        {
+          "id": "QP9DFXN83M00C550735C",
+          "name": "KRISTA ANN BABER",
+          "firstName": "KRISTA",
+          "lastName": "BABER",
+          "dateOfBirth": "1985-08-07",
+          "taxId": "818-15-1186",
+          "rootId": "QP9DFXN83M00C550735C",
+          "type": "Membership",
+          "typeCode": "MEMB",
+          "childId": "ME  0002540305"
+        },
+        {
+          "id": "IGY48BQFF030CLTCTCN3",
+          "name": "RICHARD BABER",
+          "firstName": "RICHARD",
+          "lastName": "BABER",
+          "dateOfBirth": "1928-04-22",
+          "taxId": "819-60-2996",
+          "rootId": "IGY48BQFF030CLTCTCN3",
+          "type": "Membership",
+          "typeCode": "MESL",
+          "childId": "ME  1000009396"
+        },
+        {
+          "id": "AAHV6ZSFF030CLTCTCN3",
+          "name": "LYNETTE BABER",
+          "firstName": "LYNETTE",
+          "lastName": "BABER",
+          "dateOfBirth": "1966-07-12",
+          "taxId": "833-40-6927",
+          "rootId": "AAHV6ZSFF030CLTCTCN3",
+          "type": "Membership",
+          "typeCode": "MESL",
+          "childId": "ME  1002573293"
+        },
+        {
+          "id": "9EZBHSSFF030CLTCTCN3",
+          "name": "MARY LAVERNE BABER",
+          "firstName": "MARY",
+          "lastName": "BABER",
+          "dateOfBirth": "1918-01-09",
+          "taxId": "810-61-0259",
+          "rootId": "9EZBHSSFF030CLTCTCN3",
+          "type": "Membership",
+          "typeCode": "MESL",
+          "childId": "ME  1000007042"
+        },
+        {
+          "id": "Y8JV6ZSFF030CLTCTCN3",
+          "name": "NATALIE BABER",
+          "firstName": "NATALIE",
+          "lastName": "BABER",
+          "dateOfBirth": "1988-09-05",
+          "taxId": "818-10-5363",
+          "rootId": "Y8JV6ZSFF030CLTCTCN3",
+          "type": "Membership",
+          "typeCode": "MEMB",
+          "childId": "ME  0002573291"
+        },
+        {
+          "id": "Y8JV6ZSFF030CLTCTCN3",
+          "name": "NATALIE BABER",
+          "firstName": "NATALIE",
+          "lastName": "BABER",
+          "dateOfBirth": "1988-09-05",
+          "taxId": "818-10-5363",
+          "rootId": "AAHV6ZSFF030CLTCTCN3",
+          "type": "Membership",
+          "typeCode": "MESL",
+          "childId": "ME  1002573293"
+        },
+        {
+          "id": "JAW2V2QFF030CLTCTCN4",
+          "name": "WILLIAM BABER",
+          "firstName": "WILLIAM",
+          "lastName": "BABER",
+          "dateOfBirth": "1960-09-08",
+          "taxId": "838-46-1210",
+          "rootId": "JAW2V2QFF030CLTCTCN4",
+          "type": "Membership",
+          "typeCode": "MEMB",
+          "childId": "ME  0002289680"
+        },
+        {
+          "id": "YVBV6ZSFF030CLTCTCN3",
+          "name": "ROGER BABER",
+          "firstName": "ROGER",
+          "lastName": "BABER",
+          "dateOfBirth": "1963-01-06",
+          "taxId": "835-45-1135",
+          "rootId": "YVBV6ZSFF030CLTCTCN3",
+          "type": "Membership",
+          "typeCode": "MEMB",
+          "childId": "ME  0000363933"
+        },
+        {
+          "id": "YVBV6ZSFF030CLTCTCN3",
+          "name": "ROGER BABER",
+          "firstName": "ROGER",
+          "lastName": "BABER",
+          "dateOfBirth": "1963-01-06",
+          "taxId": "835-45-1135",
+          "rootId": "AAHV6ZSFF030CLTCTCN3",
+          "type": "Membership",
+          "typeCode": "MESL",
+          "childId": "ME  1002573293"
+        },
+        {
+          "id": "F7WBHSSFF030CLTCTCN3",
+          "name": "RICHARD D BABER",
+          "firstName": "RICHARD",
+          "lastName": "BABER",
+          "dateOfBirth": "1921-06-15",
+          "taxId": "836-32-5906",
+          "rootId": "F7WBHSSFF030CLTCTCN3",
+          "type": "Membership",
+          "typeCode": "MEMB",
+          "childId": "ME  0000522663"
+        },
+        {
+          "id": "F7WBHSSFF030CLTCTCN3",
+          "name": "RICHARD D BABER",
+          "firstName": "RICHARD",
+          "lastName": "BABER",
+          "dateOfBirth": "1921-06-15",
+          "taxId": "836-32-5906",
+          "rootId": "9EZBHSSFF030CLTCTCN3",
+          "type": "Membership",
+          "typeCode": "MESL",
+          "childId": "ME  1000007042"
+        }
+      ]
+    }
+  ]
+}

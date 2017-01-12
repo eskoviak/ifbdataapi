@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "clients": [
+        {
+          "id": "Y8JV6ZSFF030CLTCTCN3",
+          "name": "NATALIE BABER",
+          "firstName": "NATALIE",
+          "lastName": "BABER",
+          "dateOfBirth": "1988-09-05",
+          "taxId": "818-10-5363",
+          "rootId": "Y8JV6ZSFF030CLTCTCN3",
+          "type": "Membership",
+          "typeCode": "MEMB",
+          "childId": "ME  0002573291"
+        },
+        {
+          "id": "Y8JV6ZSFF030CLTCTCN3",
+          "name": "NATALIE BABER",
+          "firstName": "NATALIE",
+          "lastName": "BABER",
+          "dateOfBirth": "1988-09-05",
+          "taxId": "818-10-5363",
+          "rootId": "AAHV6ZSFF030CLTCTCN3",
+          "type": "Membership",
+          "typeCode": "MESL",
+          "childId": "ME  1002573293"
+        }
+      ]
+    }
+  ]
+}
