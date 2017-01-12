@@ -12,6 +12,12 @@ info:
 
     ![Vehicle Transfer](http://connections/issite/ews/SiteAssets/sd-Vehicle%20Transfer%20Overview.png)
 
+    #### Known Implementations
+    
+    _Vehicle Transfer_
+
+    [Sample Request XML](http://connections/issite/ews/SiteAssets/VehicleTransfer_And_VehicleQuestionsChange.xml)
+
     #### Performance Expectation
     TBD
 
@@ -53,14 +59,18 @@ paths:
         - application/xml
       produces:
         - application/xml
+      parameters:
+        - name: PolicyModInXML
+          in:  body
+          description: The SOAP XML Request body.
+          required: true
+          schema:
+            type: string
       responses:
         '200':
-          description: modification response
+          description: The SOAP XML Response body.
           schema:
             type: file
-          examples:
-            application/xml: 
-              $ref:  '../../xml/VehicleTransfer_And_VehicleQuestionsChange.xml'
   /PolicyChangeLimit:
     post:
       tags:
@@ -73,10 +83,6 @@ paths:
         - application/xml
       produces:
         - applicaiton/xml
-      externalDocs:
-        description: |
-          Sample Request
-        url: http://connections/issite/ews/SiteAssets/VehicleTransfer_And_VehicleQuestionsChange.xml
       responses:
         '200':
           description: coverage change response
