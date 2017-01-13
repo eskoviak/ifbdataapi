@@ -13,11 +13,10 @@ info:
     * Date of Birth
     * Tax ID (SSN)
 
-    _A business filter to focus the inquiry_  
-    * This filter is an array of name/value pair objects
+    _A business filter to focus the inquiry_: This filter is an array of name/value pair objects.  In the current client record keeping system Exceed), the relationship of a client to a particular policy is termed a 'business object.'   The filter is used to limit the inquiry to one OR more business objects to which the client has a relationship to.
 
     #### Service Functionality
-    This service sits in front of the [process layer](http://connections/issite/iCAF/SitePages/Home.aspx) exposing the inquiry functionality to the experience layer clients.
+    This service sits in front of the [process layer](http://connections/issite/iCAF/SitePages/Home.aspx) exposing the inquiry functionality to the experience layer users.
 
     ![](http://connections/issite/EWS/SiteAssets/experience-client-inquiry.png)
     
@@ -67,7 +66,7 @@ produces:
 paths:
   /client-inquiry:
     post:
-      summary: Request client information with multiple parameters
+      summary: Request client information
       description: |
         Requests a client or client list which meet demographic information and which are filtered by certain business relationships.
       parameters:
@@ -79,7 +78,8 @@ paths:
             $ref: '../definitions.yaml#/definitions/client-inquiry-request'
       responses:
         '200':
-          description: Success.  The client information with the added business context for the requested relationship(s).
+          description: |
+            Success.  The client information with the added business context for the requested relationship(s).
           schema:
             $ref: '../definitions.yaml#/definitions/client-inquiry-response'
         default:

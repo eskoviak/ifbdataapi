@@ -2,29 +2,98 @@ swagger: '2.0'
 info:
   version: 1.0.0 SNAPSHOT
   title: client-inquiry
-  description: "\nThis API is used to inquire about clients from the enterprise client\
-    \ record keeping system.  This inquiry consists of two pieces of information:\n\
-    \n_Some combination of client demographic information_\n\n* First Name\n* Last\
-    \ Name\n* Date of Birth\n* Tax ID (SSN)\n\n_A business filter to focus the inquiry_\
-    \  \n* This filter is an array of name/value pair objects\n\n#### Service Functionality\n\
-    This service sits in front of the [process layer](http://connections/issite/iCAF/SitePages/Home.aspx)\
-    \ exposing the inquiry functionality to the experience layer clients.\n\n![](http://connections/issite/EWS/SiteAssets/experience-client-inquiry.png)\n\
-    \nThe client uses HTTP POST with the desired query fields in the request body,\
-    \ using the JSON format detailed in the request specification.  The Process Layer\
-    \ assembles the data, using the client identifying information and applying the\
-    \ desired filter.  Upon completion of the data gathering process(es), a JSON encoded\
-    \ body is returned as the requested resource.\n\n#### Known Implementations\n\
-    * Life Death Claims (LDC)\n\n_ Sample Claim inquiry using the Client's first/last\
-    \ name_\n\n[JSON Request](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-firstlastname-CLM-rq.json.txt)\
-    \ --> [JSON Response](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-firstlastname-CLM-rs.json.txt)\n\
-    \n_Sample Life Death Claim inquiry using the Client's first/last name_\n\n[JSON\
-    \ Request](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-firstlastname-LDC-rq.json.txt)\
-    \ --> [JSON Response](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-firstlastname-LDC-rs.json.txt)\n\
-    \n_Sample Life Death Claim inquiry using on the Client's last name_\n\n[JSON Request](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-lastname-LDC-rq.json.txt)\
-    \ --> [JSON Response](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-lastname-LDC-rs.json.txt)\n\
-    \n#### Performance Expectation\nTBD\n\n#### Service Capacity Supported\nTBD\n\n\
-    #### Suggested Test Scenario\nTBD\n\n#### Service Availability\nTBD\n\n#### Service\
-    \ Security\nTBD\n"
+  description: '
+
+    This API is used to inquire about clients from the enterprise client record keeping
+    system.  This inquiry consists of two pieces of information:
+
+
+    _Some combination of client demographic information_
+
+
+    * First Name
+
+    * Last Name
+
+    * Date of Birth
+
+    * Tax ID (SSN)
+
+
+    _A business filter to focus the inquiry_: This filter is an array of name/value
+    pair objects.  In the current client record keeping system Exceed), the relationship
+    of a client to a particular policy is termed a ''business object.''   The filter
+    is used to limit the inquiry to one OR more business objects to which the client
+    has a relationship to.
+
+
+    #### Service Functionality
+
+    This service sits in front of the [process layer](http://connections/issite/iCAF/SitePages/Home.aspx)
+    exposing the inquiry functionality to the experience layer users.
+
+
+    ![](http://connections/issite/EWS/SiteAssets/experience-client-inquiry.png)
+
+
+    The client uses HTTP POST with the desired query fields in the request body, using
+    the JSON format detailed in the request specification.  The Process Layer assembles
+    the data, using the client identifying information and applying the desired filter.  Upon
+    completion of the data gathering process(es), a JSON encoded body is returned
+    as the requested resource.
+
+
+    #### Known Implementations
+
+    * Life Death Claims (LDC)
+
+
+    _ Sample Claim inquiry using the Client''s first/last name_
+
+
+    [JSON Request](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-firstlastname-CLM-rq.json.txt)
+    --> [JSON Response](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-firstlastname-CLM-rs.json.txt)
+
+
+    _Sample Life Death Claim inquiry using the Client''s first/last name_
+
+
+    [JSON Request](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-firstlastname-LDC-rq.json.txt)
+    --> [JSON Response](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-firstlastname-LDC-rs.json.txt)
+
+
+    _Sample Life Death Claim inquiry using on the Client''s last name_
+
+
+    [JSON Request](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-lastname-LDC-rq.json.txt)
+    --> [JSON Response](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-lastname-LDC-rs.json.txt)
+
+
+    #### Performance Expectation
+
+    TBD
+
+
+    #### Service Capacity Supported
+
+    TBD
+
+
+    #### Suggested Test Scenario
+
+    TBD
+
+
+    #### Service Availability
+
+    TBD
+
+
+    #### Service Security
+
+    TBD
+
+    '
   contact: {name: Enterprise Web Services Team, email: EWSDevelopers@infambureau.com,
     url: 'http://connections/issite/ews/SitePages/Home.aspx'}
 host: ap-karafa-dev:8181
@@ -34,7 +103,7 @@ produces: [application/json]
 paths:
   /client-inquiry:
     post:
-      summary: Request client information with multiple parameters
+      summary: Request client information
       description: 'Requests a client or client list which meet demographic information
         and which are filtered by certain business relationships.
 
@@ -63,8 +132,10 @@ paths:
                       value: {type: string}
       responses:
         '200':
-          description: Success.  The client information with the added business context
+          description: 'Success.  The client information with the added business context
             for the requested relationship(s).
+
+            '
           schema:
             type: object
             properties:

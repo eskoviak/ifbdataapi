@@ -1,0 +1,214 @@
+swagger: '2.0'
+info:
+  version: 2.0.0 SNAPSHOT
+  title: client-interests
+  description: 'This API is used to get detailed information concerning the client''s
+    interests in policies.
+
+
+    #### Service Functionality
+
+    An interest is a business relationship between the client and a policy (contract),
+    such as the _owner_, _annuitant_, the _insured_ or the _driver_.
+
+
+    The API uses the internal record keeping system identifier to locate the client
+    information.  Additionally, one OR more filters are added to the query to describe
+    the desired relationship.
+
+
+    #### Known Implementations
+
+
+    #### Performance Expectation
+
+    TBD
+
+
+    #### Service Capacity Supported
+
+    TBD
+
+
+    #### Suggested Test Scenario
+
+    TBD
+
+
+    #### Service Availability
+
+    TBD
+
+
+    #### Service Security
+
+    TBD
+
+    '
+  contact: {name: Enterprise Web Services Team, email: EWSDevelopers@infambureau.com,
+    url: 'http://connections/issite/ews/SitePages/Home.aspx'}
+host: ap-karafa-dev:8181
+schemes: [http, https]
+consumes: [application/json]
+produces: [application/json]
+paths:
+  /client-interests:
+    get:
+      summary: Get interests for client
+      description: 'Given the recordkeeping client identifier and filter criteria,
+        provide the collection of intersts which satisfy the query.
+
+        '
+      parameters:
+      - {name: clientId, in: query, description: record keeping system identifier,
+        required: true, type: string}
+      - name: businessObject
+        in: query
+        description: The business object filter.
+        required: false
+        type: array
+        items: {type: string}
+        collectionFormat: multi
+      responses:
+        '200':
+          description: 'Success.
+
+            '
+          schema:
+            description: 'An object which relates two objects via type and id.  Consider
+              two objects, such as Policy and Client.  A policy is owned by a client.  In
+              this case, the root objectType is Policy, with it''s policyId. The child
+              objectType is Client, with it''s clientId.  The relationshipType is
+              owner:  Policy --> Owner --> Client. Note that codes or text may be
+              used to represent the three parts of the Interest.
+
+              '
+            required: [rootId, rootType, rootTypeCode, childId, childType, childTypeCode,
+              relationshipType, relationshipTypeCode, effectiveDate, expirationDate,
+              address]
+            properties:
+              rootId:
+                description: 'The id of the source object.
+
+                  '
+                type: [string]
+              rootType:
+                description: 'The type of the root object.
+
+                  '
+                type: [string]
+                enum: [Policy, Billing Account, Claim, Membership, Quote, Client]
+              rootTypeCode:
+                description: 'The type code of the root object.
+
+                  '
+                type: [string, 'null']
+              childId:
+                description: 'The id of the target object
+
+                  '
+                type: [string]
+              childType:
+                description: 'The type of the target object.
+
+                  '
+                type: [string]
+                enum: [Policy, Billing Account, Claim, Membership, Quote, Client]
+              childTypeCode:
+                description: 'The type code of the target object.
+
+                  '
+                type: [string, 'null']
+              relationshipType: {description: 'The relationship between the root and
+                  target object.
+
+                  ', type: string}
+              relationshipTypeCode:
+                description: 'The code for the relationship between the root and target
+                  object.
+
+                  '
+                type: [string, 'null']
+              effectiveDate: {type: string, format: date}
+              expirationDate:
+                type: [string, 'null']
+                format: date
+              address:
+                description: "Address model--used with various parent objects to describe\
+                  \ the US Postal Service\nlocation. \n"
+                required: [addressType, addressAggregate, street1, street2, city,
+                  state, countyCode, county, townshipCode, township, postalCode, country]
+                properties:
+                  addressType:
+                    description: 'Future use.  If used, SHOULD be set to ''Mailing''.
+
+                      '
+                    type: [string]
+                    enum: [Mailing]
+                  addressAggregate:
+                    description: 'The aggregate address for use when the individual
+                      components are not known.
+
+                      '
+                    type: [string, 'null']
+                  street1:
+                    description: 'First line of the postal address, e.g. 100 Main
+                      St.
+
+                      '
+                    type: [string, 'null']
+                  street2:
+                    description: 'Second line of the postal address, e.g. Unit 100.
+
+                      '
+                    type: [string, 'null']
+                  city:
+                    type: [string, 'null']
+                  state:
+                    description: 'For domestic addresses, use USPS two-digit state
+                      code.
+
+                      '
+                    type: [string, 'null']
+                  countyCode:
+                    description: 'Properties countyCode and county are mutually exclusive.  Use
+                      countyCode when the source system provides a two-character code.  If
+                      the source is the actual County name, then use the county property.
+
+                      '
+                    type: [string, 'null']
+                  county:
+                    description: 'Properties countyCode and county are mutually exclusive.  Use
+                      countyCode when the source system provides a two-character code.  If
+                      the source is the actual County name, then use the county property.
+
+                      '
+                    type: [string, 'null']
+                  townshipCode:
+                    description: 'Properties townshipCode and township are mutually
+                      exclusive.  Use townshipCode when the source system provides
+                      a two-character code.  If the source is the actual Township
+                      name, then use the township property.
+
+                      '
+                    type: [string, 'null']
+                  township:
+                    description: 'Properties townshipCode and township are mutually
+                      exclusive.  Use townshipCode when the source system provides
+                      a two-character code.  If the source is the actual Township
+                      name, then use the township property.
+
+                      '
+                    type: [string, 'null']
+                  postalCode:
+                    description: 'The USPS postal code, also known as the zip code.  Should
+                      be in the format ##### or #####-#### (zip plus four).
+
+                      '
+                    type: [string, 'null']
+                  country:
+                    description: 'The name of the country.
+
+                      '
+                    type: [string, 'null']
+        default: {description: failure}

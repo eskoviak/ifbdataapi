@@ -10,9 +10,11 @@ definitions:
   ClientAccount:
     $ref: ./models/ClientAccount.yaml
   client-inquiry-request:
-    $ref: ./payloads/client-inquiry-request.json
+    $ref: ./schemas/client-inquiry-request.json
   client-inquiry-response:
-    $ref: ./payloads/client-inquiry-response.json
+    $ref: ./schemas/client-inquiry-response.json
+  client-search-request:
+    $ref: ./schemas/client-search-request.json
   ClientInterest:
     $ref: ./models/ClientInterest.yaml
   Coverage:
@@ -42,7 +44,7 @@ definitions:
   Email:
     $ref: ./models/Email.yaml
   filter:
-    $ref: ./payloads/filter.json
+    $ref: ./schemas/filter.json
   FleetDriver:
     $ref: ./models/FleetDriver.yaml
   InsuredItem:
