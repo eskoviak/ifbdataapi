@@ -84,7 +84,7 @@ properties:
       - 'null'
   policyId:
     description: |
-      The identfier of the policy in the record keeping system.  This may or may not be similar to the #.id property, and may or may not contain the #.policyNumber.
+      The identfier of the policy in the record-keeping system.  This may or may not be similar to the #.id property, and may or may not contain the #.policyNumber.
     type:
       - 'string'
       - 'null'

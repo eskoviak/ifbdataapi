@@ -1,14 +1,20 @@
 swagger: '2.0'
-info: {version: 2.0.0, title: memberships, description: "This is the entry point for\
-    \ membership inquiries.\n\n#### Service Functionality:\nThis API is called with\
-    \ a membershipId parameter.  If successful, the resultant resource is a\nJSON\
-    \ oject, based on the Membership model. \n\n#### Performance Expectation:\nStandard\
-    \ SLA applies.\n\n#### Service Capacity Supported:\nStandard Capacity applies\n\
-    \n#### Suggested Test Scenario:\nTBD\n\n#### Service Availability:\nStandard Service\
-    \ Availability applies\n\n#### Service Security:\nHTTPS/SSL\n"}
+info:
+  version: 1.0.0 SNAPSHOT
+  title: memberships
+  description: "This is the entry point for membership inquiries against the record-keeping\
+    \ system.\n\n#### Service Functionality:\nThis API is called with a `membershipId`\
+    \ parameter.  If successful, the resultant resource is a\nJSON oject, based on\
+    \ the Membership model. \n\n#### Performance Expectation:\nStandard SLA applies.\n\
+    \n#### Service Capacity Supported:\nStandard Capacity applies\n\n#### Suggested\
+    \ Test Scenario:\nTBD\n\n#### Service Availability:\nStandard Service Availability\
+    \ applies\n\n#### Service Security:\nHTTPS/SSL\n"
+  contact: {name: Enterprise Web Services Team, email: EWSDevelopers@infambureau.com,
+    url: 'http://connections/issite/ews/SitePages/Home.aspx'}
+host: ap-karafa-dev:8181
 produces: [application/json]
-schemes: [https]
-basePath: /memberships
+schemes: [http, https]
+basePath: /api/memberships
 paths:
   /{membershipId}/:
     get:
@@ -17,8 +23,8 @@ paths:
       x-throttling-tier: Unlimited
       description: Returns a Membership
       parameters:
-      - &id0001 {name: membershipId, required: true, in: path, description: The membershipId
-          or membership number, type: string}
+      - {name: membershipId, required: true, in: path, description: The membership
+          number in the record-keeping system., type: string}
       responses:
         '200':
           description: Successful response
@@ -84,5 +90,3 @@ paths:
         '401': {description: Unauthorized or invalid token}
         '404': {description: Entity not found}
         '500': {description: Server error}
-parameters:
-  MembershipId: *id0001

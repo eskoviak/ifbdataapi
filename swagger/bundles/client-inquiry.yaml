@@ -4,7 +4,7 @@ info:
   title: client-inquiry
   description: '
 
-    This API is used to inquire about clients from the enterprise client record keeping
+    This API is used to inquire about clients from the enterprise client record-keeping
     system.  This inquiry consists of two pieces of information:
 
 
@@ -20,10 +20,10 @@ info:
     * Tax ID (SSN)
 
 
-    _A business filter to focus the inquiry_: This filter is an array of name/value
-    pair objects.  In the current client record keeping system Exceed), the relationship
-    of a client to a particular policy is termed a ''business object.''   The filter
-    is used to limit the inquiry to one OR more business objects to which the client
+    A _business filter to focus the inquiry_: This filter is an array of name/value
+    pair objects.  In the current client record-keeping system (Exceed), the relationship
+    of a client to a particular policy is termed a `business object`.   The filter
+    is used to limit the inquiry to one _OR_ more business objects to which the client
     has a relationship to.
 
 

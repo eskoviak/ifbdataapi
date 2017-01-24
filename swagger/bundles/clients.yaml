@@ -1,15 +1,18 @@
 swagger: '2.0'
 info:
-  version: 2.0.0
+  version: 1.0.0 SNAPSHOT
   title: clients
-  description: "This is the entry point for client inquiries.\n\n#### Service Functionality\n\
-    This API is called with a clientId parameter.  If successful, the resultant resource\
-    \ is a\nJSON oject, based on the Client model.\n\n#### Instance Diagram(s) \n\
-    ![Client](http://connections/issite/ews/SiteAssets/path-clients.png)\n\n#### Performance\
-    \ Expectation\nStandard SLA applies.\n\n#### Service Capacity Supported\nStandard\
-    \ Capacity applies\n\n#### Suggested Test Scenario\nTBD\n\n#### Service Availability\n\
-    Standard Service Availability applies\n\n#### Service Security\nHTTPS/SSL\n"
-  contact: {name: Mary Boscaccia, url: 'http://www.infarmbureau.com', email: mary.Boscacci@infarmbureau.com}
+  description: "This is the entry point for client inquiries against the client record-keeping\
+    \ system (Exceed).\n\n#### Service Functionality\nThis API is called with a `clientId`\
+    \ parameter.  If found, the resultant resource is a JSON oject, based on the Client\
+    \ model.\n\n#### Instance Diagram(s) \n![Client](http://connections/issite/ews/SiteAssets/path-clients.png)\n\
+    \n#### Performance Expectation\nStandard SLA applies.\n\n#### Service Capacity\
+    \ Supported\nStandard Capacity applies\n\n#### Suggested Test Scenario\nTBD\n\n\
+    #### Service Availability\nStandard Service Availability applies\n\n#### Service\
+    \ Security\nHTTPS/SSL\n"
+  contact: {name: Enterprise Web Services Team, email: EWSDevelopers@infambureau.com,
+    url: 'http://connections/issite/ews/SitePages/Home.aspx'}
+host: ap-karafa-dev:8181
 produces: [application/json]
 schemes: [https]
 basePath: /clients
@@ -20,15 +23,15 @@ paths:
       x-scope: api_read
       x-throttling-tier: Unlimited
       summary: Returns a array of Client models identified by the clientId
-      description: 'This process layer service queries the client record keeping system
+      description: 'This process layer service queries the client record-keeping system
         (Exceed) using the submitted parameter (clientId).   A detailed Client is
         returned, if the clientId exists.
 
         '
       produces: [application/json]
       parameters:
-      - &id0001 {name: clientId, required: true, in: path, description: The clientId
-          used to identify the client which is the object of the request., type: string}
+      - {name: clientId, required: true, in: path, description: The clientId used
+          to identify the client which is the object of the request., type: string}
       responses:
         '200':
           description: Success
@@ -37,7 +40,7 @@ paths:
             properties:
               data:
                 type: array
-                items: &id0003
+                items:
                   description: 'A Client object represents a legal entity with a defined
                     relationship to the insurance policy or
 
@@ -50,18 +53,23 @@ paths:
                     a person or an organization).
 
                     '
+                  x-acord-xref:
+                  - {'#1': OLifE.Party}
+                  - {'#2': ACORD}
+                  required: [id, sourceSystemType, sourceSystemTypeCode, name, personName,
+                    phoneNumbers, emailAddresses, taxId, addresses, preferences, demographics]
                   properties:
                     id: {description: A unique identifier for the client, type: string}
                     sourceSystemType:
                       description: "The type of client as recorded on the source system.\
-                        \  Note: either `sourceSystemType` or \n`sourceSystemTypeCode`\
+                        \  Note: either #.sourceSystemType or \n#.sourceSystemTypeCode\
                         \ is required.\n"
                       type: [string, 'null']
                     sourceSystemTypeCode:
                       description: 'The type code of client as recorded on the source
-                        system. Note: either `sourceSystemType`
+                        system. Note: either #.sourceSystemType
 
-                        or `sourceSystemTypeCode` is required.
+                        or #.sourceSystemTypeCode is required.
 
                         '
                       type: [string, 'null']
@@ -73,32 +81,42 @@ paths:
                         would be the `concatenated` name, which is
 
                         stored on the system.  If the individual''s name is to be
-                        modeled as name components, use the `personName`
+                        modeled as name components, use the #.personName
 
                         property.
 
                         '
                       type: [string, 'null']
                     personName:
-                      description: "The component parts of the Client name, when the\
-                        \ Client represents an individual, if known.  For individuals,\
-                        \ \neither  `name` or `personName` property should be populated.\
-                        \  It is expected that this property will be null\nfor organizations.\n"
-                      properties: &id0004
+                      description: 'The component parts of the Client name, when the
+                        Client represents an individual, if known.  For individuals,
+                        either the #.name or #personName property should be populated.  It
+                        is expected that this property will be null for organizations.
+
+                        '
+                      x-used-by: [Client]
+                      x-acord-agg-ref:
+                      - {'#1': 'PersonName_Type:PersonName'}
+                      - {'#2': OLifE/Party/Person}
+                      required: [firstName, middleName, lastName, titlePrefix, nameSuffix]
+                      properties:
                         firstName:
                           description: 'First (or Given) name of the person.
 
                             '
+                          x-acord-xref: ['#1.GivenName (PCS)', '#2.FirstName (LAH)']
                           type: [string, 'null']
                         middleName:
                           description: 'All middle names.
 
                             '
+                          x-acord-xref: ['#1.OtherGivenName', '#2.MiddleName']
                           type: [string, 'null']
                         lastName:
                           description: 'Last name (surname) of the person.
 
                             '
+                          x-acord-xref: ['#1.Surname', '#2.LastName']
                           type: [string, 'null']
                         titlePrefix:
                           description: 'Any phrase to precede the name which is not
@@ -107,14 +125,16 @@ paths:
                             such as Dr. or Mrs.
 
                             '
+                          x-acord-xref: ['#1.TitlePrefix', '#2.Prefix']
                           type: [string, 'null']
                         nameSuffix:
                           description: "Any phrase to succeed the name which is not\
                             \ par tof the actual name, \nsuch as `Jr.` or `III.`\n"
+                          x-acord-xref: ['#1.NameSuffix', '#2.Suffix']
                           type: [string, 'null']
                     phoneNumbers:
                       type: array
-                      items: &id0005
+                      items:
                         description: Phone model
                         properties:
                           phoneNumber: {description: 'The phone number in the ITU-T
@@ -132,13 +152,15 @@ paths:
                           phoneTypeCode: {type: string}
                     emailAddresses:
                       type: array
-                      items: &id0006
+                      items:
                         description: Email model
                         required: [emailAddress, emailAddressType]
                         properties:
-                          emailAddress: {type: string}
+                          emailAddress:
+                            type: [string]
                           emailAddressType:
                             description: Exceed email code values
+                            type: [string]
                             enum: [CON, INC, INO, OAM, OAS, OTH]
                     taxId:
                       description: 'This is a government assigned identifier.  In
@@ -147,10 +169,11 @@ paths:
                         or the Social Security Number (SSN) for and individual.
 
                         '
+                      x-acord-xref: ['#1.GovtID', '#2.TaxIdentity']
                       type: [string, 'null']
                     addresses:
                       type: array
-                      items: &id0002
+                      items: &id0001
                         description: "Address model--used with various parent objects\
                           \ to describe the US Postal Service\nlocation. \n"
                         required: [addressType, addressAggregate, street1, street2,
@@ -158,75 +181,80 @@ paths:
                           postalCode, country]
                         properties:
                           addressType:
-                            description: Future use.  If used, SHOULD be set to 'Mailing'.
+                            description: 'Future use.  If used, SHOULD be set to ''Mailing''.
+
+                              '
+                            type: [string]
                             enum: [Mailing]
-                          addressAggregate: {description: 'The aggregate address for
-                              use when the individual components are not known.
+                          addressAggregate:
+                            description: 'The aggregate address for use when the individual
+                              components are not known.
 
-                              type: [''string'', ''null'']
-
-                              '}
+                              '
+                            type: [string, 'null']
                           street1:
-                            description: First line of the postal address, e.g. 100
+                            description: 'First line of the postal address, e.g. 100
                               Main St.
+
+                              '
                             type: [string, 'null']
                           street2:
-                            description: Second line of the postal address, e.g. Apt
-                              100.
+                            description: 'Second line of the postal address, e.g.
+                              Unit 100.
+
+                              '
                             type: [string, 'null']
                           city:
                             type: [string, 'null']
                           state:
-                            description: For domestic addresses, use USPS two-digit
+                            description: 'For domestic addresses, use USPS two-digit
                               state code.
+
+                              '
                             type: [string, 'null']
                           countyCode:
                             description: 'Properties countyCode and county are mutually
-                              exclusive.  Use countyCode when the source
-
-                              system provides a two-character code.  If the source
-                              is the actual County name, then use
-
-                              the county property.
+                              exclusive.  Use countyCode when the source system provides
+                              a two-character code.  If the source is the actual County
+                              name, then use the county property.
 
                               '
                             type: [string, 'null']
                           county:
                             description: 'Properties countyCode and county are mutually
-                              exclusive.  Use countyCode when the source
-
-                              system provides a two-character code.  If the source
-                              is the actual County name, then use
-
-                              the county property.
+                              exclusive.  Use countyCode when the source system provides
+                              a two-character code.  If the source is the actual County
+                              name, then use the county property.
 
                               '
                             type: [string, 'null']
                           townshipCode:
                             description: 'Properties townshipCode and township are
                               mutually exclusive.  Use townshipCode when the source
-
                               system provides a two-character code.  If the source
-                              is the actual Township name, then use
-
-                              the township property.
+                              is the actual Township name, then use the township property.
 
                               '
                             type: [string, 'null']
                           township:
                             description: 'Properties townshipCode and township are
                               mutually exclusive.  Use townshipCode when the source
-
                               system provides a two-character code.  If the source
-                              is the actual Township name, then use
-
-                              the township property.
+                              is the actual Township name, then use the township property.
 
                               '
                             type: [string, 'null']
                           postalCode:
+                            description: 'The USPS postal code, also known as the
+                              zip code.  Should be in the format ##### or #####-####
+                              (zip plus four).
+
+                              '
                             type: [string, 'null']
                           country:
+                            description: 'The name of the country.
+
+                              '
                             type: [string, 'null']
                     preferences: {description: 'A schemaless object key/value pairs
                         representing Client preferences
@@ -234,37 +262,48 @@ paths:
                         This is used for configuring contact preferences.
 
                         ', type: object}
-                    demographics: &id0007
-                      description: 'Demographic information associated with a client;
-                        will be null for businesses.
+                    demographics:
+                      description: 'Demographic information associated with a Client
+                        or PolicyAssociation Model ; SHOULD be null for businesses.
 
                         '
                       required: [gender, genderCode, maritalStatus, maritalStatusCode,
                         dateOfBirth, dateOfDeath, driversLicenseState, driversLicenseNumber]
                       properties:
                         gender:
-                          description: "The gender of the client, if known.  Either\
-                            \ `gender` or `genderCode` is required. \n"
-                          enum: [Male, Female, Other, Unknown, 'null']
+                          description: 'The gender of the client, if known.  Either
+                            #/gender or #/genderCode is required.
+
+                            '
+                          type: [string, 'null']
+                          enum: [Male, Female, Other, Unknown]
                         genderCode:
                           description: 'The system code representing the gender. Either
-                            `gender` or `genderCode` is required.
+                            #/gender or #/genderCode is required.
 
                             '
                           type: [string, 'null']
                         maritalStatus:
-                          description: 'Either `maritalStatus` or `maritalStatusCode`
-                            is required
+                          description: 'A textual representation of the marital status.
+                            Either #/maritalStatus or #/maritalStatusCode is required.
 
                             '
-                          enum: [Deceased, Estranged, Single, Legally Separated, Married,
-                            Divorced, Unknown, Widowed, 'null']
-                        maritalStatusCode:
-                          description: The system code representing the marital status.
                           type: [string, 'null']
-                        dateOfBirth: {description: The date of birth of the client.,
-                          type: string, format: date}
+                          enum: [Deceased, Estranged, Single, Legally Separated, Married,
+                            Divorced, Unknown, Widowed]
+                        maritalStatusCode:
+                          description: 'The system code representing the marital status.
+                            Either #/maritalStatus or #/maritalStatusCode is required.
+
+                            '
+                          type: [string, 'null']
+                        dateOfBirth: {description: 'The date of birth.
+
+                            ', type: string, format: date}
                         dateOfDeath:
+                          description: 'The date of death.
+
+                            '
                           type: [string, 'null']
                           format: date
                         driversLicenseState:
@@ -280,12 +319,13 @@ paths:
       x-scope: api_read
       x-throttling-tier: Unlimited
       summary: An array of Interests for the given clientId
-      description: This process layer service queries the policy record keeping system,
+      description: This process layer service queries the policy record-keeping system,
         and returns an array of interests (relationships) between the client identified
         by the clientId and insurance objects.
       produces: [application/json]
       parameters:
-      - *id0001
+      - {name: clientId, required: true, in: path, description: The clientId used
+          to identify the client which is the object of the request., type: string}
       responses:
         '200':
           description: Success
@@ -294,52 +334,65 @@ paths:
             properties:
               data:
                 type: array
-                items: &id0008
-                  description: An object which relates two objects via type and id
+                items:
+                  description: 'An object which relates two objects via type and id.  Consider
+                    two objects, such as Policy and Client.  A policy is owned by
+                    a client.  In this case, the root objectType is Policy, with it''s
+                    policyId. The child objectType is Client, with it''s clientId.  The
+                    relationshipType is owner:  Policy --> Owner --> Client. Note
+                    that codes or text may be used to represent the three parts of
+                    the Interest.
+
+                    '
                   required: [rootId, rootType, rootTypeCode, childId, childType, childTypeCode,
                     relationshipType, relationshipTypeCode, effectiveDate, expirationDate,
                     address]
                   properties:
-                    rootId: {description: The id of the source object., type: string}
+                    rootId:
+                      description: 'The id of the source object.
+
+                        '
+                      type: [string]
                     rootType:
-                      description: The type of the root object.
+                      description: 'The type of the root object.
+
+                        '
+                      type: [string]
                       enum: [Policy, Billing Account, Claim, Membership, Quote, Client]
                     rootTypeCode:
-                      description: The type code of the root object.
+                      description: 'The type code of the root object.
+
+                        '
                       type: [string, 'null']
-                    childId: {description: The id of the target object, type: string}
+                    childId:
+                      description: 'The id of the target object
+
+                        '
+                      type: [string]
                     childType:
-                      description: The type of the target object.
+                      description: 'The type of the target object.
+
+                        '
+                      type: [string]
                       enum: [Policy, Billing Account, Claim, Membership, Quote, Client]
                     childTypeCode:
-                      description: The type code of the target object.
+                      description: 'The type code of the target object.
+
+                        '
                       type: [string, 'null']
-                    relationshipType: {description: The relationship between the root
-                        and target object., type: string}
+                    relationshipType: {description: 'The relationship between the
+                        root and target object.
+
+                        ', type: string}
                     relationshipTypeCode:
-                      description: The code for the relationship between the root
+                      description: 'The code for the relationship between the root
                         and target object.
+
+                        '
                       type: [string, 'null']
                     effectiveDate: {type: string, format: date}
                     expirationDate:
                       type: [string, 'null']
                       format: date
-                    address: *id0002
+                    address: *id0001
         '404': {description: Entity not found}
-parameters:
-  ClientId: *id0001
-definitions:
-  Client: *id0003
-  PersonName:
-    description: 'This model contains name details for a person.  It is based on the
-      ACORD PersonName_Type (PCS)
-
-      and OLifE/Party/Person (LAH).
-
-      '
-    properties: *id0004
-  Phone: *id0005
-  Email: *id0006
-  Address: *id0002
-  Demographics: *id0007
-  Interest: *id0008

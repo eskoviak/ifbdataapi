@@ -3,7 +3,7 @@ info:
   version: 2.0.0 SNAPSHOT
   title: client-interests
   description: 'This API is used to get detailed information concerning the client''s
-    interests in policies.
+    interests.
 
 
     #### Service Functionality
@@ -12,12 +12,20 @@ info:
     such as the _owner_, _annuitant_, the _insured_ or the _driver_.
 
 
-    The API uses the internal record keeping system identifier to locate the client
-    information.  Additionally, one OR more filters are added to the query to describe
+    The API uses the internal record-keeping system identifier to locate the client
+    information.  Additionally, one OR more filters MAY be added to the query to describe
     the desired relationship.
 
 
+    The following URI fragment demonstrates the use of the optional _OR_ filter (businessObject):
+
+
+    `.../api/client-interests?clientId=YZZZZZSFF030CLTCTCN3&businessObject=MEMB&businessObject=MESL`
+
+
     #### Known Implementations
+
+    LDC Client Lookup
 
 
     #### Performance Expectation
@@ -60,7 +68,7 @@ paths:
 
         '
       parameters:
-      - {name: clientId, in: query, description: record keeping system identifier,
+      - {name: clientId, in: query, description: record-keeping system identifier,
         required: true, type: string}
       - name: businessObject
         in: query

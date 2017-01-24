@@ -1,12 +1,12 @@
 swagger: "2.0"
 info:
-  version: 2.0.0
+  version: 1.0.0 SNAPSHOT
   title: memberships
   description: |
-    This is the entry point for membership inquiries.
+    This is the entry point for membership inquiries against the record-keeping system.
 
     #### Service Functionality:
-    This API is called with a membershipId parameter.  If successful, the resultant resource is a
+    This API is called with a `membershipId` parameter.  If successful, the resultant resource is a
     JSON oject, based on the Membership model. 
     
     #### Performance Expectation:
@@ -23,11 +23,17 @@ info:
     
     #### Service Security:
     HTTPS/SSL
+  contact:
+    name: Enterprise Web Services Team
+    email: EWSDevelopers@infambureau.com
+    url: http://connections/issite/ews/SitePages/Home.aspx
+host:  ap-karafa-dev:8181
 produces:
   - application/json
 schemes:
+  - http
   - https
-basePath: /memberships
+basePath: /api/memberships
 paths:
   /{membershipId}/:
     get:
@@ -36,7 +42,11 @@ paths:
       x-throttling-tier: Unlimited
       description: Returns a Membership
       parameters:
-        - $ref: "#/parameters/MembershipId"
+        - name: membershipId
+          required: true
+          in: path
+          description: The membership number in the record-keeping system. 
+          type: string 
       responses:
         "200":
           description: Successful response
@@ -53,10 +63,3 @@ paths:
           description: Entity not found
         "500":
           description: Server error
-parameters:
-  MembershipId:
-    name: membershipId
-    required: true
-    in: path
-    description: The membershipId or membership number 
-    type: string    

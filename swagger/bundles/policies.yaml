@@ -104,7 +104,7 @@ paths:
                         '
                       type: [string, 'null']
                     policyId:
-                      description: 'The identfier of the policy in the record keeping
+                      description: 'The identfier of the policy in the record-keeping
                         system.  This may or may not be similar to the #.id property,
                         and may or may not contain the #.policyNumber.
 
@@ -419,8 +419,8 @@ paths:
                           associationRelationship, demographics]
                         properties:
                           clientId:
-                            description: 'The client id from the the client record
-                              keeping system.
+                            description: 'The client id from the the client record-keeping
+                              system.
 
                               '
                             type: [string, 'null']

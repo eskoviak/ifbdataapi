@@ -17,7 +17,7 @@ required:
 properties:
   clientId:
     description: |
-      The client id from the the client record keeping system.
+      The client id from the the client record-keeping system.
     type: 
       - 'string'  
       - 'null'

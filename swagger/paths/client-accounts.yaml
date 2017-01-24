@@ -3,11 +3,10 @@ info:
   version: 2.0.0
   title: client-accounts
   description: |
-    This is the entry point for client account inquiries.
+    This is the entry point for client account inquiries against the record-keeping system.
 
     #### Service Functionality:
-    This API is called with a client account number parameter.  If successful, the resultant resource is a
-    JSON oject, based on the ClientAccount model. 
+    This API is called with a client account number (`clientAccountId`) parameter.  If found, the resultant resource is a JSON oject, based on the ClientAccount model. 
     
     #### Performance Expectation:
     Standard SLA applies.
@@ -23,17 +22,27 @@ info:
     
     #### Service Security:
     HTTPS/SSL
+  
+  contact:
+    name: Enterprise Web Services Team
+    email: EWSDevelopers@infambureau.com
+    url: http://connections/issite/ews/SitePages/Home.aspx
+host:  ap-karafa-dev:8181
 produces:
   - application/json
 schemes:
   - https
 basePath: /client-accounts
 paths:
-  /{clientAccountId}/:
+  /{clientAccountId}:
     get:
       description: Returns a ClientAccount identified by the input parameter.
       parameters:
-        - $ref: "#/parameters/ClientAccountId" 
+        - name: clientAccountId
+          required: true
+          in: path
+          description: The client number as stored in the record-keeping system.
+          type: string   
       responses:
         "200":
           description: Successful response
@@ -50,10 +59,3 @@ paths:
           description: Entity not found
         "500":
           description: Server error
-parameters:
-  ClientAccountId:
-    name: clientAccountId
-    required: true
-    in: path
-    description: The client number as stored in the record keeping system.
-    type: string

@@ -1,21 +1,27 @@
 swagger: '2.0'
-info: {version: 2.0.0, title: client-accounts, description: "This is the entry point\
-    \ for client account inquiries.\n\n#### Service Functionality:\nThis API is called\
-    \ with a client account number parameter.  If successful, the resultant resource\
-    \ is a\nJSON oject, based on the ClientAccount model. \n\n#### Performance Expectation:\n\
+info:
+  version: 2.0.0
+  title: client-accounts
+  description: "This is the entry point for client account inquiries against the record-keeping\
+    \ system.\n\n#### Service Functionality:\nThis API is called with a client account\
+    \ number (`clientAccountId`) parameter.  If found, the resultant resource is a\
+    \ JSON oject, based on the ClientAccount model. \n\n#### Performance Expectation:\n\
     Standard SLA applies.\n\n#### Service Capacity Supported:\nStandard Capacity applies\n\
     \n#### Suggested Test Scenario:\nTBD\n\n#### Service Availability:\nStandard Service\
-    \ Availability applies\n\n#### Service Security:\nHTTPS/SSL\n"}
+    \ Availability applies\n\n#### Service Security:\nHTTPS/SSL\n"
+  contact: {name: Enterprise Web Services Team, email: EWSDevelopers@infambureau.com,
+    url: 'http://connections/issite/ews/SitePages/Home.aspx'}
+host: ap-karafa-dev:8181
 produces: [application/json]
 schemes: [https]
 basePath: /client-accounts
 paths:
-  /{clientAccountId}/:
+  /{clientAccountId}:
     get:
       description: Returns a ClientAccount identified by the input parameter.
       parameters:
-      - &id0001 {name: clientAccountId, required: true, in: path, description: The
-          client number as stored in the record keeping system., type: string}
+      - {name: clientAccountId, required: true, in: path, description: The client
+          number as stored in the record-keeping system., type: string}
       responses:
         '200':
           description: Successful response
@@ -170,5 +176,3 @@ paths:
         '401': {description: Unauthorized or invalid token}
         '404': {description: Entity not found}
         '500': {description: Server error}
-parameters:
-  ClientAccountId: *id0001
