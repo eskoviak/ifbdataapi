@@ -6,7 +6,7 @@ required:
   - 'coverages'
   - 'deductibles'
   - 'discounts'
-  - 'policyFlags'
+  - 'isRated'
   - 'insuredItems'
 properties:
   detailPart:
@@ -35,17 +35,11 @@ properties:
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/Discount
-  policyFlags:
+  isRated:
     description: |
-      A set of flags which are applicable to this policy.
-    type: array
-    items:
-      $ref: ../definitions.yaml#/definitions/YesNoChoice
-    example:
-      # Is Rated flag
-      - [
-          {"choice" : "Is Rated", "state" : true}
-        ]        
+      This indicator is set to true if the policy coverages have been added but not yet underwritten (no premium assigned).
+    type: 
+      - 'boolean'
   insuredItems:
     description: |
       If the policy covers a unit or location, details for it (plus any additional coverages which are specific to that location) are listed as InsuredItems.
