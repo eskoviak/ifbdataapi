@@ -1,11 +1,13 @@
 swagger: '2.0'
 info:
   version: '1.0.0'
-  title: enterprise-pers-auto-services
+  title: pc-persautopolicymod
   description: |
-    This API is used to initiate a transfer of automobile insurance coverage from one vehicle to another.  It is intended to provide system and process layer (See [here](http://connections/issite/iCAF/SitePages/Home.aspx) for a description of this architecure) access to a self service front end.
+    This API is used to initiate a transfer of automobile insurance coverage from one vehicle to another.  It is intended to provide system and process layer (See [here](http://connections/issite/iCAF/SitePages/Home.aspx) for a description of this architecure) access to a self service front end.  The API has been designed to be a framework which is reusable, allowing future personal automobile insurance transactions to be added.
 
-    This service is built using the Simple Object Access Protocol (SOAP).
+    This service is built using the Simple Object Access Protocol (SOAP). (??? maybe nothing here)
+
+    This service is registered on Enterprise Service Bus (ESB) 2.  ???
 
     #### Service Functionality
     Using the Exceed COM framework, this service orchestrates the necessary calls to the record-keeping system, wrapping th ACORD transactions as necessary.  This exposes the same functionality used by the CSR to effect a change in the covered vehicle.
