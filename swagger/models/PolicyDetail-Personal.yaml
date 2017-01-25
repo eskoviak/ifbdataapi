@@ -1,40 +1,54 @@
 # PolicyDetail-Personal
-description: Coverages, Discounts, Premiums, etc connected with an insurance line
-required: ["detailPart","coverages","deductibles","discounts","premium","insuredItems"]
+description: |
+  The detailed information specific to a personal  policy (see property detailPart below).  This includes Coverages, Discounts, Premiums, etc.
+required:
+  - 'detailPart'
+  - 'coverages'
+  - 'deductibles'
+  - 'discounts'
+  - 'policyFlags'
+  - 'insuredItems'
 properties:
-  # ICAF 774
-  #id:
-  #  description: |
-  #    A globaly unique id. This could be a GUID or a composite of system
-  #    information and policy number but in the latter case MUST not be used to
-  #    infer information about the policy.
-  #  type: string
   detailPart:
-    description: The insurance lines for which this model applies
-    enum: ['Auto', 'Homeowners', 'Renters', 'Rural']
+    description: |
+      The insurance lines for which this model applies.
+    enum:
+      - 'Auto'
+      - 'Homeowners'
+      - 'Renters'
+      - 'Rural'
   coverages:
-    description: Coverages set at the insurance line level
+    description: |
+      Coverages set at the insurance line level
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/Coverage
   deductibles:
-    description: Deductibles applied to the Coverages at the insurance line level
+    description: |
+      Deductibles applied to the Coverages at the insurance line level
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/Deductible
   discounts:
-    description: Array of Discount
+    description: |
+      Array of Discount
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/Discount
-  # ICAF 774    
-  #premium:
-  #  description: Rolled-up value of the premium for the insurance line
-  #  type: number
+  policyFlags:
+    description: |
+      A set of flags which are applicable to this policy.
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/YesNoChoice
+    example:
+      # Is Rated flag
+      - [
+          {"choice" : "Is Rated", "state" : true}
+        ]        
   insuredItems:
     description: |
-      If the policy covers a unit or location, details for it
-      (plus any additional coverages) are listed as InsuredItems.
+      If the policy covers a unit or location, details for it (plus any additional coverages which are specific to that location) are listed as InsuredItems.
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/InsuredItem
