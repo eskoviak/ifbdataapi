@@ -44,7 +44,7 @@ produces:
   - application/json
 schemes:
   - https
-basePath: /policies
+basePath: /api/policies
 paths:
   /{policyId}:
     get:

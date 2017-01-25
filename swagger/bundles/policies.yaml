@@ -17,7 +17,7 @@ info:
   contact: {name: Mary Boscaccia, url: 'http://www.infarmbureau.com', email: mary.Boscacci@infarmbureau.com}
 produces: [application/json]
 schemes: [https]
-basePath: /policies
+basePath: /api/policies
 paths:
   /{policyId}:
     get:

@@ -57,6 +57,7 @@ host: ap-karafa-dev:8181
 schemes: [https, http]
 consumes: [application/json]
 produces: [application/json]
+basePath: /api
 paths:
   /client-search:
     post:

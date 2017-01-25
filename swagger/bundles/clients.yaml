@@ -14,8 +14,8 @@ info:
     url: 'http://connections/issite/ews/SitePages/Home.aspx'}
 host: ap-karafa-dev:8181
 produces: [application/json]
-schemes: [https]
-basePath: /clients
+schemes: [http, https]
+basePath: /api/clients
 paths:
   /{clientId}/:
     get:
@@ -31,7 +31,7 @@ paths:
       produces: [application/json]
       parameters:
       - {name: clientId, required: true, in: path, description: The clientId used
-          to identify the client which is the object of the request., type: string}
+          to identify the client in the record-keeping system., type: string}
       responses:
         '200':
           description: Success
@@ -325,7 +325,7 @@ paths:
       produces: [application/json]
       parameters:
       - {name: clientId, required: true, in: path, description: The clientId used
-          to identify the client which is the object of the request., type: string}
+          to identify the client in the record-keeping system., type: string}
       responses:
         '200':
           description: Success

@@ -5,23 +5,26 @@ info:
   description: |
     This is the entry point for membership inquiries against the record-keeping system.
 
-    #### Service Functionality:
+    #### Service Functionality
     This API is called with a `membershipId` parameter.  If successful, the resultant resource is a
-    JSON oject, based on the Membership model. 
-    
-    #### Performance Expectation:
+    JSON oject, based on the Membership model.
+
+    #### Model Diagram
+     ![Membership](http://connections/issite/ews/SiteAssets/Membership%20Model.png)
+
+    #### Performance Expectation
     Standard SLA applies.
     
-    #### Service Capacity Supported:
+    #### Service Capacity Supported
     Standard Capacity applies
     
-    #### Suggested Test Scenario:
+    #### Suggested Test Scenario
     TBD
     
-    #### Service Availability:
+    #### Service Availability
     Standard Service Availability applies
     
-    #### Service Security:
+    #### Service Security
     HTTPS/SSL
   contact:
     name: Enterprise Web Services Team

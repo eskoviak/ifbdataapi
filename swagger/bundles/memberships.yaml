@@ -3,12 +3,13 @@ info:
   version: 1.0.0 SNAPSHOT
   title: memberships
   description: "This is the entry point for membership inquiries against the record-keeping\
-    \ system.\n\n#### Service Functionality:\nThis API is called with a `membershipId`\
+    \ system.\n\n#### Service Functionality\nThis API is called with a `membershipId`\
     \ parameter.  If successful, the resultant resource is a\nJSON oject, based on\
-    \ the Membership model. \n\n#### Performance Expectation:\nStandard SLA applies.\n\
-    \n#### Service Capacity Supported:\nStandard Capacity applies\n\n#### Suggested\
-    \ Test Scenario:\nTBD\n\n#### Service Availability:\nStandard Service Availability\
-    \ applies\n\n#### Service Security:\nHTTPS/SSL\n"
+    \ the Membership model.\n\n#### Model Diagram\n ![Membership](http://connections/issite/ews/SiteAssets/Membership%20Model.png)\n\
+    \n#### Performance Expectation\nStandard SLA applies.\n\n#### Service Capacity\
+    \ Supported\nStandard Capacity applies\n\n#### Suggested Test Scenario\nTBD\n\n\
+    #### Service Availability\nStandard Service Availability applies\n\n#### Service\
+    \ Security\nHTTPS/SSL\n"
   contact: {name: Enterprise Web Services Team, email: EWSDevelopers@infambureau.com,
     url: 'http://connections/issite/ews/SitePages/Home.aspx'}
 host: ap-karafa-dev:8181

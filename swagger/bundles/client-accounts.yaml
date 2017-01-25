@@ -3,18 +3,19 @@ info:
   version: 2.0.0
   title: client-accounts
   description: "This is the entry point for client account inquiries against the record-keeping\
-    \ system.\n\n#### Service Functionality:\nThis API is called with a client account\
+    \ system.\n\n#### Service Functionality\nThis API is called with a client account\
     \ number (`clientAccountId`) parameter.  If found, the resultant resource is a\
-    \ JSON oject, based on the ClientAccount model. \n\n#### Performance Expectation:\n\
-    Standard SLA applies.\n\n#### Service Capacity Supported:\nStandard Capacity applies\n\
-    \n#### Suggested Test Scenario:\nTBD\n\n#### Service Availability:\nStandard Service\
-    \ Availability applies\n\n#### Service Security:\nHTTPS/SSL\n"
+    \ JSON oject, based on the ClientAccount model. \n\n#### Instance Diagram\n![ClientAccount](http://connections/issite/ews/SiteAssets/ClientAccount%20Model.png)\n\
+    \n#### Performance Expectation\nStandard SLA applies.\n\n#### Service Capacity\
+    \ Supported\nStandard Capacity applies\n\n#### Suggested Test Scenario\nTBD\n\n\
+    #### Service Availability:\nStandard Service Availability applies\n\n#### Service\
+    \ Security\nHTTPS/SSL\n"
   contact: {name: Enterprise Web Services Team, email: EWSDevelopers@infambureau.com,
     url: 'http://connections/issite/ews/SitePages/Home.aspx'}
 host: ap-karafa-dev:8181
 produces: [application/json]
-schemes: [https]
-basePath: /client-accounts
+schemes: [http, https]
+basePath: /api/client-accounts
 paths:
   /{clientAccountId}:
     get:
