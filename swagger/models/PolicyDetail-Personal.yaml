@@ -6,7 +6,7 @@ required:
   - 'coverages'
   - 'deductibles'
   - 'discounts'
-  - 'premium'
+  - 'policyFlags'
   - 'insuredItems'
 properties:
   detailPart:
