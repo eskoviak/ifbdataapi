@@ -3,21 +3,19 @@ info:
   version: '1.0.0'
   title: pc-persautopolicymod
   description: |
-    This API is used to initiate a transfer of automobile insurance coverage from one vehicle to another.  It is intended to provide system and process layer (See [here](http://connections/issite/iCAF/SitePages/Home.aspx) for a description of this architecure) access to a self service front end.  The API has been designed to be a framework which is reusable, allowing future personal automobile insurance transactions to be added.
-
-    This service is built using the Simple Object Access Protocol (SOAP). (??? maybe nothing here)
-
-    This service is registered on Enterprise Service Bus (ESB) 2.  ???
+    This API is used to initiate a transfer of automobile insurance coverage from one vehicle to another.  It is intended to provide process layer access (See [here](http://connections/issite/iCAF/SitePages/Home.aspx) for a description of this architecure) to a self service front end.  The API has been designed to be a framework which is reusable, allowing future personal automobile insurance transactions to be added.
 
     #### Service Functionality
-    Using the Exceed COM framework, this service orchestrates the necessary calls to the record-keeping system, wrapping th ACORD transactions as necessary.  This exposes the same functionality used by the CSR to effect a change in the covered vehicle.
+    This service is built on top of the existing Exceed COM framework.  This framework is deployed on the Enterprise Service Bus (ESB); the framework provides a layer of abstraction which exposes the Exceed application via an external API.
+
+    Using the Exceed COM framework, this service orchestrates the necessary calls to the record-keeping system, wrapping the ACORD transactions as necessary.  This exposes the same functionality, to effect a change in the vehicle policy, as would be available to a Customer Service Representative via the exceed application.
 
     ![Vehicle Transfer](http://connections/issite/ews/SiteAssets/sd-Vehicle%20Transfer%20Overview.png)
 
     #### Known Implementations
     
     _Vehicle Transfer_
-
+    ####TODO move samples 
     [Sample Request XML](http://connections/issite/ews/SiteAssets/VehicleTransfer_And_VehicleQuestionsChange.xml)
 
     #### Performance Expectation
