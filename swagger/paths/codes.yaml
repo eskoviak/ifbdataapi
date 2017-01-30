@@ -3,13 +3,13 @@ info:
   version: 1.0.0
   title: codes
   description: |
-    This is the `codes` context for the mapping path.  It provides for an enterprise service to map between system codes and a common code topology.
+    This is the `codes` context for the mapping path.  It exposes for an enterprise service to map between system codes and a common code topology.
 
     #### Service Functionality
     This API micro-service is called with several possible combinations of codes (system/common) and returns a standard JSON response structure which represents the mapping to other related information in the system mapping store.
 
     #### Sequence Diagram
-    ![Mapping](http://connections/issite/ews/SiteAssets/translator%20uc1-3uml@1-19.png)
+    ![Mapping](http://connections/issite/ews/SiteAssets/sd_codes.png)
 
     #### Performance Expectation
     Standard SLA applies.
@@ -34,7 +34,7 @@ produces:
 schemes:
   - http
   - https
-host:  http://ap-karafb-dev:8181
+host:  ap-karafb-dev:8181
 basePath: /api/mappings
 paths:
   /codes:
@@ -65,11 +65,12 @@ paths:
             The value of the common code to be mapped. Either `systemCodeValue` or `commonCodeValue` is required to complete the mapping key. 
           required: false
           type: string
-    responses:
-      '200':
-        description: Success
-        schema:
-      '404':
-        description: Not Found
-      '500':
-        description: Server Error
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: ../definitions.yaml#/definitions/codes_response
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error

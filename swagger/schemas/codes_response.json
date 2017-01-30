@@ -1,4 +1,12 @@
 {
     "type" : "object",
-    
+    "properties" : {
+        "systemCode" : { "type" : "string" },
+        "systemCodeValue" : { "type" : "string" },
+        "systemCodeDescription" : { "type" : "string" },
+        "commonCodeName" : { "type" : "string" },
+        "commonCodeValue" : { "type" : "string" },
+        "commonCodeDescription" : { "type" : "string" }
+    },
+    "required" : ["systemCode", "systemCodeValue", "systemCodeDescription", "commonCodeName", "commonCodeValue", "commonCodeDescription"]
 }

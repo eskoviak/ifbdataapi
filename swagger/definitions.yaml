@@ -11,6 +11,8 @@ definitions:
     $ref: ./models/ClientAccount.yaml
   ClientInterest:
     $ref: ./models/ClientInterest.yaml
+  codes_response:
+    $ref: ./schemas/codes_response.json
   Coverage:
     $ref: ./models/Coverage.yaml
   CoverageBenefit:
