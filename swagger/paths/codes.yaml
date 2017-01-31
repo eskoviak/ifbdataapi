@@ -3,13 +3,13 @@ info:
   version: 1.0.0
   title: codes
   description: |
-    This is the `codes` context for the mapping path.  It exposes for an enterprise service to map between system codes and a common code topology.
+    This is a system layer sevice which exposes an enterprise service to map between system codes and a common code topology.
 
     #### Service Functionality
-    This API micro-service is called with several possible combinations of codes (system/common) and returns a standard JSON response structure which represents the mapping to other related information in the system mapping store.
+    This API is called with several possible combinations of codes (system/common) and returns a standard JSON response structure which represents the mapping to other related information in the system mapping store.
 
     #### Sequence Diagram
-    ![Mapping](http://connections/issite/ews/SiteAssets/sd_codes.png)
+    ![Mapping](http://connections/issite/ews/SiteAssets/sd-codes-mapping.png)
 
     #### Performance Expectation
     Standard SLA applies.
@@ -35,9 +35,9 @@ schemes:
   - http
   - https
 host:  ap-karafb-dev:8181
-basePath: /api/mappings
+basePath: /api
 paths:
-  /codes:
+  /code-mappings:
     get:
       summary: map known code values to common structure
       description: |
