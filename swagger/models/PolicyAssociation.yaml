@@ -4,14 +4,31 @@ description: |
 
   The exact nature of the association is given in the associationType and assoicationSubType properties.
 required:
-  ['clientId', 'name', 'address', 'referenceData', 'associationType', 'associationSubType', 
-   'demographics']
+  - 'clientId'
+  - 'locationId'
+  - 'name'
+  - 'address'
+  - 'referenceData'
+  - 'associationType'
+  - 'associationTypeCode'
+  - 'associationSubType'
+  - 'associationRelationship'
+  - 'demographics'
 properties:
-  # ICAF 809
   clientId:
     description: |
       The client id from the the client record keeping system.
-    type: ['string', 'null']
+    type: 
+      - 'string'  
+      - 'null'
+  locationId:
+    description: |
+      If the interest is tied to a specific location, use this to refer to the Location.Id property.
+    x-used-by:
+      - 'Homeowners'
+    type:
+      - 'string'
+      - 'null'  
   name:
     type: string
   address:
@@ -21,17 +38,51 @@ properties:
       Reference information for this association.  The data in this field could represent a loan number or case
       number in the case of assignee (Life) or PolicyInterest (farm).  It could represent the percentage split 
       for a Beneficiary (Life).
-    type: ['string', 'null']
+    type: 
+      - 'string'  
+      - 'null'
   associationType:
     description: |
-      Description of the type of association:  (Life) Assignee, Beneficiary; (Farm) Policy Interests, Additional Named insured
-    type: string
+      Description of the type of association:  (Life) Assignee, Beneficiary; (Farm) Policy Interests, (Multiple) 
+      Additional Named Insured.  Either #.associationType or #.associationTypeCode must be valued to describe the
+      relationship of this object with the parent Policy.
+    type:
+      - 'string'  
+      - 'null'
+  associationTypeCode:
+    description: |
+      Descriptive code for the type of association:  (Life) Assignee, Beneficiary; (Farm) Policy Interests, (Multiple) 
+      Additional Named Insured.  Either #.associationType or #.associationTypeCode must be valued to describe the
+      relationship of this object with the parent Policy.
+    type:
+      - 'string'  
+      - 'null'
   associationSubType:
     description: |
       Further describes the association to the policy.  In the case of Beneficiary (Life), describes the Beneficiary
       type:  Primary or Contingent.
-    type: ['string', 'null']
-  # ICAF 824
+    type:
+      - 'string'  
+      - 'null'
+  associationRelationship:
+    description: |
+      This field is used to describe the relationship of the Party in this model (PolicyAssociation) to 
+      the parent Policy model.
+    x-used-by:
+      - 'Life'
+      - 'Annuities'
+    type:
+      - 'string'
+      - 'null'
+    example:
+      # Son of the issured who is the primary Beneficiary (partial listing)
+      - { "PolicyAssociation" :
+          { "!..." :,
+            "associationType" : "Beneficiary",
+            "associationSubType" : "Primary",
+            "associationRelationship" : "Son",
+            "...!" : }
+        }
   demographics:
     description: |
       Information about the party associated with the policy.

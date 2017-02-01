@@ -2,9 +2,21 @@ description: |
   Model for Dwelling.  A dwelling is a building which is inhabited by humans.   For other buildings,
   use a structure.
 required:
-  ['locationId', 'item', 'construction', 'dwellingType', 'fireProtection', 'formTypeDescription',
-   'foundation', 'generalCondition', 'numberOfFamilies', 'occupancy', 'roofType', 'roofAge',
-   'residenceType', 'replacementValue', 'generalLossDeductibleAmount', yearOfConstruction']
+  - 'locationId'
+  - 'item'
+  - 'construction'
+  - 'dwellingType'
+  - 'fireProtection'
+  - 'formTypeDescription'
+  - 'foundation'
+  - 'generalCondition'
+  - 'numberOfFamilies'
+  - 'occupancy'
+  - 'roofType'
+  - 'roofAge'
+  - 'residenceType'
+  - 'replacementValue'
+  - 'yearOfConstruction'
 properties:
   locationId:
     description: |
@@ -23,12 +35,13 @@ properties:
     description: |
       Type of Dwelling (eg, house, apartment, condo, townhouse, rowhouse)
     type: string
-# EWS 464 Add exposures
   exposures:
     description: |
       Exposures are specific risks which have been identified during the underwriting 
       process.
-    type: ['array', 'null']
+    type:
+      - 'array'
+      - 'null'
     items:
       $ref: ../definitions.yaml#/definitions/Hash
   fireProtection:
@@ -38,9 +51,11 @@ properties:
     description: |
       The form type description of the building.  This is currently a data field which
       is specific to farm insurance.
-
-      (Commercial) Example:  for a farm dwelling, HO-3 Platinum is a normal home, DP is condo.
     type: string
+    example:
+    # Used in Commercial
+      - {"formTypeDescription" : "HO-3 PLatinum"}   # normal home
+      - {"formTypeDescription" : "DP"}              # Condo 
   foundation:
     description: Foundation Type.
     type: string
@@ -65,12 +80,12 @@ properties:
   replacementValue:
     description: The cost to replace the dwelling.
     type: number
-  # EWS 453 -- Added property
-  generalLossDeductibleAmount:
-    description: |
-      The deductible that applies if there is a loss for which no other coverage
-      specifies a deductible or specific coverage.
-    type: ['number', 'null']
   yearOfConstruction:
     description: The year the dwelling was constructed.
     type: number
+  supplementalDocuments:
+    description: |
+      Any documents attached to the policy which are required for it's issuance.
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/SupplementalDocument    

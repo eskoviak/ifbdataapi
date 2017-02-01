@@ -1,0 +1,22 @@
+description: |
+  This model is used to represent yes or no choices for a business concept--for example:
+  Does this policy have a waived premium  -- no.  These are usually captured as a flag with
+  a true or false state.
+required:
+  ['choice', 'state']
+x-used-by:
+  ['Coverage']
+properties:
+  choice:
+    description: |
+      The business concept for which this choice applies.
+    x-required-in:
+      ['all']
+    type: string
+  state:
+    description: |
+      A boolean (true/false).  True indicates that the concept represented by the choice property
+      is selected or present.  False indicates the opposite.
+    x-required-in:
+      ['all']
+    type: boolean

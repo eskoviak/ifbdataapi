@@ -1,0 +1,62 @@
+description: |
+  This model contains name details for a person.  It is based on the ACORD PersonName_Type (PCS)
+  and OLifE/Party/Person (LAH).
+x-used-by:
+  - 'Client'
+x-acord-agg-ref:
+  - '#1' : 'PersonName_Type:PersonName'
+  - '#2' : 'OLifE/Party/Person'
+required:
+  - 'firstName'
+  - 'middleName'
+  - 'lastName'
+  - 'titlePrefix'
+  - 'nameSuffix'
+properties:
+  firstName:
+    description: |
+      First (or Given) name of the person.
+    x-acord-xref:
+      - '#1.GivenName (PCS)'
+      - '#2.FirstName (LAH)'
+    type:
+      - 'string'
+      - 'null'
+  middleName:
+    description: |
+      All middle names.
+    x-acord-xref:
+      - '#1.OtherGivenName'
+      - '#2.MiddleName'
+    type:
+      - 'string'
+      - 'null'
+  lastName:
+    description: |
+      Last name (surname) of the person.
+    x-acord-xref:
+      - '#1.Surname'
+      - '#2.LastName'
+    type:
+      - 'string'
+      - 'null'
+  titlePrefix:
+    description: |
+      Any phrase to precede the name which is not part of the actual name,
+      such as Dr. or Mrs.
+    x-acord-xref:
+      - '#1.TitlePrefix'
+      - '#2.Prefix'
+    type:
+      - 'string'
+      - 'null'    
+  nameSuffix:
+    description: |
+      Any phrase to succeed the name which is not par tof the actual name, 
+      such as `Jr.` or `III.`
+    x-acord-xref:
+      - '#1.NameSuffix'
+      - '#2.Suffix'
+    type:
+      - 'string'
+      - 'null'

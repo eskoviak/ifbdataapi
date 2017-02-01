@@ -8,4 +8,5 @@ validate.err
 *.xml
 *.xsl
 *.xpr
-dist
+*.ps1
+

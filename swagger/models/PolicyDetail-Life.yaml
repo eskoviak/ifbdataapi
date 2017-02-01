@@ -1,16 +1,46 @@
 description: |
-  (Life) Policy detail model. which is the detail element of an insurance policy.
+  The Policy detail model. which is the detail element of an insurance policy or Annuity 
+  contract.
+x-used-by:
+  - 'Policy'
+x-acord-agg-xref:
+  - '#LAH' : 'OLifE.Holding.Policy.Life'
+  - '#2' : 'OLifE.Holding.Policy.Annuity'  
 required:
-  ['detailPart', 'coverages', 'investments', 'dividends', 'faceAmount', 'netBaseDeathBenefit', 'targetPremiumAmount',
-    'targetPremiumAmountBase', 'totalPremiumsPaidAmount', 'discountedAdvancePremium', 'projectedValues', 'nonForfeitureProvision']
+  - 'detailPart'
+  - 'type'
+  - 'maturityAge'
+  - 'coverages'
+  - 'initialDepositAmount'
+  - 'investments'
+  - 'dividends'
+  - 'faceAmount'
+  - 'netBaseDeathBenefit'
+  - 'targetPremiumAmount'
+  - 'minimumPremiumAmount'
+  - 'targetPremiumAmountBase'
+  - 'lastPremiumDate'
+  - 'totalPremiumsPaidAmount'
+  - 'discountedAdvancePremium'
+  - 'projectedValues'
+  - 'nonForfeitureProvision'
+  - 'payout'
 properties:
   detailPart:
     description: |
       The insurance lines for which this model applies.
-    enum: ['Life', 'Annuity']
+    enum: 
+      - 'Life'
+      - 'Annuity'
   type:
     description: The type of policy this is (i.e. TERM).
     type: string
+  maturityAge:
+    description: |
+      The age of the annuitant at contract maturity.
+    type: 
+      - 'number'
+      - 'null'
   coverages:
     description: |
       An array of the coverages for this policy.  There must be at least one
@@ -18,6 +48,16 @@ properties:
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/Coverage
+  initialDepositAmount:
+    description: |
+      On an Annuity, this represents the estimated or expected portion of an
+      initial lump sum to be made to this contract.  Examples include qualified
+      or non-qualified replacements, Mutual Funds or Certificates of Deposit.
+    x-acord-xref:
+      - '#2.InitDepositAmt'
+    type:
+      - 'number'
+      - 'null'
   investments:
     description: |
       The investment information which is part of this life policy or
@@ -30,34 +70,68 @@ properties:
       The dividend information for a permanent/universal life policy
     $ref: ../definitions.yaml#/definitions/Dividend
   faceAmount:
-    description: The total base face amount for the policy.
+    description: |
+      The total base face amount for the policy.
     type: number
   netBaseDeathBenefit:
-    description: The net death benefit paid on the based coverage of a life insurance policy.
+    description: |
+      The net death benefit paid on the based coverage of a life insurance policy.
     type: number
   targetPremiumAmount:
-    description: The target premium for a Universal Life/Interest Sensitive Life Policy.
-    type: ['number', 'null']
+    description: |
+      The target premium for a Universal Life/Interest Sensitive Life Policy.
+    type:
+      - 'number'
+      - 'null'
+  minimumPremiumAmount:
+    description: |
+      Current No Lapse Guarantee Premium.  At IFB, this is a policy level datum.
+    x-acord-xref:
+      - '#LAH.Coverage.MinPremAmt'
+    type:
+      - 'number'
+      - 'null'
   targetPremiumAmountBase:
-    description: The target premium for all riders on a Universal Life/Interest Sensitive Life Policy.
-    type: ['number', 'null']
+    description: |
+      The target premium for all riders on a Universal Life/Interest Sensitive Life Policy.
+    type:
+      - 'number'
+      - 'null'
+  lastPremiumDate:
+    description: |
+      Date on which last premium payment was applied.  This is a property on OLifE.Holding.Policy.Life only.
+    x-acord-xref:
+      - '#LAH.LastPremDate'
+    type:
+      - 'string'
+    format: date
   totalPremiumsPaidAmount:
-    description: The cumulative premiums paid on the contract since inception.
-    type: ['number', 'null']
+    description: |
+      The cumulative premiums paid on the contract since inception.
+    type:
+      - 'number'
+      - 'null'
   discountedAdvancePremium:
-    description: unknown
-    type: ['number', 'null']
+    description: |
+      Funds, paid in advance, to cover future premium for a specific period.  They are discounted by
+      any future earned interest income, and hence represent a discount to the future premium.  These Funds
+      are not available for load or withdrawl.
+    type:
+      - 'number'
+      - 'null'
   projectedValues:
-    description: The projected policy values for a given date.
+    description: |
+      The projected policy values for a given date.
     type: object
     $ref: ../definitions.yaml#/definitions/ProjectedValues
   nonForfeitureProvision:
-    description: Provisions to prevent forfeiture of the policy.
+    description: |
+      Provisions to prevent forfeiture of the policy.
     type: object
     $ref: ../definitions.yaml#/definitions/NonForfeitureProvision
-  # ELS Removing--this was added in error
-  #policyAssociations:
-  #  description: An array of parties with interests in this policy.
-  #  type: array
-  #  items:
-  #    $ref: ../definitions.yaml#/definitions/PolicyAssociation
+  payout:
+    description: |
+      When the contract is paid, the beneficiary(ies) may elect to recieve a recurring payment or payout.  this
+      model captures that information.
+    type: object
+    $ref: ../definitions.yaml#/definitions/Payout
