@@ -2,66 +2,30 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: pc-persautopolicymod
-  description: 'This API is used to initiate a transfer of automobile insurance coverage
-    from one vehicle to another.  It is intended to provide system and process layer
-    (See [here](http://connections/issite/iCAF/SitePages/Home.aspx) for a description
-    of this architecure) access to a self service front end.  The API has been designed
-    to be a framework which is reusable, allowing future personal automobile insurance
-    transactions to be added.
-
-
-    This service is built using the Simple Object Access Protocol (SOAP). (??? maybe
-    nothing here)
-
-
-    This service is registered on Enterprise Service Bus (ESB) 2.  ???
-
-
-    #### Service Functionality
-
-    Using the Exceed COM framework, this service orchestrates the necessary calls
-    to the record-keeping system, wrapping th ACORD transactions as necessary.  This
-    exposes the same functionality used by the CSR to effect a change in the covered
-    vehicle.
-
-
-    ![Vehicle Transfer](http://connections/issite/ews/SiteAssets/sd-Vehicle%20Transfer%20Overview.png)
-
-
-    #### Known Implementations
-
-
-    _Vehicle Transfer_
-
-
-    [Sample Request XML](http://connections/issite/ews/SiteAssets/VehicleTransfer_And_VehicleQuestionsChange.xml)
-
-
-    #### Performance Expectation
-
-    TBD
-
-
-    #### Service Capacity Supported
-
-    TBD
-
-
-    #### Suggested Test Scenario
-
-    TODO:  Get with Scott on this
-
-
-    #### Service Availability
-
-    TBD
-
-
-    #### Service Security
-
-    TBD
-
-    '
+  description: "This API is used to initiate a transfer of automobile insurance coverage\
+    \ from one vehicle to another.  It is intended to provide process layer access\
+    \ (See [here](http://connections/issite/iCAF/SitePages/Home.aspx) for a description\
+    \ of this architecure) to a self service front end.  The API has been designed\
+    \ to be a framework which is reusable, allowing future personal automobile insurance\
+    \ transactions to be added.\n\n#### Service Functionality\nThis service is built\
+    \ on top of the existing Exceed COM framework and the Enterprise Service Bus (ESB).\
+    \  This framework is deployed on the Enterprise Service Bus (ESB); the framework\
+    \ provides a layer of abstraction which exposes the Exceed application via an\
+    \ external API.\n\nUsing the Exceed COM framework, this service orchestrates the\
+    \ necessary calls to the record-keeping system, wrapping the ACORD transactions\
+    \ as necessary.  This exposes the same functionality, to effect a change in the\
+    \ vehicle policy, as would be available to a Customer Service Representative via\
+    \ the exceed application.\n\n![Vehicle Transfer](http://connections/issite/ews/SiteAssets/sd-pc-persautotransfer.png)\n\
+    \n#### Known Implementations\n_Vehicle Transfer_\n\n#### Example XML\n| Requests\
+    \ | Responses |\n| --- | ---|\n| [Free Form Vehicle Info](http://connections/issite/ews/SiteAssets/pc-persautotransfer/requests/Has_FreeformEnteredVehicleInfo.xml)\
+    \ | [Has Vehicle Questions Change](http://connections/issite/ews/SiteAssets/pc-persautotransfer/requests/Has_VehicleQuestionsChange_NO.xml)\
+    \ |\n| [Has Vehicle Coverge Change](http://connections/issite/ews/SiteAssets/pc-persautotransfer/requests/Has_VehicleCoverageChange.xml)\
+    \ | |\n| [Has Vehicle Interest Change](http://connections/issite/ews/SiteAssets/pc-persautotransfer/requests/Has_VehicleInterestsChange.xml)\
+    \ | |\n| [Has Vehicle Questions Change NO](http://connections/issite/ews/SiteAssets/pc-persautotransfer/requests/Has_VehicleQuestionsChange_NO.xml)\
+    \ | |\n| [Has Vehicle Questions Change YES](http://connections/issite/ews/SiteAssets/pc-persautotransfer/requests/Has_VehicleQuestionsChange_YES.xml)\
+    \ | |\n\n    \n#### Performance Expectation\nTBD\n\n#### Service Capacity Supported\n\
+    TBD\n\n#### Suggested Test Scenario\nTODO:  Get with Scott on this\n\n#### Service\
+    \ Availability\nTBD\n\n#### Service Security\nTBD\n"
   contact: {name: Enterprise Web Services, email: ewsdevelopers@infarmbureau.com,
     url: 'http://connections/issite/ews/SitePages/Home.aspx'}
 basePath: /camel
@@ -69,12 +33,12 @@ schemes: [http, https]
 consumes: [application/xml]
 produces: [application/xml]
 paths:
-  /PolicyMod:
+  /:
     post:
-      tags: [PolicyMod, Policy]
-      summary: Modifies an auto policy.
-      description: Used to transfer an auto policy from one vehicle to another
-      operationId: JavaMethodName
+      summary: SOAP Call to ESB
+      description: 'Exposes a SOAP endpoint for clients to request a vehicle transfer
+
+        '
       consumes: [application/xml]
       produces: [application/xml]
       parameters:
@@ -86,16 +50,4 @@ paths:
       responses:
         '200':
           description: The SOAP XML Response body.
-          schema: {type: file}
-  /PolicyChangeLimit:
-    post:
-      tags: [PolicyChangeLimit, Policy]
-      summary: Changes one or more limits
-      description: Based on some business logic, this changes limits when applicable
-      operationId: JavaMethodName1
-      consumes: [application/xml]
-      produces: [applicaiton/xml]
-      responses:
-        '200':
-          description: coverage change response
           schema: {type: file}

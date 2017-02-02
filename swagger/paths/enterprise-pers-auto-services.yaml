@@ -6,18 +6,25 @@ info:
     This API is used to initiate a transfer of automobile insurance coverage from one vehicle to another.  It is intended to provide process layer access (See [here](http://connections/issite/iCAF/SitePages/Home.aspx) for a description of this architecure) to a self service front end.  The API has been designed to be a framework which is reusable, allowing future personal automobile insurance transactions to be added.
 
     #### Service Functionality
-    This service is built on top of the existing Exceed COM framework.  This framework is deployed on the Enterprise Service Bus (ESB); the framework provides a layer of abstraction which exposes the Exceed application via an external API.
+    This service is built on top of the existing Exceed COM framework and the Enterprise Service Bus (ESB).  This framework is deployed on the Enterprise Service Bus (ESB); the framework provides a layer of abstraction which exposes the Exceed application via an external API.
 
     Using the Exceed COM framework, this service orchestrates the necessary calls to the record-keeping system, wrapping the ACORD transactions as necessary.  This exposes the same functionality, to effect a change in the vehicle policy, as would be available to a Customer Service Representative via the exceed application.
 
-    ![Vehicle Transfer](http://connections/issite/ews/SiteAssets/sd-Vehicle%20Transfer%20Overview.png)
+    ![Vehicle Transfer](http://connections/issite/ews/SiteAssets/sd-pc-persautotransfer.png)
 
     #### Known Implementations
-    
     _Vehicle Transfer_
-    ####TODO move samples 
-    [Sample Request XML](http://connections/issite/ews/SiteAssets/VehicleTransfer_And_VehicleQuestionsChange.xml)
-
+    
+    #### Example XML
+    | Requests | Responses |
+    | --- | ---|
+    | [Free Form Vehicle Info](http://connections/issite/ews/SiteAssets/pc-persautotransfer/requests/Has_FreeformEnteredVehicleInfo.xml) | [Has Vehicle Questions Change](http://connections/issite/ews/SiteAssets/pc-persautotransfer/requests/Has_VehicleQuestionsChange_NO.xml) |
+    | [Has Vehicle Coverge Change](http://connections/issite/ews/SiteAssets/pc-persautotransfer/requests/Has_VehicleCoverageChange.xml) | |
+    | [Has Vehicle Interest Change](http://connections/issite/ews/SiteAssets/pc-persautotransfer/requests/Has_VehicleInterestsChange.xml) | |
+    | [Has Vehicle Questions Change NO](http://connections/issite/ews/SiteAssets/pc-persautotransfer/requests/Has_VehicleQuestionsChange_NO.xml) | |
+    | [Has Vehicle Questions Change YES](http://connections/issite/ews/SiteAssets/pc-persautotransfer/requests/Has_VehicleQuestionsChange_YES.xml) | |
+    
+        
     #### Performance Expectation
     TBD
 
@@ -47,14 +54,11 @@ consumes:
 produces:
   - application/xml
 paths:
-  /PolicyMod:
+  /:
     post:
-      tags:
-        - 'PolicyMod'
-        - 'Policy'
-      summary:  Modifies an auto policy.
-      description: Used to transfer an auto policy from one vehicle to another
-      operationId: JavaMethodName
+      summary:  SOAP Call to ESB
+      description: |
+        Exposes a SOAP endpoint for clients to request a vehicle transfer
       consumes:
         - application/xml
       produces:
@@ -71,21 +75,3 @@ paths:
           description: The SOAP XML Response body.
           schema:
             type: file
-  /PolicyChangeLimit:
-    post:
-      tags:
-        - 'PolicyChangeLimit'
-        - 'Policy'
-      summary: Changes one or more limits
-      description: Based on some business logic, this changes limits when applicable
-      operationId:  JavaMethodName1
-      consumes:
-        - application/xml
-      produces:
-        - applicaiton/xml
-      responses:
-        '200':
-          description: coverage change response
-          schema:
-            type: file
-      
