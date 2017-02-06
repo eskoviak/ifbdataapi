@@ -1,0 +1,12 @@
+{
+    "type" : "object",
+    "properties" : {
+        "filter" : {
+            "type" : "object",
+            "properties" : {
+                "name" : { "type" : "string"},
+                "value" : { "type" : "string"}
+                }
+        }
+    }
+}

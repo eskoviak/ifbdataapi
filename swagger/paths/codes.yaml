@@ -69,7 +69,7 @@ paths:
         '200':
           description: Success
           schema:
-            $ref: ../definitions.yaml#/definitions/codes_response
+            $ref: ../definitions.yaml#/definitions/codes-response
         '404':
           description: Not Found
         '500':
