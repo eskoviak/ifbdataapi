@@ -4,7 +4,7 @@ info:
   title: client-inquiry
   description: |
 
-    This API is used to inquire about clients from the enterprise client record-keeping system.  This inquiry consists of two pieces of information:
+    This [process](http://connections/issite/iCAF/SitePages/Home.aspx) API is used to inquire about clients from the enterprise client record-keeping system.  This inquiry consists of two categories of information:
 
     _Some combination of client demographic information_
 
@@ -16,7 +16,7 @@ info:
     A _business filter to focus the inquiry_: This filter is an array of name/value pair objects.  In the current client record-keeping system (Exceed), the relationship of a client to a particular policy is termed a `business object`.   The filter is used to limit the inquiry to one _OR_ more business objects to which the client has a relationship to.
 
     #### Service Functionality
-    This service sits in front of the [process layer](http://connections/issite/iCAF/SitePages/Home.aspx) exposing the inquiry functionality to the experience layer users.
+    This service sits in the [process layer](http://connections/issite/iCAF/SitePages/Home.aspx) exposing the inquiry functionality to the experience layer users.
 
     #### Sequecnt Diagram
     ![client-inquiry](http://connections/issite/EWS/SiteAssets/experience-client-inquiry.png)
@@ -25,6 +25,15 @@ info:
 
     #### Known Implementations
     * Life Death Claims (LDC)
+    
+    The following demographic information combinations are supported:
+    
+    * Last Name
+    * Last Name, First Name
+    * Last Name, Date of Birth
+    * Tax Id
+
+    The supported business filters are Primary and Select Memberships.
 
     _ Sample Claim inquiry using the Client's first/last name_
    
@@ -70,11 +79,11 @@ paths:
     post:
       summary: Request client information
       description: |
-        Requests a client or client list which meet demographic information and which are filtered by certain business relationships.
+        Requests a client collection resource which match demographic information and optionally are filtered by certain business relationships.
       parameters:
         - name: client-inquiry-request
           in: body
-          description: The input parameters in JSON format
+          description: The input JSON payload
           required: true
           schema:
             $ref: '../definitions.yaml#/definitions/client-inquiry-request'

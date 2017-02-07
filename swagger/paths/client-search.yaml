@@ -3,7 +3,7 @@ info:
   version: 1.0.0 SNAPSHOT
   title: client-search
   description: |
-    Searches the client record-keeping system for a collection of clients which match some combination of:
+    A [system](http://connections/issite/iCAF/SitePages/Home.aspx) layer API which searches the client record-keeping system for a collection of clients which match some combination of:
 
     * First Name
     * Last Name
@@ -16,6 +16,16 @@ info:
     #### Instance Diagrams
     ![client-search](http://connections/issite/EWS/SiteAssets/LDC%20Seq%20Concept%20Phase.png)
   
+    #### Known Implementations
+    * Life Death Claims (LDC)
+    
+    The following demographic information combinations are supported:
+    
+    * Last Name
+    * Last Name, First Name
+    * Last Name, Date of Birth
+    * Tax Id
+    
     #### Performance Expectation
     Standard SLA applies.
     
