@@ -9,10 +9,16 @@ definitions:
     $ref: ./models/Client.yaml
   ClientAccount:
     $ref: ./models/ClientAccount.yaml
+  client-inquiry-request:
+    $ref: ./schemas/client-inquiry-request.json
+  client-inquiry-response:
+    $ref: ./schemas/client-inquiry-response.json
+  client-search-request:
+    $ref: ./schemas/client-search-request.json
   ClientInterest:
     $ref: ./models/ClientInterest.yaml
-  codes_response:
-    $ref: ./schemas/codes_response.json
+  codes-response:
+    $ref: ./schemas/codes-response.json
   Coverage:
     $ref: ./models/Coverage.yaml
   CoverageBenefit:
@@ -39,6 +45,8 @@ definitions:
     $ref: ./models/Investment.yaml
   Email:
     $ref: ./models/Email.yaml
+  filter:
+    $ref: ./schemas/filter.json
   FleetDriver:
     $ref: ./models/FleetDriver.yaml
   InsuredItem:
