@@ -1,0 +1,77 @@
+swagger: '2.0'
+info:
+  version: 2.0.0 SNAPSHOT
+  title:  client-interests
+  description: |
+    This [system](http://connections/issite/iCAF/SitePages/Home.aspx) API is used to get detailed information concerning the client's interests.
+
+    #### Service Functionality
+    An interest is a business relationship between the client and a policy (contract), such as the _owner_, _annuitant_, the _insured_ or the _driver_.
+
+    The API uses the internal record-keeping system identifier to locate the client information.  Additionally, one OR more filters MAY be added to the query to describe the desired relationship.
+
+    The following URI fragment demonstrates the use of the optional _OR_ filter (selects those interests whose businessObject property values are 'MEMB' OR 'MESL'):
+
+    `.../api/client-interests?clientId=YZZZZZSFF030CLTCTCN3&businessObject=MEMB&businessObject=MESL`
+
+    #### Instance Diagram
+    ![client-interests](http://connections/issite/ews/SiteAssets/Interest%20Instance.png)
+
+    #### Known Implementations
+    LDC Client Lookup
+    
+    #### Performance Expectation
+    TBD
+    
+    #### Service Capacity Supported
+    TBD
+    
+    #### Suggested Test Scenario
+    TBD
+    
+    #### Service Availability
+    TBD
+    
+    #### Service Security
+    TBD
+  contact:
+    name: Enterprise Web Services Team
+    email: EWSDevelopers@infambureau.com
+    url: http://connections/issite/ews/SitePages/Home.aspx
+host:  ap-karafa-dev:8181
+schemes:
+  - 'http'
+  - 'https'
+consumes:
+  - 'application/json'
+produces:
+  - 'application/json'
+basePath: /api
+paths:
+  /client-interests:
+    get:
+      summary:  Get interests for client
+      description: |
+        Given the recordkeeping client identifier and filter criteria, provide the collection of intersts which satisfy the query.
+      parameters:
+        - name: clientId
+          in: query
+          description: record-keeping system identifier
+          required: true
+          type: string
+        - name: businessObject
+          in: query
+          description:  The business object filter.
+          required: false
+          type: array
+          items:
+            type: string 
+          collectionFormat: multi
+      responses:
+        '200' :
+          description: |
+            Success.
+          schema:
+            $ref: '../definitions.yaml#/definitions/Interest'
+        default:
+          description: failure          
