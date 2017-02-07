@@ -17,6 +17,8 @@ definitions:
     $ref: ./schemas/client-search-request.json
   ClientInterest:
     $ref: ./models/ClientInterest.yaml
+  codes-response:
+    $ref: ./schemas/codes-response.json
   Coverage:
     $ref: ./models/Coverage.yaml
   CoverageBenefit:
