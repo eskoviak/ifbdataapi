@@ -1,6 +1,5 @@
 description: |
-  This model contains name details for a person.  It is based on the ACORD PersonName_Type (PCS)
-  and OLifE/Party/Person (LAH).
+  The component parts of the Client name, when the Client represents an individual, if known.  For individuals, either the #.name or #personName property should be populated.  It is expected that this property will be null for organizations.
 x-used-by:
   - 'Client'
 x-acord-agg-ref:

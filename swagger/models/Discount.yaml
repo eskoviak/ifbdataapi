@@ -1,14 +1,20 @@
-description: A discount that modifies the premium for a policy
+description: |
+  A discount that modifies the premium for a policy
 required:
-  ['name','description','appliedDate']
+  - 'name'
+  - 'description'
+  - 'appliedDate'
 properties:
   name:
-    description: The label of the discount
+    description: |
+      The label of the discount
     type: string
   description:
-    description: The description or value of the discount
+    description: |
+      The description or value of the discount
     type: string
   appliedDate:
-    description: The date the modifier was first applied
+    description: |
+      The date the modifier was first applied
     type: string
     format: date

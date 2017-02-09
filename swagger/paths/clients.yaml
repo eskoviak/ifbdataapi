@@ -1,72 +1,60 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
-  version: 2.0.0
-  title: Clients
+  version: 1.0.0 SNAPSHOT
+  title: clients
   description: |
-    This is the entry point for client inquiries.
+    This is the entry point for client inquiries against the client record-keeping system (Exceed).
 
-    #### Service Functionality:
-    This API is called with a clientId parameter.  If successful, the resultant resource is a
-    JSON oject, based on the Client model. 
-    
-    #### Performance Expectation:
+    #### Service Functionality
+    This API is called with a `clientId` parameter.  If found, the resultant resource is a JSON oject, based on the Client model.
+
+    #### Instance Diagram(s) 
+    ![Client](http://connections/issite/ews/SiteAssets/path-clients.png)
+
+    #### Performance Expectation
     Standard SLA applies.
     
-    #### Service Capacity Supported:
+    #### Service Capacity Supported
     Standard Capacity applies
     
-    #### Suggested Test Scenario:
+    #### Suggested Test Scenario
     TBD
     
-    #### Service Availability:
+    #### Service Availability
     Standard Service Availability applies
     
-    #### Service Security:
+    #### Service Security
     HTTPS/SSL
+  contact:
+    name: Enterprise Web Services Team
+    email: EWSDevelopers@infambureau.com
+    url: http://connections/issite/ews/SitePages/Home.aspx
+host:  ap-karafa-dev:8181
 produces:
   - application/json
 schemes:
+  - http
   - https
-basePath: /clients
+basePath: /api/clients
 paths:
   /{clientId}/:
     get:
-      x-auth-type: "Application & Application User"
+      x-auth-type: 'Application & Application User'
       x-scope: api_read
       x-throttling-tier: Unlimited
-      description: Returns a Client
+      summary: Returns a array of Client models identified by the clientId
+      description: |
+        This process layer service queries the client record-keeping system (Exceed) using the submitted parameter (clientId).   A detailed Client is returned, if the clientId exists.
+      produces: 
+        - application/json
       parameters:
         - name: clientId
-          in: path
-          description: The clientId
           required: true
+          in: path
+          description: The clientId used to identify the client in the record-keeping system.
           type: string
       responses:
-        "200":
-          description: Successful response
-          schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  $ref: ../definitions.yaml#/definitions/Client
-        "401":
-          description: Unauthorized or invalid token
-        "404":
-          description: Entity not found
-        "500":
-          description: Server error
-  /{clientId}/interests:
-    get:
-      x-auth-type: "Application & Application User"
-      x-scope: api_read
-      x-throttling-tier: Unlimited
-      summary: An array of Interest
-      parameters:
-        - $ref: "#/parameters/ClientId" 
-      responses:
-        "200":
+        '200':
           description: Success
           schema:
             type: object
@@ -74,17 +62,38 @@ paths:
               data:
                 type: array
                 items:
-                  $ref: ../definitions.yaml#/definitions/Interest
-        "401":
+                  $ref: '../definitions.yaml#/definitions/Client'
+        '401':
           description: Unauthorized or invalid token
-        "404":
+        '404':
           description: Entity not found
-        "500":
+        '500':
           description: Server error
-parameters:
-  ClientId:
-    name: clientId
-    required: true
-    in: path
-    description: The clientId
-    type: string
+  /{clientId}/interests:
+    get:
+      x-auth-type: 'Application & Application User'
+      x-scope: api_read
+      x-throttling-tier: Unlimited
+      summary: An array of Interests for the given clientId
+      description:
+        This process layer service queries the policy record-keeping system, and returns an array of interests (relationships) between the client identified by the clientId and insurance objects.
+      produces:
+        - application/json
+      parameters:
+        - name: clientId
+          required: true
+          in: path
+          description: The clientId used to identify the client in the record-keeping system.
+          type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '../definitions.yaml#/definitions/Interest'
+        '404':
+          description: Entity not found

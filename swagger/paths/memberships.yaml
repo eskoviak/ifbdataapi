@@ -1,13 +1,42 @@
 swagger: "2.0"
 info:
-  version: 2.0.0
-  title: Memberships
-  description: Memberships endpoint
+  version: 1.0.0 SNAPSHOT
+  title: memberships
+  description: |
+    This is the entry point for membership inquiries against the record-keeping system.
+
+    #### Service Functionality
+    This API is called with a `membershipId` parameter.  If successful, the resultant resource is a
+    JSON oject, based on the Membership model.
+
+    #### Model Diagram
+     ![Membership](http://connections/issite/ews/SiteAssets/Membership%20Model.png)
+
+    #### Performance Expectation
+    Standard SLA applies.
+    
+    #### Service Capacity Supported
+    Standard Capacity applies
+    
+    #### Suggested Test Scenario
+    TBD
+    
+    #### Service Availability
+    Standard Service Availability applies
+    
+    #### Service Security
+    HTTPS/SSL
+  contact:
+    name: Enterprise Web Services Team
+    email: EWSDevelopers@infambureau.com
+    url: http://connections/issite/ews/SitePages/Home.aspx
+host:  ap-karafa-dev:8181
 produces:
   - application/json
 schemes:
+  - http
   - https
-basePath: /memberships
+basePath: /api/memberships
 paths:
   /{membershipId}/:
     get:
@@ -16,7 +45,11 @@ paths:
       x-throttling-tier: Unlimited
       description: Returns a Membership
       parameters:
-        - $ref: "#/parameters/MembershipId"
+        - name: membershipId
+          required: true
+          in: path
+          description: The membership number in the record-keeping system. 
+          type: string 
       responses:
         "200":
           description: Successful response
@@ -26,17 +59,10 @@ paths:
               data:
                 type: array
                 items:
-                  $ref: ../definitions.yaml#/definitions/Membership
+                  $ref: ../models/Membership.yaml
         "401":
           description: Unauthorized or invalid token
         "404":
           description: Entity not found
         "500":
           description: Server error
-parameters:
-  MembershipId:
-    name: membershipId
-    required: true
-    in: path
-    description: The membershipId or membership number 
-    type: string    
