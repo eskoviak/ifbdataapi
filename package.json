@@ -1,7 +1,7 @@
 {
-  "name": "icaf_api",
+  "name": "enterpriseapidatamodel",
   "version": "1.0.0",
-  "description": "Farm Bureau API Specification",
+  "description": "Farm Bureau API Model and Contract Repository",
   "main": "server.js",
   "dependencies": {
     "swagger-server": "^1.0.0-alpha.14"
@@ -24,8 +24,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@bitbucket.infarmbureau.com:7999/icaf/icaf-api-swagger.git"
+    "url": "http://bitbucket.infarmbureau.com:7990/projects/ES/repos/enterpriseapidatamodel"
   },
-  "author": "",
+  "author": "EWS Team and Enterprise Architecture Team",
   "license": "ISC"
 }

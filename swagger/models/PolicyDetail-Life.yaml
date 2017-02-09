@@ -66,8 +66,6 @@ properties:
     items:
         $ref: ../definitions.yaml#/definitions/Investment
   dividends:
-    description: |
-      The dividend information for a permanent/universal life policy
     $ref: ../definitions.yaml#/definitions/Dividend
   faceAmount:
     description: |
@@ -120,18 +118,8 @@ properties:
       - 'number'
       - 'null'
   projectedValues:
-    description: |
-      The projected policy values for a given date.
-    type: object
     $ref: ../definitions.yaml#/definitions/ProjectedValues
   nonForfeitureProvision:
-    description: |
-      Provisions to prevent forfeiture of the policy.
-    type: object
     $ref: ../definitions.yaml#/definitions/NonForfeitureProvision
   payout:
-    description: |
-      When the contract is paid, the beneficiary(ies) may elect to recieve a recurring payment or payout.  this
-      model captures that information.
-    type: object
     $ref: ../definitions.yaml#/definitions/Payout
