@@ -18,7 +18,7 @@ info:
     #### Service Functionality
     This service sits in the [process layer](http://connections/issite/iCAF/SitePages/Home.aspx) exposing the inquiry functionality to the experience layer users.
 
-    #### Sequecnt Diagram
+    #### Sequence Diagram
     ![client-inquiry](http://connections/issite/EWS/SiteAssets/experience-client-inquiry.png)
     
     The client uses HTTP POST with the desired query fields in the request body, using the JSON format detailed in the request specification.  The Process Layer assembles the data, using the client identifying information and applying the desired filter.  Upon completion of the data gathering process(es); a JSON encoded body is returned as the requested resource.
