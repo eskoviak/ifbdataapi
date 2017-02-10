@@ -1,42 +1,82 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
   version: 2.0.0
-  title: Policies
-  description: Policy Endpoints
+  title: policies
+  description: |
+    This is the entry point for policy inquiries.  Policy inquiries are supported for the following types of lines of Insurance:
+
+    | Personal | Commercial | Life |
+    | --- | --- | --- |
+    | Auto | Farm | Life |
+    | Home | Pollution | Annuities |
+    |Umbrella | Farm Umbrella | Rural |
+    
+    #### Service Functionality
+    This API is called with a policyId parameter.  If successful, the resultant resource is a JSON oject, based on the prefix of the policyId.
+
+    #### Instance Diagrams
+    *Auto Policy* 
+        ![Auto Policy](http://connections/issite/ews/SiteAssets/Auto%20Policy%20Structure.png)
+
+    *Home Policy*
+        ![Home Policy](http://connections/issite/ews/SiteAssets/Home%20Policy%20Structure.png)
+
+    #### Performance Expectation
+    Standard SLA applies.
+    
+    #### Service Capacity Supported
+    Standard Capacity applies
+    
+    #### Suggested Test Scenario
+    TBD
+    
+    #### Service Availability
+    Standard Service Availability applies
+    
+    #### Service Security
+    HTTPS/SSL
+  
+  contact:
+    name:  Mary Boscaccia
+    url:  http://www.infarmbureau.com
+    email: mary.Boscacci@infarmbureau.com
 produces:
   - application/json
 schemes:
   - https
-basePath: /policies
+basePath: /api/policies
 paths:
   /{policyId}:
     get:
-      summary: a Policy
+      summary: Return a policy object
+      description: |
+        For a given policyId, returns a JSON object representing the detailed client information, if the id exists on the Client system.
       parameters:
-        - $ref: "#/parameters/PolicyId"
+        - $ref: '#/parameters/PolicyId'
       responses:
-        "200":
-          description: Success
+        '200':
+          description: |
+            Success--Includes the source return codes: `SU-1000`
           schema:
             type: object
             properties:
               data:
                 type: array
                 items:
-                  $ref: ../definitions.yaml#/definitions/Policy
-        "401":
+                  $ref: '../definitions.yaml#/definitions/Policy'
+        '401':
           description: Unauthorized or invalid token
-        "404":
+        '404':
           description: Entity not found
-        "500":
+        '500':
           description: Server error                  
   /{policyId}/interests:
     get:
       summary: An array of Interest
       parameters:
-        - $ref: "#/parameters/PolicyId"
+        - $ref: '#/parameters/PolicyId'
       responses:
-        "200":
+        '200':
           description: Success
           schema:
             type: object
@@ -45,11 +85,11 @@ paths:
                 type: array
                 items:
                   $ref: ../definitions.yaml#/definitions/Interest
-        "401":
+        '401':
           description: Unauthorized or invalid token
-        "404":
+        '404':
           description: Entity not found
-        "500":
+        '500':
           description: Server error                  
 parameters:
   PolicyId:

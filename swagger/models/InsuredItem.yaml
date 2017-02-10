@@ -1,10 +1,12 @@
 description: |
-  (Commercial, Personal) Within any policy there is a `thing` that is insured. The InsuredItem
-  model covers the business properties associated with a PolicyDetail
-  including Coverages, Limits, Discounts, and LossHistory. Physical
-  descriptors of the item are captured as `itemDetails`.
+  Policies (or contracts) that insure real property (personal or commerical vehicle, dwelling, etc.) against loss, damage or liability have one or more specific items being insured.  This model describes said item(s) and any specific properties of that insurance with regard to that item. 
 required:
-  ['coverages', 'discounts', 'lossHistory', 'limits', 'itemType', 'itemDetails']
+  - 'coverages'
+  - 'discounts'
+  - 'lossHistory'
+  - 'limits'
+  - 'itemType'
+  - 'itemDetails'
 properties:
   coverages:
     type: array
@@ -24,14 +26,15 @@ properties:
       $ref: ../definitions.yaml#/definitions/Limit
   itemType:
     description: |
-      Property itemDetails will be a defined model of type itemType.  These
-      types are:
-
-      * Dwelling
-      * Other
-      * Structure
-      * Vehicle
-    enum: ['Dwelling', 'Other', 'Structure', 'Vehicle']
+      Property itemDetails will be a defined model of type itemType.
+    type:
+      - 'string'
+    enum:
+      - 'Dwelling'
+      - 'Other'
+      - 'Structure'
+      - 'Vehicle'
   itemDetails:
-    description: An instance of an item array. See itemType.
+    description: |
+      An instance of Dwelling, Other, Structure or Vehicle.  See itemType.
     type: object
