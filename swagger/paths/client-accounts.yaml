@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   version: 2.0.0
-  title: Client_Accounts
+  title: client_accounts
   description: Client Accounts endpoint
 produces:
   - application/json
