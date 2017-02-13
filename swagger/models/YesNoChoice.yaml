@@ -4,19 +4,13 @@ description: |
   a true or false state.
 required:
   ['choice', 'state']
-x-used-by:
-  ['Coverage']
 properties:
   choice:
     description: |
       The business concept for which this choice applies.
-    x-required-in:
-      ['all']
     type: string
   state:
     description: |
       A boolean (true/false).  True indicates that the concept represented by the choice property
       is selected or present.  False indicates the opposite.
-    x-required-in:
-      ['all']
     type: boolean

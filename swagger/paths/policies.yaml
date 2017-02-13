@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 2.0.0
+  version: 1.0.0 SNAPSHOT
   title: policies
   description: |
     This is the entry point for policy inquiries.  Policy inquiries are supported for the following types of lines of Insurance:
@@ -14,12 +14,18 @@ info:
     #### Service Functionality
     This API is called with a policyId parameter.  If successful, the resultant resource is a JSON oject, based on the prefix of the policyId.
 
-    #### Instance Diagrams
+    #### Diagrams
+    *Interaction*
+    ![Interaction](http://connections/issite/ews/SiteAssets/sd-policies%401-17.png)
+    
     *Auto Policy* 
-        ![Auto Policy](http://connections/issite/ews/SiteAssets/Auto%20Policy%20Structure.png)
+    ![Auto](http://connections/issite/ews/SiteAssets/Auto%20Policy%20Structure.png)
 
     *Home Policy*
-        ![Home Policy](http://connections/issite/ews/SiteAssets/Home%20Policy%20Structure.png)
+    ![Home](http://connections/issite/ews/SiteAssets/Home%20Policy%20Structure.png)
+    
+    *Farm/Umbrella/Pollution/Commerical*
+    ![Farm](http://connections/issite/ews/SiteAssets/Commercial%20Policy%20Sructure.png)
 
     #### Performance Expectation
     Standard SLA applies.
@@ -44,7 +50,6 @@ produces:
   - application/json
 schemes:
   - https
-basePath: /api/policies
 paths:
   /{policyId}:
     get:

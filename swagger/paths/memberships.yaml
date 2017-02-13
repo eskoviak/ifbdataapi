@@ -3,14 +3,14 @@ info:
   version: 1.0.0 SNAPSHOT
   title: memberships
   description: |
-    This is the entry point for membership inquiries against the record-keeping system.
+    A [process](http://connections/issite/iCAF/SitePages/Home.aspx) layer API which exposes membership inquiries against the record-keeping system.
 
     #### Service Functionality
-    This API is called with a `membershipId` parameter.  If successful, the resultant resource is a
-    JSON oject, based on the Membership model.
+    This API is called with a `membershipId` parameter.  If successful, the resultant resource is a JSON oject, based on the Membership model.
 
-    #### Model Diagram
-     ![Membership](http://connections/issite/ews/SiteAssets/Membership%20Model.png)
+    #### Diagrams
+    ![Interaction](http://connections/issite/ews/SiteAssets/sd-membership%401-6.png)
+    ![Membership](http://connections/issite/ews/SiteAssets/Membership%20Model.png)
 
     #### Performance Expectation
     Standard SLA applies.
@@ -30,7 +30,6 @@ info:
     name: Enterprise Web Services Team
     email: EWSDevelopers@infambureau.com
     url: http://connections/issite/ews/SitePages/Home.aspx
-host:  ap-karafa-dev:8181
 produces:
   - application/json
 schemes:
@@ -40,9 +39,6 @@ basePath: /api/memberships
 paths:
   /{membershipId}/:
     get:
-      x-auth-type: "Application & Application User"
-      x-scope: api_read
-      x-throttling-tier: Unlimited
       description: Returns a Membership
       parameters:
         - name: membershipId

@@ -9,8 +9,6 @@ properties:
       The location number for the structure.  There MUST be at one and only
       one location for a structure, which contains the location specific information, such as
       address.  The location(s) are contained in the Policy model.
-    x-required-in:
-      ['all']
     type: string
   item:
     description: |

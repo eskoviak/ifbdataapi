@@ -14,8 +14,9 @@ info:
 
     `.../api/client-interests?clientId=YZZZZZSFF030CLTCTCN3&businessObject=MEMB&businessObject=MESL`
 
-    #### Instance Diagram
-    ![client-interests](http://connections/issite/ews/SiteAssets/Interest%20Instance.png)
+    #### Diagrams
+    ![Interaction](http://connections/issite/ews/SiteAssets/sd-client-interests%401-7.png)
+    ![ClientInterest Model](http://connections/issite/ews/SiteAssets/Interest%20Instance.png)
 
     #### Known Implementations
     LDC Client Lookup
@@ -43,7 +44,6 @@ info:
     name: Enterprise Web Services Team
     email: EWSDevelopers@infambureau.com
     url: http://connections/issite/ews/SitePages/Home.aspx
-host:  ap-karafa-dev:8181
 schemes:
   - 'http'
   - 'https'
