@@ -51,9 +51,8 @@ consumes:
   - 'application/json'
 produces:
   - 'application/json'
-basePath: /api
 paths:
-  /client-interests:
+  /:
     get:
       summary:  Get interests for client
       description: |

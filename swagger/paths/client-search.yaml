@@ -53,9 +53,8 @@ consumes:
   - 'application/json'
 produces:
   - 'application/json'
-basePath:  /api
 paths:
-  /client-search:
+  /:
     post:
       summary:  Search client records
       description: |
