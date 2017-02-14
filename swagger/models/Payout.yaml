@@ -1,9 +1,5 @@
 description: |
   This model is used to model the various properties needed to express repetative payouts for an Life/Annuities contract
-x-used-by:
-  - 'PolicyDetails-Life'
-x-acord-agg-xref:
-  - OLifE.Holding.Policy.Annuity.Payout
 required:
   - 'originatingPolicyNumber'
   - 'payoutAmount'
@@ -19,30 +15,22 @@ properties:
   payoutAmount:
     description: |
       The amount of the repetative payout.
-    x-acord-xref:
-      - '#.PayoutAmt'
     type:
       - 'number'
   paymentMode:
     description: |
       The mode or frequency at which the repetative payment amount (#.payoutAmount) is made.
-    x-acord-type-code:
-      -'OLI_LU_PAYMODE'
     type:
       - 'string'
   nextPayoutDate:
     description: |
       The date of the next expected payment (based on #.paymentMode and #.paymentAmount).
-    x-acord-xref:
-      - '#.NextPayoutDate'
     type:
       - 'number'
     format: date
   lastPayoutDate:
     description: |
       The date of the last payment made on this contract.
-    x-acord-xref:
-      - 'null'
     type:
       - 'number'
     format: date

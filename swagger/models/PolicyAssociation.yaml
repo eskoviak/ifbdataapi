@@ -24,8 +24,6 @@ properties:
   locationId:
     description: |
       If the interest is tied to a specific location, use this to refer to the Location.Id property.
-    x-used-by:
-      - 'Homeowners'
     type:
       - 'string'
       - 'null'  
@@ -68,9 +66,6 @@ properties:
     description: |
       This field is used to describe the relationship of the Party in this model (PolicyAssociation) to 
       the parent Policy model.
-    x-used-by:
-      - 'Life'
-      - 'Annuities'
     type:
       - 'string'
       - 'null'

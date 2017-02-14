@@ -1,11 +1,6 @@
 description: |
   The Policy detail model. which is the detail element of an insurance policy or Annuity 
   contract.
-x-used-by:
-  - 'Policy'
-x-acord-agg-xref:
-  - '#LAH' : 'OLifE.Holding.Policy.Life'
-  - '#2' : 'OLifE.Holding.Policy.Annuity'  
 required:
   - 'detailPart'
   - 'type'
@@ -53,8 +48,6 @@ properties:
       On an Annuity, this represents the estimated or expected portion of an
       initial lump sum to be made to this contract.  Examples include qualified
       or non-qualified replacements, Mutual Funds or Certificates of Deposit.
-    x-acord-xref:
-      - '#2.InitDepositAmt'
     type:
       - 'number'
       - 'null'
@@ -84,8 +77,6 @@ properties:
   minimumPremiumAmount:
     description: |
       Current No Lapse Guarantee Premium.  At IFB, this is a policy level datum.
-    x-acord-xref:
-      - '#LAH.Coverage.MinPremAmt'
     type:
       - 'number'
       - 'null'
@@ -98,8 +89,6 @@ properties:
   lastPremiumDate:
     description: |
       Date on which last premium payment was applied.  This is a property on OLifE.Holding.Policy.Life only.
-    x-acord-xref:
-      - '#LAH.LastPremDate'
     type:
       - 'string'
     format: date
