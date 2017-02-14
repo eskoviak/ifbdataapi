@@ -8,8 +8,6 @@ description: |
   Note:  Either property is nullable--the invoking contract must specify usage.
 required:
   ['name', 'value']
-x-used-by:
-  ['Dwelling.exposures']
 properties:
   name:
     type: ['string', 'null']

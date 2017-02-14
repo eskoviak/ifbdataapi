@@ -1,9 +1,0 @@
-properties:
-  paperInvoices:
-    type: boolean
-  paperPolicyDocuments:
-    type: boolean
-  marketingEmailMessages:
-    type: boolean
-  billingAlerts:
-    type: boolean

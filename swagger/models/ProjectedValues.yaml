@@ -1,8 +1,6 @@
 description: |
   Projected values for a policy or contract. This model should not be used to model similar values for investments--it is meant 
   to be at the policy level.
-x-used-by:
-  - 'PolicyDetails-Life'
 required:
   - 'projectedValueDate'
   - 'policyValue'

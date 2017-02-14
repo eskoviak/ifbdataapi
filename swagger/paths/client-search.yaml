@@ -13,9 +13,11 @@ info:
     #### Service Functionality
     This service sit between the process and system layers (see [here](http://connections/issite/iCAF/SitePages/Home.aspx) for a description of this architecture).
 
-    #### Instance Diagrams
-    ![client-search](http://connections/issite/EWS/SiteAssets/LDC%20Seq%20Concept%20Phase.png)
-  
+    #### Diagrams
+    ![Interaction](http://connections/issite/EWS/SiteAssets/sd-client-search%401-6.png)
+    Request JSON:
+    ![Request](http://connections/issite/ews/SiteAssets/schema-client-search-request.png)
+    ![Client](http://connections/issite/EWS/SiteAssets/Client%20Model.png)
     #### Known Implementations
     * Life Death Claims (LDC)
     
@@ -44,7 +46,6 @@ info:
     name: Enterprise Web Services Team
     email: EWSDevelopers@infambureau.com
     url: http://connections/issite/ews/SitePages/Home.aspx
-host: ap-karafa-dev:8181
 schemes:
   - 'https'
   - 'http'
