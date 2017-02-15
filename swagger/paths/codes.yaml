@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  version: 1.0.0
+  version: 1.0.0 SNAPSHOT
   title: codes
   description: |
     This is a system layer sevice which exposes an enterprise service to map between system codes and a common code topology.
@@ -9,7 +9,7 @@ info:
     This API is called with several possible combinations of codes (system/common) and returns a standard JSON response structure which represents the mapping to other related information in the system mapping store.
 
     #### Sequence Diagram
-    ![Mapping](http://connections/issite/ews/SiteAssets/sd-codes-mapping.png)
+    ![Mapping](http://connections/issite/ews/SiteAssets/sd-codes.png)
 
     #### Performance Expectation
     Standard SLA applies.
