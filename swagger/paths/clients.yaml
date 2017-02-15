@@ -8,7 +8,8 @@ info:
     #### Service Functionality
     This API is called with a `clientId` parameter.  If found, the resultant resource is a JSON oject, based on the Client model.
 
-    #### Instance Diagram(s) 
+    #### Diagrams
+    ![Interaction](http://connections/issite/ews/SiteAssets/sd-client.png)
     ![Client](http://connections/issite/ews/SiteAssets/path-clients.png)
 
     #### Performance Expectation
