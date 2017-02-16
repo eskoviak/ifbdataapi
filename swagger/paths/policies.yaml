@@ -53,9 +53,9 @@ schemes:
   - https
 host: ap-karafb-dev:8181
 basePath:
-  /api
+  /api/policies
 paths:
-  /policies/{policyId}:
+  /{policyId}:
     get:
       summary: Return a policy object
       description: |
