@@ -47,14 +47,17 @@ info:
     email: EWSDevelopers@infambureau.com
     url: http://connections/issite/ews/SitePages/Home.aspx
 schemes:
-  - 'https'
   - 'http'
+  - 'https'
 consumes:
   - 'application/json'
 produces:
   - 'application/json'
+host: ap-karafb-dev:8181
+basePath:
+  /api
 paths:
-  /:
+  /client-search:
     post:
       summary:  Search client records
       description: |
