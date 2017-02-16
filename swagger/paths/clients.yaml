@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 1.0.0 SNAPSHOT
+  version: 1.0.0
   title: clients
   description: |
     This is the entry point for client inquiries against the client record-keeping system (Exceed).
@@ -35,6 +35,8 @@ produces:
 schemes:
   - http
   - https
+host: ap-karafb-dev:8181
+basePath: /api/clients
 paths:
   /{clientId}:
     get:
