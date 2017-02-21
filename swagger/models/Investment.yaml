@@ -1,11 +1,18 @@
 description: |
-  (Life/Annuities) Specific information regarding Investments/Financial intruments particular to 
-  permanent (whole life or participating) and Universal life policies as well as Annuties.  This
-  includes loan information.
+  (Life/Annuities) Specific information regarding Investments/Financial intruments particular to permanent (whole life or participating) and Universal life policies as well as Annuties.  This includes information which is quoted/calculated--and is only valid on the lastValueQuoteDate.
 required:
-  ['lastValueQuoteDate', 'currentInterestRate', 'netCashSurrenderValue', 'totalSurrenderValue',
-   'guaranteedInterestRate', 'loanPayoffAmount', 'currentLoanInterestRate', 'maximumLoanAmountAvailable',
-   'guranteedCashValue', 'totalCashValue', 'premiumDepositFund']
+    - 'lastValueQuoteDate'
+    - 'currentInterestRate'
+    - 'netCashSurrenderValue'
+    - 'totalSurrenderValue'
+    - 'guaranteedInterestRate'
+    - 'loanPayoffAmount'
+    - 'currentLoanInterestRate'
+    - 'maximumLoanAmountAvailable'
+    - 'guranteedCashValue'
+    - 'totalCashValue'
+    - 'premiumRefund'
+    - 'premiumDepositFund'
 properties:
   lastValueQuoteDate:
     description: The date for which the values were last quoted.
@@ -38,6 +45,12 @@ properties:
   totalCashValue:
     description: The total cash value of the policy.
     type: ['number', 'null']
+  premiumRefund:
+    description: |
+      The amount of unearned premium returned when a policy is terminated.
+    type:
+      - 'number'
+      - 'null'
   premiumDepositFund:
     description: unknown
     type: ['number', 'null']
