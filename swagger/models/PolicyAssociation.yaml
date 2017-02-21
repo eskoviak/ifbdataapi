@@ -6,6 +6,8 @@ description: |
 required:
   - 'clientId'
   - 'locationId'
+  - 'coverageCode'
+  - 'sequence'
   - 'name'
   - 'address'
   - 'referenceData'
@@ -27,6 +29,18 @@ properties:
     type:
       - 'string'
       - 'null'  
+  coverageCode:
+    description: |
+      If this PolicyAssociation is related to a coverage, this field indicates which coverageCode (also a property of Coverage) this relationship.  If this field is non-null, then sequence should also be valued.
+    type:
+      - 'string'
+      - 'null'
+  sequence:
+    description: |
+      If this PolicyAssociation is related to a coverage, this field indicates which sequence in a single coverageCode to which this association applies. If coverageCode is non-null, this field should also be valued.  Conversely if coverageCode is null, this field should likewise be null.
+    type:
+      - 'string'
+      - 'null'
   name:
     type: string
   address:
