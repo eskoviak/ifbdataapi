@@ -10,7 +10,6 @@ required:
   - 'coverageSchedule'
   - 'limits'
   - 'premium'
-  - 'coverageBenefit'
   - 'isEndorsement'
   - 'isExtended'
   - 'isExcluded'
@@ -91,13 +90,6 @@ properties:
       $ref: ../definitions.yaml#/definitions/Limit
   premium:
     type: number
-  coverageBenefit:
-    description: |
-      (Life/Annuity) Models specific benefits to the coverage, which are usually additional premium and modify
-      the owning coverage.
-    type: ['array', 'null']
-    items:
-      $ref: ../definitions.yaml#/definitions/CoverageBenefit
   isEndorsement:
     description: Flag which indicates if this is a coverage endorsement.
     type: boolean
