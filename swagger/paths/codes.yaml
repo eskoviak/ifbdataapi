@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  version: 1.0.0 SNAPSHOT
+  version: 1.0.0
   title: codes
   description: |
     This is a system layer sevice which exposes an enterprise service to map between system codes and a common code topology.
