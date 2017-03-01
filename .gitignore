@@ -10,3 +10,4 @@ validate.err
 *.xpr
 *.ps1
 server.js
+/swagger/playground
