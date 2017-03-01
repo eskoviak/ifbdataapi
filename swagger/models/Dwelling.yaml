@@ -24,6 +24,8 @@ properties:
   item:
     description: |
       An arbitrary, system assigned item number within the location dicriminates this structure on a location with multiple structures.
+    type:
+      - 'string'
   construction:
     description: |
       The type of construction of the building.

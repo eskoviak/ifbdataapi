@@ -2,7 +2,14 @@ description: |
   A physical structure to be insured.  A structure is a building which is uninhabited by
   humans.  For a building which is inhabited by humans, use dwelling.
 required:
-  ['locationId', 'item', 'description', 'isBroadPeril', 'isVacant', 'lossSettlement']
+  - 'locationId'
+  - 'item'
+  - 'typeFarming'
+  - 'ownership'
+  - 'description'
+  - 'isBroadPeril'
+  - 'isVacant'
+  - 'lossSettlement'
 properties:
   locationId:
     description: |
@@ -15,6 +22,16 @@ properties:
       An arbitrary, system assigned item number within the location dicriminates this dwelling
       on a location with multiple dwellings.
     type: string
+  typeFarming:
+    description: |
+      (Farm and Pollution) The type of farming done at the cited location.
+    type: string
+  ownership:
+    description: |
+      (Pollution) Indicator whether the location is Owned or Leased
+    enum:
+     - 'Leased'
+     - 'Owned'
   description:
     description: |
       The description of the structure.  Example:  'DAIRY COMPLEX'

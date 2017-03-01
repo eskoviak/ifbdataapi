@@ -4,8 +4,6 @@ required:
   - 'id'
   - 'address'
   - 'acres'
-  - 'typeFarming'
-  - 'ownership'
 properties:
   id:
     description: |
@@ -17,13 +15,3 @@ properties:
   acres:
     description: (Farm) The number of acres at this location
     type: number
-  typeFarming:
-    description: |
-      (Farm and Pollution) The type of farming done at the cited location.
-    type: string
-  ownership:
-    description: |
-      (Pollution) Indicator whether the location is Owned or Leased
-    enum:
-     - 'Leased'
-     - 'Owned'
