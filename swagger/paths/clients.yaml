@@ -35,8 +35,6 @@ produces:
 schemes:
   - http
   - https
-host: ap-karafb-dev:8181
-basePath: /api/clients
 paths:
   /{clientId}:
     get:
