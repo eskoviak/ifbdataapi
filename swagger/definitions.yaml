@@ -49,12 +49,16 @@ definitions:
     $ref: ./schemas/filter.json
   FleetDriver:
     $ref: ./models/FleetDriver.yaml
+  hypermedia-controls-response:
+    $ref: ./schemas/hypermedia-controls-response.json
   InsuredItem:
     $ref: ./models/InsuredItem.yaml
   Interest:
     $ref: ./models/Interest.yaml
   Billing:
     $ref: ./models/Billing.yaml
+  Link:
+    $ref: ./schemas/link.json
   Location:
     $ref: ./models/Location.yaml
   LossHistory:

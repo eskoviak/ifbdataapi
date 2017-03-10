@@ -4,8 +4,44 @@
 
 1. Clone this repository to your computer.
 
-2. Ensure that the node-js program is installed and available in your repository.
+2. Ensure that the [node-js](https://nodejs.org/en/) program is installed and available in your repository.
 
+3. Once node is installed, you need to install `gulp`, which is used to validate the JSON files.  To install, type the following at the command prompt at the top level of the directory:
+   
+   ```
+   $> npm gulp install
+   ...
+   $> npm install       <--installs dependancies
+   ```
+
+   You will notice a new directory called node_modules; this folder is excluded from git control, and contains files needed by node/gulp.
+
+4. When editing files, it is helpful to check changes for typos, etc.  At the command prompt, at the top level of the repository, enter:
+
+   ```
+   $> gulp validate
+   ...
+   [ok]...
+   ...
+
+   $>
+   ```
+
+   Any errors will be displayed.  These MUST be corrected prior to commiting the changes.
+
+5. When changes are complete, the JSON bundle files for export to WS02 are created by executing the following at the command prompt:
+
+   ```
+   $> node bundler-json
+   ...
+   $>
+   ```
+
+   This should indicate no errors.
+
+## Using Swagger (OpenAPI)
+
+OpenAPI (formerly known as Swagger) is a [specification](http://swagger.io/specification/) for defining APIs.  It is currently in version 2.0.  While swagger is the specification, it is expressed in either YAML or JSON (the idioms can be mixed).  The paths directory described above contains the main API contracts which adhere to this specification.
 
 ## Using Swagger Editor
 
@@ -34,7 +70,7 @@
 
 ### JSON Schema files names
 * lowercase
-* <path name>-[request | repsonse].json  _i.e._ `client-search-request.json`
+* &lt;path name&gt;-[request | repsonse].json  _i.e._ `client-search-request.json`
 
 ### Property Names
 * Modified camelCase:  first letter lowercase, then camel case

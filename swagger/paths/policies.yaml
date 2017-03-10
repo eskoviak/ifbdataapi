@@ -50,6 +50,8 @@ produces:
   - application/json
 schemes:
   - https
+basePath:
+  /api/policies
 paths:
   /{policyId}:
     get:
@@ -75,27 +77,35 @@ paths:
           description: Entity not found
         '500':
           description: Server error                  
-  /{policyId}/interests:
-    get:
-      summary: An array of Interest
+  /{policyId}/discounts:
+    'put':
+      summary: Adds discount to Policy
+      description: |
+        For a given policyId and input discount object, adds the policy discount to associated policy.
       parameters:
         - $ref: '#/parameters/PolicyId'
+        - name: discountInfo
+          description: |
+            The desired discount information for this operation.
+          required: true
+          in: body
+          schema:
+            $ref: ../definitions.yaml#/definitions/Discount
       responses:
         '200':
-          description: Success
+          description: |
+             Success--Policy discount has been added successfully to the given policyId.
           schema:
             type: object
             properties:
               data:
                 type: array
                 items:
-                  $ref: ../definitions.yaml#/definitions/Interest
-        '401':
-          description: Unauthorized or invalid token
+                  $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
         '404':
-          description: Entity not found
+          description: Failure--The provided policyId could not be found.
         '500':
-          description: Server error                  
+          description: Failure--unknown server error.
 parameters:
   PolicyId:
     name: policyId
