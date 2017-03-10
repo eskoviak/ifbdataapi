@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: 1.0.0
-  title:  client-interests
+  title:  interests
   description: |
     This [system](http://connections/issite/iCAF/SitePages/Home.aspx) API is used to get detailed information concerning the client's interests.
 
