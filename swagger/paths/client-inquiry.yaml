@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 1.0.0 SNAPSHOT
+  version: 1.0.0
   title: client-inquiry
   description: |
 
@@ -72,6 +72,10 @@ consumes:
   - 'application/json'
 produces:
   - 'application/json'
+host:
+  ap-karafb-dev:8181
+basePath:
+  /api/client-inquiry
 paths:
   /:
     post:

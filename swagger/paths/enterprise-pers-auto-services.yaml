@@ -1,6 +1,6 @@
-swagger: '2.0'
+swagger: "2.0"
 info:
-  version: '1.0.0'
+  version: 1.0.0
   title: pc-persautopolicymod
   description: |
     This API is used to initiate a transfer of automobile insurance coverage from one vehicle to another.  It is intended to provide process layer access (See [here](http://connections/issite/iCAF/SitePages/Home.aspx) for a description of this architecure) to a self service front end.  The API has been designed to be a framework which is reusable, allowing future personal automobile insurance transactions to be added.

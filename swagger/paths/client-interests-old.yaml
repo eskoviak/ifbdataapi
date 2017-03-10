@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 2.0.0
+  version: 1.0.0
   title:  client-interests
   description: |
     This [system](http://connections/issite/iCAF/SitePages/Home.aspx) API is used to get detailed information concerning the client's interests.
@@ -13,18 +13,6 @@ info:
     The following URI fragment demonstrates the use of the optional _OR_ filter (selects those interests whose businessObject property values are 'MEMB' OR 'MESL'):
 
     `.../api/client-interests?clientId=YZZZZZSFF030CLTCTCN3&businessObject=MEMB&businessObject=MESL`
-
-    #### Diagrams
-    ![Interaction](http://connections/issite/ews/SiteAssets/sd-client-interests%401-7.png)
-    ![ClientInterest Model](http://connections/issite/ews/SiteAssets/Interest%20Instance.png)
-
-    #### Known Implementations
-    LDC Client Lookup
-
-    **Note:**
-
-    Special Behavior for : businessObject = `MESL`
-    When `MESL` is specified as a businessObject in the filter, the api returns the interest resource for the identified client, as well as the interest resources for all of the members of the household to which that client belongs (as a collection).
 
     #### Performance Expectation
     TBD
@@ -52,9 +40,9 @@ consumes:
 produces:
   - 'application/json'
 host:
-  ap-karafb-dev:8181
+  ap-tcsoaa-dev.infarmbureau.com:8082
 basePath:
-  /api/client-interests
+  /EnterpriseClientInterestsApi/interests
 paths:
   /:
     get:
@@ -67,14 +55,6 @@ paths:
           description: record-keeping system identifier
           required: true
           type: string
-        - name: businessObject
-          in: query
-          description:  The business object filter.
-          required: false
-          type: array
-          items:
-            type: string 
-          collectionFormat: multi
       responses:
         '200' :
           description: |

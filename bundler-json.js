@@ -19,7 +19,7 @@ fs.readdir(swaggerDir,
 									console.log('API %s is valid', api.info.title);
 //									console.log('===');
 //									console.log(JSON.stringify(api));
-									fs.writeFile(swaggerBundleDir+api.info.title+'.json',
+									fs.writeFile(swaggerBundleDir+api.info.title+"-"+api.info.version+".json",
 										JSON.stringify(api),
 										console.log('API %s had been bundled', api.info.title));
 								}
