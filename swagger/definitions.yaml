@@ -29,6 +29,10 @@ definitions:
     $ref: ./models/CoverageDetail-Life.yaml
   Dividend:
     $ref: ./models/Dividend.yaml
+  documents-request:
+    $ref: ./schemas/documents-request.json
+  documents-response:
+    $ref: ./schemas/documents-response.json
   Limit:
     $ref: ./models/Limit.yaml
   Deductible:

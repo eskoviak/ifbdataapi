@@ -1,0 +1,69 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: documents
+  description: |
+    A [system](http://connections/issite/iCAF/SitePages/APIs%20-%20System%20vs%20Process%20vs%20Experience.aspx) layer API.
+
+    #### Service Functionality
+    This service performs two task.
+    * Generate a document using the SmartCommunication cloud service.
+
+    #### Sequence Diagram
+    ![Interaction](http://connections/issite/ews/SiteAssets/api.process.generate-documents-design.png)
+
+    #### Known Implementations
+    * Care+ Review
+
+    #### Performance Expectation
+    Standard SLA applies.
+    
+    #### Service Capacity Supported
+    Standard Capacity applies
+    
+    #### Suggested Test Scenario
+    TBD
+    
+    #### Service Availability
+    Standard Service Availability applies
+    
+    #### Service Security
+    HTTPS/SSL
+  contact:
+    name: Enterprise Web Services Team
+    email: EWSDevelopers@infambureau.com
+    url: http://connections/issite/ews/SitePages/Home.aspx
+schemes:
+  - 'https'
+  - 'http'
+consumes:
+  - 'application/json'
+produces:
+  - 'application/json'
+paths:
+  /:
+    post:
+      summary:  Generate document
+      description: |
+        Generate document with Smart Communication cloud services.
+      parameters:
+        - name:  documents-request
+          in: body
+          description: The input paramters in JSON format
+          required: true
+          schema:
+            $ref: '../definitions.yaml#/definitions/documents-request'
+        - name: includeDocumentData
+          in: query
+          description: includeDocumentData=true will return the generated document in the response payload under document.content .
+          required: false
+          type: boolean
+      responses:
+        '200':
+          description: |
+            Success. Generated document with Smart Communication cloud services.
+          schema:
+            $ref: '../definitions.yaml#/definitions/documents-response'
+        default:
+          description: |
+            Failure.

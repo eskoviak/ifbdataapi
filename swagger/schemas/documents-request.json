@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "batchConfigResId": {
+      "type": "number"
+    },
+    "projectId": {
+      "type": "number"
+    },
+    "transactionData": {
+      "type": "string"
+    },
+    "transactionRange": {
+      "type": "number"
+    }
+  }
+}
