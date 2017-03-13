@@ -5,6 +5,8 @@ definitions:
     $ref: ./models/Address.yaml
   Agent:
     $ref: ./models/Agent.yaml
+  archive-request:
+    $ref: ./schemas/archive-request.json
   Client:
     $ref: ./models/Client.yaml
   ClientAccount:
