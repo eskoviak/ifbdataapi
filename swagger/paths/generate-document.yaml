@@ -10,9 +10,8 @@ info:
     * Generate a document based of generateConfiguration via api.system.documents.
     * Archive the generated document based of archiveConfiguration via api.system.archive.
 
-    #### Diagrams
-
-    Request JSON:
+    #### Sequence Diagram
+    ![Interaction](http://connections/issite/ews/SiteAssets/api.process.generate-documents-design.png)
 
     #### Known Implementations
     * Care+ Review
