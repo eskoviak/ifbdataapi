@@ -49,6 +49,8 @@ definitions:
     $ref: ./schemas/filter.json
   FleetDriver:
     $ref: ./models/FleetDriver.yaml
+  generate-document-request:
+    $ref: ./schemas/generate-document-request.json
   hypermedia-controls-response:
     $ref: ./schemas/hypermedia-controls-response.json
   InsuredItem:
