@@ -10,7 +10,7 @@ info:
     * Generate a document using the SmartCommunication cloud service.
 
     #### Sequence Diagram
-    ![Interaction](http://connections/issite/ews/SiteAssets/api.process.generate-documents-design.png)
+    ![Interaction](http://connections/issite/ews/SiteAssets/api.sytem.documents-design.png)
 
     #### Known Implementations
     * Care+ Review
