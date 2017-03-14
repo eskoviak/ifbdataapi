@@ -12,4 +12,4 @@ validate.err
 server.js
 .idea
 *.iml
-/swagger/playground
+swagger/playground
