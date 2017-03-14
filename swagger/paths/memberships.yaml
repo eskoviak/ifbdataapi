@@ -40,7 +40,7 @@ host:
 basePath:
   /api/memberships
 paths:
-  /{membershipId}/:
+  /{membershipId}:
     get:
       description: Returns a Membership
       parameters:

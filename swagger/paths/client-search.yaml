@@ -47,8 +47,8 @@ info:
     email: EWSDevelopers@infambureau.com
     url: http://connections/issite/ews/SitePages/Home.aspx
 schemes:
-  - 'https'
   - 'http'
+  - 'https'
 consumes:
   - 'application/json'
 produces:
@@ -58,7 +58,7 @@ host:
 basePath:
   /api/client-search
 paths:
-  /:
+  /client-search:
     post:
       summary:  Search client records
       description: |

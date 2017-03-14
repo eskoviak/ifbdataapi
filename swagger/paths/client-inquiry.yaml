@@ -77,7 +77,7 @@ host:
 basePath:
   /api/client-inquiry
 paths:
-  /:
+  /client-inquiry:
     post:
       summary: Request client information
       description: |
