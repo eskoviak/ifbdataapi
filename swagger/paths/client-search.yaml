@@ -53,9 +53,10 @@ consumes:
   - 'application/json'
 produces:
   - 'application/json'
-host: ap-karafb-dev:8181
+host:
+  ap-karafb-dev:8181
 basePath:
-  /api
+  /api/client-search
 paths:
   /client-search:
     post:

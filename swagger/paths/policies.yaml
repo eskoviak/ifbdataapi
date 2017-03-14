@@ -1,4 +1,4 @@
-swagger: '2.0'
+swagger: "2.0"
 info:
   version: 1.0.0
   title: policies
@@ -51,7 +51,8 @@ produces:
 schemes:
   - http
   - https
-host: ap-karafb-dev:8181
+host:
+  ap-karafb-dev:8181
 basePath:
   /api/policies
 paths:
