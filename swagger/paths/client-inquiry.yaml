@@ -72,8 +72,10 @@ consumes:
   - 'application/json'
 produces:
   - 'application/json'
-host: ap-karafa-dev:8181
-basePath: /api
+host:
+  ap-karafb-dev:8181
+basePath:
+  /api/client-inquiry
 paths:
   /client-inquiry:
     post:
