@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  version: 1.0.0 SNAPSHOT
+  version: 1.0.0
   title: memberships
   description: |
     A [process](http://connections/issite/iCAF/SitePages/Home.aspx) layer API which exposes membership inquiries against the record-keeping system.
@@ -35,9 +35,12 @@ produces:
 schemes:
   - http
   - https
-basePath: /api/memberships
+host:
+  ap-karafb-dev:8181
+basePath:
+  /api/memberships
 paths:
-  /{membershipId}/:
+  /{membershipId}:
     get:
       description: Returns a Membership
       parameters:
