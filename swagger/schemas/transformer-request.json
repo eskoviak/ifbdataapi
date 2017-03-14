@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "contentType": {
+      "type": "string"
+    },
+    "templateId": {
+      "type": "string"
+    },
+    "content": {
+      "type": "object"
+    }
+  }
+}
