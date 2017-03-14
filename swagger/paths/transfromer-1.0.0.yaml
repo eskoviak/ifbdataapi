@@ -47,6 +47,10 @@ paths:
       summary:  Transform json data.
       description: |
         Transform json data to xml.
+      consumes:
+        - 'application/json'
+      produces:
+        - 'application/xml'
       parameters:
         - name:  transformer-request
           in: body
@@ -59,7 +63,11 @@ paths:
           description: |
             Success. Transformed data as xml document.
           schema:
-            $ref: '../definitions.yaml#/definitions/transformer-response'
+#            type: file
+            example: |
+              <data>
+                <theContentOfTheTransformDataAsXmlWillGoHere/>
+              </data>
         default:
           description: |
             Failure.

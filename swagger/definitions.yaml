@@ -99,8 +99,6 @@ definitions:
     $ref: ./models/SupplementalDocument.yaml
   transformer-request:
     $ref: ./schemas/transformer-request.json
-  transformer-response:
-    $ref: ./schemas/transformer-response.json
   Vehicle:
     $ref: ./models/Vehicle.yaml
   VehicleDriver:
