@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  version: 1.0.0 SNAPSHOT
+  version: 1.0.0
   title: policies
   description: |
     This is the entry point for policy inquiries.  Policy inquiries are supported for the following types of lines of Insurance:
@@ -49,7 +49,11 @@ info:
 produces:
   - application/json
 schemes:
+  - http
   - https
+host: ap-karafb-dev:8181
+basePath:
+  /api/policies
 paths:
   /{policyId}:
     get:
@@ -57,11 +61,15 @@ paths:
       description: |
         For a given policyId, returns a JSON object representing the detailed client information, if the id exists on the Client system.
       parameters:
-        - $ref: '#/parameters/PolicyId'
+        - name: policyId
+          in: path
+          required: true
+          description: the policy identifier
+          type: string
       responses:
         '200':
           description: |
-            Success--Includes the source return codes: `SU-1000`
+            Success
           schema:
             type: object
             properties:
@@ -75,31 +83,3 @@ paths:
           description: Entity not found
         '500':
           description: Server error                  
-  /{policyId}/interests:
-    get:
-      summary: An array of Interest
-      parameters:
-        - $ref: '#/parameters/PolicyId'
-      responses:
-        '200':
-          description: Success
-          schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  $ref: ../definitions.yaml#/definitions/Interest
-        '401':
-          description: Unauthorized or invalid token
-        '404':
-          description: Entity not found
-        '500':
-          description: Server error                  
-parameters:
-  PolicyId:
-    name: policyId
-    required: true
-    in: path
-    description: policyId
-    type: string
