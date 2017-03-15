@@ -97,6 +97,8 @@ definitions:
     $ref: ./models/ProjectedValues.yaml
   SupplementalDocument:
     $ref: ./models/SupplementalDocument.yaml
+  transformer-request:
+    $ref: ./schemas/transformer-request.json
   Vehicle:
     $ref: ./models/Vehicle.yaml
   VehicleDriver:
