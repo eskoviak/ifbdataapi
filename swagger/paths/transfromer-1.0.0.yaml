@@ -63,8 +63,8 @@ paths:
           description: |
             Success. Transformed data as xml document.
           schema:
-#            type: file
-            example: <data><theContentOfTheTransformDataAsXmlWillGoHere/></data>
+            type: file
+#            example: <data><theContentOfTheTransformDataAsXmlWillGoHere/></data>
         default:
           description: |
             Failure.
