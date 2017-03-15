@@ -11,7 +11,7 @@ info:
     only supports contentType : "JSON".
 
     #### Sequence Diagram
-    ![Interaction](http://connections/issite/ews/SiteAssets/api.sytem.transformer-design.png)
+    ![Interaction](http://connections/issite/ews/SiteAssets/api.system.transformer-design.png)
 
     #### Known Implementations
     * Care+ Review
