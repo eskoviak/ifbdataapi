@@ -58,7 +58,7 @@ host:
 basePath:
   /api/client-search
 paths:
-  /client-search:
+  /:
     post:
       summary:  Search client records
       description: |
