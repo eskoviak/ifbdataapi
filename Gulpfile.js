@@ -11,15 +11,16 @@ var yaml = require('gulp-yaml');
 var replace = require('gulp-replace');
 var watch = require('gulp-watch');
 var SwaggerParser = require('swagger-parser');
+var fs = require('fs');
 
 /**
  * Gulp config values
  */
-var input = 'swagger/**/*.yaml';
+//var input = 'swagger/**/*.yaml';
 var mainSwaggerDefs = 'swagger/paths/*.yaml';
-var stubSwaggerDefs = 'swagger/stubs/*.yaml';
-var output = 'dist';
-var swaggerCDN = 'https://cdn-dev.infarmbureau.com/swagger/';
+//var stubSwaggerDefs = 'swagger/stubs/*.yaml';
+var output = 'swagger/bundles/';
+//var swaggerCDN = 'https://cdn-dev.infarmbureau.com/swagger/';
 
 
 /**
@@ -30,40 +31,19 @@ gulp.task('clean', function () {
 });
 
 /**
- * replaces local file $refs with url $refs, converts to JSON, outputs to
- * `dist/`
- */
-gulp.task('build', ['clean'], function () {
-  var findRef = /[$]ref: [.]{0,2}[/](.*)[.]yaml#?(.*)/g;
-  var replaceRef = "$ref: " + swaggerCDN + "$1.json#$2";
-
-  return gulp.src(input)
-  .pipe(replace(findRef, replaceRef))
-  .pipe(yaml({ space: 4}))
-  .pipe(gulp.dest(output));
-});
-
-/**
- * runs the Swagger-Parser validator once.
+ * runs the Swagger-Parser validater once; this also builds the output files.
  */
 gulp.task('validate', function () {
-  gulp.src([mainSwaggerDefs, stubSwaggerDefs])
+  gulp.src([mainSwaggerDefs])
     .pipe(vinylPipe(validateSwagger));
 });
 
 /**
- * watches files in the `swagger` folder for changes and validates the `swagger/swagger.yaml`.
+ * watches files in the `swagger/paths` folder for changes and validates the contracts against swagger.
  */
 gulp.task('watch', ['validate'], function () {
-  watch(input, { ignoreInitial: true }, function (file) {
-
-    if (!/paths/.test(file.path)) {
-      gulp.src(stubSwaggerDefs)
-        .pipe(vinylPipe(validateSwagger));
-    }
-    else {
-      validateSwagger(file);
-    }
+  watch(mainSwaggerDefs, { ignoreInitial: true }, function (file) {
+    validateSwagger(file);
   });
 });
 
@@ -74,15 +54,16 @@ function vinylPipe(func) {
 }
 
 /**
- * calls SwaggerParser.validate and reports results
+ * calls SwaggerParser.validate--if input is valid, 
+ * creates the bundled json file in the bundles 
+ * director and reports results
  */
 function validateSwagger(vinylFile) {
     var options = { validate: { spec: true } };
-
-
     return SwaggerParser
       .validate(vinylFile.path, options)
-      .then(function () {
+      .then(function (api) {
+        fs.writeFile(output+api.info.title+'-'+api.info.version+'.json',  JSON.stringify(api))
         var msg = chalk.green('[ok]') + ' ' + vinylFile.path;
         console.log(msg);
       })
