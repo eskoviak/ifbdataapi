@@ -5,6 +5,7 @@ required:
   - 'item'
   - 'construction'
   - 'dwellingType'
+  - 'exposures'
   - 'fireProtection'
   - 'formTypeDescription'
   - 'foundation'
