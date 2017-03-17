@@ -27,49 +27,53 @@ var output = 'swagger/bundles/';
  * Cleans the `dist` folder.
  */
 gulp.task('clean', function () {
-  del(output + '/*');
+    del(output + '/*');
 });
 
 /**
  * runs the Swagger-Parser validater once; this also builds the output files.
  */
 gulp.task('validate', function () {
-  gulp.src([mainSwaggerDefs])
-    .pipe(vinylPipe(validateSwagger));
+    gulp.src([mainSwaggerDefs])
+        .pipe(vinylPipe(validateSwagger));
 });
 
 /**
  * watches files in the `swagger/paths` folder for changes and validates the contracts against swagger.
  */
 gulp.task('watch', ['validate'], function () {
-  watch(mainSwaggerDefs, { ignoreInitial: true }, function (file) {
-    validateSwagger(file);
-  });
+    watch(mainSwaggerDefs, {ignoreInitial: true}, function (file) {
+        validateSwagger(file);
+    });
 });
 
 function vinylPipe(func) {
-  return through2.obj(function (file, enc, cb) {
-    cb(null, func(file));
-  });
+    return through2.obj(function (file, enc, cb) {
+        cb(null, func(file));
+    });
 }
 
 /**
- * calls SwaggerParser.validate--if input is valid, 
- * creates the bundled json file in the bundles 
+ * calls SwaggerParser.validate--if input is valid,
+ * creates the bundled json file in the bundles
  * director and reports results
  */
 function validateSwagger(vinylFile) {
-    var options = { validate: { spec: true } };
+    var options = {validate: {spec: true}};
     return SwaggerParser
-      .validate(vinylFile.path, options)
-      .then(function (api) {
-        fs.writeFile(output+api.info.title+'-'+api.info.version+'.json',  JSON.stringify(api))
-        var msg = chalk.green('[ok]') + ' ' + vinylFile.path;
-        console.log(msg);
-      })
-      .catch(function (err) {
-        var msg = chalk.red('[error]') + ' ' + vinylFile.path + '\n';
-        msg = msg + err.message;
-        console.log(msg);
-      });
+        .validate(vinylFile.path, options)
+        .then(function (api) {
+            var layer = "";
+            if (api.info['x-architectural-layer']) {
+                layer = api.info['x-architectural-layer'] + "-";
+            }
+
+            fs.writeFile(output + layer + api.info.title + '-' + api.info.version + '.json', JSON.stringify(api));
+            console.log(chalk.green('[ok]') + ' ' + vinylFile.path);
+        })
+        .catch(function (err) {
+            var msg = chalk.red('[error]') + ' ' + vinylFile.path + '\n';
+            msg = msg + err.message;
+            console.log(msg);
+        });
 }
