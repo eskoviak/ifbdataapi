@@ -6,32 +6,25 @@ var gulp = require('gulp');
 var through2 = require('through2');
 var chalk = require('chalk');
 var del = require('del');
-var exec = require('child_process').exec;
-var yaml = require('gulp-yaml');
-var replace = require('gulp-replace');
 var watch = require('gulp-watch');
-var SwaggerParser = require('swagger-parser');
+var swaggerParser = require('swagger-parser');
 var fs = require('fs');
 
 /**
  * Gulp config values
  */
-//var input = 'swagger/**/*.yaml';
 var mainSwaggerDefs = 'swagger/paths/*.yaml';
-//var stubSwaggerDefs = 'swagger/stubs/*.yaml';
-var output = 'swagger/bundles/';
-//var swaggerCDN = 'https://cdn-dev.infarmbureau.com/swagger/';
-
+var outputFolder = 'swagger/bundles/';
 
 /**
  * Cleans the `dist` folder.
  */
 gulp.task('clean', function () {
-    del(output + '/*');
+    del(outputFolder + '/*');
 });
 
 /**
- * runs the Swagger-Parser validater once; this also builds the output files.
+ * runs the Swagger-Parser validater once; this also builds the outputFolder files.
  */
 gulp.task('validate', function () {
     gulp.src([mainSwaggerDefs])
@@ -53,6 +46,16 @@ function vinylPipe(func) {
     });
 }
 
+function getOutputFileName(api) {
+    var layer = "";
+    if (api.info['x-architectural-layer']) {
+        layer = api.info['x-architectural-layer'] + "-";
+    }
+
+    var outputFile = outputFolder + layer + api.info.title + '-' + api.info.version + '.json';
+    return outputFile;
+}
+
 /**
  * calls SwaggerParser.validate--if input is valid,
  * creates the bundled json file in the bundles
@@ -60,15 +63,11 @@ function vinylPipe(func) {
  */
 function validateSwagger(vinylFile) {
     var options = {validate: {spec: true}};
-    return SwaggerParser
+    return swaggerParser
         .validate(vinylFile.path, options)
         .then(function (api) {
-            var layer = "";
-            if (api.info['x-architectural-layer']) {
-                layer = api.info['x-architectural-layer'] + "-";
-            }
 
-            fs.writeFile(output + layer + api.info.title + '-' + api.info.version + '.json', JSON.stringify(api));
+            fs.writeFile(getOutputFileName(api), JSON.stringify(api));
             console.log(chalk.green('[ok]') + ' ' + vinylFile.path);
         })
         .catch(function (err) {
