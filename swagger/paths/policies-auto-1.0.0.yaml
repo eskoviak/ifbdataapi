@@ -45,7 +45,7 @@ host:
 basePath:
   /api/policies
 paths:
-  /{policyId}/auto:
+  /auto/{policyId}:
     get:
       summary: Return a policy object
       description: |
