@@ -13,36 +13,44 @@ var fs = require('fs');
 /**
  * Gulp config values
  */
-var mainSwaggerDefs = 'swagger/paths/*.yaml';
-var outputFolder = 'swagger/bundles/';
+var swaggerDefinitionSourceFolder = 'swagger/paths/*.yaml';
+var bundleOutputFolder = 'swagger/bundles/';
 
 /**
  * Cleans the `dist` folder.
  */
 gulp.task('clean', function () {
-    del(outputFolder + '/*');
+    return del(bundleOutputFolder + '/*');
 });
 
 /**
- * runs the Swagger-Parser validater once; this also builds the outputFolder files.
+ * runs the Swagger-Parser validater once;
  */
 gulp.task('validate', function () {
-    return gulp.src([mainSwaggerDefs])
-        .pipe(vinylPipe(validateSwagger));
+    return gulp.src([swaggerDefinitionSourceFolder])
+        .pipe(vinylPipe(swaggerProcessor));
+});
+
+/**
+ * validates and builds the bundles in bundleOutputFolder .
+ */
+gulp.task('bundle', function () {
+    return gulp.src([swaggerDefinitionSourceFolder])
+        .pipe(vinylPipe(swaggerProcessor, saveBundle));
 });
 
 /**
  * watches files in the `swagger/paths` folder for changes and validates the contracts against swagger.
  */
 gulp.task('watch', ['validate'], function () {
-    watch(mainSwaggerDefs, {ignoreInitial: true}, function (file) {
-        validateSwagger(file);
+    return watch(swaggerDefinitionSourceFolder, {ignoreInitial: true}, function (file) {
+        swaggerProcessor(file);
     });
 });
 
-function vinylPipe(func) {
+function vinylPipe(fileProcessor, fileProcessorParams) {
     return through2.obj(function (file, enc, cb) {
-        cb(null, func(file));
+        cb(null, fileProcessor(file, fileProcessorParams));
     });
 }
 
@@ -52,22 +60,30 @@ function getOutputFileName(api) {
         layer = api.info['x-architectural-layer'] + "-";
     }
 
-    var outputFile = outputFolder + layer + api.info.title + '-' + api.info.version + '.json';
+    var outputFile = bundleOutputFolder + layer + api.info.title + '-' + api.info.version + '.json';
     return outputFile;
 }
 
+function saveBundle(api){
+
+    var outputFileName = getOutputFileName(api);
+    console.log(chalk.blue('[Creating : ] ') + outputFileName);
+    fs.writeFile(outputFileName, JSON.stringify(api));
+}
 /**
  * calls SwaggerParser.validate--if input is valid,
  * creates the bundled json file in the bundles
  * director and reports results
  */
-function validateSwagger(vinylFile) {
+function swaggerProcessor(vinylFile, successCallBack) {
     var options = {validate: {spec: true}};
     return swaggerParser
         .validate(vinylFile.path, options)
         .then(function (api) {
 
-            fs.writeFile(getOutputFileName(api), JSON.stringify(api));
+            if (successCallBack) {
+                successCallBack(api);
+            }
             console.log(chalk.green('[ok]') + ' ' + vinylFile.path);
         })
         .catch(function (err) {
