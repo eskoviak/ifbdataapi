@@ -51,12 +51,11 @@ paths:
       description: |
         For a given policyId, returns a JSON object representing the detailed client information, if the id exists on the Client system.
       parameters:
-        - $ref: '#/parameters/PolicyId'
-#          - name: policyId
-#            in: path
-#            required: true
-#            description: the policy identifier
-#            type: string
+          - name: policyId
+            in: path
+            required: true
+            description: the policy identifier
+            type: string
       responses:
         '200':
           description: |
@@ -74,10 +73,3 @@ paths:
           description: Entity not found
         '500':
           description: Server error                  
-parameters:
-  PolicyId:
-    name: policyId
-    required: true
-    in: path
-    description: policyId
-    type: string
