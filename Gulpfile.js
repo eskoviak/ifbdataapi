@@ -27,7 +27,7 @@ gulp.task('clean', function () {
  * runs the Swagger-Parser validater once; this also builds the outputFolder files.
  */
 gulp.task('validate', function () {
-    gulp.src([mainSwaggerDefs])
+    return gulp.src([mainSwaggerDefs])
         .pipe(vinylPipe(validateSwagger));
 });
 
