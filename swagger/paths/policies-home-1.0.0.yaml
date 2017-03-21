@@ -1,10 +1,10 @@
 swagger: "2.0"
 info:
   version: 1.0.0
-  title: auto-policies
+  title: home-policies
   x-architectural-layer: system
   description: |
-    This is the entry point for auto policy inquiries.
+    This is the entry point for home policy inquiries.
 
     #### Service Functionality
     This API is called with a policyId parameter.  If successful, the resultant resource is a JSON oject, based on the prefix of the policyId.
@@ -13,8 +13,8 @@ info:
     *Interaction*
     ![Interaction](http://connections/issite/ews/SiteAssets/sd-policies%401-17.png)
     
-    *Auto Policy* 
-    ![Auto](http://connections/issite/ews/SiteAssets/Auto%20Policy%20Structure.png)
+    *Home Policy*
+    ![Home](http://connections/issite/ews/SiteAssets/Home%20Policy%20Structure.png)
 
     #### Performance Expectation
     Standard SLA applies.
@@ -43,13 +43,13 @@ schemes:
 host:
   ap-karafb-dev:8181
 basePath:
-  /api/policies/auto-policies
+  /api/policies/home-policies
 paths:
   /{policyId}:
     get:
       summary: Return a policy object
       description: |
-        For a given policyId, returns a JSON object representing the detailed client information, if the id exists on the Client system.
+        For a given policyId, returns a JSON object representing the detailed home policy information, if the id exists on the policy system.
       parameters:
           - name: policyId
             in: path

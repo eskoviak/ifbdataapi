@@ -49,7 +49,7 @@ paths:
     get:
       summary: Return a policy object
       description: |
-        For a given policyId, returns a JSON object representing the detailed client information, if the id exists on the Client system.
+        For a given policyId, returns a JSON object representing the detailed auto policy information, if the id exists on the policy system.
       parameters:
           - name: policyId
             in: path
@@ -67,6 +67,8 @@ paths:
                 type: array
                 items:
                   $ref: '../definitions.yaml#/definitions/Policy'
+        '204':
+          description: No content for available for the policy
         '401':
           description: Unauthorized or invalid token
         '404':
