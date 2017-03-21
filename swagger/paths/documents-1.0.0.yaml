@@ -2,6 +2,7 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: documents
+  x-architectural-layer: system
   description: |
     A [system](http://connections/issite/iCAF/SitePages/APIs%20-%20System%20vs%20Process%20vs%20Experience.aspx) layer API.
 
