@@ -58,7 +58,7 @@ Figure 1:  Repository Main Sructure
 
    You can also run 
    ```
-   $> gulb validate
+   $> gulp validate
    ```
    To validate the changes you made in you your yaml. 
     
@@ -74,7 +74,7 @@ Figure 1:  Repository Main Sructure
    ```
    This should indicate no errors; files are built into `../swagger/bundles`. 
 
-   If you have renamed or removed and yaml in `../swagger/path` Then run 
+   If you have renamed or removed any yaml in `../swagger/path` Then run 
    ```
    $> gulp clean build
    ...
