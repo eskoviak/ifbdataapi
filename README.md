@@ -32,9 +32,9 @@ Figure 1:  Repository Main Sructure
 3. Once node is installed, you need to install `gulp`, which is used to validate the JSON files.  To install, type the following at the command prompt at the top level of the directory:
    
    ```
-   $> npm install gulp-cli -g
+   $> npm install -g gulp-cli
    ...
-   $> npm install gulp -D
+   $> npm install -g gulp
    ...
    $> gulp --help
    [00:00:00] Using gulpfile
@@ -56,16 +56,32 @@ Figure 1:  Repository Main Sructure
  
    This performs an initial validation of all the `.yaml` files in the `../swagger/paths` directory. Any errors will be displayed.  The command does not return; rather it continues to watch the directory and checks any files which are subsequently changed, until ctrl-c is issued.
 
+   You can also run 
+   ```
+   $> gulb validate
+   ```
+   To validate the changes you made in you your yaml. 
+    
 5. When changes are complete, the JSON bundle files for export to WS02 are created by executing the following at the command prompt:
 
    ```
    $> gulp build
    ...
+   [ok] C:\IFBIDEV\enterpriseapidatamodel\swagger\paths\policies-1.0.0.yaml
+   [Creating : ] swagger/bundles/policies-1.0.0.json
+   ... 
    $>
    ```
+   This should indicate no errors; files are built into `../swagger/bundles`. 
 
-   This should indicate no errors; files are built into `../swagger/bundles`.
-
+   If you have renamed or removed and yaml in `../swagger/path` Then run 
+   ```
+   $> gulp clean build
+   ...
+   $>
+   ```
+   Which runs the clean task before running the build task. The clean taks deletes all files in the `../swagger/bundles` folder. 
+ 
 ## Using Swagger Editor
 
 *Note:*  The Swagger Editor is only used by developers to view the files in the `swagger/paths` directory, to check for format, validation etc.  For use in the enterprise WS02 Store, the files should be processed into the swagger/bundles directory (as JSON files) using the `gulp build` command above.

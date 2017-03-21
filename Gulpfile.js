@@ -34,7 +34,7 @@ gulp.task('validate', function () {
 /**
  * validates and builds the bundles in bundleOutputFolder .
  */
-gulp.task('bundle', function () {
+gulp.task('build', function () {
     return gulp.src([swaggerDefinitionSourceFolder])
         .pipe(vinylPipe(swaggerProcessor, saveBundle));
 });
