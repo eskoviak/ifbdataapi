@@ -1,0 +1,32 @@
+{
+  "type": "object",
+  "properties": {
+    "importProcessName": {
+      "type": "string"
+    },
+    "fileNumber": {
+      "type": "string"
+    },
+    "drawer": {
+      "type": "string"
+    },
+    "folderType": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "string"
+    },
+    "fileName": {
+      "type": "string"
+    },
+    "fileType": {
+      "type": "string"
+    },
+    "documentType": {
+      "type": "string"
+    },
+    "attachmentType": {
+      "type": "string"
+    }
+  }
+}

@@ -5,6 +5,8 @@ definitions:
     $ref: ./models/Address.yaml
   Agent:
     $ref: ./models/Agent.yaml
+  archive-request:
+    $ref: ./schemas/archive-request.json
   Client:
     $ref: ./models/Client.yaml
   ClientAccount:
@@ -27,6 +29,10 @@ definitions:
     $ref: ./models/CoverageDetail-Life.yaml
   Dividend:
     $ref: ./models/Dividend.yaml
+  documents-request:
+    $ref: ./schemas/documents-request.json
+  documents-response:
+    $ref: ./schemas/documents-response.json
   Limit:
     $ref: ./models/Limit.yaml
   Deductible:
@@ -49,12 +55,18 @@ definitions:
     $ref: ./schemas/filter.json
   FleetDriver:
     $ref: ./models/FleetDriver.yaml
+  generate-document-request:
+    $ref: ./schemas/generate-document-request.json
+  hypermedia-controls-response:
+    $ref: ./schemas/hypermedia-controls-response.json
   InsuredItem:
     $ref: ./models/InsuredItem.yaml
   Interest:
     $ref: ./models/Interest.yaml
   Billing:
     $ref: ./models/Billing.yaml
+  Link:
+    $ref: ./schemas/link.json
   Location:
     $ref: ./models/Location.yaml
   LossHistory:
@@ -85,6 +97,8 @@ definitions:
     $ref: ./models/ProjectedValues.yaml
   SupplementalDocument:
     $ref: ./models/SupplementalDocument.yaml
+  transformer-request:
+    $ref: ./schemas/transformer-request.json
   Vehicle:
     $ref: ./models/Vehicle.yaml
   VehicleDriver:

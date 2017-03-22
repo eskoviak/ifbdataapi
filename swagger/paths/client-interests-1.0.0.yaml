@@ -1,0 +1,63 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title:  interests
+  description: |
+    This [system](http://connections/issite/iCAF/SitePages/Home.aspx) API is used to get detailed information concerning the client's interests.
+
+    #### Service Functionality
+    An interest is a business relationship between the client and a policy (contract), such as the _owner_, _annuitant_, the _insured_ or the _driver_.
+
+    The API uses the internal record-keeping system identifier (`clientId`) to locate the client information.  Additionally, one OR more filters MAY be added to the query to describe the desired relationship. This allows the consumer to narrow the request, filtered by the businessObject, _e.g._ `CLM`, `MEMB`, `LIFE` etc. The returned resource will then contain a specific collection of interests tied to the requested businessObject(s).
+
+    `.../EnterpriseClientInterestsApi/interests/?clientId=SOME_CLIENT_ID`
+
+    #### Performance Expectation
+    TBD
+    
+    #### Service Capacity Supported
+    TBD
+    
+    #### Suggested Test Scenario
+    TBD
+    
+    #### Service Availability
+    TBD
+    
+    #### Service Security
+    TBD
+  contact:
+    name: Enterprise Web Services Team
+    email: EWSDevelopers@infambureau.com
+    url: http://connections/issite/ews/SitePages/Home.aspx
+schemes:
+  - 'http'
+  - 'https'
+consumes:
+  - 'application/json'
+produces:
+  - 'application/json'
+host:
+  ap-tcsoaa-dev.infarmbureau.com:8082
+basePath:
+  /EnterpriseClientInterestsApi/interests
+paths:
+  /:
+    get:
+      summary:  Get interests for client
+      description: |
+        Given the recordkeeping client identifier and filter criteria, provide the collection of intersts which satisfy the query.
+      parameters:
+        - name: clientId
+          in: query
+          description: record-keeping system identifier
+          required: true
+          type: string
+      responses:
+        '200' :
+          description: |
+            Success.
+          schema:
+            $ref: '../definitions.yaml#/definitions/Interest'
+        default:
+          description: failure          

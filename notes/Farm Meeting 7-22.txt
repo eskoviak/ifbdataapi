@@ -1,4 +1,0 @@
-Group Meeting 7/22
-•	Remove coverages from Structure and Dwelling models
-•	Add drivers (fleetDrivers?) to PolicyDetail-Commercial
-•	Build to model that adds properties for commercial drivers?

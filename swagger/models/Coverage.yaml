@@ -4,13 +4,14 @@ description: |
 required: 
   - 'deductibles'
   - 'description'
+  - 'coverageCode'
+  - 'sequence'
   - 'planCode'
   - 'coverageDetail'
   - 'coverageFlags'
   - 'coverageSchedule'
   - 'limits'
   - 'premium'
-  - 'coverageBenefit'
   - 'isEndorsement'
   - 'isExtended'
   - 'isExcluded'
@@ -28,6 +29,18 @@ properties:
       A unique label used for the coverage (ex. Bodily Injury Liability).
       In POINT, maps to the coverage description.  For (Life), contains the plan description (business name of the plan).
     type: string
+  coverageCode:
+    description: |
+      If there exsists a PolicyAssociation (for example an additional interest tied to a coverage in a Home policy), this coverageCode is the first part of a two-part key (the other being sequence) which can be used to link the two pieces of business information.
+    type:
+      - 'string'
+      - 'null' 
+  sequence:
+    description: |
+      If there exsists a PolicyAssociation (for example an additional interest tied to a coverage in a Home policy), this property is the second part of a two-part key (the other being coverageCode) which can be used to link the two pieces of business information.
+    type:
+      - 'string'
+      - 'null'   
   planCode:
     description: |
       The code used by the host system that uniquely identifies this coverage.
@@ -91,13 +104,6 @@ properties:
       $ref: ../definitions.yaml#/definitions/Limit
   premium:
     type: number
-  coverageBenefit:
-    description: |
-      (Life/Annuity) Models specific benefits to the coverage, which are usually additional premium and modify
-      the owning coverage.
-    type: ['array', 'null']
-    items:
-      $ref: ../definitions.yaml#/definitions/CoverageBenefit
   isEndorsement:
     description: Flag which indicates if this is a coverage endorsement.
     type: boolean

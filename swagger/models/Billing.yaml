@@ -6,8 +6,6 @@ properties:
   billingMode:
     description: |
       The method used to present the bill to the member
-    x-required-in:
-      - 'rural'
     type:
       - 'string'
     enum:

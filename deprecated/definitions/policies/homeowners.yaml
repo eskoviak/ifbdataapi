@@ -1,5 +1,0 @@
-properties:
-  dwellings:
-    type: array
-    items:
-      $ref: ../../definitions.yaml#/Dwelling
