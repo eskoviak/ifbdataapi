@@ -152,8 +152,8 @@ paths:
           description: Failure--unknown server error.
 parameters:
   PolicyId:
+    description: The identifier of the policy
     name: policyId
     required: true
     in: path
-    description: policyId
     type: string
