@@ -1,4 +1,4 @@
-swagger: "2.0"
+swagger: '2.0'
 info:
   version: 1.0.0
   title: home-policies
@@ -51,7 +51,7 @@ paths:
       description: |
         For a given policyId, returns a JSON object representing the detailed home policy information, if the id exists on the policy system.
       parameters:
-        - $ref: '#/parameters/PolicyId'
+        - $ref: '#/parameters/policyIdParam'
       responses:
         '200':
           description: |
@@ -75,7 +75,7 @@ paths:
       description: |
         For a given policyId and input discount object, adds the policy discount to associated policy.
       parameters:
-        - $ref: '#/parameters/PolicyId'
+        - $ref: '#/parameters/policyIdParam'
         - name: discountInfo
           description: |
             The desired discount information for this operation.
@@ -103,7 +103,7 @@ paths:
       description: |
         For a given policyId and input discount object, removes the cited policy discount from the policy object.
       parameters:
-        - $ref: '#/parameters/PolicyId'
+        - $ref: '#/parameters/policyIdParam'
         - name: discountInfo
           description: |
             The desired discount information for this operation.
@@ -132,7 +132,7 @@ paths:
       description: |
         Causes the record-keeping system to process the underwriting rules for the given policy.
       parameters:
-        - $ref: '#/parameters/PolicyId'
+        - $ref: '#/parameters/policyIdParam'
       responses:
         '200':
           description: |
@@ -149,9 +149,9 @@ paths:
         '500':
           description: Failure--unknown server error.
 parameters:
-  PolicyId:
+  policyIdParam:
     name: policyId
     required: true
     in: path
-    description: policyId
+    description: The policy identifer
     type: string
