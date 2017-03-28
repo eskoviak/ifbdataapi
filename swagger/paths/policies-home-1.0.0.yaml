@@ -1,0 +1,68 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title:  home-policies
+  x-architectural-layer: system
+  description: |
+    This is the entry point for home policy inquiries.
+
+    #### Service Functionality
+    This API is called with a policyId parameter.  If successful, the resultant resource is a JSON oject, based on the prefix of the policyId.
+
+    #### Diagrams
+    *Interaction*
+    ![Interaction](http://connections/issite/ews/SiteAssets/sd-policies%401-17.png)
+    
+    *Home Policy*
+    ![Home](http://connections/issite/ews/SiteAssets/Home%20Policy%20Structure.png)
+
+    #### Performance Expectation
+    Standard SLA applies.
+    
+    #### Service Capacity Supported
+    Standard Capacity applies
+    
+    #### Suggested Test Scenario
+    TBD
+    
+    #### Service Availability
+    Standard Service Availability applies
+    
+    #### Service Security
+    HTTPS/SSL
+  
+  contact:
+    name:  Mary Boscaccia
+    url:  http://www.infarmbureau.com
+    email: mary.Boscacci@infarmbureau.com
+produces:
+  - application/json
+schemes:
+  - http
+  - https
+host:
+  ap-karafb-dev:8181
+basePath:
+  /api/policies/home-policies
+paths:
+  /{policyId}:
+    get:
+      summary: Return a home policy object
+      description: |
+        For a given policyId, returns a JSON object representing the detailed home policy information, if the id exists on the policy system.
+      parameters:
+        - name: policyId
+          description:  The policy identifier
+          required: true
+          in: path
+          type: string
+      responses:
+        '200':
+          description: success
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '../definitions.yaml#/definitions/Policy'
