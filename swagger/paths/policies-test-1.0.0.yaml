@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: 1.0.0
-  title: home-policies
+  title: test-policies
   x-architectural-layer: system
   description: |
     This is a test yaml file for creating WS02 Store api
