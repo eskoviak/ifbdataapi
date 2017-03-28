@@ -68,6 +68,9 @@ paths:
             properties:
               data:
                 type: string
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/testa-example-response'
         '401':
           description: Unauthorized or invalid token
         '404':
