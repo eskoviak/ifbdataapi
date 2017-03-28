@@ -3,7 +3,7 @@
     "properties" : {
         "parameters" : {"type" : "object", "properties" : {
           "name" : {"type" : "string"},
-          "value" : {"type" : "string"}}},
+          "value" : {"type" : "object"}}},
         "links" : { "type" : "array", "items" : {"$ref" : "../definitions.yaml#/definitions/Link" }
         }
     }

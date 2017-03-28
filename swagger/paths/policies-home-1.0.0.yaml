@@ -152,6 +152,9 @@ paths:
                 type: array
                 items:
                   $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/policies-home-rate-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':
