@@ -43,6 +43,10 @@ paths:
             properties:
               data:
                 type: string
+          examples:
+            application/json:
+              dataItem1: value1
+              dataItem2: value2
         '401':
           description: Unauthorized or invalid token
         '404':
