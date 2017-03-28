@@ -74,4 +74,25 @@ paths:
           description: Entity not found
         '500':
           description: Server error
+    delete:
+      summary: doesn't delete anything
+      description: |
+        This API path is for ymt.
+      parameters:
+        - name: dummyId
+          required: true
+          in: path
+          description: The dummy identifier
+          type: string
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              data:
+                type: string
+        '500':
+          description: Server Error
+
                 
