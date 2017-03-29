@@ -63,6 +63,9 @@ paths:
                 type: array
                 items:
                   $ref: '../definitions.yaml#/definitions/Policy'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/policies-auto-rate-response'
         '204':
           description: No content for available for the policy
         '401':
@@ -96,6 +99,9 @@ paths:
                 type: array
                 items:
                   $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/policies-auto-rate-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':
@@ -124,6 +130,9 @@ paths:
                 type: array
                 items:
                   $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/policies-auto-rate-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':
@@ -146,6 +155,9 @@ paths:
                 type: array
                 items:
                   $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/policies-auto-rate-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':
