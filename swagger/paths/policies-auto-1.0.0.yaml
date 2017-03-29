@@ -40,10 +40,6 @@ produces:
 schemes:
   - http
   - https
-host:
-  ap-karafb-dev:8181
-basePath:
-  /api/policies/auto-policies
 paths:
   /{policyId}:
     get:
