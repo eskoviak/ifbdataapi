@@ -1,0 +1,12 @@
+{
+    "dataExample1" : "A string data value",
+    "dataExample2" : { "name" : "A property", "value" : "quixotic"},
+    "dataExample3" : 100,
+    "dataExample4" : [
+        "An", "Array", "of", "Strings"
+    ],
+    "dataExample5" : [
+        {"name" : "prop1", "value" : "an"},
+        {"name" : "prop2", "value" : "array of properties"}
+    ]
+}

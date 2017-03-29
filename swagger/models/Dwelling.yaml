@@ -17,6 +17,7 @@ required:
   - 'residenceType'
   - 'replacementValue'
   - 'yearOfConstruction'
+  - 'supplementalDocuments'
 properties:
   locationId:
     description: |

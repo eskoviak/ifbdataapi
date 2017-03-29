@@ -83,6 +83,8 @@ definitions:
     $ref: ./models/PersonName.yaml
   Phone:
     $ref: ./models/Phone.yaml
+  policies-home-rate-response:
+    $ref: ./schemas/policies-home-rate-response.json
   Policy:
     $ref: ./models/Policy.yaml
   PolicyAssociation:
@@ -99,6 +101,8 @@ definitions:
     $ref: ./models/SupplementalDocument.yaml
   transformer-request:
     $ref: ./schemas/transformer-request.json
+  testa-example-response:
+    $ref: ./schemas/testa-example-response.json
   Vehicle:
     $ref: ./models/Vehicle.yaml
   VehicleDriver:
