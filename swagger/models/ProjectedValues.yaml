@@ -8,9 +8,9 @@ required:
   - 'anniversaryPolicyValue'
   - 'anniversarySurrenderValue'
   - 'guaranteedPolicyValue'
-  - 'guaranteedSurrenderValue'
+  - 'guaranteedPolicySurrenderValue'
   - 'guaranteedAnniversaryPolicyValue'
-  - 'guaranteedAgeXAnniversaryPolicyValue'
+  - 'guaranteedAgeXAnniversaryValue'
   - 'guaranteedAnniversarySurrenderValue'
   - 'ageX'
   - 'ageXAnniversaryDate'
@@ -46,7 +46,7 @@ properties:
       The contractual policy value as of the #.projectedValueDate.
     type:
       - 'number'
-  guaranteedSurrenderValue:
+  guaranteedPolicySurrenderValue:
     description: |
       The contractual surnender value as of the #.projectedValueDate.
     type:
@@ -56,7 +56,7 @@ properties:
       The contractual policy value as of the next policy anniversary date.
     type:
       - 'number'
-  guaranteedAgeXAnniversaryPolicyValue:
+  guaranteedAgeXAnniversaryValue:
     description: |
       The contractual policy value, at #.AgeXAnniversaryDate
     type:
