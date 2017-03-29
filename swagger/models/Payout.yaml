@@ -3,9 +3,9 @@ description: |
 required:
   - 'originatingPolicyNumber'
   - 'payoutAmount'
-  - 'payoutMode'
-  - 'nextPayoutDate'
-  - 'lastPayoutDate'
+  - 'paymentMode'
+  - 'nextPaymentDate'
+  - 'lastPaymentDate'
 properties:
   originatingPolicyNumber:
     description: |
@@ -22,13 +22,13 @@ properties:
       The mode or frequency at which the repetative payment amount (#.payoutAmount) is made.
     type:
       - 'string'
-  nextPayoutDate:
+  nextPaymentDate:
     description: |
       The date of the next expected payment (based on #.paymentMode and #.paymentAmount).
     type:
       - 'number'
     format: date
-  lastPayoutDate:
+  lastPaymentDate:
     description: |
       The date of the last payment made on this contract.
     type:
