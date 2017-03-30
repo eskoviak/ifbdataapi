@@ -3,7 +3,7 @@ description: |
 required:
   - 'issueAge'
   - 'coverageType'
-  - 'coverageBenefit'
+  - 'coverageBenefits'
   - 'guidelineAnnualPremium'
   - 'deathBenefitOption'
   - 'termLevelYears'
@@ -27,7 +27,7 @@ properties:
     description: |
       The type of coverage this is (i.e. base).
     type: string
-  coverageBenefit:
+  coverageBenefits:
     description: |
       Models specific benefits to the CoverageDetail-Life, which are usually additional premium and modify the owning coverage.
     type: array
