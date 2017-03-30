@@ -77,6 +77,11 @@ paths:
         For a given policyId and input discount object, adds the policy discount to associated policy.
       parameters:
         - $ref: '#/parameters/PolicyId'
+        - name: SessionKey
+          description:  The Exceed Session key previously obtained
+          required: true
+          in: header
+          type: string
         - name: discountInfo
           description: |
             The desired discount information for this operation.
