@@ -13,9 +13,6 @@ info:
     *Interaction*
     ![Interaction](http://connections/issite/ews/SiteAssets/sd-policies%401-17.png)
     
-    *Home Policy*
-    ![Home](http://connections/issite/ews/SiteAssets/Home%20Policy%20Structure.png)
-
     #### Performance Expectation
     Standard SLA applies.
     
@@ -47,11 +44,7 @@ paths:
       description: |
         For a given policyId, returns a JSON object representing the detailed home policy information, if the id exists on the policy system.
       parameters:
-        - name: policyId
-          description: The policy identifer
-          required: true
-          in: path
-          type: string
+        - $ref: '#/parameters/PolicyId'
       responses:
         '200':
           description: Success
@@ -62,6 +55,9 @@ paths:
                 type: array
                 items:
                   $ref: '../definitions.yaml#/definitions/Policy'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/policies-home-1.0.0-get-response'
         '401':
           description: Unauthorized or invalid token
         '404':
@@ -74,10 +70,11 @@ paths:
       description: |
         For a given policyId and input discount object, adds the policy discount to associated policy.
       parameters:
-        - name: policyId
-          description: The policy identifer
+        - $ref: '#/parameters/PolicyId'
+        - name: SessionKey
+          description:  The Exceed Session key previously obtained
           required: true
-          in: path
+          in: header
           type: string
         - name: discountInfo
           description: |
@@ -96,52 +93,21 @@ paths:
                 type: array
                 items:
                   $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
+          examples:
+            applicaition/json:
+              $ref: '../definitions.yaml#/definitions/policies-home-1.0.0-discounts-put-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':
           description: Failure--unknown server error.
+  /{policyId}/discounts/{objName}:
     'delete':
       summary: Removes a discount from a policy
       description: |
         For a given policyId and input discount object, removes the cited policy discount from the policy object.
       parameters:
-        - name: policyId
-          description: The policy identifer
-          required: true
-          in: path
-          type: string
-        - name: discountInfo
-          description: |
-            The desired discount information for this operation.
-          required: true
-          in: body
-          schema:
-            $ref: ../definitions.yaml#/definitions/Discount
-      responses:
-        '200':
-          description: Success
-          schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
-        '404':
-          description: Failure--The provided policyId could not be found.
-        '500':
-          description: Failure--unknown server error.
-  /{policyId}/rate:
-    'post':
-      summary: Causes the system to rate the policy
-      description: |
-        Causes the record-keeping system to process the underwriting rules for the given policy.
-      parameters:
-        - name: policyId
-          description: The policy identifer
-          required: true
-          in: path
-          type: string
+        - $ref: '#/parameters/PolicyId'
+        - $ref: '#/parameters/Name'
       responses:
         '200':
           description: Success
@@ -154,8 +120,45 @@ paths:
                   $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
           examples:
             application/json:
-              $ref: '../definitions.yaml#/definitions/policies-home-rate-response'
+              $ref: '../definitions.yaml#/definitions/policies-home-1.0.0-discounts-delete-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':
           description: Failure--unknown server error.
+  /{policyId}/rate:
+    'post':
+      summary: Causes the system to rate the policy
+      description: |
+        Causes the record-keeping system to process the underwriting rules for the given policy.
+      parameters:
+        - $ref: '#/parameters/PolicyId'
+      responses:
+        '200':
+          description: Success
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/policies-home-1.0.0-rate-post-response'
+        '404':
+          description: Failure--The provided policyId could not be found.
+        '500':
+          description: Failure--unknown server error.
+parameters:
+  PolicyId:
+    name: policyId
+    required: true
+    in: path
+    description: policyId
+    type: string  
+  Name:
+    description: The name of the item to be deleted
+    name: objName
+    required: true
+    in: path
+    type: string        

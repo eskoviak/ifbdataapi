@@ -93,8 +93,14 @@ definitions:
     $ref: ./schemas/hypermedia-controls-response.json
   policies-auto-rate-response:
     $ref: ./schemas/policies-auto-rate-response.json
-  policies-home-rate-response:
-    $ref: ./schemas/policies-home-rate-response.json
+  policies-home-1.0.0-get-response:
+    $ref: '#/definitions/Policy'
+  policies-home-1.0.0-discounts-put-response:
+    $ref: ./schemas/hypermedia-controls-response.json
+  policies-home-1.0.0-discounts-delete-response:
+    $ref: ./schemas/hypermedia-controls-response.json
+  policies-home-1.0.0-rate-post-response:
+    $ref: ./schemas/hypermedia-controls-response.json    
   Policy:
     $ref: ./models/Policy.yaml
   PolicyAssociation:
