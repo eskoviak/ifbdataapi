@@ -83,6 +83,14 @@ definitions:
     $ref: ./models/PersonName.yaml
   Phone:
     $ref: ./models/Phone.yaml
+  policies-auto-1.0.0-get-response:
+    $ref: ./examples/policies-auto-1.0.0-get-response.json
+  policies-auto-1.0.0-discounts-put-response:
+    $ref: ./schemas/hypermedia-controls-response.json
+  policies-auto-1.0.0-discounts-delete-response:
+    $ref: ./schemas/hypermedia-controls-response.json
+  policies-auto-1.0.0-rate-post-response:
+    $ref: ./schemas/hypermedia-controls-response.json
   policies-auto-rate-response:
     $ref: ./schemas/policies-auto-rate-response.json
   policies-home-rate-response:

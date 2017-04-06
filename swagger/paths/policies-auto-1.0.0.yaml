@@ -7,14 +7,11 @@ info:
     This is the entry point for auto policy inquiries.
 
     #### Service Functionality
-    This API is called with a policyId parameter.  If successful, the resultant resource is a JSON oject, based on the prefix of the policyId.
+    This API is called with a {policyId} parameter.  If successful, the resultant resource is a JSON oject, based on the prefix of the policyId.
 
     #### Diagrams
     *Interaction*
     ![Interaction](http://connections/issite/ews/SiteAssets/sd-policies%401-17.png)
-    
-    *Auto Policy* 
-    ![Auto](http://connections/issite/ews/SiteAssets/Auto%20Policy%20Structure.png)
 
     #### Performance Expectation
     Standard SLA applies.
@@ -43,7 +40,7 @@ schemes:
 paths:
   /{policyId}:
     get:
-      summary: Return a policy object
+      summary: Return a policy Namespace Resource
       description: |
         For a given policyId, returns a JSON object representing the detailed auto policy information, if the id exists on the policy system.
       parameters:
@@ -61,7 +58,7 @@ paths:
                   $ref: '../definitions.yaml#/definitions/Policy'
           examples:
             application/json:
-              $ref: '../definitions.yaml#/definitions/policies-auto-rate-response'
+              $ref: '../definitions.yaml#/definitions/policies-auto-1.0.0-get-response'
         '204':
           description: No content for available for the policy
         '401':
@@ -102,7 +99,7 @@ paths:
                   $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
           examples:
             application/json:
-              $ref: '../definitions.yaml#/definitions/policies-auto-rate-response'
+              $ref: '../definitions.yaml#/definitions/policies-auto-1.0.0-discounts-put-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':
@@ -133,7 +130,7 @@ paths:
                   $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
           examples:
             application/json:
-              $ref: '../definitions.yaml#/definitions/policies-auto-rate-response'
+              $ref: '../definitions.yaml#/definitions/policies-auto-1.0.0-discounts-delete-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':
@@ -158,7 +155,7 @@ paths:
                   $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
           examples:
             application/json:
-              $ref: '../definitions.yaml#/definitions/policies-auto-rate-response'
+              $ref: '../definitions.yaml#/definitions/policies-auto-1.0.0-rate-post-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':

@@ -82,6 +82,33 @@ Figure 1:  Repository Main Sructure
    ```
    Which runs the clean task before running the build task. The clean taks deletes all files in the `../swagger/bundles` folder. 
  
+## Embedding Examples
+
+Providing example responses is encouraged.  The example response MUST be in the MIME type format(s) which are supported via the `produces` OpenAPI field (type _[string]_).  Note that this property is optionally present at the [Swagger Object](http://swagger.io/specification/#swagger-object-14) and the [Operation Object](http://swagger.io/specification/#operation-object-36) levels.
+
+The example files should be named using this template:
+
+*&lt;contract name&gt;[-&lt;version&gt;][-&lt;operation&gt;]-response.&lt;MIME Type Extension&gt;*
+
+The version and operation may be omitted if not needed. For example:  
+
+*policies-home-1.0.0-get-response.json*  
+
+The files should be housed in the `.../swagger/examples` folder, and an entry made in the .../swagger/definitions.yaml file.  For the file example above, the entry would be:  
+
+    ...
+    policies-home-1.0.0-get-response:  
+      $ref: './examples/policies-home-v1.0.0-get-response.json'  
+    ...
+
+To include the example response in the contract specification such that it will be bundled and usable by the WS02 API Store, include the following (refer to the above example) in the [response object](http://swagger.io/specification/#response-object-58) of the contract specification (indent appropriately; __examples__ should be at the same level as the __description__ and __schema__ objects):  
+    
+	...  
+	examples:  
+	  application/json:  
+	    $ref: '../definitions.yaml#/definitions/policies-home-1.0.0-get-response'  
+	...  
+    
 ## Using Swagger Editor
 
 *Note:*  The Swagger Editor is only used by developers to view the files in the `swagger/paths` directory, to check for format, validation etc.  For use in the enterprise WS02 Store, the files should be processed into the swagger/bundles directory (as JSON files) using the `gulp build` command above.
