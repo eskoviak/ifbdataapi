@@ -90,16 +90,6 @@ paths:
         '200':
           description: |
              Success--Policy discount has been added successfully to the given policyId.
-          schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
-          examples:
-            application/json:
-              $ref: '../definitions.yaml#/definitions/policies-auto-1.0.0-discounts-put-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':
@@ -116,16 +106,6 @@ paths:
         '200':
           description: |
             Success--Policy discount has been removed.
-          schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
-          examples:
-            application/json:
-              $ref: '../definitions.yaml#/definitions/policies-auto-1.0.0-discounts-delete-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':
@@ -147,10 +127,10 @@ paths:
               data:
                 type: array
                 items:
-                  $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
+                  $ref: '../definitions.yaml#/definitions/Policy'
           examples:
             application/json:
-              $ref: '../definitions.yaml#/definitions/policies-auto-1.0.0-rate-post-response'
+              $ref: '../definitions.yaml#/definitions/policies-auto-1.0.0-get-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':
