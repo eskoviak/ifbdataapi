@@ -90,7 +90,9 @@ definitions:
   policies-home-1.0.0-get-response:
     $ref: ./examples/policies-home-1.0.0-get-response.json
   policies-home-1.0.0-rate-post-response:
-    $ref: ./examples/policies-home-1.0.0-get-response.json    
+    $ref: ./examples/policies-home-1.0.0-get-response.json
+  policies-point-1.0.0-get-response:
+    $ref: ./examples/policies-point-1.0.0-get-response.json    
   Policy:
     $ref: ./models/Policy.yaml
   PolicyAssociation:
