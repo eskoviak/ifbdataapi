@@ -7,11 +7,11 @@ info:
     This is the entry point for home policy inquiries.
 
     #### Service Functionality
-    This API is called with a policyId parameter.  If successful, the resultant resource is a JSON oject, based on the prefix of the policyId.
+    This API is called with a {policyId} parameter.  If successful, the resultant resource is a JSON oject, based on the prefix of the policyId.
 
     #### Diagrams
     *Interaction*
-    ![Interaction](http://connections/issite/ews/SiteAssets/sd-policies%401-17.png)
+    ![Interaction](http://connections/issite/ews/SiteAssets/sd-policies-home-1.0.0.png)
     
     #### Performance Expectation
     Standard SLA applies.
@@ -86,16 +86,6 @@ paths:
       responses:
         '200':
           description: Success
-          schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
-          examples:
-            applicaition/json:
-              $ref: '../definitions.yaml#/definitions/policies-home-1.0.0-discounts-put-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':
@@ -111,16 +101,6 @@ paths:
       responses:
         '200':
           description: Success
-          schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
-          examples:
-            application/json:
-              $ref: '../definitions.yaml#/definitions/policies-home-1.0.0-discounts-delete-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':
@@ -141,7 +121,7 @@ paths:
               data:
                 type: array
                 items:
-                  $ref: '../definitions.yaml#/definitions/hypermedia-controls-response'
+                  $ref: ../definitions.yaml#/definitions/Policy
           examples:
             application/json:
               $ref: '../definitions.yaml#/definitions/policies-home-1.0.0-rate-post-response'

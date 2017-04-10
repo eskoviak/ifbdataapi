@@ -130,7 +130,7 @@ paths:
                   $ref: '../definitions.yaml#/definitions/Policy'
           examples:
             application/json:
-              $ref: '../definitions.yaml#/definitions/policies-auto-1.0.0-get-response'
+              $ref: '../definitions.yaml#/definitions/policies-auto-1.0.0-rate-post-response'
         '404':
           description: Failure--The provided policyId could not be found.
         '500':
