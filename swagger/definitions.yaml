@@ -83,10 +83,16 @@ definitions:
     $ref: ./models/PersonName.yaml
   Phone:
     $ref: ./models/Phone.yaml
-  policies-auto-rate-response:
-    $ref: ./schemas/policies-auto-rate-response.json
-  policies-home-rate-response:
-    $ref: ./schemas/policies-home-rate-response.json
+  policies-auto-1.0.0-get-response:
+    $ref: ./examples/policies-auto-1.0.0-get-response.json
+  policies-auto-1.0.0-rate-post-response:
+    $ref: ./examples/policies-auto-1.0.0-get-response.json
+  policies-home-1.0.0-get-response:
+    $ref: ./examples/policies-home-1.0.0-get-response.json
+  policies-home-1.0.0-rate-post-response:
+    $ref: ./examples/policies-home-1.0.0-get-response.json
+  policies-point-1.0.0-get-response:
+    $ref: ./examples/policies-point-1.0.0-get-response.json    
   Policy:
     $ref: ./models/Policy.yaml
   PolicyAssociation:

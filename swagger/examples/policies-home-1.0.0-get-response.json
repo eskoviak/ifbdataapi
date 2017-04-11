@@ -1,0 +1,502 @@
+{
+  "data": [
+    {
+      "id": "HP  0007038590",
+      "transactionId": null,
+      "businessPurposeTypeCode": null,
+      "transactionRequestDate": null,
+      "transactionEffectiveDate": "2014-10-31",
+      "quoteSequenceNumber": null,
+      "transactionSequenceNumber": null,
+      "policyId": null,
+      "policyNumber": "0007038590",
+      "priorPolicyNumber": null,
+      "lineOfBusinessCode": null,
+      "description": "222 S WAYNE ST FLORA, IN  46929-1363",
+      "policyStatus": "Pending",
+      "policyStatusCode": "P",
+      "controllingStateProvinceCode": null,
+      "transactionStatus": "R",
+      "transactionStatusCode": "RENEWAL",
+      "lineOfBusiness": "Homeowners",
+      "locations": [
+        {
+          "id": 1,
+          "address": {
+            "addressType": null,
+            "addressAggregate": null,
+            "street1": "222 S WAYNE ST",
+            "street2": null,
+            "city": "FLORA",
+            "state": "IN",
+            "countyCode": null,
+            "county": null,
+            "townshipCode": null,
+            "township": null,
+            "postalCode": "46929-1363",
+            "country": null
+          },
+          "acres": null
+        }
+      ],
+      "policyDetails": {
+        "detailPart": "Homeowners",
+        "coverages": [],
+        "deductibles": [],
+        "discounts": [
+          {
+            "name": "HCED",
+            "description": "Claims Experience Discount",
+            "appliedDate": "2014-10-31"
+          },
+          {
+            "name": "HLYD",
+            "description": "Loyalty Discount",
+            "appliedDate": "2014-10-31"
+          },
+          {
+            "name": "HMPD",
+            "description": "Multi-Line Discount",
+            "appliedDate": "2014-10-31"
+          }
+        ],
+        "isRated": false,
+        "insuredItems": [
+          {
+            "coverages": [
+              {
+                "deductibles": [],
+                "description": "Coverage A Dwelling",
+                "coverageCode": "COVA",
+                "sequence": null,
+                "planCode": null,
+                "coverageDetail": null,
+                "coverageFlags": null,
+                "coverageSchedule": [],
+                "limits": [
+                  {
+                    "name": null,
+                    "value": 142440
+                  }
+                ],
+                "premium": 0,
+                "isEndorsement": false,
+                "isExtended": false,
+                "isExcluded": false,
+                "isWaived": false,
+                "inclusions": []
+              },
+              {
+                "deductibles": [],
+                "description": "Coverage B Other Structures",
+                "coverageCode": "COVB",
+                "sequence": null,
+                "planCode": null,
+                "coverageDetail": null,
+                "coverageFlags": null,
+                "coverageSchedule": [],
+                "limits": [
+                  {
+                    "name": null,
+                    "value": 14244
+                  }
+                ],
+                "premium": 0,
+                "isEndorsement": false,
+                "isExtended": false,
+                "isExcluded": false,
+                "isWaived": false,
+                "inclusions": []
+              },
+              {
+                "deductibles": [],
+                "description": "Coverage C Personal Property",
+                "coverageCode": "COVC",
+                "sequence": null,
+                "planCode": null,
+                "coverageDetail": null,
+                "coverageFlags": null,
+                "coverageSchedule": [],
+                "limits": [
+                  {
+                    "name": null,
+                    "value": 71220
+                  }
+                ],
+                "premium": 0,
+                "isEndorsement": false,
+                "isExtended": false,
+                "isExcluded": false,
+                "isWaived": false,
+                "inclusions": []
+              },
+              {
+                "deductibles": [],
+                "description": "Coverage D Loss of Use",
+                "coverageCode": "COVD",
+                "sequence": null,
+                "planCode": null,
+                "coverageDetail": null,
+                "coverageFlags": null,
+                "coverageSchedule": [],
+                "limits": [
+                  {
+                    "name": null,
+                    "value": 28488
+                  }
+                ],
+                "premium": null,
+                "isEndorsement": false,
+                "isExtended": false,
+                "isExcluded": false,
+                "isWaived": false,
+                "inclusions": []
+              },
+              {
+                "deductibles": [],
+                "description": "Personal Liability Coverage",
+                "coverageCode": "COVE",
+                "planCode": null,
+                "coverageDetail": null,
+                "coverageFlags": null,
+                "coverageSchedule": [],
+                "limits": [
+                  {
+                    "name": null,
+                    "value": 300000
+                  }
+                ],
+                "premium": 0,
+                "isEndorsement": false,
+                "isExtended": false,
+                "isExcluded": false,
+                "isWaived": false,
+                "inclusions": []
+              },
+              {
+                "deductibles": [],
+                "description": "Medical Payments to Others Coverage",
+                "coverageCode": "COVF",
+                "sequence": null,
+                "planCode": null,
+                "coverageDetail": null,
+                "coverageFlags": null,
+                "coverageSchedule": [],
+                "limits": [
+                  {
+                    "name": "Per Person",
+                    "value": 5000
+                  },
+                  {
+                    "name": "Per Occurrence",
+                    "value": 10000
+                  }
+                ],
+                "premium": null,
+                "isEndorsement": false,
+                "isExtended": false,
+                "isExcluded": false,
+                "isWaived": false,
+                "inclusions": []
+              },
+              {
+                "deductibles": [],
+                "description": "Water Back Up And Sump Overflow ($10,000)",
+                "coverageCode": "HWB1",
+                "sequence": "0001",
+                "planCode": null,
+                "coverageDetail": null,
+                "coverageFlags": null,
+                "coverageSchedule": [],
+                "limits": [
+                  {
+                    "name": null,
+                    "value": 0
+                  }
+                ],
+                "premium": 0,
+                "isEndorsement": true,
+                "isExtended": true,
+                "isExcluded": false,
+                "isWaived": false,
+                "inclusions": []
+              },
+              {
+                "deductibles": [],
+                "description": "Replacement Cost on Personal Property",
+                "coverageCode": "REPC",
+                "sequence": "0001",
+                "planCode": null,
+                "coverageDetail": null,
+                "coverageFlags": null,
+                "coverageSchedule": [],
+                "limits": [
+                  {
+                    "name": null,
+                    "value": 0
+                  }
+                ],
+                "premium": 0,
+                "isEndorsement": true,
+                "isExtended": true,
+                "isExcluded": false,
+                "isWaived": false,
+                "inclusions": []
+              },
+              {
+                "deductibles": [],
+                "description": "WINDSTORM/HAIL DEDUCTIBLE APPLIES",
+                "coverageCode": null,
+                "sequence": null,
+                "planCode": null,
+                "coverageDetail": null,
+                "coverageFlags": null,
+                "coverageSchedule": [],
+                "limits": [],
+                "premium": 0,
+                "isEndorsement": false,
+                "isExtended": false,
+                "isExcluded": false,
+                "isWaived": false,
+                "inclusions": []
+              },
+              {
+                "deductibles": [
+                  {
+                    "name": null,
+                    "value": 500
+                  }
+                ],
+                "description": "LOSS DEDUCTIBLE APPLIES",
+                "coverageCode": null,
+                "sequence": null,
+                "planCode": null,
+                "coverageDetail": null,
+                "coverageFlags": null,
+                "coverageSchedule": [],
+                "limits": [],
+                "premium": 0,
+                "isEndorsement": false,
+                "isExtended": false,
+                "isExcluded": false,
+                "isWaived": false,
+                "inclusions": []
+              }
+            ],
+            "discounts": [
+              {
+                "name": "PRTD",
+                "description": "Protective device(s)",
+                "appliedDate": "2014-10-31"
+              }
+            ],
+            "lossHistory": [],
+            "limits": [],
+            "itemType": "Dwelling",
+            "itemDetails": {
+              "locationId": 1,
+              "item": null,
+              "construction": "Frame",
+              "dwellingType": "Dwelling",
+              "exposures": [
+                {
+                  "name": "Renovation Update",
+                  "value": [
+                    {
+                      "name": "Type",
+                      "value": "Heating"
+                    },
+                    {
+                      "name": "Year",
+                      "value": 2013
+                    },
+                    {
+                      "name": null,
+                      "value": "Full Renovation"
+                    }
+                  ]
+                },
+                {
+                  "name": "Renovation Update",
+                  "value": [
+                    {
+                      "name": "Type",
+                      "value": "Plumbing"
+                    },
+                    {
+                      "name": "Year",
+                      "value": 2000
+                    },
+                    {
+                      "name": null,
+                      "value": "Full Renovation"
+                    }
+                  ]
+                },
+                {
+                  "name": "Renovation Update",
+                  "value": [
+                    {
+                      "name": "Type",
+                      "value": "Roofing"
+                    },
+                    {
+                      "name": "Year",
+                      "value": 2013
+                    },
+                    {
+                      "name": null,
+                      "value": "Full Renovation"
+                    }
+                  ]
+                },
+                {
+                  "name": "Renovation Update",
+                  "value": [
+                    {
+                      "name": "Type",
+                      "value": "Wiring"
+                    },
+                    {
+                      "name": "Year",
+                      "value": 2000
+                    },
+                    {
+                      "name": null,
+                      "value": "Full Renovation"
+                    }
+                  ]
+                }
+              ],
+              "fireProtection": "PROTECTED",
+              "formTypeDescription": "HO 0002 HOMEOWNERS EXTRA POLICY",
+              "foundation": "Slab",
+              "generalCondition": "Excellent",
+              "numberOfFamilies": 1,
+              "occupancy": "Primary",
+              "roofType": "Asphalt Shingle",
+              "roofAge": 1,
+              "residenceType": "Primary",
+              "replacementValue": 142440,
+              "yearOfConstruction": 1968,
+              "supplementalDocuments": []
+            }
+          }
+        ]
+      },
+      "insuranceScore": "6P",
+      "issueAge": null,
+      "originalInceptionDate": "2008-10-31",
+      "termEffectiveDate": "2014-10-31",
+      "termExpirationDate": "2015-10-31",
+      "cancelDate": null,
+      "maturityDate": null,
+      "policyTerm": 12,
+      "premium": 0,
+      "billingDetails": {
+        "billingMode": null,
+        "paymentMode": null
+      },
+      "policyAssociations": [
+        {
+          "clientId": "FQD2Q1DE9H672C081213",
+          "locationId": null,
+          "item": null,
+          "coverageCode": null,
+          "sequence": null,
+          "name": "MINDY NICOLE THOMPSON",
+          "address": {
+            "addressType": null,
+            "addressAggregate": null,
+            "street1": "7218 N 225 E",
+            "street2": null,
+            "city": "CAMDEN",
+            "state": "IN",
+            "countyCode": null,
+            "county": null,
+            "townshipCode": null,
+            "township": null,
+            "postalCode": "46917-9205",
+            "country": null
+          },
+          "referenceData": null,
+          "associationType": "ADDITIONAL INSURED",
+          "associationTypeCode": "AIN",
+          "associationSubType": null,
+          "demographics": null
+        },
+        {
+          "clientId": "E8J36H5US200C080240C",
+          "locationId": null,
+          "item": null,
+          "coverageCode": null,
+          "sequence": null,
+          "name": "VICKY L SCOTT",
+          "address": {
+            "addressType": null,
+            "addressAggregate": null,
+            "street1": "7218 N 225 E",
+            "street2": null,
+            "city": "CAMDEN",
+            "state": "IN",
+            "countyCode": null,
+            "county": null,
+            "townshipCode": null,
+            "township": null,
+            "postalCode": "46917-9205",
+            "country": null
+          },
+          "referenceData": null,
+          "associationType": "NAMED INSURED",
+          "associationTypeCode": "NIN",
+          "associationSubType": null,
+          "demographics": null
+        },
+        {
+          "clientId": null,
+          "locationId": "00001",
+          "item": null,
+          "coverageCode": null,
+          "sequence": null,
+          "name": "MINDY NICOLE THOMPSON",
+          "address": {
+            "addressType": null,
+            "addressAggregate": null,
+            "street1": "222 S WAYNE ST",
+            "street2": null,
+            "city": "FLORA",
+            "state": "IN",
+            "countyCode": null,
+            "county": null,
+            "townshipCode": null,
+            "township": null,
+            "postalCode": "46929-1363",
+            "country": null
+          },
+          "referenceData": null,
+          "associationType": "ADDITIONAL INSURED",
+          "associationTypeCode": "AIN",
+          "associationSubType": null,
+          "demographics": null
+        }
+      ],
+      "supplementalDocuments": [
+        {
+          "code": "B1",
+          "description": "Insurance Score",
+          "dateReceived": "2014-07-24"
+        },
+        {
+          "code": "C1",
+          "description": "Claims History / CLUE report",
+          "dateReceived": "2008-10-08"
+        },
+        {
+          "code": "IN",
+          "description": "Inspection report",
+          "dateReceived": "2008-10-20"
+        }
+      ]
+    }
+  ]
+}
