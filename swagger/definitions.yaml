@@ -15,6 +15,8 @@ definitions:
     $ref: ./schemas/client-inquiry-request.json
   client-inquiry-response:
     $ref: ./schemas/client-inquiry-response.json
+  client-interests-2.0.0-get-response:
+    $ref: ./examples/client-interests-2.0.0-get-response.json
   client-search-request:
     $ref: ./schemas/client-search-request.json
   ClientInterest:
