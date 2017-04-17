@@ -2,6 +2,7 @@ swagger: "2.0"
 info:
   version: 1.0.0
   title: policies
+  x-architectural-layer: process
   description: |
     This is the entry point for policy inquiries.  Policy inquiries are supported for the following types of lines of Insurance:
 
@@ -18,15 +19,6 @@ info:
     *Interaction*
     ![Interaction](http://connections/issite/ews/SiteAssets/sd-policies%401-17.png)
     
-    *Auto Policy* 
-    ![Auto](http://connections/issite/ews/SiteAssets/Auto%20Policy%20Structure.png)
-
-    *Home Policy*
-    ![Home](http://connections/issite/ews/SiteAssets/Home%20Policy%20Structure.png)
-    
-    *Farm/Umbrella/Pollution/Commerical*
-    ![Farm](http://connections/issite/ews/SiteAssets/Commercial%20Policy%20Sructure.png)
-
     #### Performance Expectation
     Standard SLA applies.
     
