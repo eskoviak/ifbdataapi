@@ -2,15 +2,15 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: clients
+  x-architectural-layer: process
   description: |
-    This is the entry point for client inquiries against the client record-keeping system (Exceed).
+    This is the process entry point for client inquiries against the client record-keeping system (Exceed).
 
     #### Service Functionality
     This API is called with a `clientId` parameter.  If found, the resultant resource is a JSON oject, based on the Client model.
 
     #### Diagrams
     ![Interaction](http://connections/issite/ews/SiteAssets/sd-client.png)
-    ![Client](http://connections/issite/ews/SiteAssets/path-clients.png)
 
     #### Performance Expectation
     Standard SLA applies.
@@ -35,10 +35,6 @@ produces:
 schemes:
   - http
   - https
-host:
-  ap-karafb-dev:8181
-basePath:
-  /api/clients
 paths:
   /{clientId}:
     get:
@@ -63,6 +59,9 @@ paths:
                 type: array
                 items:
                   $ref: '../definitions.yaml#/definitions/Client'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/clients-1.0.0-get-response'
         '401':
           description: Unauthorized or invalid token
         '404':

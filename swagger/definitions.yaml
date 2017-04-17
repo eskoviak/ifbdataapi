@@ -25,6 +25,8 @@ definitions:
     $ref: ./schemas/client-search-request.json
   ClientInterest:
     $ref: ./models/ClientInterest.yaml
+  clients-1.0.0-get-response:
+    $ref: ./examples/clients-1.0.0-get-response.json
   codes-response:
     $ref: ./schemas/codes-response.json
   Coverage:
