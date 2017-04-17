@@ -2,6 +2,7 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: client-inquiry
+  x-architectural-layer: process
   description: |
 
     This [process](http://connections/issite/iCAF/SitePages/Home.aspx) API is used to inquire about clients from the enterprise client record-keeping system.  This inquiry consists of two categories of information:
@@ -72,10 +73,6 @@ consumes:
   - 'application/json'
 produces:
   - 'application/json'
-host:
-  ap-karafb-dev:8181
-basePath:
-  /api/client-inquiry
 paths:
   /:
     post:
@@ -95,5 +92,8 @@ paths:
             Success.  The client information with the added business context for the requested relationship(s).
           schema:
             $ref: '../definitions.yaml#/definitions/client-inquiry-response'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/client-inquiry-1.0.0-post-response'
         default:
           description: Failure
