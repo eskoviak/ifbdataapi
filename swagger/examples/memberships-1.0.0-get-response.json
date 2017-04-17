@@ -1,0 +1,26 @@
+{
+  "data": {
+    "id": "ME  0002418718",
+    "membershipNumber": "0002418718",
+    "paidStatus": "Unpaid",
+    "membershipType": null,
+    "membershipTypeCode": "MEMB",
+    "membershipClass": null,
+    "membershipClassCode": "A",
+    "membershipCode": "INDIVIDUAL",
+    "longevityDate": "2008-01-01",
+    "termEffectiveDate": "2016-12-01",
+    "termExpirationDate": "2017-12-01",
+    "paidToDate": null,
+    "clientCounty": "Morgan",
+    "clientCountyCode": 55,
+    "clientTownship": "Brown",
+    "clientTownshipCode": "04",
+    "overrideCounty": null,
+    "overrideCountyCode": null,
+    "overrideTownship": null,
+    "overrideTownshipCode": null,
+    "clientId": "DI4ES8RPDT645MUT1925",
+    "doNotRenew": false
+  }
+}

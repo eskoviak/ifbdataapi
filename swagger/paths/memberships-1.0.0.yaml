@@ -2,6 +2,7 @@ swagger: "2.0"
 info:
   version: 1.0.0
   title: memberships
+  x-architectural-layer: process
   description: |
     A [process](http://connections/issite/iCAF/SitePages/Home.aspx) layer API which exposes membership inquiries against the record-keeping system.
 
@@ -35,10 +36,6 @@ produces:
 schemes:
   - http
   - https
-host:
-  ap-karafb-dev:8181
-basePath:
-  /api/memberships
 paths:
   /{membershipId}:
     get:
@@ -58,7 +55,10 @@ paths:
               data:
                 type: array
                 items:
-                  $ref: ../models/Membership.yaml
+                  $ref: ../definitions.yaml#/definitions/Membership
+          examples:
+            application/json:
+              $ref: ../definitions.yaml#/definitions/memberships-1.0.0-get-response
         "401":
           description: Unauthorized or invalid token
         "404":

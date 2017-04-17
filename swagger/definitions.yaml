@@ -81,6 +81,8 @@ definitions:
     $ref: ./models/LossHistory.yaml
   Membership:
     $ref: ./models/Membership.yaml
+  memberships-1.0.0-get-response:
+    $ref: ./examples/memberships-1.0.0-get-response.json
   NonForfeitureProvision:
     $ref: ./models/NonForfeiture-Life.yaml
   Other:
