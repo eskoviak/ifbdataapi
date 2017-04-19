@@ -15,6 +15,8 @@ definitions:
     $ref: ./schemas/client-inquiry-request.json
   client-inquiry-response:
     $ref: ./schemas/client-inquiry-response.json
+  client-inquiry-1.0.0-post-response:
+    $ref: ./examples/client-inquiry-1.0.0-post-response.json
   client-interests-2.0.0-get-response:
     $ref: ./examples/client-interests-2.0.0-get-response.json
   client-search-1.0.0-post-response:
@@ -23,6 +25,8 @@ definitions:
     $ref: ./schemas/client-search-request.json
   ClientInterest:
     $ref: ./models/ClientInterest.yaml
+  clients-1.0.0-get-response:
+    $ref: ./examples/clients-1.0.0-get-response.json
   codes-response:
     $ref: ./schemas/codes-response.json
   Coverage:
@@ -77,6 +81,8 @@ definitions:
     $ref: ./models/LossHistory.yaml
   Membership:
     $ref: ./models/Membership.yaml
+  memberships-1.0.0-get-response:
+    $ref: ./examples/memberships-1.0.0-get-response.json
   NonForfeitureProvision:
     $ref: ./models/NonForfeiture-Life.yaml
   Other:

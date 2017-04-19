@@ -1,0 +1,69 @@
+{
+  "data": {
+    "id": "ACOIT4PFF030CLTCTCN1",
+    "sourceSystemType": null,
+    "sourceSystemTypeCode": "IN",
+    "name": "JOHN P HILGENHOLD",
+    "personName": null,
+    "phoneNumbers": [
+      {
+        "phoneType": null,
+        "phoneTypeCode": "IW",
+        "phoneNumber": "+1-812-5474197+"
+      },
+      {
+        "phoneType": null,
+        "phoneTypeCode": "HH",
+        "phoneNumber": "+1-812-8362886+"
+      }
+    ],
+    "emailAddresses": [
+      {
+        "emailAddress": "jp.hilgenholdinfarmbureaucom@example.com",
+        "emailAddressType": "OAM"
+      },
+      {
+        "emailAddress": "jppampscinet@example.com",
+        "emailAddressType": "OTH"
+      }
+    ],
+    "taxId": null,
+    "preferences": [
+      {
+        "preference": "Billing Alert",
+        "preferenceCode": "OAMAB",
+        "enabled": false
+      },
+      {
+        "preference": "Marketing Email",
+        "preferenceCode": "OAMME",
+        "enabled": false
+      },
+      {
+        "preference": "Paper Policy Documents",
+        "preferenceCode": "OAMPD",
+        "enabled": false
+      },
+      {
+        "preference": "Product Email",
+        "preferenceCode": "OAMPE",
+        "enabled": false
+      },
+      {
+        "preference": "Paper Invoice",
+        "preferenceCode": "OAMPI",
+        "enabled": false
+      }
+    ],
+    "demographics": {
+      "gender": null,
+      "genderCode": "M",
+      "dateOfBirth": "1964-06-09",
+      "maritalStatus": null,
+      "maritalStatusCode": "M",
+      "driversLicenseNumber": 5788690618,
+      "driversLicenseState": "IN",
+      "dateOfDeath": null
+    }
+  }
+}
