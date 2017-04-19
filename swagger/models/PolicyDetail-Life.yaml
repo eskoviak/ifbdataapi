@@ -1,11 +1,6 @@
 description: |
   The Policy detail model. which is the detail element of an insurance policy or Annuity 
   contract.
-x-used-by:
-  - 'Policy'
-x-acord-agg-xref:
-  - '#LAH' : 'OLifE.Holding.Policy.Life'
-  - '#2' : 'OLifE.Holding.Policy.Annuity'  
 required:
   - 'detailPart'
   - 'type'
@@ -53,8 +48,6 @@ properties:
       On an Annuity, this represents the estimated or expected portion of an
       initial lump sum to be made to this contract.  Examples include qualified
       or non-qualified replacements, Mutual Funds or Certificates of Deposit.
-    x-acord-xref:
-      - '#2.InitDepositAmt'
     type:
       - 'number'
       - 'null'
@@ -66,8 +59,6 @@ properties:
     items:
         $ref: ../definitions.yaml#/definitions/Investment
   dividends:
-    description: |
-      The dividend information for a permanent/universal life policy
     $ref: ../definitions.yaml#/definitions/Dividend
   faceAmount:
     description: |
@@ -86,8 +77,6 @@ properties:
   minimumPremiumAmount:
     description: |
       Current No Lapse Guarantee Premium.  At IFB, this is a policy level datum.
-    x-acord-xref:
-      - '#LAH.Coverage.MinPremAmt'
     type:
       - 'number'
       - 'null'
@@ -100,8 +89,6 @@ properties:
   lastPremiumDate:
     description: |
       Date on which last premium payment was applied.  This is a property on OLifE.Holding.Policy.Life only.
-    x-acord-xref:
-      - '#LAH.LastPremDate'
     type:
       - 'string'
     format: date
@@ -120,18 +107,8 @@ properties:
       - 'number'
       - 'null'
   projectedValues:
-    description: |
-      The projected policy values for a given date.
-    type: object
     $ref: ../definitions.yaml#/definitions/ProjectedValues
   nonForfeitureProvision:
-    description: |
-      Provisions to prevent forfeiture of the policy.
-    type: object
     $ref: ../definitions.yaml#/definitions/NonForfeitureProvision
   payout:
-    description: |
-      When the contract is paid, the beneficiary(ies) may elect to recieve a recurring payment or payout.  this
-      model captures that information.
-    type: object
     $ref: ../definitions.yaml#/definitions/Payout

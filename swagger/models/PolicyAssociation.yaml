@@ -6,6 +6,9 @@ description: |
 required:
   - 'clientId'
   - 'locationId'
+  - 'item'
+  - 'coverageCode'
+  - 'sequence'
   - 'name'
   - 'address'
   - 'referenceData'
@@ -17,18 +20,33 @@ required:
 properties:
   clientId:
     description: |
-      The client id from the the client record keeping system.
+      The client id from the the client record-keeping system.
     type: 
       - 'string'  
       - 'null'
   locationId:
     description: |
       If the interest is tied to a specific location, use this to refer to the Location.Id property.
-    x-used-by:
-      - 'Homeowners'
     type:
       - 'string'
       - 'null'  
+  item:
+    description: |
+      An arbitrary, system assigned item number within the location dicriminates this structure on a location with multiple structures.
+    type:
+      - 'string'
+  coverageCode:
+    description: |
+      If this PolicyAssociation is related to a coverage, this field indicates which coverageCode (also a property of Coverage) this relationship.  If this field is non-null, then sequence should also be valued.
+    type:
+      - 'string'
+      - 'null'
+  sequence:
+    description: |
+      If this PolicyAssociation is related to a coverage, this field indicates which sequence in a single coverageCode to which this association applies. If coverageCode is non-null, this field should also be valued.  Conversely if coverageCode is null, this field should likewise be null.
+    type:
+      - 'string'
+      - 'null'
   name:
     type: string
   address:
@@ -66,24 +84,9 @@ properties:
       - 'null'
   associationRelationship:
     description: |
-      This field is used to describe the relationship of the Party in this model (PolicyAssociation) to 
-      the parent Policy model.
-    x-used-by:
-      - 'Life'
-      - 'Annuities'
+      This field is used to describe the relationship of the Party in this model (PolicyAssociation) to the parent Policy model.
     type:
       - 'string'
       - 'null'
-    example:
-      # Son of the issured who is the primary Beneficiary (partial listing)
-      - { "PolicyAssociation" :
-          { "!..." :,
-            "associationType" : "Beneficiary",
-            "associationSubType" : "Primary",
-            "associationRelationship" : "Son",
-            "...!" : }
-        }
   demographics:
-    description: |
-      Information about the party associated with the policy.
     $ref: ../definitions.yaml#/definitions/Demographics

@@ -9,4 +9,7 @@ validate.err
 *.xsl
 *.xpr
 *.ps1
-
+server.js
+.idea
+*.iml
+swagger/playground

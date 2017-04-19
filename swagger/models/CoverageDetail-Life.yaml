@@ -2,7 +2,8 @@ description: |
   Condition covered or excluded by a life insurance policy or annuities contract.
 required:
   - 'issueAge'
-  - 'type'
+  - 'coverageType'
+  - 'coverageBenefits'
   - 'guidelineAnnualPremium'
   - 'deathBenefitOption'
   - 'termLevelYears'
@@ -26,6 +27,12 @@ properties:
     description: |
       The type of coverage this is (i.e. base).
     type: string
+  coverageBenefits:
+    description: |
+      Models specific benefits to the CoverageDetail-Life, which are usually additional premium and modify the owning coverage.
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/CoverageBenefit
   guidelineAnnualPremium:
     description: |
       The annual premium level above which the contract becomes a Modified Endowment Contract.

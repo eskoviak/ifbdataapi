@@ -1,10 +1,9 @@
 description: |
   (Personal)  A rated or excluded driver of a vehicle.
-required: ["clientId","isRated","isExcluded","relationshipToNamedInsured","discounts","penalties"]
+required: ["client","isRated","isExcluded","relationshipToNamedInsured","discounts","penalties"]
 properties:
-  clientId:
-    description: The id of the Client information for the driver
-    type: string
+  client:
+    $ref: '../definitions.yaml#/definitions/Client'
   isRated:
     description: the VehicleDriver is the rated driver of the vehicle
     type: boolean

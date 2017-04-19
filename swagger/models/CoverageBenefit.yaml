@@ -20,6 +20,10 @@ properties:
     description: |
       The amount of the premium for this benefit.
     type: number
+  faceAmount:
+    description: |
+      The Face Amount which this benefit contributes to the overall policy Face Amount.
+    type: number
   effectiveDate:
     description: |
       The effective date of this benefit.

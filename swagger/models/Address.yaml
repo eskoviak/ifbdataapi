@@ -2,52 +2,87 @@ description: |
   Address model--used with various parent objects to describe the US Postal Service
   location. 
 required: 
-  ['addressType', 'addressAggregate', 'street1', 'street2', 'city', 'state', 'countyCode', 'county',
-   'townshipCode', 'township', 'postalCode', 'country']
+  - 'addressType'
+  - 'addressAggregate'
+  - 'street1'
+  - 'street2'
+  - 'city'
+  - 'state'
+  - 'countyCode'
+  - 'county'
+  - 'townshipCode'
+  - 'township'
+  - 'postalCode'
+  - 'country'
 properties:
   addressType:
-    description:  Future use.  If used, SHOULD be set to 'Mailing'.
-    enum: ['Mailing']
+    description: |
+      Future use.  If used, SHOULD be set to 'Mailing'.
+    type:
+      - 'string'
+    enum:
+      - 'Mailing'
   addressAggregate:
     description: |
       The aggregate address for use when the individual components are not known.
-    type: ['string', 'null']
+    type:
+      - 'string'
+      - 'null'
   street1:
-    description: First line of the postal address, e.g. 100 Main St.
-    type: ['string', 'null']
+    description: |
+      First line of the postal address, e.g. 100 Main St.
+    type:
+      - 'string'
+      - 'null'
   street2:
-    description: Second line of the postal address, e.g. Apt 100.
-    type: ['string', 'null']
+    description: |
+      Second line of the postal address, e.g. Unit 100.
+    type:
+      - 'string'
+      - 'null'
   city:
-    type: ['string', 'null']
+    type:
+      - 'string'
+      - 'null'
   state:
-    description:  For domestic addresses, use USPS two-digit state code.
-    type: ['string', 'null']
+    description: | 
+      For domestic addresses, use USPS two-digit state code.
+    type:
+      - 'string'
+      - 'null'
   countyCode:
     description: |
-      Properties countyCode and county are mutually exclusive.  Use countyCode when the source
-      system provides a two-character code.  If the source is the actual County name, then use
-      the county property.
-    type: ['string', 'null']
+      Properties countyCode and county are mutually exclusive.  Use countyCode when the source system provides a two-character code.  If the source is the actual County name, then use the county property.
+    type:
+      - 'string'
+      - 'null'
   county:
     description: |
-      Properties countyCode and county are mutually exclusive.  Use countyCode when the source
-      system provides a two-character code.  If the source is the actual County name, then use
-      the county property.
-    type: ['string', 'null']
+      Properties countyCode and county are mutually exclusive.  Use countyCode when the source system provides a two-character code.  If the source is the actual County name, then use the county property.
+    type:
+      - 'string'
+      - 'null'
   townshipCode:
     description: |
-      Properties townshipCode and township are mutually exclusive.  Use townshipCode when the source
-      system provides a two-character code.  If the source is the actual Township name, then use
-      the township property.
-    type: ['string', 'null']
+      Properties townshipCode and township are mutually exclusive.  Use townshipCode when the source system provides a two-character code.  If the source is the actual Township name, then use the township property.
+    type:
+      - 'string'
+      - 'null'
   township:
     description: |
-      Properties townshipCode and township are mutually exclusive.  Use townshipCode when the source
-      system provides a two-character code.  If the source is the actual Township name, then use
-      the township property.
-    type: ['string', 'null']
+      Properties townshipCode and township are mutually exclusive.  Use townshipCode when the source system provides a two-character code.  If the source is the actual Township name, then use the township property.
+    type:
+      - 'string'
+      - 'null'
   postalCode:
-    type: ['string', 'null']
+    description: |
+      The USPS postal code, also known as the zip code.  Should be in the format ##### or #####-#### (zip plus four).
+    type:
+      - 'string'
+      - 'null'
   country:
-    type: ['string', 'null']
+    description: |
+      The name of the country.
+    type:
+      - 'string'
+      - 'null'

@@ -1,9 +1,0 @@
-description: Life policy details for a policy
-properties:
-  primaryBeneficiary:
-    description: The policy's primary beneficiary
-    x-ifb-comment: (cac) Does a primary beneficiary need to be a Client?
-    type: string
-  allOwnersNames:
-    x-ifb-comment: (cac) What is this?
-  

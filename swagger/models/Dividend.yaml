@@ -1,5 +1,5 @@
 description: |
-  Contains the Perm/Universal life policy specific information regarding dividends
+  Contains the policy specific information regarding dividends
 required:
   - 'dividendOption'
   - 'totalPaidUpAdditions'

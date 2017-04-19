@@ -1,4 +1,5 @@
-description: (Life) Describes the non-forfeiture provisions on a life policy
+description: |
+  Describes the non-forfeiture provisions on a life policy
 properties:
   reducedPaidUpAmount:
     description: unknown.

@@ -3,9 +3,6 @@ description: |
   annuity contract.  A the model represents either a person (i.e. the insured or the annuitant),
   an organization (i.e. a bank or assignee), or it can be Unknown (i.e. a trust, which can be either
   a person or an organization).
-x-acord-xref:
-  - '#1' : 'OLifE.Party'
-  - '#2' : 'ACORD'
 required:
   - 'id'
   - 'sourceSystemType'
@@ -46,10 +43,6 @@ properties:
       - 'string'
       - 'null'
   personName:
-    description: |
-      The component parts of the Client name, when the Client represents an individual, if known.  For individuals, 
-      either the #.name or #personName property should be populated.  It is expected that this property will be null
-      for organizations.
     $ref: ../definitions.yaml#/definitions/PersonName
   phoneNumbers:
     type: array
@@ -63,9 +56,6 @@ properties:
     description: |
       This is a government assigned identifier.  In the US, this is either the Tax ID Number (TIN) for a business
       or the Social Security Number (SSN) for and individual.
-    x-acord-xref:
-      - '#1.GovtID'
-      - '#2.TaxIdentity'
     type:
       - 'string'
       - 'null'

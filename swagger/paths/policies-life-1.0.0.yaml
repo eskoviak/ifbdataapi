@@ -1,0 +1,72 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: life-policies
+  x-architectural-layer: system
+  description: |
+    This is the entry point for life policy inquiries.
+
+    #### Service Functionality
+    This API is called with a policyId parameter.  If successful, the resultant resource is a JSON oject, based on the prefix of the policyId.
+
+    #### Diagrams
+    *Interaction*
+    ![Interaction](http://connections/issite/ews/SiteAssets/sd-policies%401-17.png)
+    
+    #### Performance Expectation
+    Standard SLA applies.
+    
+    #### Service Capacity Supported
+    Standard Capacity applies
+    
+    #### Suggested Test Scenario
+    TBD
+    
+    #### Service Availability
+    Standard Service Availability applies
+    
+    #### Service Security
+    HTTPS/SSL
+  
+  contact:
+    name:  Mary Boscaccia
+    url:  http://www.infarmbureau.com
+    email: mary.Boscacci@infarmbureau.com
+produces:
+  - application/json
+schemes:
+  - http
+  - https
+host:
+  ap-karafb-dev:8181
+basePath:
+  /api/policies/life-policies
+paths:
+  /{policyId}:
+    get:
+      summary: Return a policy object
+      description: |
+        For a given policyId, returns a JSON object representing the detailed life policy information, if the id exists on the policy system.
+      parameters:
+          - name: policyId
+            in: path
+            required: true
+            description: the policy identifier
+            type: string
+      responses:
+        '200':
+          description: |
+            Success
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '../definitions.yaml#/definitions/Policy'
+        '401':
+          description: Unauthorized or invalid token
+        '404':
+          description: Entity not found
+        '500':
+          description: Server error                  

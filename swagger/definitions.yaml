@@ -5,14 +5,26 @@ definitions:
     $ref: ./models/Address.yaml
   Agent:
     $ref: ./models/Agent.yaml
+  archive-request:
+    $ref: ./schemas/archive-request.json
   Client:
     $ref: ./models/Client.yaml
   ClientAccount:
     $ref: ./models/ClientAccount.yaml
+  client-inquiry-request:
+    $ref: ./schemas/client-inquiry-request.json
+  client-inquiry-response:
+    $ref: ./schemas/client-inquiry-response.json
+  client-interests-2.0.0-get-response:
+    $ref: ./examples/client-interests-2.0.0-get-response.json
+  client-search-1.0.0-post-response:
+    $ref: ./examples/client-search-1.0.0-post-response.json
+  client-search-request:
+    $ref: ./schemas/client-search-request.json
   ClientInterest:
     $ref: ./models/ClientInterest.yaml
-  codes_response:
-    $ref: ./schemas/codes_response.json
+  codes-response:
+    $ref: ./schemas/codes-response.json
   Coverage:
     $ref: ./models/Coverage.yaml
   CoverageBenefit:
@@ -21,6 +33,10 @@ definitions:
     $ref: ./models/CoverageDetail-Life.yaml
   Dividend:
     $ref: ./models/Dividend.yaml
+  documents-request:
+    $ref: ./schemas/documents-request.json
+  documents-response:
+    $ref: ./schemas/documents-response.json
   Limit:
     $ref: ./models/Limit.yaml
   Deductible:
@@ -39,14 +55,22 @@ definitions:
     $ref: ./models/Investment.yaml
   Email:
     $ref: ./models/Email.yaml
+  filter:
+    $ref: ./schemas/filter.json
   FleetDriver:
     $ref: ./models/FleetDriver.yaml
+  generate-document-request:
+    $ref: ./schemas/generate-document-request.json
+  hypermedia-controls-response:
+    $ref: ./schemas/hypermedia-controls-response.json
   InsuredItem:
     $ref: ./models/InsuredItem.yaml
   Interest:
     $ref: ./models/Interest.yaml
   Billing:
     $ref: ./models/Billing.yaml
+  Link:
+    $ref: ./schemas/link.json
   Location:
     $ref: ./models/Location.yaml
   LossHistory:
@@ -63,6 +87,16 @@ definitions:
     $ref: ./models/PersonName.yaml
   Phone:
     $ref: ./models/Phone.yaml
+  policies-auto-1.0.0-get-response:
+    $ref: ./examples/policies-auto-1.0.0-get-response.json
+  policies-auto-1.0.0-rate-post-response:
+    $ref: ./examples/policies-auto-1.0.0-get-response.json
+  policies-home-1.0.0-get-response:
+    $ref: ./examples/policies-home-1.0.0-get-response.json
+  policies-home-1.0.0-rate-post-response:
+    $ref: ./examples/policies-home-1.0.0-get-response.json
+  policies-point-1.0.0-get-response:
+    $ref: ./examples/policies-point-1.0.0-get-response.json    
   Policy:
     $ref: ./models/Policy.yaml
   PolicyAssociation:
@@ -77,6 +111,10 @@ definitions:
     $ref: ./models/ProjectedValues.yaml
   SupplementalDocument:
     $ref: ./models/SupplementalDocument.yaml
+  transformer-request:
+    $ref: ./schemas/transformer-request.json
+  testa-example-response:
+    $ref: ./schemas/testa-example-response.json
   Vehicle:
     $ref: ./models/Vehicle.yaml
   VehicleDriver:

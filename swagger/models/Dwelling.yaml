@@ -1,11 +1,11 @@
 description: |
-  Model for Dwelling.  A dwelling is a building which is inhabited by humans.   For other buildings,
-  use a structure.
+  Model for Dwelling.  A dwelling is a building which is inhabited by humans.   For other buildings, use a structure.
 required:
   - 'locationId'
   - 'item'
   - 'construction'
   - 'dwellingType'
+  - 'exposures'
   - 'fireProtection'
   - 'formTypeDescription'
   - 'foundation'
@@ -17,53 +17,58 @@ required:
   - 'residenceType'
   - 'replacementValue'
   - 'yearOfConstruction'
+  - 'supplementalDocuments'
 properties:
   locationId:
     description: |
-      The location Id for the dwelling.  There MUST be one and only one location
-      for a dwelling, which contains the location specific information, such as
-      address.  The location(s) are contained in the Policy model.
+      The location Id for the dwelling.  There MUST be one and only one location for a dwelling, which contains the location specific information, such as address.  The location(s) are contained in the Policy model.
     type: string
   item:
     description: |
-      An arbitrary, system assigned item number within the location dicriminates this structure
-      on a location with multiple structures.
+      An arbitrary, system assigned item number within the location dicriminates this structure on a location with multiple structures.
+    type:
+      - 'string'
   construction:
-    description: the type of construction of the building
+    description: |
+      The type of construction of the building.
     type: string
   dwellingType:
     description: |
-      Type of Dwelling (eg, house, apartment, condo, townhouse, rowhouse)
+      Type of Dwelling (eg, house, apartment, condo, townhouse, rowhouse).
     type: string
   exposures:
     description: |
-      Exposures are specific risks which have been identified during the underwriting 
-      process.
+      Exposures are specific risks which have been identified during the underwriting process.
     type:
       - 'array'
       - 'null'
     items:
       $ref: ../definitions.yaml#/definitions/Hash
   fireProtection:
-    description: the type of fire protection of the building
+    description: |
+      The type of fire protection of the building
     type: string
   formTypeDescription:
     description: |
-      The form type description of the building.  This is currently a data field which
-      is specific to farm insurance.
+      The form type description of the building.  This is currently a data field which is specific to farm insurance.
     type: string
     example:
     # Used in Commercial
       - {"formTypeDescription" : "HO-3 PLatinum"}   # normal home
       - {"formTypeDescription" : "DP"}              # Condo 
   foundation:
-    description: Foundation Type.
+    description: 
+      Foundation Type.
     type: string
   generalCondition:
+    description: |
+      The general condition of the building.
     type: string
   numberOfFamilies:
-    description: the number of families dwelling at this location.
+    description: |
+      The number of families dwelling at this location.
     type: number
+    format: integer
   occupancy:
     description: |
       The type of residence of the dwelling.  Examples inlcude 'OWNER', 'RENTED TO OTHERS'.
@@ -74,18 +79,21 @@ properties:
   roofAge:
     description: Age of roof in years.
     type: number
+    format: integer
   residenceType:
     description: The type of residence of the building. 
     type: string
   replacementValue:
     description: The cost to replace the dwelling.
     type: number
+    format: integer
   yearOfConstruction:
     description: The year the dwelling was constructed.
     type: number
+    format: integer
   supplementalDocuments:
     description: |
       Any documents attached to the policy which are required for it's issuance.
     type: array
     items:
-      $ref: ../definitions.yaml#/definitions/SupplementalDocument    
+      $ref: ../definitions.yaml#/definitions/SupplementalDocument

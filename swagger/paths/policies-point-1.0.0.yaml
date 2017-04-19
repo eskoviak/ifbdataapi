@@ -1,0 +1,78 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: point-policies
+  x-architectural-layer: system
+  description: |
+    This is the entry point for Farm/Umbrella/Pollution/Commerical policy inquiries.
+
+    #### Service Functionality
+    This API is called with a policyId parameter.  If successful, the resultant resource is a JSON oject, based on the prefix of the policyId.  Currently this prefix designates these types of policies:  
+    
+    * RG -- Farm
+    * FPL -- Farm Pollution
+    * FUM -- Farm Umbrella
+    * PUM -- Personal Umbrella
+
+    #### Diagrams
+    *Interaction*
+    ![Interaction](http://connections/issite/ews/SiteAssets/sd-policies-point-1.0.0.png)
+    
+    #### Performance Expectation
+    Standard SLA applies.
+    
+    #### Service Capacity Supported
+    Standard Capacity applies
+    
+    #### Suggested Test Scenario
+    TBD
+    
+    #### Service Availability
+    Standard Service Availability applies
+    
+    #### Service Security
+    HTTPS/SSL
+  
+  contact:
+    name:  Mary Boscaccia
+    url:  http://www.infarmbureau.com
+    email: mary.Boscacci@infarmbureau.com
+produces:
+  - application/json
+schemes:
+  - http
+  - https
+paths:
+  /{policyId}:
+    get:
+      summary: Return a policy object
+      description: |
+        For a given policyId, returns a JSON object representing the detailed Farm/Umbrella/Pollution/Commerical policy information, if the id exists on the policy system.
+      parameters:
+          - name: policyId
+            in: path
+            required: true
+            description: the policy identifier
+            type: string
+      responses:
+        '200':
+          description: |
+            Success
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '../definitions.yaml#/definitions/Policy'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/policies-point-1.0.0-get-response'        
+        '204':
+          description: No content for available for the policy
+        '401':
+          description: Unauthorized or invalid token
+        '404':
+          description: Entity not found
+        '500':
+          description: Server error                  

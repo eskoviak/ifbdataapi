@@ -1,0 +1,323 @@
+{
+  "data": [
+    {
+      "id": "APV 0005151050",
+      "transactionId": null,
+      "businessPurposeTypeCode": null,
+      "transactionRequestDate": null,
+      "transactionEffectiveDate": "2012-07-04",
+      "quoteSequenceNumber": "APV   00",
+      "transactionSequenceNumber": null,
+      "policyId": null,
+      "policyNumber": "0005151050",
+      "priorPolicyNumber": null,
+      "description": "1996 FORD PROBE/SE",
+      "policyStatus": "Active",
+      "policyStatusCode": "A",
+      "controllingStateProvinceCode": null,
+      "transactionStatus": "PRO-RATA CANCELLATION",
+      "transactionStatusCode": "P",
+      "lineOfBusiness": "Auto",
+      "lineOfBusinessCode": "APV",
+      "locations": [],
+      "policyDetails": {
+        "detailPart": "Auto",
+        "coverages": [],
+        "deductibles": [],
+        "discounts": [],
+        "isRated": true,
+        "insuredItems": [
+          {
+            "coverages": [
+              {
+                "deductibles": [],
+                "description": "Bodily Injury Liability",
+                "coverageCode": null,
+                "sequence": null,
+                "planCode": null,
+                "coverageDetail": null,
+                "coverageFlags": null,
+                "coverageSchedule": null,
+                "limits": [
+                  {
+                    "name": "PERSON",
+                    "value": 100000
+                  },
+                  {
+                    "name": "ACCIDENT",
+                    "value": 300000
+                  }
+                ],
+                "premium": 178,
+                "isEndorsement": false,
+                "isExtended": false,
+                "isExcluded": false,
+                "isWaived": false,
+                "inclusions": []
+              },
+              {
+                "deductibles": [],
+                "description": "Property Damage Liability",
+                "coverageCode": null,
+                "sequence": null,
+                "planCode": null,
+                "coverageDetail": null,
+                "coverageFlags": null,
+                "coverageSchedule": null,
+                "limits": [
+                  {
+                    "name": null,
+                    "value": 100000
+                  }
+                ],
+                "premium": 156,
+                "isEndorsement": false,
+                "isExtended": false,
+                "isExcluded": false,
+                "isWaived": false,
+                "inclusions": []
+              },
+              {
+                "deductibles": [],
+                "description": "Uninsured/Underinsured Motorist-BI",
+                "coverageCode": null,
+                "sequence": null,
+                "planCode": null,
+                "coverageDetail": null,
+                "coverageFlags": null,
+                "coverageSchedule": null,
+                "limits": [
+                  {
+                    "name": "PERSON",
+                    "value": 100000
+                  },
+                  {
+                    "name": "ACCIDENT",
+                    "value": 300000
+                  }
+                ],
+                "premium": 19,
+                "isEndorsement": false,
+                "isExtended": false,
+                "isExcluded": false,
+                "isWaived": false,
+                "inclusions": []
+              },
+              {
+                "deductibles": [],
+                "description": "Uninsured Motorist-PD",
+                "coverageCode": null,
+                "sequence": null,
+                "planCode": null,
+                "coverageDetail": null,
+                "coverageFlags": null,
+                "coverageSchedule": null,
+                "limits": [
+                  {
+                    "name": null,
+                    "value": 10000
+                  }
+                ],
+                "premium": 3,
+                "isEndorsement": false,
+                "isExtended": false,
+                "isExcluded": false,
+                "isWaived": false,
+                "inclusions": []
+              },
+              {
+                "deductibles": [],
+                "description": "Medical Payments",
+                "limits": [
+                  {
+                    "name": null,
+                    "value": 2000
+                  }
+                ],
+                "premium": 35,
+                "isEndorsement": false,
+                "isExtended": false,
+                "isWaived": false,
+                "isExcluded": false,
+                "inclusions": [],
+                "coverageDetail": null
+              },
+              {
+                "deductibles": [],
+                "description": "Valet",
+                "limits": [
+                  {
+                    "name": "1",
+                    "value": 0
+                  },
+                  {
+                    "name": "2",
+                    "value": 0
+                  }
+                ],
+                "premium": 0,
+                "isEndorsement": true,
+                "isExtended": true,
+                "isWaived": false,
+                "isExcluded": false,
+                "inclusions": [],
+                "coverageDetail": null
+              }
+            ],
+            "discounts": [
+              {
+                "name": "MCL2",
+                "description": "Multi-Car Discount  3 or More Vehicles",
+                "appliedDate": "2012-07-04"
+              }
+            ],
+            "lossHistory": [],
+            "limits": [],
+            "itemType": "Vehicle",
+            "itemDetails": {
+              "address": {
+                "addressType": null,
+                "addressAggregate": null,
+                "street1": "605 MAPLE CREST DR",
+                "street2": null,
+                "city": "GOSHEN",
+                "state": "IN",
+                "countyCode": null,
+                "county": "Elkhart (Elkhart)",
+                "townshipCode": null,
+                "township": null,
+                "postalCode": "46528-2715",
+                "country": null
+              },
+              "description": "1996 FORD PROBE/SE",
+              "type": "Private Passenger",
+              "vin": "1ZVLT20A6T5108717",
+              "vehicleUse": "Under 15 miles to work, 5-7 days/wk",
+              "valetLevel": null,
+              "classCode": "184S00",
+              "classCodeDescription": "18 year old driver who is a youthful single female (principal use) and is driving the vehicle less than 15 miles one-way to/from work and there are no tickets or accidents being charged",
+              "territory": 26,
+              "ratingTier": 1,
+              "unit": 1,
+              "costNew": 0,
+              "drivers": [
+                {
+                  "client": {
+                    "clientId": "FXU34DQFF030CLTCTCN4",
+                    "sourceSystemType": null,
+                    "sourceSystemTypeCode": null,
+                    "name": "CIARA  MILLER",
+                    "personName": null,
+                    "phoneNumbers": null,
+                    "emailAddresses": null,
+                    "taxId": null,
+                    "addresses": null,
+                    "preferences": null,
+                    "demographics": {
+                      "gender": "Female",
+                      "genderCode": null,
+                      "maritalStatus": "Single",
+                      "maritalStatusCode": null,
+                      "dateOfBirth": "1993-08-08",
+                      "dateOfDeath": null,
+                      "driversLicenseState": "IN",
+                      "driversLicenseNumber": 8951147511
+                    }
+                  },
+                  "isRated": true,
+                  "isExcluded": false,
+                  "relationshipToNamedInsured": "Same",
+                  "discounts": [
+                    {
+                      "name": "TDD",
+                      "description": "Youthful Driver Discount",
+                      "appliedDate": "2012-07-04"
+                    },
+                    {
+                      "name": "TSD",
+                      "description": "Top Scholar Discount",
+                      "appliedDate": "2012-07-04"
+                    }
+                  ],
+                  "penalties": []
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "insuranceScore": "LV3 (23A)",
+      "issueAge": null,
+      "originalInceptionDate": "2009-12-02",
+      "termEffectiveDate": "2012-06-02",
+      "termExpirationDate": "2012-12-02",
+      "cancelDate": "2012-07-04",
+      "maturityDate": null,
+      "policyTerm": 6,
+      "premium": 391,
+      "billingDetails": {
+        "billingMode": null,
+        "paymentMode": "MONTHLY"
+      },
+      "policyAssociations": [
+        {
+          "clientId": "XD7WPOQFF030CLTCTCN4",
+          "locationId": null,
+          "item": null,
+          "coverageCode": null,
+          "sequence": null,
+          "name": "AMANDA L MILLER",
+          "address": {
+            "addressType": null,
+            "addressAggregate": null,
+            "street1": "605 MAPLE CREST DR",
+            "street2": null,
+            "city": "GOSHEN",
+            "state": "IN",
+            "countyCode": null,
+            "county": null,
+            "townshipCode": null,
+            "township": null,
+            "postalCode": "46528-2715",
+            "country": null
+          },
+          "referenceData": null,
+          "associationType": "ADDITIONAL NAMED INSURED",
+          "associationTypeCode": "ANI",
+          "associationSubType": null,
+          "associationRelationship": null,
+          "demographics": null
+        },
+        {
+          "clientId": "FXU34DQFF030CLTCTCN4",
+          "locationId": null,
+          "item": null,
+          "coverageCode": null,
+          "sequence": null,
+          "name": "CIARA  MILLER",
+          "address": {
+            "addressType": null,
+            "addressAggregate": null,
+            "street1": "605 MAPLE CREST DR",
+            "street2": null,
+            "city": "GOSHEN",
+            "state": "IN",
+            "countyCode": null,
+            "county": null,
+            "townshipCode": null,
+            "township": null,
+            "postalCode": "46528-2715",
+            "country": null
+          },
+          "referenceData": null,
+          "associationType": "NAMED INSURED",
+          "associationTypeCode": "NIN",
+          "associationSubType": null,
+          "associationRelationship": null,
+          "demographics": null
+        }
+      ],
+      "supplementalDocuments": []
+    }
+  ]
+}

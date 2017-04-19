@@ -1,8 +1,6 @@
 description: |
   Projected values for a policy or contract. This model should not be used to model similar values for investments--it is meant 
   to be at the policy level.
-x-used-by:
-  - 'PolicyDetails-Life'
 required:
   - 'projectedValueDate'
   - 'policyValue'
@@ -10,9 +8,9 @@ required:
   - 'anniversaryPolicyValue'
   - 'anniversarySurrenderValue'
   - 'guaranteedPolicyValue'
-  - 'guaranteedSurrenderValue'
+  - 'guaranteedPolicySurrenderValue'
   - 'guaranteedAnniversaryPolicyValue'
-  - 'guaranteedAgeXAnniversaryPolicyValue'
+  - 'guaranteedAgeXAnniversaryValue'
   - 'guaranteedAnniversarySurrenderValue'
   - 'ageX'
   - 'ageXAnniversaryDate'
@@ -48,7 +46,7 @@ properties:
       The contractual policy value as of the #.projectedValueDate.
     type:
       - 'number'
-  guaranteedSurrenderValue:
+  guaranteedPolicySurrenderValue:
     description: |
       The contractual surnender value as of the #.projectedValueDate.
     type:
@@ -58,7 +56,7 @@ properties:
       The contractual policy value as of the next policy anniversary date.
     type:
       - 'number'
-  guaranteedAgeXAnniversaryPolicyValue:
+  guaranteedAgeXAnniversaryValue:
     description: |
       The contractual policy value, at #.AgeXAnniversaryDate
     type:

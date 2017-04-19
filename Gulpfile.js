@@ -6,89 +6,89 @@ var gulp = require('gulp');
 var through2 = require('through2');
 var chalk = require('chalk');
 var del = require('del');
-var exec = require('child_process').exec;
-var yaml = require('gulp-yaml');
-var replace = require('gulp-replace');
 var watch = require('gulp-watch');
-var SwaggerParser = require('swagger-parser');
+var swaggerParser = require('swagger-parser');
+var fs = require('fs');
 
 /**
  * Gulp config values
  */
-var input = 'swagger/**/*.yaml';
-var mainSwaggerDefs = 'swagger/paths/*.yaml';
-var stubSwaggerDefs = 'swagger/stubs/*.yaml';
-var output = 'dist';
-var swaggerCDN = 'https://cdn-dev.infarmbureau.com/swagger/';
-
+var swaggerDefinitionSourceFolder = 'swagger/paths/*.yaml';
+var bundleOutputFolder = 'swagger/bundles/';
 
 /**
  * Cleans the `dist` folder.
  */
 gulp.task('clean', function () {
-  del(output + '/*');
+    return del(bundleOutputFolder + '/*');
 });
 
 /**
- * replaces local file $refs with url $refs, converts to JSON, outputs to
- * `dist/`
- */
-gulp.task('build', ['clean'], function () {
-  var findRef = /[$]ref: [.]{0,2}[/](.*)[.]yaml#?(.*)/g;
-  var replaceRef = "$ref: " + swaggerCDN + "$1.json#$2";
-
-  return gulp.src(input)
-  .pipe(replace(findRef, replaceRef))
-  .pipe(yaml({ space: 4}))
-  .pipe(gulp.dest(output));
-});
-
-/**
- * runs the Swagger-Parser validator once.
+ * runs the Swagger-Parser validater once;
  */
 gulp.task('validate', function () {
-  gulp.src([mainSwaggerDefs, stubSwaggerDefs])
-    .pipe(vinylPipe(validateSwagger));
+    return gulp.src([swaggerDefinitionSourceFolder])
+        .pipe(vinylPipe(swaggerProcessor));
 });
 
 /**
- * watches files in the `swagger` folder for changes and validates the `swagger/swagger.yaml`.
+ * validates and builds the bundles in bundleOutputFolder .
+ */
+gulp.task('build', function () {
+    return gulp.src([swaggerDefinitionSourceFolder])
+        .pipe(vinylPipe(swaggerProcessor, saveBundle));
+});
+
+/**
+ * watches files in the `swagger/paths` folder for changes and validates the contracts against swagger.
  */
 gulp.task('watch', ['validate'], function () {
-  watch(input, { ignoreInitial: true }, function (file) {
-
-    if (!/paths/.test(file.path)) {
-      gulp.src(stubSwaggerDefs)
-        .pipe(vinylPipe(validateSwagger));
-    }
-    else {
-      validateSwagger(file);
-    }
-  });
+    return watch(swaggerDefinitionSourceFolder, {ignoreInitial: true}, function (file) {
+        swaggerProcessor(file);
+    });
 });
 
-function vinylPipe(func) {
-  return through2.obj(function (file, enc, cb) {
-    cb(null, func(file));
-  });
+function vinylPipe(fileProcessor, fileProcessorParams) {
+    return through2.obj(function (file, enc, cb) {
+        cb(null, fileProcessor(file, fileProcessorParams));
+    });
 }
 
+function getOutputFileName(api) {
+    var layer = "";
+    if (api.info['x-architectural-layer']) {
+        layer = api.info['x-architectural-layer'] + "-";
+    }
+
+    var outputFile = bundleOutputFolder + layer + api.info.title + '-' + api.info.version + '.json';
+    return outputFile;
+}
+
+function saveBundle(api){
+
+    var outputFileName = getOutputFileName(api);
+    console.log(chalk.blue('[Creating : ] ') + outputFileName);
+    fs.writeFile(outputFileName, JSON.stringify(api));
+}
 /**
- * calls SwaggerParser.validate and reports results
+ * calls SwaggerParser.validate--if input is valid,
+ * creates the bundled json file in the bundles
+ * director and reports results
  */
-function validateSwagger(vinylFile) {
-    var options = { validate: { spec: true } };
+function swaggerProcessor(vinylFile, successCallBack) {
+    var options = {validate: {spec: true}};
+    return swaggerParser
+        .validate(vinylFile.path, options)
+        .then(function (api) {
 
-
-    return SwaggerParser
-      .validate(vinylFile.path, options)
-      .then(function () {
-        var msg = chalk.green('[ok]') + ' ' + vinylFile.path;
-        console.log(msg);
-      })
-      .catch(function (err) {
-        var msg = chalk.red('[error]') + ' ' + vinylFile.path + '\n';
-        msg = msg + err.message;
-        console.log(msg);
-      });
+            if (successCallBack) {
+                successCallBack(api);
+            }
+            console.log(chalk.green('[ok]') + ' ' + vinylFile.path);
+        })
+        .catch(function (err) {
+            var msg = chalk.red('[error]') + ' ' + vinylFile.path + '\n';
+            msg = msg + err.message;
+            console.log(msg);
+        });
 }
