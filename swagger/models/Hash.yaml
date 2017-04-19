@@ -1,17 +1,15 @@
 description: |
-  A model for a name:value pair.  Used whenever a data item is needed which only has a name and value.
-  This will eventually be used for:
-  * Limits
-  * Deductibles
-  * Discounts
-  * Exposures
-  Note:  Either property is nullable--the invoking contract must specify usage.
+  A model for a Hash.  Used whenever a data item is needed which only has a name and object.
 required:
-  ['name', 'value']
-x-used-by:
-  ['Dwelling.exposures']
+  - 'name'
+  - 'value'
 properties:
   name:
-    type: ['string', 'null']
+    type:
+      - 'string'
+      - 'null'
   value:
-    type: ['object', 'null']
+    type:
+      - 'string'
+      - 'null'
+    

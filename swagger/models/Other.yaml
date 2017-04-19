@@ -4,7 +4,12 @@ description:  |
 
   Example:  'Wedding Ring'.
 required:
-  ['description', 'classification', 'detail', 'deductibles', 'limits', 'premium']
+  - 'description'
+  - 'classification'
+  - 'detail'
+  - 'deductibles'
+  - 'limits'
+  - 'premium'
 properties:
   description:
     description: A description of this item type.
