@@ -2,9 +2,6 @@ description: |
   Policies (or contracts) that insure real property (personal or commerical vehicle, dwelling, etc.) against loss, damage or liability have one or more specific items being insured.  This model describes said item(s) and any specific properties of that insurance with regard to that item. 
 required:
   - 'coverages'
-  - 'discounts'
-  - 'lossHistory'
-  - 'limits'
   - 'itemType'
   - 'itemDetails'
 properties:
@@ -27,14 +24,14 @@ properties:
   itemType:
     description: |
       Property itemDetails will be a defined model of type itemType.
-    type:
-      - 'string'
     enum:
       - 'Dwelling'
-      - 'Other'
+      - 'Liability'
+      - 'Other--DEPRECATED'
+      - 'Property'
       - 'Structure'
       - 'Vehicle'
   itemDetails:
     description: |
-      An instance of Dwelling, Other, Structure or Vehicle.  See itemType.
+      An instance of itemType (which is another Model).
     type: object

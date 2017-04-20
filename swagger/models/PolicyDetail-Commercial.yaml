@@ -1,7 +1,8 @@
 description: |
-  The policy details for a commercial type of insurance.  Currently this covers Farm.
+  The policy details for policies contained on the Point (Commerical Polices) system.
 required:
-  ['detailPart', 'coverages',  'insuredItems', 'fleetDrivers']
+  - 'detailPart'
+  - 'insuredItems'
 properties:
   detailPart:
     description: the insurance lines for which this model applies.

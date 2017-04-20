@@ -1,12 +1,10 @@
 description: |
-  Model for Dwelling.  A dwelling is a building which is inhabited by humans.   For other buildings, use a structure.
+  Model for Dwelling.  A dwelling is a building which is inhabited by humans.   For other type of buildings, use a structure.
 required:
   - 'locationId'
-  - 'item'
   - 'construction'
   - 'dwellingType'
   - 'exposures'
-  - 'fireProtection'
   - 'formTypeDescription'
   - 'foundation'
   - 'generalCondition'
@@ -17,7 +15,6 @@ required:
   - 'residenceType'
   - 'replacementValue'
   - 'yearOfConstruction'
-  - 'supplementalDocuments'
 properties:
   locationId:
     description: |
@@ -26,8 +23,7 @@ properties:
   item:
     description: |
       An arbitrary, system assigned item number within the location dicriminates this structure on a location with multiple structures.
-    type:
-      - 'string'
+    type: string
   construction:
     description: |
       The type of construction of the building.
@@ -38,16 +34,30 @@ properties:
     type: string
   exposures:
     description: |
-      Exposures are specific risks which have been identified during the underwriting process.
-    type:
-      - 'array'
-      - 'null'
+      Exposures are specific risks which have been identified during the underwriting process.  May also include know risk types.
+    type: array
     items:
       $ref: ../definitions.yaml#/definitions/Hash
   fireProtection:
     description: |
       The type of fire protection of the building
     type: string
+  protectionClass:
+    description: |
+      The Protection Class is a number from 1 to 10 (based on ISO Public Protection Classes) that refers to the public protection facilities in a geographic area. A lower number indicates higher protection.  Some protection class directories show divided classes (for example 5/9 or 6/9).
+    type: string
+  liabilityClass:
+    description: |
+      General Liability (GL) classes are used by insurers to classify businesses into categories of risk, to aid them in assigning the appropriate rate, coverages, and exclusions for GL insurance.
+    type: string
+  liabilityClassCode:
+    description: |
+      General Liability (GL) class codes are groups of numbers that insurance companies use to classify businesses into categories of risk, to aid them in assigning the appropriate rate, coverages, and exclusions for GL insurance.
+    type: string
+  coinsurance:
+    description: |
+      Coinsurance is the percentage of value that the policyholder is required to insure. For example, a building with a value of $1,000,000 and a policy with an 80% coinsurance clause must be insured for at least $800,000.
+    type: number
   formTypeDescription:
     description: |
       The form type description of the building.  This is currently a data field which is specific to farm insurance.
@@ -87,6 +97,18 @@ properties:
     description: The cost to replace the dwelling.
     type: number
     format: integer
+  valuation:
+    description: |
+       One of several possible methods of establishing the value of insured property to determine the amount the insurer will pay in the event of loss.
+    type: string
+  automaticIncrease:
+    description: |
+      An automatic increase is an addition to an insurance policy that renders coverage limits on buildings flexible to inflation rate, specifically the value. It takes into account the changes to the cost of construction so that there is an automatic change in the insured property's coverage whenever there is a change in the costs. This protects the insured from a loss due to inflation.
+    type: boolean
+  inflationGuard:
+    description: |
+      Inflation guard provision. A provision that gradually and continuously increases the limit(s) of a policy by a specified percentage over a specified time period (such as 3 percent every 3 months).
+    type: string
   yearOfConstruction:
     description: The year the dwelling was constructed.
     type: number

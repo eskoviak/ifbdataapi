@@ -1,15 +1,8 @@
-description: |
-  A model for a Hash.  Used whenever a data item is needed which only has a name and object.
 required:
   - 'name'
   - 'value'
 properties:
   name:
-    type:
-      - 'string'
-      - 'null'
+    type: string
   value:
-    type:
-      - 'string'
-      - 'null'
-    
+    type: string    
