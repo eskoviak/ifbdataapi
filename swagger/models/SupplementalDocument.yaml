@@ -11,3 +11,8 @@ properties:
   dateReceived:
     type: string
     format: date
+  editionDate:
+    description: |
+      The date the current edition of the form was issued.
+    type: string
+    format: date

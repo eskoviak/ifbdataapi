@@ -32,9 +32,13 @@ properties:
     description: |
       Type of Dwelling (eg, house, apartment, condo, townhouse, rowhouse).
     type: string
+  riskType:
+    description: |
+      A risk type is used for a dwelling which has a commercial use, such as a church or dry-cleaning busness.  The risk type associates this commercial use to the rating used for underwrting purposes.
+    type: string
   exposures:
     description: |
-      Exposures are specific risks which have been identified during the underwriting process.  May also include know risk types.
+      Exposures are risks which are tied to a specific hazard and have been identified during the underwriting process.  
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/Hash
@@ -46,13 +50,13 @@ properties:
     description: |
       The Protection Class is a number from 1 to 10 (based on ISO Public Protection Classes) that refers to the public protection facilities in a geographic area. A lower number indicates higher protection.  Some protection class directories show divided classes (for example 5/9 or 6/9).
     type: string
-  liabilityClass:
+  class:
     description: |
-      General Liability (GL) classes are used by insurers to classify businesses into categories of risk, to aid them in assigning the appropriate rate, coverages, and exclusions for GL insurance.
+      Classes are used by insurers to classify businesses into categories of risk, to aid them in assigning the appropriate rate, coverages, and exclusions for GL insurance.
     type: string
-  liabilityClassCode:
+  classCode:
     description: |
-      General Liability (GL) class codes are groups of numbers that insurance companies use to classify businesses into categories of risk, to aid them in assigning the appropriate rate, coverages, and exclusions for GL insurance.
+      Class codes are groups of numbers that insurance companies use to classify businesses into categories of risk, to aid them in assigning the appropriate rate, coverages, and exclusions for GL insurance.
     type: string
   coinsurance:
     description: |

@@ -9,7 +9,7 @@ Figure 1:  Repository Main Sructure
 * **swagger**: This folder contains the structures for the model.   
   - **bundles**:  This folder is the output folder which contains the `.yaml` files contained in the *paths* folder, with all external [$ref](http://swagger.io/specification/#reference-object-75) pointers converted to internal (in-line) references. This folder should not need manual maintenance; it is maintained by the `gulp validate` command.
   * **paths**: The contracts for the APIs are contained in this folder.  The files are named:
-    <contract_name>-X.Y.Z.yaml, where:  
+    &lt;contract_name&gt;-X.Y.Z.yaml, where:  
       X =:: major release number  
       Y =:: minor release number (currently always 0)  
       Z =:: build number (currently always 0).  
@@ -119,15 +119,15 @@ To include the example response in the contract specification such that it will 
 
 ## Swagger Documentation Notes
 
-* All models MUST have a description
+* All models SHOULD have a `description` element.  Generic models, such as Hash, do not include a `description` as the referencing element SHOULD describe the usasge.
 * Properties of with concrete types SHOULD have a description
-* Properties of $ref SHOULD NOT have a description--the editor will use the description from the referenced item specification
-* Primary id properties should be named `id` and be the first element of the model
+* Properties which are references to other types (`$ref:`) SHOULD NOT have a description--the editor will use the description from the referenced item specification.  Exception:  Hash.
+* Primary id properties should be named `id` and be the first element of the model.  This `id` is a `required:` field.
 * When referencing a id of another model, prefix with the model name, i.e. _clientId_ when referring to the id property of the Client model
 * Enumerations of strings:  The first letter MUST be capitalized
 * Boolean properties:  Should begin with `is`  
 * Unless otherwise specified, the use of `format: date` refers to ISO8601 date format:  *CCYY-MM-DD*, example: 1776-07-04.
-* In order to accommodate data which is provided in a a coded and a decoded format, such fields should be modeled as <property> and <property>Code; e.g. _addressType_ and _addressTypeCode_
+* In order to accommodate data which is provided in both a coded and a decoded format, such fields should be modeled as &lt;property&gt; and &lt;property>Code; e.g. _addressType_ and _addressTypeCode_
 
 ## Naming Conventions
 ### Model file names (first letter capitalized)
