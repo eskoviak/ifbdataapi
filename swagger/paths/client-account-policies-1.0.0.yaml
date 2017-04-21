@@ -1,0 +1,75 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title:  client-account-policies
+  x-architectural-layer: process
+  description: |
+    This process API is used to get a list of policies for a given client account (household).
+
+    #### Service Functionality
+    This API accepts a `clientAccountId` and an optional business filter.  The clientAccountId is used to first find all clients associated with the household, and the filter is used to limit the returned policies to a specficic lineOfBusiness and insuredItemCoverageCode.
+
+    #### Diagrams
+    ![Interaction](http://connections/issite/ews/SiteAssets/sd-client-account-policies-1.0.0.png)
+
+    #### Known Implementations
+    Combined Auto Quote
+
+    #### Performance Expectation
+    TBD
+    
+    #### Service Capacity Supported
+    TBD
+    
+    #### Suggested Test Scenario
+    TBD
+    
+    #### Service Availability
+    TBD
+    
+    #### Service Security
+    TBD
+  contact:
+    name: Enterprise Web Services Team
+    email: EWSDevelopers@infambureau.com
+    url: http://connections/issite/ews/SitePages/Home.aspx
+schemes:
+  - 'http'
+  - 'https'
+consumes:
+  - 'application/json'
+produces:
+  - 'application/json'
+paths:
+  /{clientAccountId}:
+    post:
+      description: |
+        Requests all the policies for each client in the client account, optionally filtered by the business filter in the request body.
+      parameters:
+        - $ref: '#/parameters/ClientAccountId'
+        - name: businessFilter
+          required: false
+          in: body
+          description: |
+            A JSON object which serves to limit the resulting return to policies which have the specified business objects.
+          schema: 
+            $ref: '../definitions.yaml#/definitions/client-account-policies-request'
+      responses:
+        '200':
+          description: Success.  The resulting array contains at least one Policy.
+          schema:
+            type: array
+            items:
+              $ref: '../definitions.yaml#/definitions/Policy'
+        '204':
+          description: No Content.  There were no policies matching the request criteria.
+        default:
+          description:  Server Error.
+parameters:
+  ClientAccountId:
+    name: clientAccountId
+    required: true
+    in: path
+    description: |
+      The identifier for the client account, also known as a household.
+    type: string

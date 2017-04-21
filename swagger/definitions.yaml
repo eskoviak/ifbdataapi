@@ -11,6 +11,8 @@ definitions:
     $ref: ./models/Client.yaml
   ClientAccount:
     $ref: ./models/ClientAccount.yaml
+  client-account-policies-request:
+    $ref: './schemas/client-account-policies-request.json'
   client-inquiry-request:
     $ref: ./schemas/client-inquiry-request.json
   client-inquiry-response:

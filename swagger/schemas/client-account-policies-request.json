@@ -1,0 +1,7 @@
+{
+    "type": "object",
+    "properties" : {
+        "lineOfBusiness" : { "type" : "string" },
+        "insuredItemCoverageCode" : { "type" : "string"}
+    }
+}
