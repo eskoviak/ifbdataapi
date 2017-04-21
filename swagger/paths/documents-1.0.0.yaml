@@ -72,3 +72,26 @@ paths:
         default:
           description: |
             Failure.
+    get:
+      summary:  Get cached document
+      description: |
+        Get cached document with Smart Communication cloud services.
+      parameters:
+        - name: cachedDocumentLocation
+          in: query
+          description: |
+            cachedDocumentLocation will contain the partial uri provided by Smart Communication on invocation
+            of the POST.
+          required: true
+          type: string
+      produces:
+        - 'application/pdf'
+      responses:
+        '200':
+          description: |
+            returns the pdf content
+          schema:
+            type: file
+        default:
+          description: |
+            Failure.
