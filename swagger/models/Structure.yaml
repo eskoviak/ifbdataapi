@@ -1,11 +1,7 @@
 description: |
-  A physical structure to be insured.  A structure is a building which is uninhabited by
-  humans.  For a building which is inhabited by humans, use dwelling.
+  A physical structure to be insured.  A structure is a building which is uninhabited by humans, such as a barn.  For a building which is inhabited by humans, use dwelling.
 required:
   - 'locationId'
-  - 'item'
-  - 'typeFarming'
-  - 'ownership'
   - 'description'
   - 'isBroadPeril'
   - 'isVacant'
@@ -13,29 +9,31 @@ required:
 properties:
   locationId:
     description: |
-      The location number for the structure.  There MUST be at one and only
-      one location for a structure, which contains the location specific information, such as
-      address.  The location(s) are contained in the Policy model.
+      The location number for the structure.  There MUST be at one and only one location for a structure, which contains the location specific information, such as address.  The location(s) are contained in the Policy model.
     type: string
   item:
     description: |
-      An arbitrary, system assigned item number within the location dicriminates this dwelling
-      on a location with multiple dwellings.
+      An arbitrary, system assigned item number within the location dicriminates this dwelling on a location with multiple dwellings.
     type: string
   typeFarming:
     description: |
-      (Farm and Pollution) The type of farming done at the cited location.
+      The type of farming done at the cited location.
     type: string
   ownership:
     description: |
-      (Pollution) Indicator whether the location is Owned or Leased
+      Indicator whether the location is Owned or Leased
     enum:
-     - 'Leased'
-     - 'Owned'
+      - 'Leased'
+      - 'Owned'
   description:
     description: |
-      The description of the structure.  Example:  'DAIRY COMPLEX'
+      A description of the structure.  Example:  'DAIRY COMPLEX'
     type: string
+  itemSchedule:
+    description: |
+      A generic schedule to list miscellaneous details for this item.
+    type:
+      $ref: '../definitions.yaml#/definitions/Hash'  
   isBroadPeril:
     description: whether broad peril applies
     type: boolean

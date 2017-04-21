@@ -1,7 +1,5 @@
 description:  |
-  (Commercial; Personal) Model for InsuredItem type of 'Other'.  This is a catch-all for items that are not Vehicles, Dwellings or Structures.  
-
-  Example:  'Wedding Ring'.
+  Model for InsuredItem type of 'Other'.  This item is deprecated.  Do not use for new APIs.
 required:
   - 'description'
   - 'classification'
@@ -27,19 +25,16 @@ properties:
     description: |
       A detailed itemization of the item.  E.g. 'Nikon D500 Camera', 'Bass-Pro'.
     type: string
-  deductibles:
+  itemSchedule:
     description: |
-      Pro-rated portion of the claim which is not paid by the insurer. A deductible may apply to multiple coverages. Examples:
-      
-      (Home) A deductible may cover COVA, COVB, COVC, but only be represented in the response under COVA (Renters) or only under COVC
+      A generic schedule to list miscellaneous details for this item.
+    type:
+      $ref: '../definitions.yaml#/definitions/Hash'
+  deductibles:
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/Deductible
   limits:
-    description: |
-      Limits of liability (on the part of the insurer) and other details of the Coverage in the form of a name/value pair.
-
-      Example--for a #.description = 'Residence', this array may have an object 'Liability Limit':1000000 
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/Limit

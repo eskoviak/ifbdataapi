@@ -9,10 +9,12 @@ properties:
   description:
     type: string
   dateReceived:
+    description: |
+      The date the document was received.
     type: string
     format: date
   editionDate:
     description: |
-      The date the current edition of the form was issued.
+      The date the form, upon which this document is based, was published.
     type: string
     format: date

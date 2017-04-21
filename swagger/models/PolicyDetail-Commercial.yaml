@@ -1,5 +1,5 @@
 description: |
-  The policy details for policies contained on the Point (Commerical Polices) system.
+  The policy details for Commerical policies (Point System).
 required:
   - 'detailPart'
   - 'insuredItems'
@@ -10,14 +10,30 @@ properties:
       [
         'Farm Auto',
         'Dwelling',
-        'Farm Structure',
-        'Farm Property',
         'Equine',
+        'Farm Inland Marine',
         'Farm Liability',
-        'Inland Marine'
+        'Farm Property',
+        'Pollution',
+        'Structure',
+        'Farm Umbrella',
+        'Personal Umbrella',
+        'Commercial Umbrella',
+        'Church Liability',
+        'Church Property',
+        'Church Bus',
+        'BOP Fire',
+        'BOP General Liabiity',
+        'BOP Inland Marine',
+        'BOP Packet Coverages',
+        'Commercial Crime',
+        'Commercial Auto',
+        'Commercial Fire',
+        'Commercial Garage',
+        'Commercial General Liability',
+        'Commercial Inland Marine'
       ]
   coverages:
-    description: Coverages which are attached to the entire policy
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/Coverage
@@ -29,9 +45,14 @@ properties:
     items:
       $ref: ../definitions.yaml#/definitions/InsuredItem
   fleetDrivers:
-    description: |
-      The list of Vehicle drivers which are authorized to drive vehicles owned/operated/insured 
-      by this policy.
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/FleetDriver
+  federalEmployerIdNumber:
+    description: |
+      A unique nine-digit number assigned by the Internal Revenue Service (IRS) to business entities operating in the United States for the purposes of identification.
+    type: string
+  legalId:
+    description: | 
+      An id used to legally identify an entity.
+    type: string

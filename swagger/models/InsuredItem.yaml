@@ -23,15 +23,15 @@ properties:
       $ref: ../definitions.yaml#/definitions/Limit
   itemType:
     description: |
-      Property itemDetails will be a defined model of type itemType.
+      Property itemDetails will be a defined model of type itemType.  NOte:  itemType other is deprecated and should not be used in new APIs.
     enum:
       - 'Dwelling'
       - 'Liability'
-      - 'Other--DEPRECATED'
+      - 'Other'
       - 'Property'
       - 'Structure'
       - 'Vehicle'
   itemDetails:
     description: |
-      An instance of itemType (which is another Model).
+      The instance of itemType (which is another Model).
     type: object

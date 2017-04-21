@@ -15,6 +15,11 @@ properties:
     description: |
       A detailed itemization of the item.  E.g. 'Nikon D500 Camera', 'Bass-Pro'.
     type: string
+  itemSchedule:
+    description: |
+      A generic schedule to list miscellaneous details for this item.
+    type:
+      $ref: '../definitions.yaml#/definitions/Hash'
   deductibles:
     type: array
     items:
@@ -27,3 +32,11 @@ properties:
     description: |
       The portion of the total premium which is attributable to this particular item.
     type: number
+  locationId:
+    description: |
+      The location Id for the liability. The location(s) are contained in the Policy model.
+    type: string
+  item:
+    description: |
+      An arbitrary, system assigned item number within the location dicriminates this liability on a policy with multiple location/liabilities.
+    type: string    

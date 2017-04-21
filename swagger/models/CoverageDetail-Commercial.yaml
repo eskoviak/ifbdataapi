@@ -1,0 +1,24 @@
+description: |
+  Coverage details which are specific to the commercial type of insurance.
+required:
+properties:
+  description:
+    type: string
+  deductibles:
+    type: array
+    items:
+      $ref: '../definitions.yaml#/definitions/Deductible'
+  coverageDetailSchedule:
+    description: |
+      A generic schedule to list miscellaneous details for this item.
+    type: array
+    items:
+      $ref: '../definitions.yaml#/definitions/Hash'
+  limits:
+    type: array
+    items:
+    $ref: '../definitions.yaml#/definitions/Limits'
+  premium:
+    description: |
+      The amount of the total premium which is due to this item.
+    type: number
