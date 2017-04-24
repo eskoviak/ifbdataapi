@@ -29,7 +29,7 @@ properties:
     description: |
       A description of the structure.  Example:  'DAIRY COMPLEX'
     type: string
-  itemSchedule:
+  itemSchedules:
     description: |
       A generic schedule to list miscellaneous details for this item.
     type:

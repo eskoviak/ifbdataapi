@@ -8,7 +8,7 @@ properties:
     type: array
     items:
       $ref: '../definitions.yaml#/definitions/Deductible'
-  coverageDetailSchedule:
+  coverageDetailSchedules:
     description: |
       A generic schedule to list miscellaneous details for this item.
     type: array

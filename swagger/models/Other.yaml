@@ -25,7 +25,7 @@ properties:
     description: |
       A detailed itemization of the item.  E.g. 'Nikon D500 Camera', 'Bass-Pro'.
     type: string
-  itemSchedule:
+  itemSchedules:
     description: |
       A generic schedule to list miscellaneous details for this item.
     type:
