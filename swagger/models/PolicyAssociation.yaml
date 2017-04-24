@@ -33,6 +33,10 @@ properties:
     description: |
       An arbitrary, system assigned item number within the location dicriminates this structure on a location with multiple structures.
     type: string
+  unit:
+    description: |
+      An arbitrary, system assigned unit number which relates this association to a specific vehicle in a fleet of vehicles.
+    type: number
   coverageCode:
     description: |
       If this PolicyAssociation is related to a coverage, this field indicates which coverageCode (also a property of Coverage) this relationship.  If this field is non-null, then sequence should also be valued.
