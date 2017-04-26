@@ -63,3 +63,9 @@ properties:
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/VehicleDriver
+  supplementalDocuments:
+    description: |
+      Any documents attached to the policy which are required for it's issuance.
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/SupplementalDocument

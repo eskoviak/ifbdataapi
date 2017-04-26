@@ -39,4 +39,10 @@ properties:
   item:
     description: |
       An arbitrary, system assigned item number within the location dicriminates this liability on a policy with multiple location/liabilities.
-    type: string    
+    type: string
+  supplementalDocuments:
+    description: |
+      Any documents attached to the policy which are required for it's issuance.
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/SupplementalDocument

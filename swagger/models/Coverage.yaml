@@ -45,7 +45,9 @@ properties:
       The code used by the host system that uniquely identifies this coverage.
     type: string
   coverageDetail:
-    $ref: '../definitions.yaml#/definitions/CoverageDetail-Life'
+    description: |
+      An object representing the coverage details, appropriate for this type of insurance.  The model schema is CoverageDetail-XXX, where XXX is either Life or Commericial.
+    type: object
   coverageFlags:
     type: array
     items:

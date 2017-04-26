@@ -42,3 +42,9 @@ properties:
     description: |
       An arbitrary, system assigned item number within the location dicriminates this property on a location with multiple structures.
     type: string
+  supplementalDocuments:
+    description: |
+      Any documents attached to the policy which are required for it's issuance.
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/SupplementalDocument

@@ -49,3 +49,9 @@ properties:
          'ACV', # Actual Cash Value
          'RC'   # Replacement Cost
       ]
+  supplementalDocuments:
+    description: |
+      Any documents attached to the policy which are required for it's issuance.
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/SupplementalDocument

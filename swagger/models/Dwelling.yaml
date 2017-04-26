@@ -34,7 +34,7 @@ properties:
     type: string
   riskType:
     description: |
-      A risk type is used for a dwelling which has a commercial use, such as a church or dry-cleaning busness.  The risk type associates this commercial use to the rating used for underwrting purposes.
+      A risk type is used for a dwelling which has a commercial use, such as a church or dry-cleaning business.  The risk type associates this commercial use to the rating used for underwrting purposes.
     type: string
   exposures:
     description: |
@@ -101,10 +101,6 @@ properties:
     description: The cost to replace the dwelling.
     type: number
     format: integer
-  valuation:
-    description: |
-       One of several possible methods of establishing the value of insured property to determine the amount the insurer will pay in the event of loss.
-    type: string
   automaticIncrease:
     description: |
       An automatic increase is an addition to an insurance policy that renders coverage limits on buildings flexible to inflation rate, specifically the value. It takes into account the changes to the cost of construction so that there is an automatic change in the insured property's coverage whenever there is a change in the costs. This protects the insured from a loss due to inflation.
