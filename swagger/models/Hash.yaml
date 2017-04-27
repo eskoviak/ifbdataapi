@@ -1,15 +1,8 @@
-description: |
-  A model for a name:value pair.  Used whenever a data item is needed which only has a name and value.
-  This will eventually be used for:
-  * Limits
-  * Deductibles
-  * Discounts
-  * Exposures
-  Note:  Either property is nullable--the invoking contract must specify usage.
 required:
-  ['name', 'value']
+  - 'name'
+  - 'value'
 properties:
   name:
-    type: ['string', 'null']
+    type: string
   value:
-    type: ['object', 'null']
+    type: string    

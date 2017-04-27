@@ -1,13 +1,7 @@
 description:  |
-  Model for InsuredItem type of 'Other'.  This item is deprecated.  Do not use for new APIs.
+  InsuredItem type of Property--representing an item of property to be insured.
 required:
   - 'description'
-  - 'classification'
-  - 'sequence'
-  - 'detail'
-  - 'deductibles'
-  - 'limits'
-  - 'premium'
 properties:
   description:
     description: A description of this item type.
@@ -18,9 +12,7 @@ properties:
   sequence:
     description: |
       If this other item is tied to an additional interest on a policy, the sequence is used to tie this item to a PolicyAssociation.
-    type:
-      - 'string'
-      - 'null'
+    type: string
   detail:
     description: |
       A detailed itemization of the item.  E.g. 'Nikon D500 Camera', 'Bass-Pro'.
@@ -39,4 +31,20 @@ properties:
     items:
       $ref: ../definitions.yaml#/definitions/Limit
   premium:
+    description: |
+      The portion of the total premium which is attributable to this particular item.
     type: number
+  locationId:
+    description: |
+      The location Id for the property. The location(s) are contained in the Policy model.
+    type: string
+  item:
+    description: |
+      An arbitrary, system assigned item number within the location dicriminates this property on a location with multiple structures.
+    type: string
+  supplementalDocuments:
+    description: |
+      Any documents attached to the policy which are required for it's issuance.
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/SupplementalDocument
