@@ -1,0 +1,76 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: individuals-search
+  x-architectural-layer: process
+  description: |
+    This is the process entry point for individuals (client) searches against the client record-keeping system (Exceed).
+
+    #### Service Functionality
+    This API is called with a JSON payload of search parameters.  If found, the resultant resource is a JSON collection of Individuals.
+
+    #### Diagrams
+    ![Interaction](http://connections/issite/ews/SiteAssets/api.process.individuals-search-design.png)
+
+    #### Performance Expectation
+    Standard SLA applies.
+
+    #### Service Capacity Supported
+    Standard Capacity applies
+
+    #### Suggested Test Scenario
+    TBD
+
+    #### Service Availability
+    Standard Service Availability applies
+
+    #### Service Security
+    HTTPS/SSL
+  contact:
+    name: Enterprise Web Services Team
+    email: EWSDevelopers@infambureau.com
+    url: http://connections/issite/ews/SitePages/Home.aspx
+produces:
+  - application/json
+schemes:
+  - http
+  - https
+basePath:
+  /api/clients/individuals
+paths:
+  /search:
+    post:
+      summary: Request individuals information matching criteria
+      description: |
+        Requests an Individual collection resource which match search criteria.
+      parameters:
+        - name: individuals-search-request
+          in: body
+          description: The input JSON payload
+          required: true
+          schema:
+            $ref: '../definitions.yaml#/definitions/individuals-search-request'
+        - name: limit
+          required: true
+          in: query
+          description: The maximum size of the collection to return
+          type: string
+      responses:
+        '200':
+          description: |
+            Success.  The Individuals collection along with search parameters.
+          schema:
+            $ref: '../definitions.yaml#/definitions/individuals-search-response'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/individuals-search-1.0.0-post-response'
+        '206':
+          description: |
+            Partial Response.  More records were returned than the limit parameter.  Returning only the max records requested.
+          schema:
+            $ref: '../definitions.yaml#/definitions/individuals-search-response'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/individuals-search-1.0.0-post-response'
+        default:
+          description: Failure

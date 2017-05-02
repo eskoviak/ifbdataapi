@@ -1,0 +1,90 @@
+{
+  "type": "object",
+  "properties": {
+    "personName": {
+      "type": "object",
+      "properties": {
+        "firstName": { "type" : "string" },
+        "middleName": { "type" : "string" },
+        "lastName": { "type" : "string" }
+      }
+    },
+    "phoneNumbers": {
+      "type": "array",
+      "items": {
+        "type" : "object",
+        "properties": {
+          "phoneNumber": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "emailAddresses": {
+      "type": "array",
+      "items": {
+        "type" : "object",
+        "properties": {
+          "emailAddress": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "taxId": {
+      "type" : "string"
+    },
+    "addresses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "street1": {
+            "type": "string"
+          },
+          "street2": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "county": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "demographics": {
+      "type": "object",
+      "properties": {
+        "driversLicenseState": {
+          "type": "string"
+        },
+        "driversLicenseNumber": {
+          "type": "string"
+        }
+      }
+    },
+    "clientAccountNumber": {
+      "type": "string"
+    },
+    "policyNumber": {
+      "type": "string"
+    },
+    "agentCode": {
+      "type": "string"
+    },
+    "claimNumber": {
+      "type": "string"
+    },
+    "billingAccountNumber": {
+      "type": "string"
+    }
+  }
+}

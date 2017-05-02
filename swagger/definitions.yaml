@@ -7,6 +7,12 @@ definitions:
     $ref: ./models/Agent.yaml
   archive-request:
     $ref: ./schemas/archive-request.json
+  businesses-search-request:
+    $ref: ./schemas/businesses-search-request.json
+  businesses-search-response:
+    $ref: ./schemas/businesses-search-response.json
+  businesses-search-1.0.0-post-response:
+    $ref: ./examples/businesses-search-1.0.0-post-response.json
   Client:
     $ref: ./models/Client.yaml
   ClientAccount:
@@ -57,6 +63,12 @@ definitions:
     $ref: ./models/Hash.yaml
   Investment:
     $ref: ./models/Investment.yaml
+  individuals-search-request:
+    $ref: ./schemas/individuals-search-request.json
+  individuals-search-response:
+    $ref: ./schemas/individuals-search-response.json
+  individuals-search-1.0.0-post-response:
+    $ref: ./examples/individuals-search-1.0.0-post-response.json
   Email:
     $ref: ./models/Email.yaml
   filter:
