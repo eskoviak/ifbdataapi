@@ -40,7 +40,7 @@ basePath:
   /api/clients/client-accounts
 paths:
   /{clientId}/name:
-    post:
+    'post':
       summary: Corrects client name
       description: For a given clientId, corrects the client name for account client type.
       parameters:

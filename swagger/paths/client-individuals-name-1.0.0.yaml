@@ -45,7 +45,7 @@ paths:
       description: For a given clientId, corrects the client name for individual client type.
       parameters:
           - $ref: '#/parameters/ClientId'
-          - name: personName
+          - name: personInfo
             description: The desired person name information for this operation
             required: true
             in: body
@@ -65,7 +65,7 @@ paths:
       description: For a given clientId, changes the client name for individual client type.
       parameters:
         - $ref: '#/parameters/ClientId'
-        - name: personName
+        - name: personInfo
           description: The desired person name information for this operation
           required: true
           in: body
