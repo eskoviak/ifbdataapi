@@ -50,7 +50,7 @@ paths:
             required: true
             in: body
             schema:
-              $ref: ../definitions.yaml#/definitions/PersonName
+              $ref: ../definitions.yaml#/definitions/client-individuals-name-request
       responses:
         '200':
           description: Success
@@ -70,7 +70,7 @@ paths:
           required: true
           in: body
           schema:
-            $ref: ../definitions.yaml#/definitions/PersonName
+            $ref: ../definitions.yaml#/definitions/client-individuals-name-request
       responses:
         '200':
           description: Success
