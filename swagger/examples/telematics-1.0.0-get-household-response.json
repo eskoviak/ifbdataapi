@@ -1,0 +1,90 @@
+{
+  "data": [
+    {
+      "household": {
+        "accountNumber": 585569,
+        "householdReferenceId": 987654321,
+        "drivers": {
+          "driverWithStatus": [
+            {
+              "driverStatus": "Active",
+              "driver": {
+                "driverReferenceId": "JSPRNGBH97190OPR4539",
+                "name": {
+                  "first": "BAT",
+                  "last": "Man"
+                },
+                "dOB": {
+                  "year": 1967,
+                  "month": "01",
+                  "day": 11
+                },
+                "email": "bat.man@gotham.org"
+              }
+            },
+            {
+              "driverStatus": "Active",
+              "driver": {
+                "driverReferenceId": "2B9VGB97YC489OPR4539",
+                "name": {
+                  "first": "VINH",
+                  "last": "Man"
+                },
+                "dOB": {
+                  "year": 1966,
+                  "month": "04",
+                  "day": 20
+                },
+                "email": "vinh.man@vietnamish.com"
+              }
+            },
+            {
+              "driverStatus": "Active",
+              "driver": {
+                "driverReferenceId": "X3G3VVJN5X497OPR4539",
+                "name": {
+                  "first": "AQUA",
+                  "last": "Man"
+                },
+                "dOB": {
+                  "year": 1994,
+                  "month": "07",
+                  "day": 17
+                },
+                "email": "aqua.man@underthesea.edu"
+              }
+            }
+          ]
+        },
+        "policies": {
+          "policyWithStatus": [
+            {
+              "policyStatus": "ACTIVE",
+              "policy": {
+                "policyNumber": "0008511418",
+                "policyState": "IN",
+                "driverReferences": {
+                  "driverReferenceId": [
+                    "JSPRNGBH97190OPR4539",
+                    "X3G3VVJN5X497OPR4539"
+                  ]
+                }
+              }
+            },
+            {
+              "policyStatus": "ACTIVE",
+              "policy": {
+                "policyNumber": "0008511250",
+                "policyState": "IN",
+                "driverReferences": {
+                  "driverReferenceId": "2B9VGB97YC489OPR4539"
+                }
+              }
+            }
+          ]
+        },
+        "vehicles": null
+      }
+    }
+  ]
+}
