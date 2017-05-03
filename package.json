@@ -4,6 +4,9 @@
   "description": "Farm Bureau API Model and Contract Repository",
   "main": "server.js",
   "dependencies": {
+    "del": "^2.2.2",
+    "gulp-watch": "^4.3.11",
+    "swagger-parser": "^3.4.1",
     "swagger-server": "^1.0.0-alpha.14"
   },
   "devDependencies": {
