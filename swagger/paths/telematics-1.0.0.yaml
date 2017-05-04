@@ -59,12 +59,6 @@ paths:
           required: true
           schema:
              $ref: ../schemas/telematics-household-request.json
-#            type: object
-#            properties:
-#              data:
-#                type: array
-#                items:
-#                  type: object
         - $ref: '#/parameters/Content-Type'
         - $ref: '#/parameters/Accept'
       responses:
@@ -141,12 +135,7 @@ paths:
           description: The input paramters in JSON format
           required: true
           schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  type: object
+             $ref: ../schemas/telematics-household-request.json
         - $ref: '#/parameters/Content-Type'
         - $ref: '#/parameters/Accept'
       responses:
@@ -213,12 +202,7 @@ paths:
           description: The input paramters in JSON format.
           required: true
           schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  type: object
+             $ref: ../schemas/telematics-driver.json
         - $ref: '#/parameters/Content-Type'
         - $ref: '#/parameters/Accept'
       responses:
@@ -244,12 +228,7 @@ paths:
           description: The input paramters in JSON format.
           required: true
           schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  type: object
+             $ref: ../schemas/telematics-driver-update-request.json
         - $ref: '#/parameters/Content-Type'
         - $ref: '#/parameters/Accept'
       responses:
