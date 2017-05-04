@@ -49,7 +49,7 @@ basePath:
 paths:
   /household:
     post:
-      summary:  Creates a household with household, policy and driver data.
+      summary:  Creates a household
       description: |
         Creates a household with policy and driver data in the Lexis Nexis telematics system.
       parameters:
@@ -91,7 +91,8 @@ paths:
             Server error.
   /household/{householdId}:
     get:
-      description: Returns a Household.
+      summary: Returns a Household
+      description: Returns a Household. Includes all driver and policy data.
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/Accept'
@@ -117,6 +118,7 @@ paths:
           description: |
             Server error.
     delete:
+      summary: Delete a Household
       description: Delete a Household.
       parameters:
         - $ref: '#/parameters/householdId'
@@ -128,7 +130,7 @@ paths:
 
   /household/{householdId}/policy:
     post:
-      summary:  Creates a policy with policy and driver data.
+      summary:  Creates a policy
       description: |
         Creates a policy with policy and driver data for a household in the Lexis Nexis telematics system.
       parameters:
@@ -158,7 +160,8 @@ paths:
             Server error.
   /household/{householdId}/policy/{policyId}:
     get:
-      description: Returns a policy
+      summary: Returns a policy
+      description: Returns a policy tied to the household. Includes only reference to the related drives.
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/policyId'
@@ -185,6 +188,7 @@ paths:
           description: |
             Server error.
     delete:
+      summary: Delete a policy
       description: Delete a policy.
       parameters:
         - $ref: '#/parameters/householdId'
@@ -197,7 +201,7 @@ paths:
 
   /household/{householdId}/policy/{policyId}/driver:
     post:
-      summary:  Creates a driver for a household and policy.
+      summary:  Creates a driver
       description: |
         Creates a driver for a household and policy in the Lexis Nexis telematics system.
       parameters:
@@ -227,9 +231,10 @@ paths:
           description: |
             Server error.
     put:
-      summary:  Update a driver for a household and policy.
+      summary:  Update a driver
       description: |
         Update a driver for a household and policy in the Lexis Nexis telematics system.
+        Could update: date of birth; name; and email.
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/policyId'
@@ -258,7 +263,8 @@ paths:
             Server error.
   /household/{householdId}/policy/{policyId}/driver/{driverId}:
     get:
-      description: Returns a driver
+      summary: Returns a driver
+      description: Returns a driver.
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/policyId'
@@ -286,6 +292,7 @@ paths:
           description: |
             Server error.
     delete:
+      summary: Delete a driver
       description: Delete a driver.
       parameters:
         - $ref: '#/parameters/householdId'
@@ -319,12 +326,14 @@ parameters:
   Content-Type:
     name: Content-Type
     in: header
-    description: Determines the request format. Allowed values are 'appliation/json' or 'application/xml'.
+    description: Determines the request format. Allowed values are 'application/json' or 'application/xml'.
+    default: 'application/json'
     required: false
     type: string
   Accept:
     name: Accept
     in: header
-    description: Determines the response format. Allowed values are 'appliation/json' or 'application/xml'.
+    description: Determines the response format. Allowed values are 'application/json' or 'application/xml'.
+    default: 'application/json'
     required: false
     type: string
