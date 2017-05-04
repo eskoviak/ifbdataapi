@@ -51,7 +51,7 @@ paths:
           schema:
             $ref: '../definitions.yaml#/definitions/businesses-search-request'
         - name: limit
-          required: true
+          required: false
           in: query
           description: The maximum size of the collection to return
           type: string
