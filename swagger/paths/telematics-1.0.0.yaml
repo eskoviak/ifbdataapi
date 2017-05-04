@@ -58,12 +58,13 @@ paths:
           description: The input paramters in JSON format.
           required: true
           schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  type: object
+             $ref: ../schemas/telematics-household-request.json
+#            type: object
+#            properties:
+#              data:
+#                type: array
+#                items:
+#                  type: object
         - $ref: '#/parameters/Content-Type'
         - $ref: '#/parameters/Accept'
       responses:

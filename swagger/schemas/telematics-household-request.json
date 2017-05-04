@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "household": {
+      "type": "object",
+      "properties": {
+        "householdReferenceId": {
+          "type": "string"
+        },
+        "drivers": {
+          "type": "array",
+          "items": {
+            "$ref": "./telematics-driver.json"
+          }
+        },
+        "policies": {
+          "type": "array",
+          "items": {
+            "$ref": "./telematics-policy.json"
+          }
+        }
+      }
+    }
+  }
+}
