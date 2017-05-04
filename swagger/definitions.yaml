@@ -27,8 +27,12 @@ definitions:
     $ref: ./examples/client-interests-2.0.0-get-response.json
   client-search-1.0.0-post-response:
     $ref: ./examples/client-search-1.0.0-post-response.json
+  client-search-1.1.0-post-response:
+    $ref: ./examples/client-search-1.1.0-post-response.json
   client-search-request:
     $ref: ./schemas/client-search-request.json
+  client-search-request-1.1.0:
+    $ref: ./schemas/client-search-request-1.1.0.json
   ClientInterest:
     $ref: ./models/ClientInterest.yaml
   clients-1.0.0-get-response:
