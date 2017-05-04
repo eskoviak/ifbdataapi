@@ -111,12 +111,13 @@ paths:
         '500':
           description: Failure.
 
-  /policy:
+  /household/{householdId}/policy:
     post:
       summary:  Creates a policy with policy and driver data.
       description: |
-        Creates a policy with policy and driver data in the Lexis Nexis telematics system
+        Creates a policy with policy and driver data for a household in the Lexis Nexis telematics system
       parameters:
+        - $ref: '#/parameters/householdId'
         - name: telematics-policy-request
           in: body
           description: The input paramters in JSON format
@@ -133,7 +134,7 @@ paths:
       responses:
         '201':
           description: |
-            Success creation of household.
+            Success creation of policy.
         '400':
           description: |
             Invalid payload.
@@ -142,7 +143,7 @@ paths:
             Server error.
   /household/{householdId}/policy/{policyId}:
     get:
-      description: Returns a Household
+      description: Returns a policy
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/policyId'
@@ -179,6 +180,108 @@ paths:
         '500':
           description: Failure.
 
+  /household/{householdId}/policy/{policyId}/driver:
+    post:
+      summary:  Creates a driver for a household and policy.
+      description: |
+        Creates a driver for a household and policy in the Lexis Nexis telematics system
+      parameters:
+        - $ref: '#/parameters/householdId'
+        - $ref: '#/parameters/policyId'
+        - name: telematics-driver-request
+          in: body
+          description: The input paramters in JSON format
+          required: true
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  type: object
+        - $ref: '#/parameters/Content-Type'
+        - $ref: '#/parameters/Accept'
+      responses:
+        '201':
+          description: |
+            Success creation of driver.
+        '400':
+          description: |
+            Invalid payload.
+        '500':
+          description: |
+            Server error.
+    put:
+      summary:  Update a driver for a household and policy.
+      description: |
+        Update a driver for a household and policy in the Lexis Nexis telematics system
+      parameters:
+        - $ref: '#/parameters/householdId'
+        - $ref: '#/parameters/policyId'
+        - name: telematics-driver-request
+          in: body
+          description: The input paramters in JSON format
+          required: true
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  type: object
+        - $ref: '#/parameters/Content-Type'
+        - $ref: '#/parameters/Accept'
+      responses:
+        '201':
+          description: |
+            Success creation of household.
+        '400':
+          description: |
+            Invalid payload.
+        '500':
+          description: |
+            Server error.
+  /household/{householdId}/policy/{policyId}/driver/{driverId}:
+    get:
+      description: Returns a driver
+      parameters:
+        - $ref: '#/parameters/householdId'
+        - $ref: '#/parameters/policyId'
+        - $ref: '#/parameters/driverId'
+        - $ref: '#/parameters/Accept'
+      responses:
+        '200':
+          description: Successful response
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  type: object
+          examples:
+            application/json:
+              $ref: ../examples/telematics-1.0.0-get-policy-response.json
+            application/xml:
+              $ref: ../examples/telematics-1.0.0-get-policy-response.xml
+        '404':
+          description: |
+            Resource does not exist.
+        '500':
+          description: |
+            Server error.
+    delete:
+      description: Delete a driver
+      parameters:
+        - $ref: '#/parameters/householdId'
+        - $ref: '#/parameters/policyId'
+        - $ref: '#/parameters/driverId'
+      responses:
+        '200':
+          description: Successful deletion of the policy.
+        '500':
+          description: Failure.
+
 parameters:
   householdId:
     name: householdId
@@ -191,6 +294,12 @@ parameters:
     required: true
     in: path
     description: The policy id for Lexis Nexis.
+    type: string
+  driverId:
+    name: driverId
+    required: true
+    in: path
+    description: The driver id for Lexis Nexis.
     type: string
   Content-Type:
     name: Content-Type
