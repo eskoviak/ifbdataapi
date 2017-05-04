@@ -7,13 +7,15 @@ info:
     A [system](http://connections/issite/iCAF/SitePages/APIs%20-%20System%20vs%20Process%20vs%20Experience.aspx) layer API.
 
     #### Service Functionality
-    This service allows various CRUD operations with the Lexis Nexis telematics webservices. It allow creation, retrival, and
-    deletion of household, policy, and driver. Only update allow on driver. Notes the deletion of an entitiy has cascading
-    affect. For example, a household with one policy and one driver under that policy, if the driver is deleted then it automatically
+    This service allows various CRUD operations with the Lexis Nexis telematics webservices. It allows creation, retrival, and
+    deletion of household, policy, and driver. Only update allowed is for driver.
+
+    **Warning** the deletion of an entitiy has cascading affect. For example, a household with one policy and one driver
+    under that policy, if the driver is deleted then it automatically
     deletes the parent policy and houeshold.
 
     #### Known Implementations
-    Auto Policy Telematics service
+    Exceed Auto Policy Telematics service
 
     #### Performance Expectation
     Standard SLA applies.
@@ -49,11 +51,11 @@ paths:
     post:
       summary:  Creates a household with household, policy and driver data.
       description: |
-        Creates a household with policy and driver data in the Lexis Nexis telematics system
+        Creates a household with policy and driver data in the Lexis Nexis telematics system.
       parameters:
         - name: telematics-household-request
           in: body
-          description: The input paramters in JSON format
+          description: The input paramters in JSON format.
           required: true
           schema:
             type: object
@@ -67,22 +69,35 @@ paths:
       responses:
         '201':
           description: |
-            Success creation of household.
+            Successful creation of household.
         '400':
           description: |
             Invalid payload.
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    errorMessage:
+                      type: string
+          examples:
+            application/json:
+              $ref: ../examples/telematics-1.0.0-add-household-response-error.json
         '500':
           description: |
             Server error.
   /household/{householdId}:
     get:
-      description: Returns a Household
+      description: Returns a Household.
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/Accept'
       responses:
         '200':
-          description: Successful response
+          description: Successful response.
           schema:
             type: object
             properties:
@@ -102,7 +117,7 @@ paths:
           description: |
             Server error.
     delete:
-      description: Delete a Household
+      description: Delete a Household.
       parameters:
         - $ref: '#/parameters/householdId'
       responses:
@@ -115,7 +130,7 @@ paths:
     post:
       summary:  Creates a policy with policy and driver data.
       description: |
-        Creates a policy with policy and driver data for a household in the Lexis Nexis telematics system
+        Creates a policy with policy and driver data for a household in the Lexis Nexis telematics system.
       parameters:
         - $ref: '#/parameters/householdId'
         - name: telematics-policy-request
@@ -150,7 +165,7 @@ paths:
         - $ref: '#/parameters/Accept'
       responses:
         '200':
-          description: Successful response
+          description: Successful response.
           schema:
             type: object
             properties:
@@ -170,7 +185,7 @@ paths:
           description: |
             Server error.
     delete:
-      description: Delete a policy
+      description: Delete a policy.
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/policyId'
@@ -184,13 +199,13 @@ paths:
     post:
       summary:  Creates a driver for a household and policy.
       description: |
-        Creates a driver for a household and policy in the Lexis Nexis telematics system
+        Creates a driver for a household and policy in the Lexis Nexis telematics system.
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/policyId'
         - name: telematics-driver-request
           in: body
-          description: The input paramters in JSON format
+          description: The input paramters in JSON format.
           required: true
           schema:
             type: object
@@ -214,13 +229,13 @@ paths:
     put:
       summary:  Update a driver for a household and policy.
       description: |
-        Update a driver for a household and policy in the Lexis Nexis telematics system
+        Update a driver for a household and policy in the Lexis Nexis telematics system.
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/policyId'
         - name: telematics-driver-request
           in: body
-          description: The input paramters in JSON format
+          description: The input paramters in JSON format.
           required: true
           schema:
             type: object
@@ -251,7 +266,7 @@ paths:
         - $ref: '#/parameters/Accept'
       responses:
         '200':
-          description: Successful response
+          description: Successful response.
           schema:
             type: object
             properties:
@@ -271,7 +286,7 @@ paths:
           description: |
             Server error.
     delete:
-      description: Delete a driver
+      description: Delete a driver.
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/policyId'
