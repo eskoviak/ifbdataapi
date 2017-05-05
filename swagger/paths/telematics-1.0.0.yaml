@@ -215,6 +215,7 @@ paths:
         '500':
           description: |
             Server error.
+  /household/{householdId}/policy/{policyId}/driver/{driverId}:
     put:
       summary:  Update a driver
       description: |
@@ -223,6 +224,7 @@ paths:
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/policyId'
+        - $ref: '#/parameters/driverId'
         - name: telematics-driver-request
           in: body
           description: The input paramters in JSON format.
@@ -241,7 +243,6 @@ paths:
         '500':
           description: |
             Server error.
-  /household/{householdId}/policy/{policyId}/driver/{driverId}:
     get:
       summary: Returns a driver
       description: Returns a driver.
