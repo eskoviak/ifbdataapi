@@ -135,7 +135,7 @@ paths:
           description: The input paramters in JSON format
           required: true
           schema:
-             $ref: ../schemas/telematics-household-request.json
+             $ref: ../schemas/telematics-policy-request.json
         - $ref: '#/parameters/Content-Type'
         - $ref: '#/parameters/Accept'
       responses:

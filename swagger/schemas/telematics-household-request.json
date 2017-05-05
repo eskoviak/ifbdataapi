@@ -16,7 +16,12 @@
         "policies": {
           "type": "array",
           "items": {
-            "$ref": "./telematics-policy.json"
+            "type": "object",
+            "properties": {
+              "policy": {
+                "$ref": "./telematics-policy.json"
+              }
+            }
           }
         }
       }

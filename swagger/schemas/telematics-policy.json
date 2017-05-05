@@ -1,24 +1,19 @@
 {
   "type": "object",
   "properties": {
-    "policy": {
-      "type": "object",
-      "properties": {
-        "policyNumber": {
-          "type": "string"
-        },
-        "policyState": {
-          "type": "string"
-        },
-        "driverReferences": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "driverReferenceId": {
-                "type": "string"
-              }
-            }
+    "policyNumber": {
+      "type": "string"
+    },
+    "policyState": {
+      "type": "string"
+    },
+    "driverReferences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "driverReferenceId": {
+            "type": "string"
           }
         }
       }
