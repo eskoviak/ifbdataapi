@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "policyWithStatus": {
+        "policyStatus": "ACTIVE",
+        "policy": {
+          "policyNumber": "0008511418",
+          "policyState": "IN",
+          "driverReferences": {
+            "driverReferenceId": [
+              "JSPRNGBH97190OPR4539",
+              "X3G3VVJN5X497OPR4539"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

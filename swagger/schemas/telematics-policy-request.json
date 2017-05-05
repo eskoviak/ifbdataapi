@@ -1,0 +1,14 @@
+{
+  "type": "object",
+  "properties": {
+    "policy": {
+      "$ref": "./telematics-policy.json"
+    },
+    "drivers": {
+      "type": "array",
+      "items": {
+        "$ref": "./telematics-driver.json"
+      }
+    }
+  }
+}
