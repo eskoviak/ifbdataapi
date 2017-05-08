@@ -119,6 +119,20 @@ definitions:
     $ref: ./models/SupplementalDocument.yaml
   transformer-request:
     $ref: ./schemas/transformer-request.json
+  telematics-1.0.0-add-household-response-error:
+    $ref: ./examples/telematics-1.0.0-add-household-response-error.json
+  telematics-1.0.0-get-household-response-json:
+    $ref: ./examples/telematics-1.0.0-get-household-response.json
+  telematics-1.0.0-get-household-response-xml:
+    $ref: ./examples/telematics-1.0.0-get-household-response.xml
+  telematics-1.0.0-get-policy-response-json:
+    $ref: ./examples/telematics-1.0.0-get-policy-response.json
+  telematics-1.0.0-get-policy-response-xml:
+    $ref: ./examples/telematics-1.0.0-get-policy-response.xml
+  telematics-1.0.0-get-driver-response-json:
+    $ref: ./examples/telematics-1.0.0-get-driver-response.json
+  telematics-1.0.0-get-driver-response-xml:
+    $ref: ./examples/telematics-1.0.0-get-driver-response.xml
   testa-example-response:
     $ref: ./schemas/testa-example-response.json
   Vehicle:
