@@ -25,7 +25,7 @@ properties:
     description: |
       The type code of the root object.
     type: string
-  rootRootDescription:
+  rootTypeDescription:
     description: |
       A descriptive tag used with the root object type.
     type: string
