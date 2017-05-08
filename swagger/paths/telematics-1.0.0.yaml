@@ -80,7 +80,7 @@ paths:
                       type: string
           examples:
             application/json:
-              $ref: ../examples/telematics-1.0.0-add-household-response-error.json
+              $ref: ../definitions.yaml#/definitions/telematics-1.0.0-add-household-response-error
         '500':
           description: |
             Server error.
@@ -103,9 +103,9 @@ paths:
                   type: object
           examples:
             application/json:
-              $ref: ../examples/telematics-1.0.0-get-household-response.json
+              $ref: ../definitions.yaml#/definitions/telematics-1.0.0-get-household-response-json
             application/xml:
-              $ref: ../examples/telematics-1.0.0-get-household-response.xml
+              $ref: ../definitions.yaml#/definitions/telematics-1.0.0-get-household-response-xml
         '404':
           description: |
             Resource does not exist.
@@ -168,9 +168,9 @@ paths:
                   type: object
           examples:
             application/json:
-              $ref: ../examples/telematics-1.0.0-get-policy-response.json
+              $ref: ../definitions.yaml#/definitions/telematics-1.0.0-get-policy-response-json
             application/xml:
-              $ref: ../examples/telematics-1.0.0-get-policy-response.xml
+              $ref: ../definitions.yaml#/definitions/telematics-1.0.0-get-policy-response-xml
         '404':
           description: |
             Resource does not exist.
@@ -263,9 +263,9 @@ paths:
                   type: object
           examples:
             application/json:
-              $ref: ../examples/telematics-1.0.0-get-policy-response.json
+              $ref: ../definitions.yaml#/definitions/telematics-1.0.0-get-driver-response-json
             application/xml:
-              $ref: ../examples/telematics-1.0.0-get-policy-response.xml
+              $ref: ../definitions.yaml#/definitions/telematics-1.0.0-get-driver-response-xml
         '404':
           description: |
             Resource does not exist.
