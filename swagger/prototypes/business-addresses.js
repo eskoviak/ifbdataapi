@@ -6,6 +6,7 @@ mc.setPayloadJSON(
     '    {\n' +
     '        "addresses": [\n' +
     '        {\n' +
+    '            "addressId" : "PLM|APV 1234567",\n' +
     '            "addressType": "PLM",\n' +
     '            "effectiveDate": "2011-01-01",\n' +
     '            "associatedObject": "APV 1234567",\n' +
@@ -22,6 +23,7 @@ mc.setPayloadJSON(
     '            "country": null\n' +
     '        },\n' +
     '        {\n' +
+    '            "addressId" : "PLD|APV 1234567",\n' +
     '            "addressType": "PLD",\n' +
     '            "effectiveDate": "2011-01-01",\n' +
     '            "associatedObject": "APV 1234567",\n' +
