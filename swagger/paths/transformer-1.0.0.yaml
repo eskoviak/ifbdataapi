@@ -69,7 +69,6 @@ paths:
             type: object
           examples:
             application/xml:
-              $ref: ../definitions.yaml#/definitions/transformer-1.0.0-post-response-xml
             application/json:
               $ref: ../definitions.yaml#/definitions/transformer-1.0.0-post-response-json
         default:
