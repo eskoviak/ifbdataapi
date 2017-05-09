@@ -1,7 +1,7 @@
 swagger: "2.0"
 info:
   version: 1.0.0
-  title: client-addresses
+  title: clients-addresses
   x-architectural-layer: system
   description: |
     This is the entry point for client addresses
