@@ -93,12 +93,7 @@ paths:
         '200':
           description: Successful response.
           schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  type: object
+            $ref: ../schemas/telematics-generic-success-response.json
           examples:
             application/json:
               $ref: ../definitions.yaml#/definitions/telematics-1.0.0-get-household-response-json
@@ -172,12 +167,7 @@ paths:
         '200':
           description: Successful response.
           schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  type: object
+            $ref: ../schemas/telematics-generic-success-response.json
           examples:
             application/json:
               $ref: ../definitions.yaml#/definitions/telematics-1.0.0-get-policy-response-json
@@ -287,12 +277,7 @@ paths:
         '200':
           description: Successful response.
           schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  type: object
+            $ref: ../schemas/telematics-generic-success-response.json
           examples:
             application/json:
               $ref: ../definitions.yaml#/definitions/telematics-1.0.0-get-driver-response-json

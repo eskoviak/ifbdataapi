@@ -4,12 +4,7 @@
     "data": {
       "type": "array",
       "items": {
-        "type": "object",
-        "properties": {
-          "errorMessage": {
-            "type": "string"
-          }
-        }
+        "type": "object"
       }
     }
   }
