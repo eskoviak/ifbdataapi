@@ -64,7 +64,7 @@ paths:
       responses:
         '200':
           description: |
-            Success. Transformed data as xml document.
+            Success. Transformed data as xml or JSON document.
           schema:
             type: object
           examples:

@@ -138,7 +138,7 @@ definitions:
   transformer-1.0.0-post-response-json:
     $ref: ./examples/transformer-1.0.0-post-response.json
   transformer-1.0.0-post-response-xml:
-    $ref: ./examples/transformer-1.0.0-post-response.xml
+    $ref: ./examples/transformer-1.0.0-post-response.jxml
   Vehicle:
     $ref: ./models/Vehicle.yaml
   VehicleDriver:

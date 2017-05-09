@@ -1,0 +1,20 @@
+{ 
+    "Data" : {
+        "type" : "object",
+        "properties" : {
+            "household" : {
+                "type" : "object",
+                "properties" : {
+                      "Driver" : {
+                          "type" : "object",
+                          "properties" : {
+                              "DriverReferenceId" : {
+                                  "type" : "string"
+                                  }
+                              }
+                          }
+                      }
+                }
+            }
+        }
+}
