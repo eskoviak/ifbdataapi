@@ -66,7 +66,7 @@ paths:
           description: |
             Success. Transformed data as xml document.
           schema:
-            type: file
+            type: object
           examples:
             application/xml:
               $ref: ../definitions.yaml#/definitions/transformer-1.0.0-post-response-xml
