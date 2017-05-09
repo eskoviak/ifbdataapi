@@ -1,14 +1,8 @@
 /node_modules
-/bower_components
 *.swp
 *.swo
 *.log
 validate.err
-*proposed.yaml
 *.xsl
-*.xpr
 *.ps1
-server.js
 .idea
-*.iml
-swagger/playground

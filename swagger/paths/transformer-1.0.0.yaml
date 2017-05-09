@@ -42,6 +42,7 @@ consumes:
   - 'application/json'
 produces:
   - 'application/xml'
+  - 'applicaiton/json'
 paths:
   /:
     post:
@@ -52,6 +53,7 @@ paths:
         - 'application/json'
       produces:
         - 'application/xml'
+        - 'applicaiton/json'
       parameters:
         - name:  transformer-request
           in: body
@@ -65,7 +67,11 @@ paths:
             Success. Transformed data as xml document.
           schema:
             type: file
-#            example: <data><theContentOfTheTransformDataAsXmlWillGoHere/></data>
+          examples:
+            application/xml:
+              $ref: ../definitions.yaml#/definitions/transformer-1.0.0-post-response-xml
+            application/json:
+              $ref: ../definitions.yaml#/definitions/transformer-1.0.0-post-response-json
         default:
           description: |
             Failure.
