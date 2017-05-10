@@ -38,12 +38,6 @@ info:
 schemes:
   - 'https'
   - 'http'
-consumes:
-  - 'application/json'
-  - 'application/xml'
-produces:
-  - 'application/json'
-  - 'application/xml'
 basePath:
   /api/telematics
 paths:
@@ -52,6 +46,12 @@ paths:
       summary:  Creates a household
       description: |
         Creates a household with policy and driver data in the Lexis Nexis telematics system.
+      consumes:
+        - 'application/json'
+        - 'application/xml'
+      produces:
+        - 'application/json'
+        - 'application/xml'
       parameters:
         - name: telematics-household-request
           in: body
@@ -69,15 +69,7 @@ paths:
           description: |
             Invalid payload.
           schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    errorMessage:
-                      type: string
+            $ref: ../schemas/telematics-error.json
           examples:
             application/json:
               $ref: ../definitions.yaml#/definitions/telematics-1.0.0-add-household-response-error
@@ -88,6 +80,12 @@ paths:
     get:
       summary: Returns a Household
       description: Returns a Household. Includes all driver and policy data.
+      consumes:
+        - 'application/json'
+        - 'application/xml'
+      produces:
+        - 'application/json'
+        - 'application/xml'
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/Accept'
@@ -95,12 +93,7 @@ paths:
         '200':
           description: Successful response.
           schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  type: object
+            $ref: ../schemas/telematics-generic-success-response.json
           examples:
             application/json:
               $ref: ../definitions.yaml#/definitions/telematics-1.0.0-get-household-response-json
@@ -128,6 +121,12 @@ paths:
       summary:  Creates a policy
       description: |
         Creates a policy with policy and driver data for a household in the Lexis Nexis telematics system.
+      consumes:
+        - 'application/json'
+        - 'application/xml'
+      produces:
+        - 'application/json'
+        - 'application/xml'
       parameters:
         - $ref: '#/parameters/householdId'
         - name: telematics-policy-request
@@ -145,6 +144,8 @@ paths:
         '400':
           description: |
             Invalid payload.
+          schema:
+            $ref: ../schemas/telematics-error.json
         '500':
           description: |
             Server error.
@@ -152,6 +153,12 @@ paths:
     get:
       summary: Returns a policy
       description: Returns a policy tied to the household. Includes only reference to the related drives.
+      consumes:
+        - 'application/json'
+        - 'application/xml'
+      produces:
+        - 'application/json'
+        - 'application/xml'
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/policyId'
@@ -160,12 +167,7 @@ paths:
         '200':
           description: Successful response.
           schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  type: object
+            $ref: ../schemas/telematics-generic-success-response.json
           examples:
             application/json:
               $ref: ../definitions.yaml#/definitions/telematics-1.0.0-get-policy-response-json
@@ -194,6 +196,12 @@ paths:
       summary:  Creates a driver
       description: |
         Creates a driver for a household and policy in the Lexis Nexis telematics system.
+      consumes:
+        - 'application/json'
+        - 'application/xml'
+      produces:
+        - 'application/json'
+        - 'application/xml'
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/policyId'
@@ -212,6 +220,8 @@ paths:
         '400':
           description: |
             Invalid payload.
+          schema:
+            $ref: ../schemas/telematics-error.json
         '500':
           description: |
             Server error.
@@ -221,6 +231,12 @@ paths:
       description: |
         Update a driver for a household and policy in the Lexis Nexis telematics system.
         Could update: date of birth; name; and email.
+      consumes:
+        - 'application/json'
+        - 'application/xml'
+      produces:
+        - 'application/json'
+        - 'application/xml'
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/policyId'
@@ -246,6 +262,12 @@ paths:
     get:
       summary: Returns a driver
       description: Returns a driver.
+      consumes:
+        - 'application/json'
+        - 'application/xml'
+      produces:
+        - 'application/json'
+        - 'application/xml'
       parameters:
         - $ref: '#/parameters/householdId'
         - $ref: '#/parameters/policyId'
@@ -255,12 +277,7 @@ paths:
         '200':
           description: Successful response.
           schema:
-            type: object
-            properties:
-              data:
-                type: array
-                items:
-                  type: object
+            $ref: ../schemas/telematics-generic-success-response.json
           examples:
             application/json:
               $ref: ../definitions.yaml#/definitions/telematics-1.0.0-get-driver-response-json
