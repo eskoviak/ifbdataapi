@@ -37,6 +37,12 @@ definitions:
     $ref: ./models/ClientInterest.yaml
   clients-1.0.0-get-response:
     $ref: ./examples/clients-1.0.0-get-response.json
+  client-accounts-search-request:
+    $ref: ./schemas/client-accounts-search-request.json
+  client-accounts-search-response:
+    $ref: ./schemas/client-accounts-search-response.json
+  client-accounts-search-1.0.0-post-response:
+    $ref: ./examples/client-accounts-search-1.0.0-post-response.json
   clients-addresses-request:
     $ref: ./schemas/clients-addresses-request.json
   codes-response:

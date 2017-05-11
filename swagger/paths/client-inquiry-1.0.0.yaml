@@ -5,6 +5,8 @@ info:
   x-architectural-layer: process
   description: |
 
+    ### Base Client Inquiry:
+
     This [process](http://connections/issite/iCAF/SitePages/Home.aspx) API is used to inquire about clients from the enterprise client record-keeping system.  This inquiry consists of two categories of information:
 
     _Some combination of client demographic information_
@@ -21,14 +23,14 @@ info:
 
     #### Sequence Diagram
     ![client-inquiry](http://connections/issite/EWS/SiteAssets/experience-client-inquiry.png)
-    
+
     The client uses HTTP POST with the desired query fields in the request body, using the JSON format detailed in the request specification.  The Process Layer assembles the data, using the client identifying information and applying the desired filter.  Upon completion of the data gathering process(es); a JSON encoded body is returned as the requested resource.
 
     #### Known Implementations
     * Life Death Claims (LDC)
-    
+
     The following demographic information combinations are supported:
-    
+
     * Last Name
     * Last Name, First Name
     * Last Name, Date of Birth
@@ -37,29 +39,39 @@ info:
     The supported business filters are Primary and Select Memberships.
 
     _ Sample Claim inquiry using the Client's first/last name_
-   
+
     [JSON Request](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-firstlastname-CLM-rq.json.txt) --> [JSON Response](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-firstlastname-CLM-rs.json.txt)
 
     _Sample Life Death Claim inquiry using the Client's first/last name_
 
     [JSON Request](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-firstlastname-LDC-rq.json.txt) --> [JSON Response](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-firstlastname-LDC-rs.json.txt)
-    
+
     _Sample Life Death Claim inquiry using on the Client's last name_
 
     [JSON Request](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-lastname-LDC-rq.json.txt) --> [JSON Response](http://connections/issite/ews/SiteAssets/client-inquiry-request-response/client-inquiry-lastname-LDC-rs.json.txt)
 
+    ### Individual/Business/Account Client Inquiry:
+
+    This is the process entry point for individuals (client) searches against the client record-keeping system (Exceed).
+
+    #### Service Functionality
+    This API is called with a JSON payload of search parameters.  If found, the resultant resource is a JSON collection of Individuals.
+
+    #### Diagrams (Example: Individual)
+    ![Interaction](http://connections/issite/ews/SiteAssets/api.process.individuals-search-design.png)
+
     #### Performance Expectation
     TBD
-    
+
     #### Service Capacity Supported
     TBD
-    
+
     #### Suggested Test Scenario
     TBD
-    
+
     #### Service Availability
     TBD
-    
+
     #### Service Security
     TBD
   contact:
@@ -95,5 +107,113 @@ paths:
           examples:
             application/json:
               $ref: '../definitions.yaml#/definitions/client-inquiry-1.0.0-post-response'
+        default:
+          description: Failure
+  /individual-clients/search:
+    post:
+      summary: Request individuals information matching criteria
+      description: |
+        Requests an Individual collection resource which match search criteria.
+      parameters:
+        - name: individual-clients-search-request
+          in: body
+          description: The input JSON payload
+          required: true
+          schema:
+            $ref: '../definitions.yaml#/definitions/individuals-search-request'
+        - name: limit
+          required: false
+          in: query
+          description: The maximum size of the collection to return
+          type: string
+      responses:
+        '200':
+          description: |
+            Success.  The Individuals collection along with search parameters.
+          schema:
+            $ref: '../definitions.yaml#/definitions/individuals-search-response'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/individuals-search-1.0.0-post-response'
+        '206':
+          description: |
+            Partial Response.  More records were returned than the limit parameter.  Returning only the max records requested.
+          schema:
+            $ref: '../definitions.yaml#/definitions/individuals-search-response'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/individuals-search-1.0.0-post-response'
+        default:
+          description: Failure
+  /business-clients/search:
+    post:
+      summary: Request businesses information matching criteria
+      description: |
+        Requests an Business collection resource which match search criteria.
+      parameters:
+        - name: business-clients-search-request
+          in: body
+          description: The input JSON payload
+          required: true
+          schema:
+            $ref: '../definitions.yaml#/definitions/businesses-search-request'
+        - name: limit
+          required: false
+          in: query
+          description: The maximum size of the collection to return
+          type: string
+      responses:
+        '200':
+          description: |
+            Success.  The Businesses collection along with search parameters.
+          schema:
+            $ref: '../definitions.yaml#/definitions/businesses-search-response'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/businesses-search-1.0.0-post-response'
+        '206':
+          description: |
+            Partial Response.  More records were returned than the limit parameter.  Returning only the max records requested.
+          schema:
+            $ref: '../definitions.yaml#/definitions/businesses-search-response'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/businesses-search-1.0.0-post-response'
+        default:
+          description: Failure
+  /client-accounts/search:
+    post:
+      summary: Request accounts information matching criteria
+      description: |
+        Requests an Business collection resource which match search criteria.
+      parameters:
+        - name: clients-accounts-search-request
+          in: body
+          description: The input JSON payload
+          required: true
+          schema:
+            $ref: '../definitions.yaml#/definitions/client-accounts-search-request'
+        - name: limit
+          required: false
+          in: query
+          description: The maximum size of the collection to return
+          type: string
+      responses:
+        '200':
+          description: |
+            Success.  The Accounts Client collection along with search parameters.
+          schema:
+            $ref: '../definitions.yaml#/definitions/client-accounts-search-response'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/client-accounts-search-1.0.0-post-response'
+        '206':
+          description: |
+            Partial Response.  More records were returned than the limit parameter.  Returning only the max records requested.
+          schema:
+            $ref: '../definitions.yaml#/definitions/businesses-search-response'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/client-accounts-search-1.0.0-post-response'
         default:
           description: Failure
