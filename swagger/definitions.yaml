@@ -17,6 +17,12 @@ definitions:
     $ref: ./models/Client.yaml
   ClientAccount:
     $ref: ./models/ClientAccount.yaml
+  client-accounts-name-request:
+    $ref: ./schemas/client-accounts-name-request.json
+  client-businesses-name-request:
+    $ref: ./schemas/client-businesses-name-request.json
+  client-individuals-name-request:
+      $ref: ./schemas/client-individuals-name-request.json
   client-inquiry-request:
     $ref: ./schemas/client-inquiry-request.json
   client-inquiry-response:
