@@ -5,7 +5,6 @@
 *.log
 validate.err
 *proposed.yaml
-*.xml
 *.xsl
 *.xpr
 *.ps1

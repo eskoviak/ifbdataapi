@@ -1,0 +1,13 @@
+<data>
+    <policyWithStatus>
+        <policyStatus>ACTIVE</policyStatus>
+        <policy>
+            <policyNumber>0008511418</policyNumber>
+            <policyState>IN</policyState>
+            <driverReferences>
+                <driverReferenceId>X3G3VVJN5X497OPR4539</driverReferenceId>
+                <driverReferenceId>JSPRNGBH97190OPR4539</driverReferenceId>
+            </driverReferences>
+        </policy>
+    </policyWithStatus>
+</data>
