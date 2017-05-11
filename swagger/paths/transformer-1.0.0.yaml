@@ -42,7 +42,7 @@ consumes:
   - 'application/json'
 produces:
   - 'application/xml'
-  - 'applicaiton/json'
+  - 'application/json'
 paths:
   /:
     post:
