@@ -1,26 +1,30 @@
 {
   "type" : "object",
   "properties" : {
-    "Client": {"type": "object"},
-      "personName": {
-        "type": "object",
-        "properties": {
-          "firstName": {
-            "type": "string"
-          },
-          "middleName": {
-            "type": "string"
-          },
-          "lastName": {
-            "type": "string"
-          },
-          "titlePrefix": {
-            "type": "string"
-          },
-          "nameSuffix": {
-            "type": "string"
+    "Client": {
+      "type": "object",
+      "properties" : {
+        "personName": {
+          "type": "object",
+          "properties": {
+            "firstName": {
+              "type": "string"
+            },
+            "middleName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "titlePrefix": {
+              "type": "string"
+            },
+            "nameSuffix": {
+              "type": "string"
+            }
           }
         }
+      }
     }
   }
 }
