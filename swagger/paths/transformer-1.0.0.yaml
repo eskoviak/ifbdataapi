@@ -53,7 +53,7 @@ paths:
         - 'application/json'
       produces:
         - 'application/xml'
-        - 'applicaiton/json'
+        - 'application/json'
       parameters:
         - name:  transformer-request
           in: body
