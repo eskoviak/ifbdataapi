@@ -165,6 +165,10 @@ definitions:
     $ref: ./examples/telematics-1.0.0-get-driver-response.xml
   testa-example-response:
     $ref: ./schemas/testa-example-response.json
+  transformer-1.0.0-post-response-json:
+    $ref: ./examples/transformer-1.0.0-post-response.json
+  transformer-1.0.0-post-response-xml:
+    $ref: ./examples/transformer-1.0.0-post-response.xml
   Vehicle:
     $ref: ./models/Vehicle.yaml
   VehicleDriver:

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <household>
+        <HouseholdReferenceId>9876ZZZ21</HouseholdReferenceId>
+        <Drivers>
+            <Driver>
+                <DriverReferenceId>2B9VGB97YC48RFID4539</DriverReferenceId>
+                <Name>
+                    <First>Spider</First>
+                    <Last>Man</Last>
+                </Name>
+                <DOB>
+                    <Year>1966</Year>
+                    <Month>04</Month>
+                    <Day>20</Day>
+                </DOB>
+                <Email>spiderman@webslinger.com</Email>
+            </Driver>
+        </Drivers>
+        <Policies>
+            <Policy>
+                <PolicyNumber>0008511DD0</PolicyNumber>
+                <PolicyState>IN</PolicyState>
+                <DriverReferences>
+                    <DriverReferenceId>2B9VGB97YC48RFID4539</DriverReferenceId>
+                </DriverReferences>
+            </Policy>
+        </Policies>
+    </household>
+</data>
