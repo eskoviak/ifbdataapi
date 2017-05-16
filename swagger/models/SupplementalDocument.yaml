@@ -1,13 +1,20 @@
-description:  This model containes references to supplemental documentation for a policy.
+description:  Supplemental documentation for a policy.
 required:
-  ['code', 'description', 'dateReceived']
+  - 'code'
 properties:
   code:
     description: |
       The code assigned to the document by the record-keeping system.
-    type: ['string', 'null']
+    type: string
   description:
-    type: ['string', 'null']
+    type: string
   dateReceived:
-    type: ['number', 'null']
+    description: |
+      The date the document was received.
+    type: string
+    format: date
+  editionDate:
+    description: |
+      The date the form, upon which this document is based, was published.
+    type: string
     format: date

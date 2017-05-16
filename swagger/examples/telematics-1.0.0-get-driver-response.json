@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "driverWithStatus": {
+        "driverStatus": "Active",
+        "driver": {
+          "driverReferenceId": "2B9VGB97YC489OPR4539",
+          "name": {
+            "first": "Wonder",
+            "last": "Woman"
+          },
+          "dOB": {
+            "year": 1966,
+            "month": "04",
+            "day": 20
+          },
+          "email": "wonder.woman@amazon.gov"
+        }
+      }
+    }
+  ]
+}

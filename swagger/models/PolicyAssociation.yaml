@@ -11,30 +11,32 @@ required:
   - 'sequence'
   - 'name'
   - 'address'
-  - 'referenceData'
   - 'associationType'
   - 'associationTypeCode'
   - 'associationSubType'
   - 'associationRelationship'
   - 'demographics'
 properties:
+  detailPart:
+    description: |
+      For policies which contain multiple policy detail parts, this field relates this policy association to the correct detail part.
+    type: string
   clientId:
     description: |
       The client id from the the client record-keeping system.
-    type: 
-      - 'string'  
-      - 'null'
+    type: string
   locationId:
     description: |
-      If the interest is tied to a specific location, use this to refer to the Location.Id property.
-    type:
-      - 'string'
-      - 'null'  
+      If the association is tied to a specific location, this refers to the Location.Id property.
+    type: string
   item:
     description: |
       An arbitrary, system assigned item number within the location dicriminates this structure on a location with multiple structures.
-    type:
-      - 'string'
+    type: string
+  unit:
+    description: |
+      An arbitrary, system assigned unit number which relates this association to a specific vehicle in a fleet of vehicles.
+    type: number
   coverageCode:
     description: |
       If this PolicyAssociation is related to a coverage, this field indicates which coverageCode (also a property of Coverage) this relationship.  If this field is non-null, then sequence should also be valued.
@@ -53,38 +55,25 @@ properties:
     $ref: ../definitions.yaml#/definitions/Address
   referenceData:
     description: |
-      Reference information for this association.  The data in this field could represent a loan number or case
-      number in the case of assignee (Life) or PolicyInterest (farm).  It could represent the percentage split 
-      for a Beneficiary (Life).
-    type: 
-      - 'string'  
-      - 'null'
+      Reference information for this association.  The data in this field could represent a loan number or case number in the case of assignee or a policy interest.  It could represent the percentage split for a Beneficiary (Life).
+    type: string
   associationType:
     description: |
-      Description of the type of association:  (Life) Assignee, Beneficiary; (Farm) Policy Interests, (Multiple) 
-      Additional Named Insured.  Either #.associationType or #.associationTypeCode must be valued to describe the
-      relationship of this object with the parent Policy.
-    type:
-      - 'string'  
-      - 'null'
+      Description of the type of association.  Either associationType or associationTypeCode should be valued.
+    type: string
   associationTypeCode:
     description: |
-      Descriptive code for the type of association:  (Life) Assignee, Beneficiary; (Farm) Policy Interests, (Multiple) 
-      Additional Named Insured.  Either #.associationType or #.associationTypeCode must be valued to describe the
-      relationship of this object with the parent Policy.
-    type:
-      - 'string'  
-      - 'null'
+      Descriptive code for the type of association. Either associationType or associationTypeCode should be valued.
+    type: string
   associationSubType:
     description: |
-      Further describes the association to the policy.  In the case of Beneficiary (Life), describes the Beneficiary
-      type:  Primary or Contingent.
+      Further describes the association to the policy.  In the case of Beneficiary (Life), describes the Beneficiary type:  Primary or Contingent.
     type:
       - 'string'  
       - 'null'
   associationRelationship:
     description: |
-      This field is used to describe the relationship of the Party in this model (PolicyAssociation) to the parent Policy model.
+      This field is used to describe the relationship of the object in this association to the parent Policy or Policy Detail model.
     type:
       - 'string'
       - 'null'

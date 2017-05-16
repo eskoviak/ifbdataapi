@@ -1,11 +1,10 @@
 description: |
-  The maximum amount for a Coverage.  In the form of a name/value pair--
-  example:  'Liability Limit'/10000000
+  The maximum amount the insurer will pay for and instance of a claim against a Coverage.
 required: ["name", "value"]
 properties:
   name:
-    description: The name of a Limit
-    type: ["string", "null"]
+    description: The name of the Limit
+    type: string
   value:
-    description: The value of a Limit
+    description: The value of the Limit
     type: number 

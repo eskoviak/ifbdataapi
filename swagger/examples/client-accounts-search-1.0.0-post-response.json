@@ -1,0 +1,96 @@
+{
+  "data": [
+    {
+      "clients": [
+        {
+          "id": "12345",
+          "name": null,
+          "personName": {
+            "firstName": "Bob",
+            "middleName": "A",
+            "lastName": "Customer",
+            "titlePrefix": null,
+            "nameSuffix": null
+          },
+          "phoneNumbers": [
+            {
+              "phoneNumber": "555-555-5555",
+              "phoneType": "Home"
+            },
+            {
+              "phoneNumber": "555-555-4444",
+              "phoneType": "Cell"
+            }
+          ],
+          "phoneTypeCode": null,
+          "emailAddresses": [
+            {
+              "emailAddress": "bob@example.com",
+              "emailAddressType": "CON"
+            },
+            {
+              "emailAddress": "robert@example.com",
+              "emailAddressType": "INC"
+            }
+          ],
+          "taxId": null,
+          "addresses": [
+            {
+              "addressType": "PLM",
+              "effectiveDate": "2011-01-01",
+              "associatedObject": "APV 1234567",
+              "addressAggregate": null,
+              "street1": "PO BOX 202",
+              "street2": null,
+              "city": "MEROM",
+              "state": "IN",
+              "countyCode": null,
+              "county": "Sullivan (Gill)",
+              "townshipCode": null,
+              "township": null,
+              "postalCode": "47861-0202",
+              "country": null
+            },
+            {
+              "addressType": "PLD",
+              "effectiveDate": "2011-01-01",
+              "associatedObject": "APV 1234567",
+              "addressAggregate": null,
+              "street1": "PO BOX 202",
+              "street2": null,
+              "city": "MEROM",
+              "state": "IN",
+              "countyCode": null,
+              "county": "Sullivan (Gill)",
+              "townshipCode": null,
+              "township": null,
+              "postalCode": "47861-0202",
+              "country": null
+            }
+          ],
+          "preferences": [
+            {
+              "key": null,
+              "value": null
+            }
+          ],
+          "demographics": {
+            "gender": null,
+            "genderCode": null,
+            "maritalStatus": null,
+            "maritalStatusCode": null,
+            "dateOfBirth": "1980-01-01",
+            "dateOfDeath": null,
+            "driversLicenseState": null,
+            "driversLicenseNumber": null
+          },
+          "clientAccountNumber": null,
+          "policyNumber": "APV 1234567",
+          "agentCode": null,
+          "claimNumber": null,
+          "billingAccountNumber": null
+        }
+      ]
+    }
+  ]
+}

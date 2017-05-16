@@ -1,11 +1,10 @@
 description: |
-  Condition covered or excluded by an insurance policy or annuity contract.  Coverages
+  Coverage is the amount of risk or liability that is covered for an individual or entity by way of insurance services. Coverages
   are also known as 'Riders.
 required: 
   - 'deductibles'
   - 'description'
   - 'coverageCode'
-  - 'sequence'
   - 'planCode'
   - 'coverageDetail'
   - 'coverageFlags'
@@ -46,90 +45,42 @@ properties:
       The code used by the host system that uniquely identifies this coverage.
     type: string
   coverageDetail:
-    $ref: '../definitions.yaml#/definitions/CoverageDetail-Life'
-  coverageFlags:
     description: |
-      This property is an arry of YesNoChoice models representing coverage options (yes/no choices)
-    type:
-      - 'array'
-      - 'null'
+      An object representing the coverage details, appropriate for this type of insurance.  The model schema is CoverageDetail-XXX, where XXX is either Life or Commericial.
+    type: object
+  coverageFlags:
+    type: array
     items:
       $ref: '../definitions.yaml#/definitions/YesNoChoice'
-    example:
-      # Pollution -- with cleanup
-      - [
-          {'choice' : 'Pollution, with Cleanup', 'state' : true}
-        ]  
   coverageSchedules:
+    description: |
+      A schedule of items which are included in this coverages.
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/Hash
-    example:
-      # Simple List (assume in Structure coverage); note use of values only
-      -  'coverageSchedules' :
-          [
-            {'name' :, 'value' : 'Building 1' },
-            {'name' :, 'value' : 'Building 2' }
-          ]
-      # Compound List (assume in appropriate Coverage)
-      -  'coverageSchedules' : 
-          [
-            {'name' : 'startDate', 'value' : '1776-07-04'},
-            {'name' : 'endDate', 'value' : '1776-07-04'} 
-          ]
-      -  'coverageSchedules' :
-          [
-              {'name' : 'classCode' , 'value' : 'CCCC'},
-              {'name' : 'classCodeDescription', 'value' : 'CCCC Description'}
-          ]
-      -  'coverageSchedules' :
-          [
-              {'name' : 'Liability',
-              'value' :
-                # The value of a Hash can be an array of Hashes
-                [
-                  {'name' : 'Premium Basis', 'value' : 'some basis'},
-                  {'name' : 'Rate', 'value' : rate }
-                ]
-              }
-          ]
   limits:
-    description: |
-      Limits of liability (on the part of the insurer) and other details of the Coverage
-      in the form of a name/value pair.
-
-      Example--for a #.description = 'Residence', this array may have an object 'Liability Limit':1000000 
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/Limit
   premium:
+    description: |
+      The amount of the total premium for the policy which is due to this coverage.
     type: number
   isEndorsement:
     description: Flag which indicates if this is a coverage endorsement.
     type: boolean
   isExtended:
-    description: flag for extended coverage
-    type:
-      - 'boolean'
-      - 'null'
+    description: Flag for extended coverage
   isExcluded:
     description: flag for excluded coverage
-    type:
-      - 'boolean'
-      - 'null'
+    type: boolean
   isWaived:
     description: flag for waived coverage
-    type:
-      - 'boolean'
-      - 'null'
+    type: boolean
   inclusions:
     description: |
-      (Farm) Specific coverage inclusions which are not separate coverages (i.e. have
+      Specific coverage inclusions which are not separate coverages (i.e. have
       no associated premium).  Example:  'Equipment Breakdown Coverage'
-
-      Items are an array of strings.
     type: array
     items:
-      type:
-        - 'string'
-        - 'null'
+      type: string
