@@ -30,12 +30,12 @@ properties:
     type: string
   vehicleUse:
     description: |
-      Example, length of commute
+      The primary use of the vehicle, such as commute to work, farm utility vehichle, etc.
     type: string
   valetLevel:
-    type:
-      - 'string'
-      - 'null'
+    description: |
+      An IFBI level of service for the vehicle, such as free towing and transportation expenses.
+    type: string
   classCode:
     description: |
       Vehicle class code
@@ -47,7 +47,10 @@ properties:
   territory:
     description: |
       The territory code where the vehicle is garaged
+    type: string
   ratingTier:
+    description: |
+      An IFBI business term which indicates the level at which vehicle was rated for premium.
     type: number
   unit:
     description: | 
@@ -55,8 +58,12 @@ properties:
     type: number
   costNew:
     description: |
-      The MSRP or the stated value of the vehicle.  
+      The published, industry recognized value of the vehicle.  
     type: number
+  statedValue:
+    description: |
+      The value of the item currently, as stated by the owner/insured.
+    type: string
   drivers:
     description: |
       Array of VehicleDriver.
