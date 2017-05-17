@@ -2,8 +2,9 @@ swagger: '2.0'
 info:
   version: 2.0.0
   title:  client-interests
+  x-architectural-layer: system
   description: |
-    This [system](http://connections/issite/iCAF/SitePages/Home.aspx) API is used to get detailed information concerning the client's interests.
+    This system API is used to get detailed information concerning the client's interests.
 
     #### Service Functionality
     An interest is a business relationship between the client and a policy (contract), such as the _owner_, _annuitant_, the _insured_ or the _driver_.
@@ -15,8 +16,7 @@ info:
     `.../api/client-interests?clientId=YZZZZZSFF030CLTCTCN3&businessObject=MEMB&businessObject=MESL`
 
     #### Diagrams
-    ![Interaction](http://connections/issite/ews/SiteAssets/sd-client-interests%401-7.png)
-    ![ClientInterest Model](http://connections/issite/ews/SiteAssets/Interest%20Instance.png)
+    ![Interaction](http://connections/issite/ews/SiteAssets/sd-client-interests-2.0.0.png)
 
     #### Known Implementations
     LDC Client Lookup
@@ -51,16 +51,12 @@ consumes:
   - 'application/json'
 produces:
   - 'application/json'
-host:
-  ap-karafb-dev:8181
-basePath:
-  /api/client-interests
 paths:
   /:
     get:
       summary:  Get interests for client
       description: |
-        Given the recordkeeping client identifier and filter criteria, provide the collection of intersts which satisfy the query.
+        Given the recordkeeping client identifier and filter criteria, provide the collection of interests which satisfy the query.
       parameters:
         - name: clientId
           in: query
@@ -80,6 +76,11 @@ paths:
           description: |
             Success.
           schema:
-            $ref: '../definitions.yaml#/definitions/Interest'
+            type: array
+            items:
+              $ref: '../definitions.yaml#/definitions/Interest'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/client-interests-2.0.0-get-response'
         default:
           description: failure          

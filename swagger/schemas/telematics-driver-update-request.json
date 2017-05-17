@@ -1,0 +1,38 @@
+{
+  "type": "object",
+  "properties": {
+    "driver": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "object",
+          "properties": {
+            "firstName": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            }
+          }
+        },
+        "dateOfBirth": {
+          "type": "object",
+          "properties": {
+            "year": {
+              "type": "string"
+            },
+            "month": {
+              "type": "string"
+            },
+            "day": {
+              "type": "string"
+            }
+          }
+        },
+        "email": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

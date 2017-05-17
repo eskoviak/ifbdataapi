@@ -1,0 +1,150 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: auto-policies
+  x-architectural-layer: system
+  description: |
+    This is the entry point for auto policy inquiries.
+
+    #### Service Functionality
+    This API is called with a {policyId} parameter.  If successful, the resultant resource is a JSON oject, based on the prefix of the policyId.
+
+    #### Diagrams
+    *Interaction*
+    ![Interaction](http://connections/issite/ews/SiteAssets/sd-policies-auto-1.0.0.png)
+
+    #### Performance Expectation
+    Standard SLA applies.
+    
+    #### Service Capacity Supported
+    Standard Capacity applies
+    
+    #### Suggested Test Scenario
+    TBD
+    
+    #### Service Availability
+    Standard Service Availability applies
+    
+    #### Service Security
+    HTTPS/SSL
+  
+  contact:
+    name:  Mary Boscacci
+    url:  http://www.infarmbureau.com
+    email: mary.Boscacci@infarmbureau.com
+produces:
+  - application/json
+schemes:
+  - http
+  - https
+paths:
+  /{policyId}:
+    get:
+      summary: Return a policy Namespace Resource
+      description: |
+        For a given policyId, returns a JSON object representing the detailed auto policy information, if the id exists on the policy system.
+      parameters:
+          - $ref: '#/parameters/PolicyId'
+      responses:
+        '200':
+          description: |
+            Success
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '../definitions.yaml#/definitions/Policy'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/policies-auto-1.0.0-get-response'
+        '204':
+          description: No content for available for the policy
+        '401':
+          description: Unauthorized or invalid token
+        '404':
+          description: Entity not found
+        '500':
+          description: Server error                  
+  /{policyId}/discounts:
+    'put':
+      summary: Adds a discount to Policy
+      description: |
+        For a given policyId and input discount object, adds the policy discount to associated policy.
+      parameters:
+        - $ref: '#/parameters/PolicyId'
+        - name: SessionKey
+          description:  The Exceed Session key previously obtained
+          required: true
+          in: header
+          type: string
+        - name: discountInfo
+          description: |
+            The desired discount information for this operation.
+          required: true
+          in: body
+          schema:
+            $ref: ../definitions.yaml#/definitions/Discount
+      responses:
+        '200':
+          description: |
+             Success--Policy discount has been added successfully to the given policyId.
+        '404':
+          description: Failure--The provided policyId could not be found.
+        '500':
+          description: Failure--unknown server error.
+  /{policyId}/discounts/{objName}:
+    'delete':
+      summary: Removes a discount from a policy
+      description: |
+        For a given policyId and input discount object, removes the cited policy discount from the policy object.
+      parameters:
+        - $ref: '#/parameters/PolicyId'
+        - $ref: '#/parameters/Name'
+      responses:
+        '200':
+          description: |
+            Success--Policy discount has been removed.
+        '404':
+          description: Failure--The provided policyId could not be found.
+        '500':
+          description: Failure--unknown server error.
+  /{policyId}/rate:
+    'post':
+      summary: Causes the system to rate the policy
+      description: |
+        Causes the record-keeping system to process the underwriting rules for the given policy.
+      parameters:
+        - $ref: '#/parameters/PolicyId'
+      responses:
+        '200':
+          description: |
+            Success--the policy has been rated and a new premium has been calculated.
+          schema:
+            type: object
+            properties:
+              data:
+                type: array
+                items:
+                  $ref: '../definitions.yaml#/definitions/Policy'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/policies-auto-1.0.0-rate-post-response'
+        '404':
+          description: Failure--The provided policyId could not be found.
+        '500':
+          description: Failure--unknown server error.
+parameters:
+  PolicyId:
+    description: The identifier of the policy
+    name: policyId
+    required: true
+    in: path
+    type: string
+  Name:
+    description: The name of the item to be deleted
+    name: objName
+    required: true
+    in: path
+    type: string

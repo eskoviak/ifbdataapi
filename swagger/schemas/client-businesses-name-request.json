@@ -1,0 +1,12 @@
+{
+  "type" : "object",
+  "properties" : {
+      "Client": { "type": "object",
+        "properties" : {
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+  }
+}

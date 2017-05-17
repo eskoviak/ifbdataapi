@@ -1,0 +1,1165 @@
+{
+  "data": [
+    {
+      "id": "PT  RG 0501260",
+      "transactionId": null,
+      "businessPurposeTypeCode": null,
+      "transactionRequestDate": null,
+      "transactionEffectiveDate": "2016-06-07",
+      "quoteSequenceNumber": null,
+      "transactionSequenceNumber": null,
+      "policyId": null,
+      "policyNumber": "0501260",
+      "priorPolicyNumber": null,
+      "lineOfBusinessCode": null,
+      "description": "FISHER, JOHN W",
+      "policyStatus": "Active",
+      "policyStatusCode": "A",
+      "controllingStateProvinceCode": null,
+      "transactionStatus": null,
+      "transactionStatusCode": null,
+      "lineOfBusiness": "Farm",
+      "insuranceScore": null,
+      "issueAge": null,
+      "originalInceptionDate": "1966-06-07",
+      "termEffectiveDate": "2016-06-07",
+      "termExpirationDate": "2017-06-07",
+      "cancelDate": null,
+      "maturityDate": null,
+      "policyTerm": 12,
+      "premium": 1655,
+      "billingDetails": null,
+      "supplementalDocuments": [],
+      "locations": [
+        {
+          "id": 1,
+          "address": {
+            "addressType": null,
+            "street1": "19-/14N/8W/",
+            "street2": null,
+            "city": "ROSEDALE",
+            "state": "IN",
+            "countyCode": 610,
+            "county": "PARKE",
+            "townshipCode": null,
+            "township": null,
+            "postalCode": "47874 7084",
+            "country": "USA"
+          },
+          "acres": 40,
+          "typeFarming": null,
+          "ownership": null
+        },
+        {
+          "id": 2,
+          "address": {
+            "addressType": null,
+            "street1": "020/14N/8W/",
+            "street2": null,
+            "city": "ROSEDALE",
+            "state": "IN",
+            "countyCode": 610,
+            "county": "PARKE",
+            "townshipCode": null,
+            "township": null,
+            "postalCode": "47874 7084",
+            "country": "USA"
+          },
+          "acres": 40,
+          "typeFarming": null,
+          "ownership": null
+        },
+        {
+          "id": 3,
+          "address": {
+            "addressType": null,
+            "street1": "013/14N/9W/",
+            "street2": null,
+            "city": "ROSEDALE",
+            "state": "IN",
+            "countyCode": 610,
+            "county": "PARKE",
+            "townshipCode": null,
+            "township": null,
+            "postalCode": "47874 7084",
+            "country": "USA"
+          },
+          "acres": 80,
+          "typeFarming": null,
+          "ownership": null
+        },
+        {
+          "id": 4,
+          "address": {
+            "addressType": null,
+            "street1": "001/14N/9W/",
+            "street2": null,
+            "city": "ROSEDALE",
+            "state": "IN",
+            "countyCode": 610,
+            "county": "PARKE",
+            "townshipCode": null,
+            "township": null,
+            "postalCode": "47874 7084",
+            "country": "USA"
+          },
+          "acres": 85,
+          "typeFarming": null,
+          "ownership": null
+        }
+      ],
+      "policyDetails": [
+        {
+          "detailPart": "Dwelling",
+          "coverages": [
+            {
+              "description": "Equipment Breakdown Coverage",
+              "premium": 0,
+              "coverageBenefit": null,
+              "isEndorsement": false,
+              "isExtended": false,
+              "isExcluded": false,
+              "isWaived": false,
+              "inclusions": [],
+              "coverageDetails": null,
+              "deductibles": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "coverageFlags": [],
+              "coverageSchedules": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ]
+            }
+          ],
+          "insuredItems": [
+            {
+              "itemType": "Dwelling",
+              "coverages": [
+                {
+                  "description": "Coverage A Dwelling",
+                  "premium": 1315,
+                  "coverageBenefit": null,
+                  "isEndorsement": false,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": "Deductible",
+                      "value": 500
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Dwelling COVA Limit",
+                      "value": 177584
+                    }
+                  ]
+                },
+                {
+                  "description": "Coverage B Other Structures",
+                  "premium": 0,
+                  "coverageBenefit": null,
+                  "isEndorsement": false,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": "Deductible",
+                      "value": 500
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Other Structures Limit",
+                      "value": 17758
+                    }
+                  ]
+                },
+                {
+                  "description": "Coverage C Personal Property",
+                  "premium": 0,
+                  "coverageBenefit": null,
+                  "isEndorsement": false,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": "Deductible",
+                      "value": 500
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Contents Limit",
+                      "value": 133188
+                    }
+                  ]
+                },
+                {
+                  "description": "Coverage D Loss of Use",
+                  "premium": 0,
+                  "coverageBenefit": null,
+                  "isEndorsement": false,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Loss of Use Limit",
+                      "value": 35517
+                    }
+                  ]
+                },
+                {
+                  "description": "Earthquake Dwg",
+                  "premium": 69,
+                  "coverageBenefit": null,
+                  "isEndorsement": true,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": "Deductible",
+                      "value": 0.1
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Dwelling COVA Limit",
+                      "value": 177584
+                    }
+                  ]
+                },
+                {
+                  "description": "Refrigerated Property",
+                  "premium": 10,
+                  "coverageBenefit": null,
+                  "isEndorsement": true,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Amount of Insurance",
+                      "value": 1000
+                    }
+                  ]
+                },
+                {
+                  "description": "ACV on Loss to Roof Surfacing",
+                  "premium": -92,
+                  "coverageBenefit": null,
+                  "isEndorsement": true,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ]
+                },
+                {
+                  "description": "Personal Property Replacement Cost",
+                  "premium": 0,
+                  "coverageBenefit": null,
+                  "isEndorsement": true,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ]
+                },
+                {
+                  "description": "Windstorm or Hail Deductible Applies",
+                  "premium": 0,
+                  "coverageBenefit": null,
+                  "isEndorsement": false,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": "Wind Hail Deductible",
+                      "value": 0.01
+                    },
+                    {
+                      "name": "Wind Hail Deductible Minimum",
+                      "value": 0
+                    },
+                    {
+                      "name": "Wind Hail Deductible Maximum",
+                      "value": 0
+                    },
+                    {
+                      "name": "Wind Hail Deductible Calculate",
+                      "value": 1776
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ]
+                }
+              ],
+              "discounts": [
+                {
+                  "name": "Multi-Line",
+                  "description": "Multi-Line Discount",
+                  "appliedDate": null
+                },
+                {
+                  "name": "Protective Systems",
+                  "description": "FIRE/SMOKE/DEAD BOLTS",
+                  "appliedDate": null
+                }
+              ],
+              "lossHistory": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "itemDetails": [
+                {
+                  "locationId": 1,
+                  "item": 1,
+                  "construction": "FRAME",
+                  "dwellingType": null,
+                  "fireProtection": "PARTIALLY PROTECTED",
+                  "formTypeDescription": "HO-3 (PLATINUM)",
+                  "foundation": null,
+                  "generalCondition": null,
+                  "numberOfFamilies": 1,
+                  "occupancy": "OWNER",
+                  "roofType": "ASPHALT",
+                  "roofAge": 0,
+                  "residenceType": null,
+                  "replacementValue": null,
+                  "yearOfConstruction": 1874
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "detailPart": "Farm Liability",
+          "insuredItems": [
+            {
+              "itemType": "Other",
+              "coverages": [
+                {
+                  "description": "Coverage F - Liability",
+                  "premium": 152,
+                  "coverageBenefit": null,
+                  "isEndorsement": false,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Liability Limit",
+                      "value": 500000
+                    }
+                  ]
+                }
+              ],
+              "discounts": [],
+              "lossHistory": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "itemDetails": []
+            },
+            {
+              "itemType": "Other",
+              "coverages": [
+                {
+                  "description": "Coverage G - Medical Payments",
+                  "premium": 0,
+                  "coverageBenefit": null,
+                  "isEndorsement": false,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Medical Limit",
+                      "value": 1000
+                    }
+                  ]
+                }
+              ],
+              "discounts": [],
+              "lossHistory": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "itemDetails": []
+            },
+            {
+              "itemType": "Other",
+              "coverages": [
+                {
+                  "description": "Employer's Liability",
+                  "premium": 14,
+                  "coverageBenefit": null,
+                  "isEndorsement": true,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ]
+                }
+              ],
+              "discounts": [],
+              "lossHistory": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "itemDetails": []
+            },
+            {
+              "itemType": "Other",
+              "coverages": [
+                {
+                  "description": "Limited Pollution Coverage",
+                  "premium": 25,
+                  "coverageBenefit": null,
+                  "isEndorsement": true,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ],
+                  "coverageFlags": [
+                    {
+                      "choice": "With Clean-Up",
+                      "state": false
+                    }
+                  ],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ]
+                }
+              ],
+              "discounts": [],
+              "lossHistory": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "itemDetails": []
+            },
+            {
+              "itemType": "Other",
+              "coverages": [
+                {
+                  "description": "No Daycare Coverage",
+                  "premium": 0,
+                  "coverageBenefit": null,
+                  "isEndorsement": true,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ]
+                }
+              ],
+              "discounts": [],
+              "lossHistory": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "itemDetails": []
+            }
+          ]
+        },
+        {
+          "detailPart": "Farm Property",
+          "insuredItems": [
+            {
+              "itemType": "Other",
+              "coverages": [
+                {
+                  "description": "Farm Property Cargo",
+                  "premium": 2,
+                  "coverageBenefit": null,
+                  "isEndorsement": true,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": "Deductible",
+                      "value": 1000
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Blanket Amount",
+                      "value": 10000
+                    },
+                    {
+                      "name": "Scheduled Amount",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "discounts": [],
+              "lossHistory": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "itemDetails": []
+            },
+            {
+              "itemType": "Other",
+              "coverages": [
+                {
+                  "description": "Farm Property Broad Peril",
+                  "premium": 0,
+                  "coverageBenefit": null,
+                  "isEndorsement": true,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": "Deductible",
+                      "value": 1000
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Amount of Insurance",
+                      "value": 1000
+                    }
+                  ]
+                }
+              ],
+              "discounts": [],
+              "lossHistory": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "itemDetails": []
+            },
+            {
+              "itemType": "Other",
+              "coverages": [
+                {
+                  "description": "Farm Machinery",
+                  "premium": 5,
+                  "coverageBenefit": null,
+                  "isEndorsement": true,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": "Deductible",
+                      "value": 1000
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ]
+                }
+              ],
+              "discounts": [],
+              "lossHistory": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "itemDetails": []
+            },
+            {
+              "itemType": "Other",
+              "coverages": [
+                {
+                  "description": "Equipment Breakdown Coverage",
+                  "premium": 0,
+                  "coverageBenefit": null,
+                  "isEndorsement": false,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": "Deductible",
+                      "value": 1000
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ]
+                }
+              ],
+              "discounts": [],
+              "lossHistory": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "itemDetails": []
+            },
+            {
+              "itemType": "Other",
+              "coverages": [
+                {
+                  "description": "Personal Farm Records",
+                  "premium": 0,
+                  "coverageBenefit": null,
+                  "isEndorsement": true,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": "Deductible",
+                      "value": 1000
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Amount of Insurance",
+                      "value": 1000
+                    }
+                  ]
+                }
+              ],
+              "discounts": [],
+              "lossHistory": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "itemDetails": []
+            },
+            {
+              "itemType": "Other",
+              "coverages": [
+                {
+                  "description": "Refrigerated Products",
+                  "premium": 0,
+                  "coverageBenefit": null,
+                  "isEndorsement": true,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": "Deductible",
+                      "value": 1000
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Amount of Insurance",
+                      "value": 1000
+                    }
+                  ]
+                }
+              ],
+              "discounts": [],
+              "lossHistory": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "itemDetails": []
+            },
+            {
+              "itemType": "Other",
+              "coverages": [
+                {
+                  "description": "Blanket Farm Personal Prop",
+                  "premium": 75,
+                  "coverageBenefit": null,
+                  "isEndorsement": false,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": "Deductible",
+                      "value": 1000
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Amount of Insurance",
+                      "value": 10000
+                    }
+                  ]
+                }
+              ],
+              "discounts": [],
+              "lossHistory": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "itemDetails": [
+                {
+                  "description": "MACHINERY",
+                  "classification": null,
+                  "detail": null,
+                  "premium": 0,
+                  "deductibles": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ],
+                  "limits": [
+                    {
+                      "name": "Amount of Insurance",
+                      "value": 9000
+                    }
+                  ]
+                },
+                {
+                  "description": "MISC TOOLS",
+                  "classification": null,
+                  "detail": null,
+                  "premium": 0,
+                  "deductibles": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ],
+                  "limits": [
+                    {
+                      "name": "Amount of Insurance",
+                      "value": 1000
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "detailPart": "Structure",
+          "coverages": [
+            {
+              "description": "Outdoor Antenna",
+              "premium": 15,
+              "coverageBenefit": null,
+              "isEndorsement": true,
+              "isExtended": false,
+              "isExcluded": false,
+              "isWaived": false,
+              "inclusions": [],
+              "coverageDetails": null,
+              "deductibles": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "coverageFlags": [],
+              "coverageSchedules": [],
+              "limits": [
+                {
+                  "name": "Amount of Insurance",
+                  "value": 3000
+                }
+              ]
+            },
+            {
+              "description": "Fire Department Service Charge",
+              "premium": 0,
+              "coverageBenefit": null,
+              "isEndorsement": true,
+              "isExtended": false,
+              "isExcluded": false,
+              "isWaived": false,
+              "inclusions": [],
+              "coverageDetails": null,
+              "deductibles": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "coverageFlags": [],
+              "coverageSchedules": [],
+              "limits": [
+                {
+                  "name": "Amount of Insurance",
+                  "value": 500
+                }
+              ]
+            },
+            {
+              "description": "Equipment Breakdown Coverage",
+              "premium": 0,
+              "coverageBenefit": null,
+              "isEndorsement": false,
+              "isExtended": false,
+              "isExcluded": false,
+              "isWaived": false,
+              "inclusions": [],
+              "coverageDetails": null,
+              "deductibles": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "coverageFlags": [],
+              "coverageSchedules": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ]
+            },
+            {
+              "description": "Private Power & Light Poles",
+              "premium": 0,
+              "coverageBenefit": null,
+              "isEndorsement": true,
+              "isExtended": false,
+              "isExcluded": false,
+              "isWaived": false,
+              "inclusions": [],
+              "coverageDetails": null,
+              "deductibles": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "coverageFlags": [],
+              "coverageSchedules": [],
+              "limits": [
+                {
+                  "name": "Amount of Insurance",
+                  "value": 1000
+                }
+              ]
+            }
+          ],
+          "insuredItems": [
+            {
+              "itemType": "Structure",
+              "coverages": [
+                {
+                  "description": "Building",
+                  "premium": 65,
+                  "coverageBenefit": null,
+                  "isEndorsement": false,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": "Deductible",
+                      "value": 1000
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Amount of Insurance",
+                      "value": 5000
+                    }
+                  ]
+                },
+                {
+                  "description": "Farm Structures Broad Peril",
+                  "premium": 0,
+                  "coverageBenefit": null,
+                  "isEndorsement": true,
+                  "isExtended": false,
+                  "isExcluded": false,
+                  "isWaived": false,
+                  "inclusions": [],
+                  "coverageDetails": null,
+                  "deductibles": [
+                    {
+                      "name": null,
+                      "value": null
+                    }
+                  ],
+                  "coverageFlags": [],
+                  "coverageSchedules": [],
+                  "limits": [
+                    {
+                      "name": "Amount of Insurance",
+                      "value": 5000
+                    }
+                  ]
+                }
+              ],
+              "discounts": [],
+              "lossHistory": [],
+              "limits": [
+                {
+                  "name": null,
+                  "value": null
+                }
+              ],
+              "itemDetails": [
+                {
+                  "locationId": 1,
+                  "item": 2,
+                  "description": "BARN",
+                  "isBroadPeril": true,
+                  "isVacant": false,
+                  "lossSettlement": "ACTUAL CASH VALUE",
+                  "typeFarming": null,
+                  "ownership": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "policyAssociations": [
+        {
+          "clientId": null,
+          "locationId": 0,
+          "item": 0,
+          "unix": 0,
+          "detailPart": null,
+          "coverageCode": null,
+          "sequencx": null,
+          "name": "FISHER, JOHN W",
+          "address": {
+            "addressType": null,
+            "street1": null,
+            "street2": "5123 W 800 S",
+            "city": "ROSEDALE",
+            "state": "IN",
+            "countyCode": null,
+            "county": null,
+            "townshipCode": null,
+            "township": null,
+            "postalCode": "47874-7084",
+            "country": "USA"
+          },
+          "referenceData": null,
+          "associationType": "NAMED INSURED",
+          "associationTypeCode": null,
+          "associationSubType": null,
+          "associationRelationship": null,
+          "demographics": null
+        }
+      ],
+      "discounts": []
+    }
+  ]
+}

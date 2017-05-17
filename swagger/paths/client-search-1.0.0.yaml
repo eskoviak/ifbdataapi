@@ -2,8 +2,9 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: client-search
+  x-architectural-layer: system
   description: |
-    A [system](http://connections/issite/iCAF/SitePages/Home.aspx) layer API which searches the client record-keeping system for a collection of clients which match some combination of:
+    A system layer API which searches the client record-keeping system for a collection of clients which match some combination of:
 
     * First Name
     * Last Name
@@ -11,15 +12,13 @@ info:
     * Tax ID (SSN)
 
     #### Service Functionality
-    This service sit between the process and system layers (see [here](http://connections/issite/iCAF/SitePages/Home.aspx) for a description of this architecture).
+    This service layer service is used to find client objects which match the criteria present in the service request (a POST payload). 
 
     #### Diagrams
-    ![Interaction](http://connections/issite/EWS/SiteAssets/sd-client-search%401-6.png)
-    Request JSON:
-    ![Request](http://connections/issite/ews/SiteAssets/schema-client-search-request.png)
-    ![Client](http://connections/issite/EWS/SiteAssets/Client%20Model.png)
+    ![Interaction](http://connections/issite/EWS/SiteAssets/sd-client-search-1.0.0.png)
+    
     #### Known Implementations
-    * Life Death Claims (LDC)
+    **Life Death Claims (LDC)**
     
     The following demographic information combinations are supported:
     
@@ -53,10 +52,6 @@ consumes:
   - 'application/json'
 produces:
   - 'application/json'
-host:
-  ap-karafb-dev:8181
-basePath:
-  /api/client-search
 paths:
   /:
     post:
@@ -78,6 +73,9 @@ paths:
             type: array
             items:
               $ref: '../definitions.yaml#/definitions/Client'
+          examples:
+            application/json:
+              $ref: '../definitions.yaml#/definitions/client-search-1.0.0-post-response'
         default:
           description: |
             Failure.

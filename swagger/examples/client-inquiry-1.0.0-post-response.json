@@ -1,0 +1,32 @@
+{
+  "data": [
+    {
+      "clients": [
+        {
+          "id": "A8KV6ZSFF030CLTCTCN3",
+          "name": "ASHLEY BABER",
+          "firstName": "ASHLEY",
+          "lastName": "BABER",
+          "dateOfBirth": "1992-07-06",
+          "taxId": "812-38-5662",
+          "rootId": "A8KV6ZSFF030CLTCTCN3",
+          "type": "Policy",
+          "typeCode": "BCBS",
+          "childId": "HS2 09033709011"
+        },
+        {
+          "id": "A8KV6ZSFF030CLTCTCN3",
+          "name": "ASHLEY BABER",
+          "firstName": "ASHLEY",
+          "lastName": "BABER",
+          "dateOfBirth": "1992-07-06",
+          "taxId": "812-38-5662",
+          "rootId": "A8KV6ZSFF030CLTCTCN3",
+          "type": "Policy",
+          "typeCode": "LIFE",
+          "childId": "LA  0000729809"
+        }
+      ]
+    }
+  ]
+}

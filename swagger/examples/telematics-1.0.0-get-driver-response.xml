@@ -1,0 +1,18 @@
+<data>
+    <driverWithStatus>
+        <driverStatus>Active</driverStatus>
+        <driver>
+            <driverReferenceId>2B9VGB97YC489OPR4539</driverReferenceId>
+            <name>
+                <first>Wonder</first>
+                <last>Woman</last>
+            </name>
+            <dOB>
+                <year>1966</year>
+                <month>04</month>
+                <day>20</day>
+            </dOB>
+            <email>wonder.woman@amazon.gov</email>
+        </driver>
+    </driverWithStatus>
+</data>

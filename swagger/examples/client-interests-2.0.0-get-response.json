@@ -1,0 +1,21 @@
+{
+  "data": [
+    {
+      "interests": [
+        {
+          "rootId": "9MIMXF3OCIWUC520037C",
+          "rootType": "Client",
+          "rootTypeCode": null,
+          "childId": "01OJADPFF030CLTCTCN1",
+          "childType": "Relative",
+          "childTypeCode": "REL",
+          "relationshipType": "Relative",
+          "relationshipTypeCode": "REL",
+          "effectiveDate": "2014-10-13",
+          "expirationDate": "9999-12-31",
+          "address": null
+        }
+      ]
+    }
+  ]
+}

@@ -2,6 +2,7 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: documents
+  x-architectural-layer: system
   description: |
     A [system](http://connections/issite/iCAF/SitePages/APIs%20-%20System%20vs%20Process%20vs%20Experience.aspx) layer API.
 
@@ -68,6 +69,29 @@ paths:
             Success. Generated document with Smart Communication cloud services.
           schema:
             $ref: '../definitions.yaml#/definitions/documents-response'
+        default:
+          description: |
+            Failure.
+    get:
+      summary:  Get cached document
+      description: |
+        Get cached document with Smart Communication cloud services.
+      parameters:
+        - name: cachedDocumentLocation
+          in: query
+          description: |
+            cachedDocumentLocation will contain the partial uri provided by Smart Communication on invocation
+            of the POST.
+          required: true
+          type: string
+      produces:
+        - 'application/pdf'
+      responses:
+        '200':
+          description: |
+            returns the pdf content
+          schema:
+            type: file
         default:
           description: |
             Failure.

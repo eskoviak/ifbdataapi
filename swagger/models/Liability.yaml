@@ -1,0 +1,48 @@
+description:  |
+  Model for InsuredItem type of Liability.
+properties:
+  description:
+    description: A description of this item.
+    type: string
+  classification:
+    description: Classification of this item.  E.g. 'Camera-Non Prof', 'Boat 2015'.
+    type: string
+  sequence:
+    description: |
+      If this item is tied to an additional interest on a policy, the sequence is used to tie this item to a PolicyAssociation.
+    type: string
+  detail:
+    description: |
+      A detailed itemization of the item.  E.g. 'Nikon D500 Camera', 'Bass-Pro'.
+    type: string
+  itemSchedules:
+    description: |
+      A generic schedule to list miscellaneous details for this item.
+    type:
+      $ref: '../definitions.yaml#/definitions/Hash'
+  deductibles:
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/Deductible
+  limits:
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/Limit
+  premium:
+    description: |
+      The portion of the total premium which is attributable to this particular item.
+    type: number
+  locationId:
+    description: |
+      The location Id for the liability. The location(s) are contained in the Policy model.
+    type: string
+  item:
+    description: |
+      An arbitrary, system assigned item number within the location dicriminates this liability on a policy with multiple location/liabilities.
+    type: string
+  supplementalDocuments:
+    description: |
+      Any documents attached to the policy which are required for it's issuance.
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/SupplementalDocument

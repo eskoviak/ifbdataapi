@@ -1,0 +1,36 @@
+{
+  "data": [
+    {
+      "clients": [
+        {
+          "id": "AAHV6ZSFF030CLTCTCN3",
+          "sourceSystemType": null,
+          "sourceSystemTypeCode": null,
+          "name": "LYNETTE BABER",
+          "personName": {
+            "firstName": "LYNETTE",
+            "middleName": null,
+            "lastName": "BABER",
+            "titlePrefix": null,
+            "nameSuffix": null
+          },
+          "phoneNumbers": [],
+          "emailAddresses": [],
+          "taxId": "833-40-6927",
+          "addresses": null,
+          "preferences": [],
+          "demographics": {
+            "gender": null,
+            "genderCode": null,
+            "dateOfBirth": "1966-07-12",
+            "maritalStatus": null,
+            "maritalStatusCode": null,
+            "driversLicenseNumber": null,
+            "driversLicenseState": null,
+            "dateOfDeath": null
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: clients-name
+  x-architectural-layer: system
+  description: |
+    This is a system level API that updates the client name
+
+    #### Service Functionality
+    This API is called with a {clientId} parameter. If successful, the resultant is a HTTP 200 status code.
+
+    #### Diagrams
+    TBD
+
+    #### Performance Expectation
+    Standard SLA applies.
+
+    #### Service Capacity Supported
+    Standard Capacity applies
+
+    #### Suggested Test Scenarioa
+    TBD
+
+    #### Service Availability
+    Standard Service Availability applies
+
+    #### Service Security
+    HTTPS/SSL
+
+  contact:
+    name:  Mary Boscacci
+    url:  http://www.infarmbureau.com
+    email: mary.Boscacci@infarmbureau.com
+produces:
+  - application/json
+schemes:
+  - http
+  - https
+basePath:
+  /api/clients
+paths:
+  /individuals/{clientId}/name:
+    'post':
+      summary: Corrects client name
+      description: For a given clientId, corrects the client name for individual client type.
+      parameters:
+          - $ref: '#/parameters/ClientId'
+          - name: client-individuals-name-request
+            description: The desired person name information for this operation
+            required: true
+            in: body
+            schema:
+              $ref: ../definitions.yaml#/definitions/client-individuals-name-request
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized or invalid token
+        '404':
+          description: Entity not found
+        '500':
+          description: Server error
+    'put':
+      summary: Changes client name
+      description: For a given clientId, changes the client name for individual client type.
+      parameters:
+        - $ref: '#/parameters/ClientId'
+        - name: client-individuals-name-request
+          description: The desired person name information for this operation
+          required: true
+          in: body
+          schema:
+            $ref: ../definitions.yaml#/definitions/client-individuals-name-request
+      responses:
+        '200':
+          description: Success
+        '401':
+          description: Unauthorized or invalid token
+        '404':
+          description: Entity not found
+        '500':
+          description: Server error
+  /businesses/{clientId}/name:
+      'post':
+        summary: Corrects client name
+        description: For a given clientId, corrects the client name for business client type.
+        parameters:
+            - $ref: '#/parameters/ClientId'
+            - name: client-businesses-name-request
+              description: The desired business name information for this operation
+              required: true
+              in: body
+              schema:
+                $ref: '../definitions.yaml#/definitions/client-businesses-name-request'
+        responses:
+          '200':
+            description: Success
+          '401':
+            description: Unauthorized or invalid token
+          '404':
+            description: Entity not found
+          '500':
+            description: Server error
+      'put':
+        summary: Changes client name
+        description: For a given clientId, changes the client name for business client type.
+        parameters:
+          - $ref: '#/parameters/ClientId'
+          - name: client-businesses-name-request
+            description: The desired business name information for this operation
+            required: true
+            in: body
+            schema:
+              $ref: '../definitions.yaml#/definitions/client-businesses-name-request'
+        responses:
+          '200':
+            description: Success
+          '401':
+            description: Unauthorized or invalid token
+          '404':
+            description: Entity not found
+          '500':
+            description: Server error
+  /client-accounts/{clientId}/name:
+      'post':
+        summary: Corrects client name
+        description: For a given clientId, corrects the client name for account client type.
+        parameters:
+            - $ref: '#/parameters/ClientId'
+            - name: client-accounts-name-request
+              description: The desired account name information for this operation
+              required: true
+              in: body
+              schema:
+                $ref: '../definitions.yaml#/definitions/client-accounts-name-request'
+        responses:
+          '200':
+            description: Success
+          '401':
+            description: Unauthorized or invalid token
+          '404':
+            description: Entity not found
+          '500':
+            description: Server error
+      'put':
+        summary: Changes client name
+        description: For a given clientId, changes the client name for account client type.
+        parameters:
+          - $ref: '#/parameters/ClientId'
+          - name: client-accounts-name-request
+            description: The desired account name information for this operation
+            required: true
+            in: body
+            schema:
+              $ref: '../definitions.yaml#/definitions/client-accounts-name-request'
+        responses:
+          '200':
+            description: Success
+          '401':
+            description: Unauthorized or invalid token
+          '404':
+            description: Entity not found
+          '500':
+            description: Server error
+parameters:
+  ClientId:
+    description: The identifier of the client
+    name: clientId
+    required: true
+    in: path
+    type: string

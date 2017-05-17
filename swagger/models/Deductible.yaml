@@ -1,15 +1,10 @@
 description: |
-  A deductible covering one more more Coverages.  Modeled as a name:value pair.
-
-  Example:
-    name:  'Each Item/Location'
-    value: 1000
+  A deductible covering one more more Coverages. A deductible represents the portion of the loss or damages which will first be paid by the policy holder before the insurance provider makes payment.  
 required: ["name", "value"]
 properties:
   name:
-    description: The label of the deductible
-    type: ["string", "null"]
-  # This had been defined as a string but makes more sense to spec as a numeric
+    description: The name of the deductible
+    type: string
   value:
-    description: The value of the deductible
+    description: The value of the deductible.  May be either a percent or dollar amount.
     type: number

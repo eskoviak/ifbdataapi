@@ -1,0 +1,12 @@
+{
+    "data" : [
+        { "parameters" : {
+            "name" : "policy",
+            "value" : { "$ref" : "../definitions.yaml#/definitions/Policy"}
+        },
+        "links" :[
+            
+        ]}
+    ]
+
+}

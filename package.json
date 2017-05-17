@@ -4,7 +4,13 @@
   "description": "Farm Bureau API Model and Contract Repository",
   "main": "server.js",
   "dependencies": {
-    "swagger-server": "^1.0.0-alpha.14"
+    "common-errors": "^1.0.0",
+    "del": "^2.2.2",
+    "filter-java-properties": "^0.3.0",
+    "gulp-watch": "^4.3.11",
+    "swagger-parser": "^3.4.1",
+    "swagger-server": "^1.0.0-alpha.14",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "chalk": "^1.1.3",

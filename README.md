@@ -9,7 +9,7 @@ Figure 1:  Repository Main Sructure
 * **swagger**: This folder contains the structures for the model.   
   - **bundles**:  This folder is the output folder which contains the `.yaml` files contained in the *paths* folder, with all external [$ref](http://swagger.io/specification/#reference-object-75) pointers converted to internal (in-line) references. This folder should not need manual maintenance; it is maintained by the `gulp validate` command.
   * **paths**: The contracts for the APIs are contained in this folder.  The files are named:
-    <contract_name>-X.Y.Z.yaml, where:  
+    &lt;contract_name&gt;-X.Y.Z.yaml, where:  
       X =:: major release number  
       Y =:: minor release number (currently always 0)  
       Z =:: build number (currently always 0).  
@@ -32,9 +32,9 @@ Figure 1:  Repository Main Sructure
 3. Once node is installed, you need to install `gulp`, which is used to validate the JSON files.  To install, type the following at the command prompt at the top level of the directory:
    
    ```
-   $> npm install gulp-cli -g
+   $> npm install -g gulp-cli
    ...
-   $> npm install gulp -D
+   $> npm install -g gulp
    ...
    $> gulp --help
    [00:00:00] Using gulpfile
@@ -56,16 +56,59 @@ Figure 1:  Repository Main Sructure
  
    This performs an initial validation of all the `.yaml` files in the `../swagger/paths` directory. Any errors will be displayed.  The command does not return; rather it continues to watch the directory and checks any files which are subsequently changed, until ctrl-c is issued.
 
+   You can also run 
+   ```
+   $> gulp validate
+   ```
+   To validate the changes you made in you your yaml. 
+    
 5. When changes are complete, the JSON bundle files for export to WS02 are created by executing the following at the command prompt:
 
    ```
    $> gulp build
    ...
+   [ok] C:\IFBIDEV\enterpriseapidatamodel\swagger\paths\policies-1.0.0.yaml
+   [Creating : ] swagger/bundles/policies-1.0.0.json
+   ... 
    $>
    ```
+   This should indicate no errors; files are built into `../swagger/bundles`. 
 
-   This should indicate no errors; files are built into `../swagger/bundles`.
+   If you have renamed or removed any yaml in `../swagger/path` Then run 
+   ```
+   $> gulp clean build
+   ...
+   $>
+   ```
+   Which runs the clean task before running the build task. The clean taks deletes all files in the `../swagger/bundles` folder. 
+ 
+## Embedding Examples
 
+Providing example responses is encouraged.  The example response MUST be in the MIME type format(s) which are supported via the `produces` OpenAPI field (type _[string]_).  Note that this property is optionally present at the [Swagger Object](http://swagger.io/specification/#swagger-object-14) and the [Operation Object](http://swagger.io/specification/#operation-object-36) levels.
+
+The example files should be named using this template:
+
+*&lt;contract name&gt;[-&lt;version&gt;][-&lt;operation&gt;]-response.&lt;MIME Type Extension&gt;*
+
+The version and operation may be omitted if not needed. For example:  
+
+*policies-home-1.0.0-get-response.json*  
+
+The files should be housed in the `.../swagger/examples` folder, and an entry made in the .../swagger/definitions.yaml file.  For the file example above, the entry would be:  
+
+    ...
+    policies-home-1.0.0-get-response:  
+      $ref: './examples/policies-home-v1.0.0-get-response.json'  
+    ...
+
+To include the example response in the contract specification such that it will be bundled and usable by the WS02 API Store, include the following (refer to the above example) in the [response object](http://swagger.io/specification/#response-object-58) of the contract specification (indent appropriately; __examples__ should be at the same level as the __description__ and __schema__ objects):  
+    
+	...  
+	examples:  
+	  application/json:  
+	    $ref: '../definitions.yaml#/definitions/policies-home-1.0.0-get-response'  
+	...  
+    
 ## Using Swagger Editor
 
 *Note:*  The Swagger Editor is only used by developers to view the files in the `swagger/paths` directory, to check for format, validation etc.  For use in the enterprise WS02 Store, the files should be processed into the swagger/bundles directory (as JSON files) using the `gulp build` command above.
@@ -76,15 +119,15 @@ Figure 1:  Repository Main Sructure
 
 ## Swagger Documentation Notes
 
-* All models MUST have a description
+* All models SHOULD have a `description` element.  Generic models, such as Hash, do not include a `description` as the referencing element SHOULD describe the usasge.
 * Properties of with concrete types SHOULD have a description
-* Properties of $ref SHOULD NOT have a description--the editor will use the description from the referenced item specification
-* Primary id properties should be named `id` and be the first element of the model
+* Properties which are references to other types (`$ref:`) SHOULD NOT have a description--the editor will use the description from the referenced item specification.  Exception:  Hash.
+* Primary id properties should be named `id` and be the first element of the model.  This `id` is a `required:` field.
 * When referencing a id of another model, prefix with the model name, i.e. _clientId_ when referring to the id property of the Client model
 * Enumerations of strings:  The first letter MUST be capitalized
 * Boolean properties:  Should begin with `is`  
 * Unless otherwise specified, the use of `format: date` refers to ISO8601 date format:  *CCYY-MM-DD*, example: 1776-07-04.
-* In order to accommodate data which is provided in a a coded and a decoded format, such fields should be modeled as <property> and <property>Code; e.g. _addressType_ and _addressTypeCode_
+* In order to accommodate data which is provided in both a coded and a decoded format, such fields should be modeled as &lt;property&gt; and &lt;property>Code; e.g. _addressType_ and _addressTypeCode_
 
 ## Naming Conventions
 ### Model file names (first letter capitalized)
