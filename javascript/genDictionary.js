@@ -1,26 +1,28 @@
 /*
-Reads a list of yaml files to read from a repository, and build
-a data dictionary (json file) of the property elements
+Reads a list of yaml files to read from a repository via http, and builds
+a data dictionary (json file) of the property elements--note, this file is not
+normalized--an entry is made for each property in each model, so multiples will exist.
 
-author:  eskoviak@gmail.com
-version: 0.9.1  -- feature/issue-4
+@author:  eskoviak@gmail.com
+@version: 0.9.2  -- EWS 848
 
  */
 
 'use strict';
 var fs = require('fs');
 var readline = require('readline');
-var https = require('https');
-var yaml = require('js-yaml');
-var basePath = '/eskoviak/ifbdataapi/develop/swagger/models/';
+var http = require('http');
+var yaml = require('yaml-js');
+var basePath = '/projects/ES/repos/enterpriseapidatamodel/raw/swagger/models/';
+var query = '?at=refs%2Fheads%2Fdevelop';
 var items = [];
 
 // OPTIONS Declarations
 const getOptions = {
-    hostname: 'raw.githubusercontent.com',
+    hostname: 'bitbucket.infarmbureau.com',
+    port: 7990,
     path: '', // will be built on the fly
     method: 'GET',
-    auth: 'eskoviak:route66'
 };
 
 const outOptions = {
@@ -32,8 +34,8 @@ const inOptions = {
 };
 
 // create i/o streams
-var outStream = fs.createWriteStream('dataDict.json', outOptions);
-var inStream = fs.createReadStream('filelist.txt', inOptions);  // list of models
+var outStream = fs.createWriteStream('./javascript/dataDict.json', outOptions);
+var inStream = fs.createReadStream('./javascript/filelist.txt', inOptions);  // list of models
 
 // use the readline interface to facilitate reading a line of text
 const rl = readline.createInterface({
@@ -41,7 +43,7 @@ const rl = readline.createInterface({
 });
 
 rl.on('line', (line) => {
-  getOptions.path = basePath + line;
+  getOptions.path = basePath + line + query;
   getResource(line, responseCB);
 })
 
@@ -55,13 +57,13 @@ inStream.on('end', () => {
   data to the repsonseCB function
 */
 function getResource(modelName, responseCB) {
-  https.get(getOptions, (response) => {
+  http.get(getOptions, (response) => {
     var body = '';
     response.on('data', (d) => {
       body += d;
     });
     response.on('end', () => {
-      if (body != '') responseCB(modelName, yaml.safeLoad(body));
+      if (body != '') responseCB(modelName, yaml.load(body));
     });
   });
 }
