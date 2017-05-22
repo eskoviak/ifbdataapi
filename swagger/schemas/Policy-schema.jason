@@ -1,0 +1,10 @@
+{
+	"$schema" : "http://json-schema-org/schema#",
+	"id" : "http://infarmbureau.com/schemas/Policy.json",
+	"title" : "Policy"
+	"description" : "A top-level namespace resource which represents an insurance Policy (of various types) or an annuity Contract (fixed and variable).\n"
+	"type" : "object",
+	"properties" : {
+
+	}
+}

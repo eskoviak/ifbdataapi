@@ -2,142 +2,84 @@ description: |
   A top-level model which represents an insurance Policy (of various types) or an annuity Contract (fixed and variable).
 required: 
   - 'id'
-  - 'transactionId'
-  - 'businessPurposeTypeCode'
-  - 'transactionRequestDate'
-  - 'transactionEffectiveDate'
-  - 'quoteSequenceNumber'
-  - 'transactionSequenceNumber'
-  - 'policyId'
   - 'policyNumber'
-  - 'priorPolicyNumber'
-  - 'description'
-  - 'policyStatus'
-  - 'policyStatusCode'
-  - 'controllingStateProvinceCode'
-  - 'transactionStatus'
-  - 'transactionStatusCode'
-  - 'lineOfBusiness'
-  - 'lineOfBusinessCode'
-  - 'locations'
   - 'policyDetails'
-  - 'insuranceScore'
-  - 'issueAge'
-  - 'originalInceptionDate'
-  - 'termEffectiveDate'
-  - 'termExpirationDate'
-  - 'cancelDate'
-  - 'maturityDate'
-  - 'policyTerm'
   - 'premium'
-  - 'billingDetails'
-  - 'policyAssociations'
-  - 'supplementalDocuments'
 properties:
   id:
     description: |
       The policy ID is a globally unique id. This could be a GUID or a composite of system information and policy number but in the latter case MUST not be used to infer information about the policy.
     type: string
+    maxLength: 20
   transactionId:
     description: |
       A transaction, or session key, provided by the source system during a multi-step business process.  The key is needed by subsequent operations to complete the desired processing.
-    type: 
-      - 'string'
-      - 'null'  
+    type: string
   businessPurposeTypeCode:
     description: |
       A code indicating the business event being submitted in this message.
-    type:
-      - 'string'
-      - 'null'
+    type: string
   transactionRequestDate:
     description: |
       The date the transaction was requested.
-    type:
-      - 'string'
-      - 'null'
+    type: string
     format: date
   transactionEffectiveDate:
     description: |
       The date the transaction is effective.
-    type:
-      - 'string'
-      - 'null'
+    type: string
     format: date
   quoteSequenceNumber:
     description: |
       A unique number used to tie quotes together.  Multiple quotes can be prepared for a single insurance request, adjusting values to match the premium to a desired level.  This proporty is used to track the interations of quotes.  
-    type:
-      - 'string'
-      - 'null'
+    type: string
   transactionSequenceNumber:
     description: |
       A system assigned number which orders the transactions as they occur in the recordkeeping system, during the policy term.  Transaction 0 (T0) is reserved for renewal.  In a new term, the sequence numbering is reset to T0 (renewal).
-    type:
-      - 'string'
-      - 'null'
+    type: string
   policyId:
     description: |
       The identfier of the policy in the record-keeping system.  This may or may not be similar to the #.id property, and may or may not contain the #.policyNumber.
-    type:
-      - 'string'
-      - 'null'
+    type: string
   policyNumber:
     description: |
       The recordkeeping system Policy Number; this is NOT globally unique, and can be distinct from the policyId.
-    type: 
-      - 'string'
-      - 'null'
+    type: string 
   priorPolicyNumber:
     description: |
       Used in situations where there is a one-to-one correspondence between a current policy and the one being converted, replaced, exchanged, or re-issued.
-    type:
-      - 'string'
-      - 'null'
+    type: string
   lineOfBusinessCode:
     description: |
-    type:
-      - 'string'
-      - 'null'
+    type: string
   description:
     description: Short description of the policy (eg, '2006 Harley Road King').
     type: string
   policyStatus:
     description: |
       The current status of the policy in text as decoded from the source system.  Either policyStatus or policyStatusCode MUST be populated.
-    type: 
-      - 'string'
-      - 'null'
+    type: string
   policyStatusCode:
     description: |
       The current status of the policy as represented by a code from the source system.  Either policyStatus or policyStatusCode MUST be populated.
-    type:
-      - 'string'
-      - 'null'
+    type: string
   controllingStateProvinceCode:
     description: |
       A code for the state used to determine some rating factors and Insurance Services Office reporting categories. The source of the code is the U.S. Postal Service two letter state abbreviation.
-    type:
-      - 'string'
-      - 'null'
+    type: string
   transactionStatus:
     description: |
       The transaction status is additional information to the policy status, which is an indicator of a possible change in the policy status due to a pending transaction.  Example:  cancellation in process.  Either transactionStatus or transactionStatusCode must be specfied.
-    type:
-      - 'string'
-      - 'null'
+    type: string
   transactionStatusCode:
     description: |
       The transaction status code is additional information to the policy status, which is a code indicating a possible change in the policy status due to a pending transaction.  Example:  cancellation in process.  Either transactionStatus or transactionStatusCode must be specfied.
-    type:
-      - 'string'
-      - 'null'
+    type: string
   lineOfBusiness:
     description: |
       The policy package (ie, policy type). This a 'hint' with respect to the data to found in
       #.policyDetail.
-    type:
-      - 'string'
+    type: string
     enum: 
       - 'Auto'
       - 'Homeowners'
@@ -169,15 +111,11 @@ properties:
     description: |
       The score or index used to rate the policy, such as a credit score or other indicator of financial
       health.
-    type: 
-      - 'string'
-      - 'null'
+    type: string
   issueAge:
     description: |
       The age of the insured or annuitant at the time of issue. This is a policy level property, meaning that it applies to the entire policy package. This usage is more common in Annuity contracts.  For a life insurance policy, it is more common to specify the issue age of the insured at the Coverage level.
-    type:
-      - 'number'
-      - 'null'
+    type: number
     format: integer
   originalInceptionDate:
     description: |
@@ -192,33 +130,24 @@ properties:
   termExpirationDate:
     description: |
       The date the policy or contract term expires.
-    type:
-      - 'string'
-      - 'null'
+    type: string
     format: date
   cancelDate:
-    type:
-      - 'string'
-      - 'null'
+    type: string
     format: date
   maturityDate:
     description: |
       (Life/Annuity) The date at which the policy or contract matures--premiums are no longer being collected.
-    type:
-      - 'string'
-      - 'null'
+    type: string
     format: date
   policyTerm:
     description: |
       The term of the current policy, in months.
-    type:
-      - 'number'
-      - 'null'
+    type: number
   premium:
     description: |
       The rolled-up value of the premiums of the Insurance Lines.
-    type:
-      - 'number'
+    type: number
   billingDetails:
     $ref: '../definitions.yaml#/definitions/Billing'
   policyAssociations:
