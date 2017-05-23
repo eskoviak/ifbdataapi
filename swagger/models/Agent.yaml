@@ -1,27 +1,47 @@
 description: A model for an agent or representative of the firm.
 required:
-  ['id', 'agentName', 'title', 'phoneNumber', 'faxNumber', 'emailAddress', 'address',
-   'biography', 'agencyManagerId', 'agencyManagerName']
+  - 'id'
+  - 'agentName'
+  - 'phoneNumber'
+  - 'agencyId'
 properties:
   id:
     type: string
   agentName:
     type: string
   title:
-    type: ['string', 'null']
-  phoneNumber:
-    $ref: ../definitions.yaml#/definitions/Phone
+    type: string
+  isRegistered:
+    description: |
+      Indicates whether this representive is a REGISTERED REPRESENTATIVE, as defined by FINRA (nee NASD).
+    type: boolean
+  phoneNumbers:
+    description: |
+      An array of phone numbers/types for this item.
+    type: array
+    items:
+      $ref: ../definitions.yaml#/definitions/Phone
   faxNumber:
-    type: ['string', 'null']
+    type: string
   emailAddress:
-    type: ['string', 'null']
+    type: string
   address:
     type: array
     items:
       $ref: ../definitions.yaml#/definitions/Address
-  biography:
-    type: ['string', 'null']
+  agencyCode:
+    description: |
+      The code or identifier of the agency to which this representative belongs.
+    type: string
+  agencyName:
+    description: |
+      The business name of the agency to which this representative belongs.
+    type: string
   agencyManagerId:
-    type: ['string', 'null']
+    description:  |
+      The identification number of this representatives manager.
+    type: string
   agencyManagerName:
-    type: ['string', 'null']
+    description: |
+      The name of the representative's manager.
+    type: string
