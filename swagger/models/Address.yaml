@@ -1,33 +1,21 @@
 description: |
-  Address model--used with various parent objects to describe the US Postal Service
-  location. 
+  Address model--common model to describe the US Postal Service location. 
 required:
   - 'addressId'
   - 'addressType'
-  - 'associatedObjectId'
-  - 'addressAggregate'
   - 'street1'
-  - 'street2'
   - 'city'
   - 'state'
-  - 'countyCode'
-  - 'county'
-  - 'townshipCode'
-  - 'township'
   - 'postalCode'
-  - 'country'
 properties:
   addressId:
     description: |
       The Enterprise-wide handle to this individual-address entry.
-    type: 
-      - 'string'
-      - 'null'
+    type: string
   addressType:
     description: |
       Type code for type of individual address association in Exceed.
-    type: 
-      - 'string'
+    type: string
     enum:
       - 'Mailing'
       - 'BLM'
@@ -60,73 +48,58 @@ properties:
       - 'WCL'
       - 'WMAM'
       - 'WMAR'
+  addressValidationCode:
+    description: |
+      The code provided by the source system that indicates the validation status of the address.
+    type: string
+    maxLength: 1
   associatedObject:
     description: |
       The object (Policy, Account, Claim, etc) associated with this individual address.
-    type: 
-      - 'string'
-      - 'null'
+    type: string
   addressAggregate:
     description: |
       The aggregate address for use when the individual components are not known.
-    type: 
-      - 'string'
-      - 'null'
+    type: string 
   street1:
     description: |
       First line of the postal address, e.g. 100 Main St.
-    type: 
-      - 'string'
-      - 'null'
+    type: string
   street2:
     description: |
       Second line of the postal address, e.g. Unit 100.
-    type: 
-      - 'string'
-      - 'null'
+    type: string
   city:
-    type: 
-      - 'string'
-      - 'null'
+    description: |
+      The name of the City.
+    type: string
   state:
     description: | 
-      For domestic addresses, use USPS two-digit state code.
-    type: 
-      - 'string'
-      - 'null'
+      Use USPS two-digit state code.
+    type: string
+    maxLength: 2
   countyCode:
     description: |
-      Properties countyCode and county are mutually exclusive.  Use countyCode when the source system provides a two-character code.  If the source is the actual County name, then use the county property.
-    type: 
-      - 'string'
-      - 'null'
+      The encoded value for the county.
+    type: string
   county:
     description: |
-      Properties countyCode and county are mutually exclusive.  Use countyCode when the source system provides a two-character code.  If the source is the actual County name, then use the county property.
-    type: 
-      - 'string'
-      - 'null'
+      The name of the county.
+    type: string
   townshipCode:
     description: |
-      Properties townshipCode and township are mutually exclusive.  Use townshipCode when the source system provides a two-character code.  If the source is the actual Township name, then use the township property.
-    type: 
-      - 'string'
-      - 'null'
+      The encoded value for the township.
+    type: string
   township:
     description: |
-      Properties townshipCode and township are mutually exclusive.  Use townshipCode when the source system provides a two-character code.  If the source is the actual Township name, then use the township property.
-    type: 
-      - 'string'
-      - 'null'
+      The name of the township.
+    type: string
   postalCode:
     description: |
       The USPS postal code, also known as the zip code.  Should be in the format ##### or #####-#### (zip plus four).
-    type: 
-      - 'string'
-      - 'null'
+    type: string
+    pattern: '^[0-9]{5}(-[0-9]{4})?$'
   country:
     description: |
       The name of the country.
-    type: 
-      - 'string'
-      - 'null'
+    type: string
