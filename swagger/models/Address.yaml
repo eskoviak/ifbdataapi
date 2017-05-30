@@ -12,6 +12,10 @@ properties:
     description: |
       The Enterprise-wide handle to this individual-address entry.
     type: string
+  correlationId:
+    description: |
+      A system generated id, which is used to link two objects which are to be considered identical, based on the lexical rule of equivalence for that class of object.
+    type: string      
   addressType:
     description: |
       Type code for type of individual address association in Exceed.
