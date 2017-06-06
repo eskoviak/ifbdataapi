@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  version: 1.0.0
+  version: v1
   title: clients-addresses
   x-architectural-layer: system
   description: |
@@ -28,7 +28,7 @@ info:
     HTTPS/SSL
 
   contact:
-    name:  Mary Boscaccia
+    name:  Mary Boscacci
     url:  http://www.infarmbureau.com
     email: mary.Boscacci@infarmbureau.com
 produces:
@@ -40,112 +40,122 @@ basePath:
   /api/clients
 paths:
   /individual-clients/{clientId}/addresses/{encodedAddressId}:
-    'put':
-      summary: Client Individual Address Change
-      description: |
-        For a given clientId and encodedAddressId, changes the associated address if exists.
-      parameters:
-          - $ref: '#/parameters/ClientId'
-          - $ref: '#/parameters/EncodedAddressId'
-          - name: Address
-            description: The desired Address.
-            required: true
-            in: body
-            schema:
-              $ref: ../definitions.yaml#/definitions/clients-addresses-request
-      responses:
-        '200':
-          description: Success
-        '404':
-          description: Entity not found
-        '500':
-          description: Server error
+              put:
+                summary: Client Individual Address Change
+                description: |
+                  For a given clientId and encodedAddressId, changes the associated address if exists.
+                parameters:
+                    - $ref: '#/parameters/ClientId'
+                    - $ref: '#/parameters/EncodedAddressId'
+                    - name: Address
+                      description: The desired Address.
+                      required: true
+                      in: body
+                      schema:
+                        $ref: ../definitions.yaml#/definitions/clients-addresses-request
+                responses:
+                  "200":
+                    description: Success
+                  "401":
+                    description: Unauthorized or invalid token
+                  "404":
+                    description: Entity not found
+                  "500":
+                    description: Server error
   /business-clients/{clientId}/addresses/{encodedAddressId}:
-      'put':
-        summary: Client Business Address Change
-        description: |
-          For a given clientId and encodedAddressId, changes the associated address if exists.
-        parameters:
-            - $ref: '#/parameters/ClientId'
-            - $ref: '#/parameters/EncodedAddressId'
-            - name: Address
-              description: The desired Address.
-              required: true
-              in: body
-              schema:
-                $ref: ../definitions.yaml#/definitions/clients-addresses-request
-        responses:
-          '200':
-            description: Success
-          '404':
-            description: Entity not found
-          '500':
-            description: Server error
+              put:
+                summary: Client Business Address Change
+                description: |
+                  For a given clientId and encodedAddressId, changes the associated address if exists.
+                parameters:
+                    - $ref: '#/parameters/ClientId'
+                    - $ref: '#/parameters/EncodedAddressId'
+                    - name: Address
+                      description: The desired Address.
+                      required: true
+                      in: body
+                      schema:
+                        $ref: ../definitions.yaml#/definitions/clients-addresses-request
+                responses:
+                  "200":
+                    description: Success
+                  "401":
+                    description: Unauthorized or invalid token
+                  "404":
+                    description: Entity not found
+                  "500":
+                    description: Server error
   /client-accounts/{clientId}/addresses/{encodedAddressId}:
-        'put':
-          summary: Client Account Address Change
-          description: |
-            For a given clientId and encodedAddressId, changes the associated address if exists.
-          parameters:
-              - $ref: '#/parameters/ClientId'
-              - $ref: '#/parameters/EncodedAddressId'
-              - name: Address
-                description: The desired Address.
-                required: true
-                in: body
-                schema:
-                  $ref: ../definitions.yaml#/definitions/clients-addresses-request
-          responses:
-            '200':
-              description: Success
-            '404':
-              description: Entity not found
-            '500':
-              description: Server error
+              put:
+                summary: Client Account Address Change
+                description: |
+                  For a given clientId and encodedAddressId, changes the associated address if exists.
+                parameters:
+                    - $ref: '#/parameters/ClientId'
+                    - $ref: '#/parameters/EncodedAddressId'
+                    - name: Address
+                      description: The desired Address.
+                      required: true
+                      in: body
+                      schema:
+                        $ref: ../definitions.yaml#/definitions/clients-addresses-request
+                responses:
+                  "200":
+                    description: Success
+                  "401":
+                    description: Unauthorized or invalid token
+                  "404":
+                    description: Entity not found
+                  "500":
+                    description: Server error
   /individual-clients/{clientId}/addresses/{encodedAddressId}/correct:
-          'post':
-            summary: Client Individual Address Correct
-            description: |
-              For a given clientId and encodedAddressId, corrects the associated address if exists.
-            parameters:
-                - $ref: '#/parameters/ClientId'
-                - $ref: '#/parameters/EncodedAddressId'
-                - name: Address
-                  description: The desired Address.
-                  required: true
-                  in: body
-                  schema:
-                    $ref: ../definitions.yaml#/definitions/clients-addresses-request
-            responses:
-              '200':
-                description: Success
-              '404':
-                description: Entity not found
-              '500':
-                description: Server error
+              post:
+                summary: Client Individual Address Correct
+                description: |
+                  For a given clientId and encodedAddressId, corrects the associated address if exists.
+                parameters:
+                    - $ref: '#/parameters/ClientId'
+                    - $ref: '#/parameters/EncodedAddressId'
+                    - name: Address
+                      description: The desired Address.
+                      required: true
+                      in: body
+                      schema:
+                        $ref: ../definitions.yaml#/definitions/clients-addresses-request
+                responses:
+                  "200":
+                    description: Success
+                  "401":
+                    description: Unauthorized or invalid token
+                  "404":
+                    description: Entity not found
+                  "500":
+                    description: Server error
   /business-clients/{clientId}/addresses/{encodedAddressId}/correct:
-            'post':
-              summary: Client Business Address Correct
-              description: |
-                For a given clientId and encodedAddressId, corrects the associated address if exists.
-              parameters:
-                  - $ref: '#/parameters/ClientId'
-                  - $ref: '#/parameters/EncodedAddressId'
-                  - name: Address
-                    description: The desired Address.
-                    required: true
-                    in: body
-                    schema:
-                      $ref: ../definitions.yaml#/definitions/clients-addresses-request
-              responses:
-                '200':
-                  description: Success
-                '404':
-                  description: Entity not found
-                '500':
-                  description: Server error
+              post:
+                summary: Client Business Address Correct
+                description: |
+                  For a given clientId and encodedAddressId, corrects the associated address if exists.
+                parameters:
+                    - $ref: '#/parameters/ClientId'
+                    - $ref: '#/parameters/EncodedAddressId'
+                    - name: Address
+                      description: The desired Address.
+                      required: true
+                      in: body
+                      schema:
+                        $ref: ../definitions.yaml#/definitions/clients-addresses-request
+                responses:
+                  "200":
+                    description: Success
+                  "401":
+                    description: Unauthorized or invalid token
+                  "404":
+                    description: Entity not found
+                  "500":
+                    description: Server error
   /client-accounts/{clientId}/addresses/{encodedAddressId}/correct:
-              'post':
+              post:
                 summary: Client Account Address Correct
                 description: |
                   For a given clientId and encodedAddressId, corrects the associated address if exists.
@@ -159,11 +169,13 @@ paths:
                       schema:
                         $ref: ../definitions.yaml#/definitions/clients-addresses-request
                 responses:
-                  '200':
+                  "200":
                     description: Success
-                  '404':
+                  "401":
+                    description: Unauthorized or invalid token
+                  "404":
                     description: Entity not found
-                  '500':
+                  "500":
                     description: Server error
   /individual-clients/{clientId}/addresses:
               get:
