@@ -6,3 +6,4 @@ validate.err
 *.xsl
 *.ps1
 .idea
+*.iml
