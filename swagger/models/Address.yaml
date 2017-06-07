@@ -12,6 +12,10 @@ properties:
     description: |
       The Enterprise-wide handle to this individual-address entry.
     type: string
+  correlationId:
+    description: |
+      An arbitrary id which is used to link two objects which are to be considered identical, based on the lexical rule of equivalence for that class of object.
+    type: string      
   addressType:
     description: |
       Type code for type of individual address association in Exceed.
@@ -48,15 +52,28 @@ properties:
       - 'WCL'
       - 'WMAM'
       - 'WMAR'
+  effectiveDate:
+    description: |
+      The address effective date.
+  expirationDate:
+    description: |
+      The address expiration date.
+  associatedObject:
+    description: |
+      The object (Policy, Account, Claim, etc) associated with this individual address.
+    type: string
+  addressStatus:
+    description: |
+      The status of the address in the record keeping system.
+    type: string
+    enum:
+        - "Active"     # May be updated/changed
+        - "Inactive"   # Historical, may not be updated or changed
   addressValidationCode:
     description: |
       The code provided by the source system that indicates the validation status of the address.
     type: string
     maxLength: 1
-  associatedObject:
-    description: |
-      The object (Policy, Account, Claim, etc) associated with this individual address.
-    type: string
   addressAggregate:
     description: |
       The aggregate address for use when the individual components are not known.
