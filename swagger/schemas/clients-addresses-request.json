@@ -6,6 +6,18 @@
         "addressValidationCode": {
           "type": "string"
         },
+        "userId": {
+          "type": "string"
+        },
+        "reasonCode": {
+          "type": "string"
+        },
+        "effectiveDate": {
+          "type": "string"
+        },
+        "additionalTasks": {
+          "type": "string"
+        },
         "street1": {
           "type": "string"
         },

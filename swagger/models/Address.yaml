@@ -52,6 +52,12 @@ properties:
       - 'WCL'
       - 'WMAM'
       - 'WMAR'
+  effectiveDate:
+    description: |
+      The address effective date.
+  expirationDate:
+    description: |
+      The address expiration date.
   associatedObject:
     description: |
       The object (Policy, Account, Claim, etc) associated with this individual address.
