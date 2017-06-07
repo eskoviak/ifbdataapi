@@ -12,6 +12,9 @@
         "reasonCode": {
           "type": "string"
         },
+        "effectiveDate": {
+          "type": "string"
+        },
         "additionalTasks": {
           "type": "string"
         },
