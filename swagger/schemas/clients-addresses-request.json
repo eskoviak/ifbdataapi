@@ -3,6 +3,9 @@
   "properties" : {
     "address": { "type": "object",
       "properties" : {
+        "addressValidationCode": {
+          "type": "string"
+        },
         "street1": {
           "type": "string"
         },
@@ -16,6 +19,9 @@
           "type": "string"
         },
         "countyCode": {
+          "type": "string"
+        },
+        "townshipCode": {
           "type": "string"
         },
         "postalCode": {

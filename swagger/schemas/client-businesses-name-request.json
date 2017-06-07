@@ -5,6 +5,18 @@
         "properties" : {
           "name": {
             "type": "string"
+          },
+          "previousFormattedName": {
+            "type": "string"
+          },
+          "formattedName": {
+            "type": "string"
+          },
+          "previousOptionalName": {
+            "type": "string"
+          },
+          "optionalName": {
+            "type": "string"
           }
         }
       }
